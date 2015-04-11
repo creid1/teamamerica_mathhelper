@@ -26,6 +26,10 @@ public class QuestionsPageConfigurator {
     }
 
     public static Question getNextQuestion() {
+
+        if (maxQuestions == 0) {
+            return null;
+        }
         if (counter >= maxQuestions) {
             //reset the counter to start over again
             counter = 0;

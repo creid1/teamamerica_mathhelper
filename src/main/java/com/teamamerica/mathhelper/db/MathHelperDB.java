@@ -7,6 +7,8 @@ import com.teamamerica.mathhelper.models.User;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by Christina on 4/11/2015.
@@ -22,7 +24,6 @@ public class MathHelperDB {
     protected Connection conn = null;
     protected Statement statement = null;
     protected String sql = null;
-    protected PreparedStatement preparedStatement = null;
     protected final String loggerName = "MathHelperDB";
 
     //default constructor doesn't initialize any variables
@@ -44,38 +45,38 @@ public class MathHelperDB {
 
     private void closeDBConnection() {
         try {
-            //Logger.getLogger(loggerName).log(Level.INFO,"Closing Connection to Math Helper DB.....");
+            Logger.getLogger(loggerName).log(Level.INFO,"Closing Connection to Math Helper DB.....");
             conn.close();
-            //Logger.getLogger(loggerName).log(Level.INFO,"Connection Closed.....");
+            Logger.getLogger(loggerName).log(Level.INFO,"Connection Closed.....");
         } catch (SQLException e){
-            //Logger.getLogger(loggerName).log(Level.SEVERE, e.getMessage());
-            //Logger.getLogger(loggerName).log(Level.SEVERE, e.getStackTrace().toString());
+            Logger.getLogger(loggerName).log(Level.SEVERE, e.getMessage());
+            Logger.getLogger(loggerName).log(Level.SEVERE, e.getStackTrace().toString());
         }
         try {
-            //Logger.getLogger(loggerName).log(Level.INFO,"Closing Statement to Math Helper DB.....");
+            Logger.getLogger(loggerName).log(Level.INFO,"Closing Statement to Math Helper DB.....");
             statement.close();
-            //Logger.getLogger(loggerName).log(Level.INFO,"Statement Closed.....");
+            Logger.getLogger(loggerName).log(Level.INFO,"Statement Closed.....");
         } catch (SQLException e) {
-            //Logger.getLogger(loggerName).log(Level.SEVERE, e.getMessage());
-            //Logger.getLogger(loggerName).log(Level.SEVERE, e.getStackTrace().toString());
+            Logger.getLogger(loggerName).log(Level.SEVERE, e.getMessage());
+            Logger.getLogger(loggerName).log(Level.SEVERE, e.getStackTrace().toString());
         }
     }
 
 
     private void dbConnect() {
-        //Logger.getLogger(loggerName).log(Level.INFO, "Connecting to database...");
+        Logger.getLogger(loggerName).log(Level.INFO, "Connecting to database...");
         try {
             Class.forName(JDBC_DRIVER);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            //Logger.getLogger(loggerName).log(Level.INFO, "Database Connection Successful...");
+            Logger.getLogger(loggerName).log(Level.INFO, "Database Connection Successful...");
         } catch (SQLException e) {
-            //Logger.getLogger(loggerName).log(Level.SEVERE, "Could not connect to the database...");
-            //Logger.getLogger(loggerName).log(Level.SEVERE, e.getMessage());
-            //Logger.getLogger(loggerName).log(Level.SEVERE, e.getStackTrace().toString());
+            Logger.getLogger(loggerName).log(Level.SEVERE, "Could not connect to the database...");
+            Logger.getLogger(loggerName).log(Level.SEVERE, e.getMessage());
+            e.printStackTrace();
         } catch (ClassNotFoundException ce) {
-            //Logger.getLogger(loggerName).log(Level.SEVERE, "Could not find the class name...");
-            //Logger.getLogger(loggerName).log(Level.SEVERE, ce.getMessage());
-            //Logger.getLogger(loggerName).log(Level.SEVERE, ce.getStackTrace().toString());
+            Logger.getLogger(loggerName).log(Level.SEVERE, "Could not find the class name...");
+            Logger.getLogger(loggerName).log(Level.SEVERE, ce.getMessage());
+            ce.printStackTrace();
         }
     }
 
@@ -83,24 +84,24 @@ public class MathHelperDB {
         try {
             //create a new statement
             statement = conn.createStatement();
-            //Logger.getLogger(loggerName).log(Level.INFO, "Found!      Using existing database.");
+            Logger.getLogger(loggerName).log(Level.INFO, "Found!      Using existing database.");
             // Database already exists, continue.
         } catch (SQLException e) {
-            //Logger.getLogger(loggerName).log(Level.SEVERE, e.getMessage());
-            //Logger.getLogger(loggerName).log(Level.SEVERE,e.getStackTrace().toString());
+            Logger.getLogger(loggerName).log(Level.SEVERE, e.getMessage());
+            e.printStackTrace();
         }
     }
 
     private void userMathHelperDB(){
         // Use the mathhelper database
-        //Logger.getLogger(loggerName).log(Level.INFO,"Connecting to Math Helper DB.....");
+        Logger.getLogger(loggerName).log(Level.INFO,"Connecting to Math Helper DB.....");
         String sql = "USE mathhelper";
         try {
             statement.execute(sql);
-            //Logger.getLogger(loggerName).log(Level.INFO, "Connecting to Math Helper DB Successful....");
+            Logger.getLogger(loggerName).log(Level.INFO, "Connecting to Math Helper DB Successful....");
         } catch (SQLException e) {
-            //Logger.getLogger(loggerName).log(Level.SEVERE,e.getMessage());
-            //Logger.getLogger(loggerName).log(Level.SEVERE,e.getStackTrace().toString());
+            Logger.getLogger(loggerName).log(Level.SEVERE,e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -119,8 +120,8 @@ public class MathHelperDB {
             ps.executeUpdate();
             return true;
         } catch (SQLException e) {
-            //Logger.getLogger(loggerName).log(Level.INFO, e.getMessage());
-            //Logger.getLogger(loggerName).log(Level.INFO, e.getStackTrace().toString());
+            Logger.getLogger(loggerName).log(Level.INFO, e.getMessage());
+           e.printStackTrace();
 
         } finally {
             closeDBConnection();
@@ -142,8 +143,8 @@ public class MathHelperDB {
             ps.executeUpdate();
             return true;
         } catch (SQLException e) {
-            //Logger.getLogger(loggerName).log(Level.INFO, e.getMessage());
-            //Logger.getLogger(loggerName).log(Level.SEVERE, e.getStackTrace().toString());
+            Logger.getLogger(loggerName).log(Level.INFO, e.getMessage());
+            e.printStackTrace();
 
         } finally {
             closeDBConnection();
@@ -172,8 +173,8 @@ public class MathHelperDB {
             // Close result set.
             rs.close();
         } catch (SQLException se) {
-            //Logger.getLogger(loggerName).log(Level.INFO, se.getMessage());
-            //Logger.getLogger(loggerName).log(Level.SEVERE, se.getStackTrace().toString());
+            Logger.getLogger(loggerName).log(Level.INFO, se.getMessage());
+            se.printStackTrace();
         } finally {
             closeDBConnection();
         }
@@ -202,8 +203,8 @@ public class MathHelperDB {
             // Close result set.
             rs.close();
         } catch (SQLException se) {
-            //Logger.getLogger(loggerName).log(Level.INFO, se.getMessage());
-            //Logger.getLogger(loggerName).log(Level.SEVERE, se.getStackTrace().toString());
+            Logger.getLogger(loggerName).log(Level.INFO, se.getMessage());
+           se.printStackTrace();
         } finally {
             closeDBConnection();
         }
@@ -237,8 +238,8 @@ public class MathHelperDB {
             // Close result set.
             rs.close();
         } catch (SQLException se) {
-            //Logger.getLogger(loggerName).log(Level.INFO, se.getMessage());
-            //Logger.getLogger(loggerName).log(Level.SEVERE, se.getStackTrace().toString());
+            Logger.getLogger(loggerName).log(Level.SEVERE, se.getMessage());
+            se.printStackTrace();
         } finally {
             closeDBConnection();
         }
@@ -267,8 +268,8 @@ public class MathHelperDB {
             // Close result set.
             rs.close();
         } catch (SQLException se) {
-            //Logger.getLogger(loggerName).log(Level.INFO, se.getMessage());
-            //Logger.getLogger(loggerName).log(Level.SEVERE, se.getStackTrace().toString());
+            Logger.getLogger(loggerName).log(Level.INFO, se.getMessage());
+            se.printStackTrace();
         } finally {
             closeDBConnection();
         }

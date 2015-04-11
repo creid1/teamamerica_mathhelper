@@ -1,6 +1,7 @@
 package com.teamamerica.mathhelper.ui.panels;
 
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
+import com.teamamerica.mathhelper.controllers.GradeLevel;
 
 public class SelectGrade extends javax.swing.JFrame {
 
@@ -158,7 +159,7 @@ public class SelectGrade extends javax.swing.JFrame {
     private void btnPreKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         Object source = evt.getSource();
         if (source == btnnPreK) {
-            UserInteractionsConfigurator.set_interactive_grade_level_str("Pre-K");
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.PRE_K);
             new MainMenu().setVisible(true);
             this.setVisible(false);
         }
