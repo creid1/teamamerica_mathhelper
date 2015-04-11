@@ -1,22 +1,24 @@
 package com.teamamerica.mathhelper.ui.panels;
 
+import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
+
 public class SelectGrade extends javax.swing.JFrame {
 
     public SelectGrade() {
         initComponents();
     }
 
-   
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        btn2 = new javax.swing.JButton();
+        btnnPreK = new javax.swing.JButton();
+        btn1 = new javax.swing.JButton();
+        btn4 = new javax.swing.JButton();
+        btnK = new javax.swing.JButton();
+        btn3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -26,77 +28,77 @@ public class SelectGrade extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        jButton5.setBackground(new java.awt.Color(102, 255, 102));
-        jButton5.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jButton5.setText("2nd");
-        jButton5.setPreferredSize(new java.awt.Dimension(107, 35));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btn2.setBackground(new java.awt.Color(102, 255, 102));
+        btn2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btn2.setText("2nd");
+        btn2.setPreferredSize(new java.awt.Dimension(107, 35));
+        btn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btn2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5);
-        jButton5.setBounds(40, 220, 112, 86);
+        jPanel1.add(btn2);
+        btn2.setBounds(40, 220, 112, 86);
 
-        jButton6.setBackground(new java.awt.Color(102, 255, 102));
-        jButton6.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jButton6.setText("Pre-K");
-        jButton6.setPreferredSize(new java.awt.Dimension(107, 35));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnnPreK.setBackground(new java.awt.Color(102, 255, 102));
+        btnnPreK.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnnPreK.setText("Pre-K");
+        btnnPreK.setPreferredSize(new java.awt.Dimension(107, 35));
+        btnnPreK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnPreKActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton6);
-        jButton6.setBounds(40, 100, 112, 86);
+        jPanel1.add(btnnPreK);
+        btnnPreK.setBounds(40, 100, 112, 86);
 
-        jButton7.setBackground(new java.awt.Color(255, 0, 0));
-        jButton7.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jButton7.setText("1st");
-        jButton7.setPreferredSize(new java.awt.Dimension(107, 35));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btn1.setBackground(new java.awt.Color(255, 0, 0));
+        btn1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btn1.setText("1st");
+        btn1.setPreferredSize(new java.awt.Dimension(107, 35));
+        btn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btn1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton7);
-        jButton7.setBounds(440, 100, 112, 86);
+        jPanel1.add(btn1);
+        btn1.setBounds(440, 100, 112, 86);
 
-        jButton8.setBackground(new java.awt.Color(255, 0, 0));
-        jButton8.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jButton8.setText("4th");
-        jButton8.setPreferredSize(new java.awt.Dimension(107, 35));
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btn4.setBackground(new java.awt.Color(255, 0, 0));
+        btn4.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btn4.setText("4th");
+        btn4.setPreferredSize(new java.awt.Dimension(107, 35));
+        btn4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btn4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton8);
-        jButton8.setBounds(440, 220, 112, 86);
+        jPanel1.add(btn4);
+        btn4.setBounds(440, 220, 112, 86);
 
-        jButton9.setBackground(new java.awt.Color(255, 255, 0));
-        jButton9.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jButton9.setText("Kindergarten");
-        jButton9.setPreferredSize(new java.awt.Dimension(107, 35));
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        btnK.setBackground(new java.awt.Color(255, 255, 0));
+        btnK.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnK.setText("Kindergarten");
+        btnK.setPreferredSize(new java.awt.Dimension(107, 35));
+        btnK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                btnKActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton9);
-        jButton9.setBounds(240, 100, 112, 86);
+        jPanel1.add(btnK);
+        btnK.setBounds(240, 100, 112, 86);
 
-        jButton10.setBackground(new java.awt.Color(255, 255, 0));
-        jButton10.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jButton10.setText("3rd");
-        jButton10.setPreferredSize(new java.awt.Dimension(107, 35));
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        btn3.setBackground(new java.awt.Color(255, 255, 0));
+        btn3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btn3.setText("3rd");
+        btn3.setPreferredSize(new java.awt.Dimension(107, 35));
+        btn3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                btn3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton10);
-        jButton10.setBounds(240, 220, 112, 86);
+        jPanel1.add(btn3);
+        btn3.setBounds(240, 220, 112, 86);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel2.setText("Select Your Grade");
@@ -132,72 +134,83 @@ public class SelectGrade extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         Object source = evt.getSource();
-        if (source == jButton5) {
+        if (source == btn2) {
+            UserInteractionsConfigurator.set_interactive_grade_level_str("2");
             new MainMenu().setVisible(true);
             this.setVisible(false);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-       Object source = evt.getSource();
-       if(source == jButton6){
-          new MainMenu().setVisible(true);
-          this.setVisible(false);
-       }
+    private void btnPreKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        Object source = evt.getSource();
+        if (source == btnnPreK) {
+            UserInteractionsConfigurator.set_interactive_grade_level_str("Pre-K");
+            new MainMenu().setVisible(true);
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-       Object source = evt.getSource();
-       if(source == jButton7){
-          new MainMenu().setVisible(true);
-          this.setVisible(false);
-       }
+    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        Object source = evt.getSource();
+        if (source == btn1) {
+            UserInteractionsConfigurator.set_interactive_grade_level_str("1");
+
+            new MainMenu().setVisible(true);
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-       Object source = evt.getSource();
-       if(source == jButton8){
-          new MainMenu().setVisible(true);
-          this.setVisible(false);
-       }
+    private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        Object source = evt.getSource();
+        if (source == btn4) {
+            UserInteractionsConfigurator.set_interactive_grade_level_str("4");
+
+            new MainMenu().setVisible(true);
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-       Object source = evt.getSource();
-       if(source == jButton9){
-          new MainMenu().setVisible(true);
-          this.setVisible(false);
-       }
+    private void btnKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        Object source = evt.getSource();
+        if (source == btnK) {
+            UserInteractionsConfigurator.set_interactive_grade_level_str("K");
+            System.out.println(UserInteractionsConfigurator.get_interactive_grade_level_enum());
+
+            new MainMenu().setVisible(true);
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-       Object source = evt.getSource();
-       if(source == jButton10){
-          new MainMenu().setVisible(true);
-          this.setVisible(false);
-       }
+    private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        Object source = evt.getSource();
+        if (source == btn3) {
+            UserInteractionsConfigurator.set_interactive_grade_level_str("3");
+            System.out.println(UserInteractionsConfigurator.get_interactive_grade_level_enum());
+            new MainMenu().setVisible(true);
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       Object source = evt.getSource();
-       if(source == jButton2){
-          new SplashPage1().setVisible(true);
-          this.setVisible(false);
-       }
+        Object source = evt.getSource();
+        if (source == jButton2) {
+            new SplashPage1().setVisible(true);
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -208,7 +221,7 @@ public class SelectGrade extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-       
+
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
@@ -216,15 +229,16 @@ public class SelectGrade extends javax.swing.JFrame {
             }
         });
     }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton10;
+    private javax.swing.JButton btn3;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton btn2;
+    private javax.swing.JButton btnnPreK;
+    private javax.swing.JButton btn1;
+    private javax.swing.JButton btn4;
+    private javax.swing.JButton btnK;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

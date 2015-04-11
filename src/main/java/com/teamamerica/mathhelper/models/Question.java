@@ -10,8 +10,8 @@ public class Question {
     //data fields for the Question object
     private int question_id;
     private String grade_level;
-    private String question_level;
-    private String question_type;
+    private String difficulty_level;
+    private String category_type;
     private String question;
     private String answer;
     private String wrong_1;
@@ -24,11 +24,11 @@ public class Question {
     }
 
     //constructor that takes all values
-    public Question(int question_id, String question_level, String question_type, String question, String answer, String wrong_1,
+    public Question(int question_id, String difficulty_level, String category_type, String question, String answer, String wrong_1,
                     String wrong_2, String wrong_3) {
         this.question_id = question_id;
-        this.question_level = question_level;
-        this.question_type = question_type;
+        this.difficulty_level = difficulty_level;
+        this.category_type = category_type;
         this.question = question;
         this.answer = answer;
         this.wrong_1 = wrong_1;
@@ -48,12 +48,12 @@ public class Question {
         this.grade_level = grade_level;
     }
 
-    public void setQuestion_level(String question_level) {
-        this.question_level = question_level;
+    public void setDifficulty_level(String difficulty) {
+        this.difficulty_level = difficulty;
     }
 
-    public void setQuestion_type(String question_type) {
-        this.question_type = question_type;
+    public void setCategory_type(String category) {
+        this.category_type = category;
     }
 
     public void setQuestion(String question) {
@@ -88,13 +88,13 @@ public class Question {
         return grade_level;
     }
 
-    public String getQuestion_level() {
-        return question_level;
+    public String getDifficulty_level() {
+        return difficulty_level;
     }
 
 
-    public String getQuestion_type() {
-        return question_type;
+    public String getCategory_type() {
+        return category_type;
     }
 
     public String getQuestion() {
@@ -127,17 +127,20 @@ public class Question {
      * @return ArrayList
      */
     public static ArrayList<Question> searchQuestions(
-            ArrayList<Question> questionList, String searchType, String searchCriteria) {
+            ArrayList<Question> questionList, String searchType, Enum searchCriteria) {
 
         ArrayList<Question> questions = new ArrayList<>();
         for (Question question : questionList) {
-            if (searchType.equalsIgnoreCase("grade_level") & question.getGrade_level().equalsIgnoreCase(searchCriteria)) {
+            if (searchType.equalsIgnoreCase("grade_level")
+                    & question.getGrade_level().equalsIgnoreCase(searchCriteria.toString())) {
                 questions.add(question);
             }
-            if (searchType.equalsIgnoreCase("question_level") & question.getQuestion_level().equalsIgnoreCase(searchCriteria)) {
+            if (searchType.equalsIgnoreCase("difficulty_level")
+                    & question.getDifficulty_level().equalsIgnoreCase(searchCriteria.toString())) {
                 questions.add(question);
             }
-            if (searchType.equalsIgnoreCase("question_type") & question.getQuestion_type().equalsIgnoreCase(searchCriteria)){
+            if (searchType.equalsIgnoreCase("category_type")
+                    & question.getCategory_type().equalsIgnoreCase(searchCriteria.toString())){
                 questions.add(question);
             }
         }

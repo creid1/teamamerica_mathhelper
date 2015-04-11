@@ -157,8 +157,8 @@ public class sqlMathHelperCreateDBScript {
             // Retrieve entry's attributes by column name
             int id = rs.getInt("question_id");
             String gradelevel = rs.getString("grade_level");
-            String questionlevel = rs.getString("question_level");
-            String questionType = rs.getString("question_type");
+            String difficultyLevel = rs.getString("difficulty_level");
+            String categoryType = rs.getString("category_type");
             String question = rs.getString("question");
             String answer = rs.getString("answer");
             String wrong1 = rs.getString("wrong_1");
@@ -168,8 +168,8 @@ public class sqlMathHelperCreateDBScript {
             // Display values
             System.out.println("ID: " + id);
             System.out.println(", Grade Level: " + gradelevel);
-            System.out.println(", Question Level: " + questionlevel);
-            System.out.println(", Question Tpe: " + questionType);
+            System.out.println(", Difficulty Level: " + difficultyLevel);
+            System.out.println(", Category Type: " + categoryType);
             System.out.println(", Question: " + question);
             System.out.println(", Answer: " + answer);
             System.out.println(", Wrong1: " + wrong1);
@@ -196,15 +196,15 @@ public class sqlMathHelperCreateDBScript {
             // Retrieve entry's attributes by column name
             int id = rs.getInt("tutorial_id");
             String gradelevel = rs.getString("grade_level");
-            String tutoriallevel = rs.getString("tutorial_level");
-            String tutorialtype = rs.getString("tutorial_type");
+            String difficultyLevel = rs.getString("difficulty_level");
+            String categoryType = rs.getString("category_type");
             String tutorial = rs.getString("tutorial");
 
             // Display values
             System.out.println("ID: " + id);
             System.out.println(", Grade Level: " + gradelevel);
-            System.out.println(", Tutorial Level: " + tutoriallevel);
-            System.out.println(", Tutorial Type: " + tutorialtype);
+            System.out.println(", Tutorial Level: " + difficultyLevel);
+            System.out.println(", Tutorial Type: " + categoryType);
             System.out.println(", Tutorial: " + tutorial);
 
         }
@@ -282,8 +282,8 @@ public class sqlMathHelperCreateDBScript {
             sql = "CREATE TABLE questions" +
                     "(question_id INT UNSIGNED NOT NULL AUTO_INCREMENT, " +
                     "grade_level CHAR(30) NOT NULL, " +
-                    "question_level CHAR(40) NOT NULL, " +
-                    "question_type CHAR(40) NOT NULL, " +
+                    "difficulty_level CHAR(40) NOT NULL, " +
+                    "category_type CHAR(40) NOT NULL, " +
                     "question TEXT NOT NULL, " +
                     "answer TEXT NOT NULL, " +
                     "wrong_1 TEXT NOT NULL, " +
@@ -291,8 +291,8 @@ public class sqlMathHelperCreateDBScript {
                     "wrong_3 TEXT NOT NULL, " +
                     "PRIMARY KEY(question_id));";
             stmt.execute(sql);
-            sql = "INSERT INTO questions (grade_level,question_level,question_type,question,answer,wrong_1,wrong_2,wrong_3)" +
-                    "VALUES ('K','E','addition','What is 2 + 2?','4','3','7','9');";
+            sql = "INSERT INTO questions (grade_level,difficulty_level,category_type,question,answer,wrong_1,wrong_2,wrong_3)" +
+                    "VALUES ('K','Easy','Addition','What is 2 + 2?','4','3','7','9');";
             stmt.executeUpdate(sql);
         } catch (SQLException se) {
             System.out.println("Found!      Using existing questions table.");
@@ -313,13 +313,13 @@ public class sqlMathHelperCreateDBScript {
             sql = "CREATE TABLE tutorials" +
                     "(tutorial_id INT UNSIGNED NOT NULL AUTO_INCREMENT, " +
                     "grade_level CHAR(30) NOT NULL, " +
-                    "tutorial_level CHAR(40) NOT NULL, " +
-                    "tutorial_type CHAR(40) NOT NULL, " +
+                    "difficulty_level CHAR(40) NOT NULL, " +
+                    "category_type CHAR(40) NOT NULL, " +
                     "tutorial TEXT NOT NULL, " +
                     "PRIMARY KEY(tutorial_id));";
             stmt.execute(sql);
-            sql = "INSERT INTO tutorials(grade_level,tutorial_level,tutorial_type, tutorial)" +
-                    "VALUES ('K','E','addition','2 + 2 = 4');";
+            sql = "INSERT INTO tutorials(grade_level,difficulty_level,category_type, tutorial)" +
+                    "VALUES ('K','Easy','Addition','2 + 2 = 4');";
             stmt.executeUpdate(sql);
         } catch (SQLException se) {
             System.out.println("Found!      Using existing tutorials table.");

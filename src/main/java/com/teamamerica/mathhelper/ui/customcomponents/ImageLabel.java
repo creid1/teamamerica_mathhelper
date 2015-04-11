@@ -1,6 +1,6 @@
 package com.teamamerica.mathhelper.ui.customcomponents;
 
-import com.teamamerica.mathhelper.configurations.ConfigDirectory;
+import com.teamamerica.mathhelper.environment.ConfigDirectory;
 
 import javax.swing.*;
 import java.awt.*;

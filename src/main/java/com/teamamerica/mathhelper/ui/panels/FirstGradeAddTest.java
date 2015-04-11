@@ -1,6 +1,7 @@
 package com.teamamerica.mathhelper.ui.panels;
 
-import javax.swing.*;
+import com.teamamerica.mathhelper.configurators.QuestionsPageConfigurator;
+import com.teamamerica.mathhelper.models.Question;
 
 public class FirstGradeAddTest extends javax.swing.JFrame {
 
@@ -10,6 +11,8 @@ public class FirstGradeAddTest extends javax.swing.JFrame {
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+
+        question = QuestionsPageConfigurator.getNextQuestion();
 
         jPanel1 = new javax.swing.JPanel();
         btnNext = new javax.swing.JButton();
@@ -33,7 +36,7 @@ public class FirstGradeAddTest extends javax.swing.JFrame {
         btnNext.setText("Next ");
         btnNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnNextActionPerformed(evt);
             }
         });
         jPanel1.add(btnNext);
@@ -63,26 +66,25 @@ public class FirstGradeAddTest extends javax.swing.JFrame {
 
         btnC.setBackground(new java.awt.Color(255, 0, 0));
         btnC.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
-        btnC.setText("C.  5");
+        btnC.setText(question.getWrong_1());
         jPanel1.add(btnC);
         btnC.setBounds(340, 200, 120, 40);
 
         btnA.setBackground(new java.awt.Color(255, 0, 0));
         btnA.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
-        btnA.setText("A.  2");
+        btnA.setText(question.getAnswer());
         jPanel1.add(btnA);
         btnA.setBounds(120, 200, 120, 40);
 
         btnD.setBackground(new java.awt.Color(255, 0, 0));
         btnD.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
-        btnD.setText("D.  7");
+        btnD.setText(question.getWrong_2());
         jPanel1.add(btnD);
         btnD.setBounds(340, 260, 120, 40);
 
         btnB.setBackground(new java.awt.Color(255, 0, 0));
         btnB.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
-       // btnB.setText("B.  10");
-        btnB.setIcon(new ImageIcon("C:\\Users\\Christina\\SCHOOL\\FSU\\CSC362\\images\\shapes\\circle.jpg"));
+        btnB.setText(question.getWrong_3());
         jPanel1.add(btnB);
         btnB.setBounds(120, 260, 120, 40);
 
@@ -90,7 +92,7 @@ public class FirstGradeAddTest extends javax.swing.JFrame {
         txtQuestion.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
 
         //TODO: set the txtQuestion
-        txtQuestion.setText("Question #1: What shape is a circle?");
+        txtQuestion.setText(question.getQuestion());
         txtQuestion.setEnabled(false);
         jPanel1.add(txtQuestion);
         txtQuestion.setBounds(80, 70, 430, 100);
@@ -118,12 +120,12 @@ public class FirstGradeAddTest extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
         );
 
         pack();
@@ -134,16 +136,23 @@ public class FirstGradeAddTest extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        question = QuestionsPageConfigurator.getNextQuestion();
+        btnA.setText(question.getAnswer());
+        btnB.setText(question.getWrong_2());
+        btnC.setText(question.getWrong_1());
+        btnD.setText(question.getWrong_3());
+        txtQuestion.setText(question.getQuestion());
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-       Object source = evt.getSource();
-       if(source == btnTests){
-          new FirstGradeTestMain().setVisible(true);
-          this.setVisible(false);
-       }
+        Object source = evt.getSource();
+        if (source == btnTests) {
+            new FirstGradeTestMain().setVisible(true);
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -151,7 +160,7 @@ public class FirstGradeAddTest extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     public static void main(String args[]) {
-        
+
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
@@ -159,7 +168,10 @@ public class FirstGradeAddTest extends javax.swing.JFrame {
             }
         });
     }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private Question question;
+
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnTests;
     private javax.swing.JButton btnHelp;

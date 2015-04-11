@@ -10,6 +10,10 @@
 
 package com.teamamerica.mathhelper.ui.panels;
 
+import com.teamamerica.mathhelper.configurators.QuestionsPageConfigurator;
+import com.teamamerica.mathhelper.controllers.DifficultyLevel;
+import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
+
 public class Difficulty extends javax.swing.JFrame {
 
     /**
@@ -29,12 +33,12 @@ public class Difficulty extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        btnEasy = new javax.swing.JButton();
+        btnMedium = new javax.swing.JButton();
+        btnHard = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnTutorials = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,41 +47,41 @@ public class Difficulty extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(436, 308));
         jPanel1.setLayout(null);
 
-        jButton6.setBackground(new java.awt.Color(102, 255, 102));
-        jButton6.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jButton6.setText("Easy");
-        jButton6.setPreferredSize(new java.awt.Dimension(107, 35));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnEasy.setBackground(new java.awt.Color(102, 255, 102));
+        btnEasy.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnEasy.setText("Easy");
+        btnEasy.setPreferredSize(new java.awt.Dimension(107, 35));
+        btnEasy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnEasyActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton6);
-        jButton6.setBounds(30, 150, 112, 86);
+        jPanel1.add(btnEasy);
+        btnEasy.setBounds(30, 150, 112, 86);
 
-        jButton7.setBackground(new java.awt.Color(255, 255, 0));
-        jButton7.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jButton7.setText("Medium");
-        jButton7.setPreferredSize(new java.awt.Dimension(107, 35));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnMedium.setBackground(new java.awt.Color(255, 255, 0));
+        btnMedium.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnMedium.setText("Medium");
+        btnMedium.setPreferredSize(new java.awt.Dimension(107, 35));
+        btnMedium.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnMediumActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton7);
-        jButton7.setBounds(230, 150, 112, 86);
+        jPanel1.add(btnMedium);
+        btnMedium.setBounds(230, 150, 112, 86);
 
-        jButton8.setBackground(new java.awt.Color(255, 0, 51));
-        jButton8.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jButton8.setText("Hard");
-        jButton8.setPreferredSize(new java.awt.Dimension(107, 35));
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btnHard.setBackground(new java.awt.Color(255, 0, 51));
+        btnHard.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnHard.setText("Hard");
+        btnHard.setPreferredSize(new java.awt.Dimension(107, 35));
+        btnHard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btnHardActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton8);
-        jButton8.setBounds(440, 150, 112, 86);
+        jPanel1.add(btnHard);
+        btnHard.setBounds(440, 150, 112, 86);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 48)); // NOI18N
         jLabel2.setText("Select Difficulty");
@@ -90,16 +94,16 @@ public class Difficulty extends javax.swing.JFrame {
         jPanel1.add(jButton3);
         jButton3.setBounds(440, 320, 112, 43);
 
-        jButton1.setBackground(new java.awt.Color(153, 204, 255));
-        jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        jButton1.setText("Tutorials");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnTutorials.setBackground(new java.awt.Color(153, 204, 255));
+        btnTutorials.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        btnTutorials.setText("Tutorials");
+        btnTutorials.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(30, 320, 112, 43);
+        jPanel1.add(btnTutorials);
+        btnTutorials.setBounds(30, 320, 112, 43);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ian\\Documents\\backround.jpeg")); // NOI18N
         jPanel1.add(jLabel1);
@@ -120,33 +124,41 @@ public class Difficulty extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnEasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
        Object source = evt.getSource();
-       if(source == jButton6){
+       if(source == btnEasy){
+           UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.EASY);
+           System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
+           QuestionsPageConfigurator.loadQuestionsList();
           new FirstGradeAddTest().setVisible(true);
           this.setVisible(false);
        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btnMediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
        Object source = evt.getSource();
-       if(source == jButton7){
-          new FirstGradeAddTest().setVisible(true);
+       if(source == btnMedium){
+           UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.MEDIUM);
+           System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
+
+           new FirstGradeAddTest().setVisible(true);
           this.setVisible(false);
        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btnHardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
        Object source = evt.getSource();
-       if(source == jButton8){
-          new FirstGradeTestMain().setVisible(true);
+       if(source == btnHard){
+           UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.HARD);
+           System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
+           new FirstGradeTestMain().setVisible(true);
           this.setVisible(false);
        }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        Object source = evt.getSource();
-       if(source == jButton1){
+       if(source == btnTutorials){
           new FirstGradeTutorials().setVisible(true);
           this.setVisible(false);
        }
@@ -194,11 +206,11 @@ public class Difficulty extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnTutorials;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton btnEasy;
+    private javax.swing.JButton btnMedium;
+    private javax.swing.JButton btnHard;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

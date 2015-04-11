@@ -10,8 +10,8 @@ public class Tutorial {
     //the data fields for a Tutorial object
     private int tutorial_id;
     private String grade_level;
-    private String tutorial_level;
-    private String tutorial_type;
+    private String difficulty_level;
+    private String category_type;
     private String tutorial;
 
     //default constructor
@@ -20,11 +20,11 @@ public class Tutorial {
     }
 
     //constructor that takes all values
-    public Tutorial(int tutorial_id, String grade_level, String tutorial_level, String tutorial_type, String tutorial) {
+    public Tutorial(int tutorial_id, String grade_level, String difficulty_level, String category_type, String tutorial) {
         this.tutorial_id = tutorial_id;
         this.grade_level = grade_level;
-        this.tutorial_level = tutorial_level;
-        this.tutorial_type = tutorial_type;
+        this.difficulty_level = difficulty_level;
+        this.category_type = category_type;
         this.tutorial = tutorial;
     }
 
@@ -41,12 +41,12 @@ public class Tutorial {
         this.grade_level = grade_level;
     }
 
-    public void setTutorial_level(String tutorial_level) {
-        this.tutorial_level = tutorial_level;
+    public void setDifficulty_level(String difficulty) {
+        this.difficulty_level = difficulty;
     }
 
-    public void setTutorial_type(String tutorial_type) {
-        this.tutorial_type = tutorial_type;
+    public void setCategory_type(String category) {
+        this.category_type = category;
     }
 
     public void setTutorial(String tutorial) {
@@ -65,12 +65,12 @@ public class Tutorial {
         return grade_level;
     }
 
-    public String getTutorial_level() {
-        return tutorial_level;
+    public String getDifficulty_level() {
+        return difficulty_level;
     }
 
-    public String getTutorial_type() {
-        return tutorial_type;
+    public String getCategory_type() {
+        return category_type;
     }
 
     public String getTutorial() {
@@ -87,17 +87,20 @@ public class Tutorial {
      * @return ArrayList
      */
     public static ArrayList<Tutorial> searchTutorials(
-            ArrayList<Tutorial> tutorialList, String searchType, String searchCriteria) {
+            ArrayList<Tutorial> tutorialList, String searchType, Enum searchCriteria) {
 
         ArrayList<Tutorial> tutorials = new ArrayList<>();
         for (Tutorial tutorial : tutorialList) {
-            if (searchType.equalsIgnoreCase("grade_level") & tutorial.getGrade_level().equalsIgnoreCase(searchCriteria)) {
+            if (searchType.equalsIgnoreCase("grade_level")
+                    & tutorial.getGrade_level().equalsIgnoreCase(searchCriteria.toString())) {
                 tutorials.add(tutorial);
             }
-            if (searchType.equalsIgnoreCase("tutorial_level") & tutorial.getTutorial_level().equalsIgnoreCase(searchCriteria)) {
+            if (searchType.equalsIgnoreCase("difficulty_level")
+                    & tutorial.getDifficulty_level().equalsIgnoreCase(searchCriteria.toString())) {
                 tutorials.add(tutorial);
             }
-            if (searchType.equalsIgnoreCase("tutorial_type") & tutorial.getTutorial_type().equalsIgnoreCase(searchCriteria)) {
+            if (searchType.equalsIgnoreCase("category_type")
+                    & tutorial.getCategory_type().equalsIgnoreCase(searchCriteria.toString())) {
                 tutorials.add(tutorial);
             }
         }
