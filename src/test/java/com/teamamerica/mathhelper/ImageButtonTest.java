@@ -1,7 +1,6 @@
 package com.teamamerica.mathhelper;
 
-import com.teamamerica.mathhelper.configurations.ConfigDirectory;
-import com.teamamerica.mathhelper.customcomponents.ImageButton;
+import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
 
 import javax.swing.*;
 import java.awt.*;

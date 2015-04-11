@@ -1,7 +1,6 @@
 package com.teamamerica.mathhelper;
 
-import com.teamamerica.mathhelper.customcomponents.ImageCheckBox;
-import com.teamamerica.mathhelper.customcomponents.ImageRadioButton;
+import com.teamamerica.mathhelper.ui.customcomponents.ImageRadioButton;
 
 import javax.swing.*;
 import java.awt.*;

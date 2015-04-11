@@ -1,0 +1,21 @@
+MATH HELPER Database Schema:
+
+
+Users:
+PrimaryKey: userid
+userid|username|password
+
+Test Problems:
+PrimaryKey: autoincrementing number
+uniqueNum|Grade Level| Question Level| Question| Answer|
+
+
+Test Results:
+PrimaryKey: auto-incrementing number
+uniqueNum|userid|Number Grade
+
+Tutorials:
+PrimaryKey: uniqueNum
+uniqueNum|Grade Level| Tutorial Level| Tutorial
+
+

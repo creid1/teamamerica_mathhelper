@@ -58,7 +58,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.teamamerica.mathhelper.panels.SplashPage1</mainClass>
+                            <mainClass>com.teamamerica.mathhelper.ui.panels.SplashPage1</mainClass>
                             <classpathPrefix>dependency-jars/</classpathPrefix>
                         </manifest>
                     </archive>

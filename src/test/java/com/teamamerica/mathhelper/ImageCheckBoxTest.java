@@ -1,13 +1,11 @@
 package com.teamamerica.mathhelper;
 
-import com.teamamerica.mathhelper.customcomponents.ImageCheckBox;
-import com.teamamerica.mathhelper.customcomponents.ImageLabel;
+import com.teamamerica.mathhelper.ui.customcomponents.ImageCheckBox;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemListener;
 
 /**
  * Created by Christina on 4/10/2015.

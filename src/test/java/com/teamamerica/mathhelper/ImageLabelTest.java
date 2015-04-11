@@ -1,12 +1,9 @@
 package com.teamamerica.mathhelper;
 
-import com.teamamerica.mathhelper.customcomponents.ImageButton;
-import com.teamamerica.mathhelper.customcomponents.ImageLabel;
+import com.teamamerica.mathhelper.ui.customcomponents.ImageLabel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Created by Christina on 4/10/2015.
