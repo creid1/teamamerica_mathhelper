@@ -41,7 +41,7 @@ public class ImageRadioButton extends JRadioButton {
     }
 
     public ImageIcon getImageIcon(String fileName){
-        return new ImageIcon(ConfigDirectory.getCircleImageFileFromDirectory(fileName));
+        return new ImageIcon(fileName);
     }
 }
 

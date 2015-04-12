@@ -8,8 +8,6 @@ import java.io.File;
 public class ConfigDirectory {
 
     public static String imageDirectory = configureDirectory("resources.image.directory");
-    public static String imageShapesDirectory = configureDirectory("image.shapes.directory");
-
 
 
     /**
@@ -29,14 +27,14 @@ public class ConfigDirectory {
 
 
     public static String getImageFileFromDirectory(String filename){
-        return imageDirectory + filename;
+        return imageDirectory + configureImageDBFile(filename);
 
     }
 
-    public static String getCircleImageFileFromDirectory(String filename){
-        return imageShapesDirectory + filename;
+    private static String configureImageDBFile(String filename){
+        String[] split = filename.split("_");
+        return split[0] + File.separator + split[1];
     }
-
 
 
 }

@@ -1,11 +1,13 @@
 package com.teamamerica.mathhelper.imagetests;
 
+import com.teamamerica.mathhelper.environment.ConfigDirectory;
 import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 /**
  * Created by Christina on 4/10/2015.
@@ -39,8 +41,8 @@ public class ImageButtonTest extends JFrame implements ActionListener {
         //instantiate the panel and all to the frame
         mainPanel = new JPanel();
         mainPanel.setLayout(new FlowLayout());
-        btnImage = new ImageButton("circle.jpg",500,500);
-       // btnImage.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConfigDirectory.getCircleImageFileFromDirectory("circle.jpg"))));
+        btnImage = new ImageButton(true,ConfigDirectory.getImageFileFromDirectory("shapes_circle.jpg"),500,500);
+       // btnImage.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConfigDirectory.getShapesImageFileFromDirectory("circle.jpg"))));
        // btnImage.setIcon(new javax.swing.ImageIcon(ConfigDirectory.getImageFileFromDirectory("circle.jpg")));
         btnImage.setBorderPainted(true);
         btnImage.setFocusPainted(false);

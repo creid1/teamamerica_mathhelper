@@ -25,7 +25,7 @@ public class QuestionsPageConfigurator {
         maxQuestions = questions.size();
     }
 
-    public static Question getNextQuestion() {
+    public static Question getQuestion() {
 
         if (maxQuestions == 0) {
             return null;

@@ -35,7 +35,7 @@ public class ImageLabelTest extends JFrame{
         //instantiate the panel and all to the frame
         mainPanel = new JPanel();
         mainPanel.setLayout(new FlowLayout());
-        lblMessage = new ImageLabel("circle.jpg",500,500);
+        lblMessage = new ImageLabel(true,"circle.jpg",500,500);
         mainPanel.add(lblMessage);
         add(mainPanel);
         pack();

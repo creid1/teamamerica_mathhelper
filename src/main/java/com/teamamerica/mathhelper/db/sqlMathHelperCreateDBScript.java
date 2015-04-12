@@ -44,6 +44,64 @@ public class sqlMathHelperCreateDBScript {
             }
             createUsersTable(stmt);
             createQuestionsTable(stmt);
+            //add values into questions table to test
+            String value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+                    "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
+                    "VALUES ('K','Easy','Addition'," + false + ",'2 + 3 = ','5','4','7','6');";
+            addQuestionToDB(stmt, value);
+             value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+                    "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
+                    "VALUES ('K','Easy','Addition'," + false + ",'1 + 2 = ','3','4','8','5');";
+            addQuestionToDB(stmt, value);
+             value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+                    "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
+                    "VALUES ('K','Easy','Addition'," + false + ",'4 + 5 = ','9','8','7','6');";
+            addQuestionToDB(stmt, value);
+             value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+                    "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
+                    "VALUES ('K','Easy','Addition'," + false + ",'3 + 4 = ','7','3','8','9');";
+            addQuestionToDB(stmt, value);
+
+             value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+                    "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
+                    "VALUES ('K','Easy','Addition'," + false + ",'6 + 2 = ','8','3','6','9');";
+            addQuestionToDB(stmt, value);
+
+             value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+                    "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
+                    "VALUES ('K','Easy','Addition'," + false + ",'8 + 3 = ','11','12','5','9');";
+            addQuestionToDB(stmt, value);
+
+             value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+                    "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
+                    "VALUES ('K','Easy','Addition'," + false + ",'6 + 3 = ','9','3','8','6');";
+            addQuestionToDB(stmt, value);
+
+             value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+                    "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
+                    "VALUES ('K','Easy','Addition'," + false + ",'3 + 3 = ','6','3','5','9');";
+
+
+
+            value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+                    "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
+                    "VALUES ('K','Easy','Addition'," + true + ",'CIRCLE: ','shapes_circle.jpg','shapes_diamond.png'," +
+                    "'shapes_heart.jpeg','shapes_triangle.jpg');";
+            addQuestionToDB(stmt, value);
+
+            value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+                    "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
+                    "VALUES ('K','Easy','Addition'," + true + ",'TRIANGLE: ','shapes_triangle.jpg','shapes_square.jpg'," +
+                    "'shapes_star.jpg','shapes_circle.jpg');";
+            addQuestionToDB(stmt, value);
+
+            value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+                    "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
+                    "VALUES ('K','Easy','Addition'," + true + ",'SQUARE: ','shapes_square.jpg','shapes_star.jpg'," +
+                    "'shapes_heart.jpeg','shapes_diamond.png');";
+            addQuestionToDB(stmt, value);
+
+
             createGradesTable(stmt);
             createTutorialsTable(stmt);
             // Use the groupproject database
@@ -159,17 +217,19 @@ public class sqlMathHelperCreateDBScript {
             String gradelevel = rs.getString("grade_level");
             String difficultyLevel = rs.getString("difficulty_level");
             String categoryType = rs.getString("category_type");
+            boolean hasImage = rs.getBoolean("has_image");
             String question = rs.getString("question");
             String answer = rs.getString("answer");
             String wrong1 = rs.getString("wrong_1");
             String wrong2 = rs.getString("wrong_2");
-            String wrong3 = rs.getString("wrong_2");
+            String wrong3 = rs.getString("wrong_3");
 
             // Display values
             System.out.println("ID: " + id);
             System.out.println(", Grade Level: " + gradelevel);
             System.out.println(", Difficulty Level: " + difficultyLevel);
             System.out.println(", Category Type: " + categoryType);
+            System.out.println(", Has Image: " + hasImage);
             System.out.println(", Question: " + question);
             System.out.println(", Answer: " + answer);
             System.out.println(", Wrong1: " + wrong1);
@@ -198,6 +258,7 @@ public class sqlMathHelperCreateDBScript {
             String gradelevel = rs.getString("grade_level");
             String difficultyLevel = rs.getString("difficulty_level");
             String categoryType = rs.getString("category_type");
+            boolean hasImage = rs.getBoolean("has_image");
             String tutorial = rs.getString("tutorial");
 
             // Display values
@@ -205,7 +266,9 @@ public class sqlMathHelperCreateDBScript {
             System.out.println(", Grade Level: " + gradelevel);
             System.out.println(", Tutorial Level: " + difficultyLevel);
             System.out.println(", Tutorial Type: " + categoryType);
+            System.out.println(", Has Image: " + hasImage);
             System.out.println(", Tutorial: " + tutorial);
+
 
         }
 
@@ -284,6 +347,7 @@ public class sqlMathHelperCreateDBScript {
                     "grade_level CHAR(30) NOT NULL, " +
                     "difficulty_level CHAR(40) NOT NULL, " +
                     "category_type CHAR(40) NOT NULL, " +
+                    "has_image BOOLEAN NOT NULL, " +
                     "question TEXT NOT NULL, " +
                     "answer TEXT NOT NULL, " +
                     "wrong_1 TEXT NOT NULL, " +
@@ -291,8 +355,9 @@ public class sqlMathHelperCreateDBScript {
                     "wrong_3 TEXT NOT NULL, " +
                     "PRIMARY KEY(question_id));";
             stmt.execute(sql);
-            sql = "INSERT INTO questions (grade_level,difficulty_level,category_type,question,answer,wrong_1,wrong_2,wrong_3)" +
-                    "VALUES ('K','Easy','Addition','What is 2 + 2?','4','3','7','9');";
+            sql = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+                    "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
+                    "VALUES ('K','Easy','Addition'," + false + ",'2 + 2 =','4','3','7','9');";
             stmt.executeUpdate(sql);
         } catch (SQLException se) {
             System.out.println("Found!      Using existing questions table.");
@@ -300,6 +365,24 @@ public class sqlMathHelperCreateDBScript {
             System.out.println(se.getStackTrace().toString());
             // Table already exists, continue.
         }
+    }
+
+    private static void addQuestionToDB(Statement stmt, String value) {
+
+        // Use the mathhelper database
+        String sql = "USE mathhelper";
+        try {
+            stmt.execute(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            stmt.executeUpdate(value);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private static void createTutorialsTable(Statement stmt) throws SQLException {
@@ -315,11 +398,12 @@ public class sqlMathHelperCreateDBScript {
                     "grade_level CHAR(30) NOT NULL, " +
                     "difficulty_level CHAR(40) NOT NULL, " +
                     "category_type CHAR(40) NOT NULL, " +
+                    "has_image BOOLEAN NOT NULL, " +
                     "tutorial TEXT NOT NULL, " +
                     "PRIMARY KEY(tutorial_id));";
             stmt.execute(sql);
-            sql = "INSERT INTO tutorials(grade_level,difficulty_level,category_type, tutorial)" +
-                    "VALUES ('K','Easy','Addition','2 + 2 = 4');";
+            sql = "INSERT INTO tutorials(grade_level,difficulty_level,category_type,has_image,tutorial)" +
+                    "VALUES ('K','Easy'," + false + ",'Addition','2 + 2 = 4');";
             stmt.executeUpdate(sql);
         } catch (SQLException se) {
             System.out.println("Found!      Using existing tutorials table.");

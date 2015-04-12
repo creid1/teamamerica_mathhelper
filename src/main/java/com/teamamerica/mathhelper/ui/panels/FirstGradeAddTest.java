@@ -12,7 +12,7 @@ public class FirstGradeAddTest extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        question = QuestionsPageConfigurator.getNextQuestion();
+        question = QuestionsPageConfigurator.getQuestion();
 
         jPanel1 = new javax.swing.JPanel();
         btnNext = new javax.swing.JButton();
@@ -138,7 +138,7 @@ public class FirstGradeAddTest extends javax.swing.JFrame {
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        question = QuestionsPageConfigurator.getNextQuestion();
+        question = QuestionsPageConfigurator.getQuestion();
         btnA.setText(question.getAnswer());
         btnB.setText(question.getWrong_2());
         btnC.setText(question.getWrong_1());

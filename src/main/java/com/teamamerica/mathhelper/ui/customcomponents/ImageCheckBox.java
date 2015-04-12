@@ -46,6 +46,6 @@ public class ImageCheckBox extends JCheckBox {
     }
 
     public ImageIcon getImageIcon(String fileName) {
-        return new ImageIcon(ConfigDirectory.getCircleImageFileFromDirectory(fileName));
+        return new ImageIcon(fileName);
     }
 }

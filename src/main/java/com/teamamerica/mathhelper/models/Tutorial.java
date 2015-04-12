@@ -13,6 +13,7 @@ public class Tutorial {
     private String difficulty_level;
     private String category_type;
     private String tutorial;
+    private boolean has_image;
 
     //default constructor
     public Tutorial() {
@@ -20,12 +21,14 @@ public class Tutorial {
     }
 
     //constructor that takes all values
-    public Tutorial(int tutorial_id, String grade_level, String difficulty_level, String category_type, String tutorial) {
+    public Tutorial(int tutorial_id, String grade_level,
+                    String difficulty_level, String category_type, String tutorial, boolean has_image) {
         this.tutorial_id = tutorial_id;
         this.grade_level = grade_level;
         this.difficulty_level = difficulty_level;
         this.category_type = category_type;
         this.tutorial = tutorial;
+        this.has_image = has_image;
     }
 
 
@@ -53,6 +56,10 @@ public class Tutorial {
         this.tutorial = tutorial;
     }
 
+    public void setHas_image(boolean has_image) {
+        this.has_image = has_image;
+    }
+
 
     /**
      * ***************************GETTERS **************************************
@@ -76,6 +83,8 @@ public class Tutorial {
     public String getTutorial() {
         return tutorial;
     }
+
+    public boolean getHas_image(){ return has_image; }
 
     /********************************** STATIC CLASS SEARCH METHODS *******************************/
 

@@ -228,6 +228,7 @@ public class MathHelperDB {
                 question.setGrade_level(rs.getString("grade_level"));
                 question.setDifficulty_level(rs.getString("difficulty_level"));
                 question.setCategory_type(rs.getString("category_type"));
+                question.setHas_image(rs.getBoolean("has_image"));
                 question.setQuestion(rs.getString("question"));
                 question.setAnswer(rs.getString("answer"));
                 question.setWrong_1(rs.getString("wrong_1"));
@@ -262,6 +263,7 @@ public class MathHelperDB {
                 tutorial.setGrade_level(rs.getString("grade_level"));
                 tutorial.setDifficulty_level(rs.getString("difficulty_level"));
                 tutorial.setCategory_type(rs.getString("category_type"));
+                tutorial.setHas_image(rs.getBoolean("has_image"));
                 tutorial.setTutorial(rs.getString("tutorial"));
                 tutorials.add(tutorial);
             }

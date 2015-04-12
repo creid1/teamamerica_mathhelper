@@ -17,6 +17,7 @@ public class Question {
     private String wrong_1;
     private String wrong_2;
     private String wrong_3;
+    private boolean has_image;
 
     //default constructor
     public Question() {
@@ -25,7 +26,7 @@ public class Question {
 
     //constructor that takes all values
     public Question(int question_id, String difficulty_level, String category_type, String question, String answer, String wrong_1,
-                    String wrong_2, String wrong_3) {
+                    String wrong_2, String wrong_3, boolean has_image) {
         this.question_id = question_id;
         this.difficulty_level = difficulty_level;
         this.category_type = category_type;
@@ -34,6 +35,8 @@ public class Question {
         this.wrong_1 = wrong_1;
         this.wrong_2 = wrong_2;
         this.wrong_3 = wrong_3;
+        this.has_image = has_image;
+
     }
 
     /**
@@ -76,6 +79,10 @@ public class Question {
         this.wrong_3 = wrong_3;
     }
 
+    public void setHas_image(boolean has_image) {
+        this.has_image = has_image;
+    }
+
 
     /**
      * ************************ GETTERS************************************
@@ -116,6 +123,10 @@ public class Question {
     public String getWrong_3() {
         return wrong_3;
     }
+
+    public boolean getHas_image(){ return has_image; }
+
+
 
     /********************************** STATIC CLASS SEARCH METHODS *******************************/
 

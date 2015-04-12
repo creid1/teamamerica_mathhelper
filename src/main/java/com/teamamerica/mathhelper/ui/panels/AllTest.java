@@ -1,7 +1,10 @@
 package com.teamamerica.mathhelper.ui.panels;
 
+import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
+
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 
 public class AllTest extends JFrame {
 
@@ -16,10 +19,10 @@ public class AllTest extends JFrame {
     private JPanel pnQuestion;
     private JPanel pnAnswer;
     private JPanel pnFooter;
-    private JButton btnB;
-    private JRadioButton btnC;
-    private JRadioButton btnA;
-    private JRadioButton btnD;
+    private ImageButton btnB;
+    private ImageButton btnC;
+    private ImageButton btnA;
+    private ImageButton btnD;
 
     private JTextField txtQuestion;
     // End of variables declaration//GEN-END:variables
@@ -82,16 +85,16 @@ public class AllTest extends JFrame {
         pnAnswer = new JPanel();
         pnAnswer.setLayout(new GridLayout(2,2));
 
-        btnA = new JRadioButton();
-        btnB = new JButton();
-        btnD = new JRadioButton();
-        btnC = new JRadioButton();
+        btnA = new ImageButton(true,"shapes" + File.separator + "circle.jpg",500,500);
+        btnB = new ImageButton(true,"shapes" + File.separator + "diamond.png",500,500);
+        btnD = new ImageButton(true,"shapes" + File.separator + "hexagon.jpg",500,500);
+        btnC = new ImageButton(true,"shapes" + File.separator + "square.jpg",500,500);
 
-        btnA.setBackground(new java.awt.Color(255, 0, 0));
+      //  btnA.setBackground(new java.awt.Color(255, 0, 0));
         btnA.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
-        btnA.setText("A.  2");
+      //  btnA.setText("A.  2");
 
-        btnB.setBackground(new java.awt.Color(255, 0, 0));
+    //    btnB.setBackground(new java.awt.Color(255, 0, 0));
         btnB.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         // btnB.setText("B.  10");
         btnB.setIcon(new ImageIcon("C:\\Users\\Christina\\SCHOOL\\FSU\\CSC362\\images\\shapes\\circle2.jpg"));

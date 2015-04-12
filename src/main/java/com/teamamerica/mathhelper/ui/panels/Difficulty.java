@@ -130,7 +130,7 @@ public class Difficulty extends javax.swing.JFrame {
            UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.EASY);
            System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
            QuestionsPageConfigurator.loadQuestionsList();
-          new FirstGradeAddTest().setVisible(true);
+          new GlobalTestMain().setVisible(true);
           this.setVisible(false);
        }
     }//GEN-LAST:event_jButton6ActionPerformed

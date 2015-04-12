@@ -15,7 +15,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <resources.directory>${project.basedir}/src/main/resources</resources.directory>
         <resources.image.directory>${resources.directory}/images</resources.image.directory>
-        <image.shapes.directory>${resources.image.directory}/shapes</image.shapes.directory>
     </properties>
 
     <dependencies>

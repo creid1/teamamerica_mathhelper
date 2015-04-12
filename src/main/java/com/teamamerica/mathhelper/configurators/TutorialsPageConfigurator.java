@@ -25,11 +25,15 @@ public class TutorialsPageConfigurator {
         maxQuestions = tutorials.size();
     }
 
-    public static Tutorial getNextQuestion() {
+    public static Tutorial getTutorial() {
+
+        if (maxQuestions == 0) {
+            return null;
+        }
         if (counter >= maxQuestions) {
-            counter = 0;  //reset the counter to loop through list again
+            //reset the counter to start over again
+            counter = 0;
         }
         return tutorials.get(counter++);
-
     }
 }
