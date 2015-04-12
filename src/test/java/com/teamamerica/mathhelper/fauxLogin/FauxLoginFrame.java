@@ -32,6 +32,7 @@ public class FauxLoginFrame extends JFrame {
         setVisible(true);
         setResizable(false);
 
+
         //center the frame based on the screen's dimensions
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension d = toolkit.getScreenSize();

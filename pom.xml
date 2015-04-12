@@ -15,15 +15,24 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <resources.directory>${project.basedir}/src/main/resources</resources.directory>
         <resources.image.directory>${resources.directory}/images</resources.image.directory>
+        <javafx.rt.jar>C:\Program Files (x86)\Oracle\JavaFX 2.0 SDK\rt\lib\jfxrt.jar</javafx.rt.jar>
+        <ant.javafx.jar>C:\Program Files (x86)\Oracle\JavaFX 2.0 SDK\tools\ant-javafx.jar</ant.javafx.jar>
+
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.eclipse.swt.win32.win32</groupId>
+            <artifactId>x86</artifactId>
+            <version>3.3.0-v3346</version>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -34,7 +43,6 @@
     <build>
         <finalName>mathhelper</finalName>
         <plugins>
-
             <!-- Set a compiler level -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -57,7 +65,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.teamamerica.mathhelper.ui.panels.SplashPage1</mainClass>
+                            <mainClass>com.teamamerica.mathhelper.ui.panels.LogIn</mainClass>
                             <classpathPrefix>dependency-jars/</classpathPrefix>
 
                         </manifest>
