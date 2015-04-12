@@ -1,7 +1,5 @@
 package com.teamamerica.mathhelper.ui.customcomponents;
 
-import com.teamamerica.mathhelper.environment.ConfigDirectory;
-
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
@@ -45,6 +43,7 @@ public class ImageButton extends JButton {
 
         this.setIcon(null);
         this.setText(fileName);
+        this.setFont(new Font("DejaVu Serif", 0,40));
         this.setBackground(Color.WHITE);
         this.setPreferredSize(new Dimension(width, height));
         this.setMaximumSize(new Dimension(width, height));
