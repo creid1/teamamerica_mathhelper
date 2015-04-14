@@ -1,6 +1,20 @@
 package com.teamamerica.mathhelper.ui.panels;
 
+import com.teamamerica.mathhelper.ui.customcomponents.YouTubeFrame;
+
 public class FirstGradeAddTutorial extends javax.swing.JFrame {
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnNextPage;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtTutorial;
+
+    // End of variables declaration//GEN-END:variables
 
     public FirstGradeAddTutorial() {
         initComponents();
@@ -9,13 +23,14 @@ public class FirstGradeAddTutorial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+
         jPanel1 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
+        btnNextPage = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtTutorial = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -23,16 +38,16 @@ public class FirstGradeAddTutorial extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        jButton4.setBackground(new java.awt.Color(153, 204, 255));
-        jButton4.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        jButton4.setText("Next Page");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnNextPage.setBackground(new java.awt.Color(153, 204, 255));
+        btnNextPage.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        btnNextPage.setText("Next Page");
+        btnNextPage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnNextPageActionListener(evt);
             }
         });
-        jPanel1.add(jButton4);
-        jButton4.setBounds(470, 10, 110, 40);
+        jPanel1.add(btnNextPage);
+        btnNextPage.setBounds(470, 10, 110, 40);
 
         jButton5.setBackground(new java.awt.Color(153, 204, 255));
         jButton5.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
@@ -65,15 +80,15 @@ public class FirstGradeAddTutorial extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(160, -10, 290, 80);
 
-        jTextField1.setBackground(new java.awt.Color(255, 0, 0));
-        jTextField1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtTutorial.setBackground(new java.awt.Color(255, 0, 0));
+        txtTutorial.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        txtTutorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(80, 60, 440, 260);
+       jPanel1.add(txtTutorial);
+        txtTutorial.setBounds(80, 60, 440, 260);
 
         jLabel1.setBackground(new java.awt.Color(255, 0, 51));
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -92,6 +107,7 @@ public class FirstGradeAddTutorial extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
         );
 
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -108,8 +124,15 @@ public class FirstGradeAddTutorial extends javax.swing.JFrame {
        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnNextPageActionListener(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        System.out.println("NEXT BUTTON" +
+                "+ CLICKED!!!!");
+        new YouTubeFrame("https://www.youtube.com/v/b-Cr0EWwaTk?fs=1").setVisible(true);
+
+
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -126,14 +149,5 @@ public class FirstGradeAddTutorial extends javax.swing.JFrame {
             }
         });
     }
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    // End of variables declaration//GEN-END:variables
+
 }

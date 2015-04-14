@@ -150,7 +150,7 @@ public class SelectGrade extends javax.swing.JFrame {
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         Object source = evt.getSource();
         if (source == btn2) {
-            UserInteractionsConfigurator.set_interactive_grade_level_str("2");
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.SECOND);
             new MainMenu().setVisible(true);
             this.setVisible(false);
         }
@@ -168,7 +168,7 @@ public class SelectGrade extends javax.swing.JFrame {
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         Object source = evt.getSource();
         if (source == btn1) {
-            UserInteractionsConfigurator.set_interactive_grade_level_str("1");
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.FIRST);
 
             new MainMenu().setVisible(true);
             this.setVisible(false);
@@ -178,7 +178,7 @@ public class SelectGrade extends javax.swing.JFrame {
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         Object source = evt.getSource();
         if (source == btn4) {
-            UserInteractionsConfigurator.set_interactive_grade_level_str("4");
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.FOURTH);
 
             new MainMenu().setVisible(true);
             this.setVisible(false);
@@ -188,7 +188,7 @@ public class SelectGrade extends javax.swing.JFrame {
     private void btnKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         Object source = evt.getSource();
         if (source == btnK) {
-            UserInteractionsConfigurator.set_interactive_grade_level_str("K");
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.K);
             System.out.println(UserInteractionsConfigurator.get_interactive_grade_level_enum());
 
             new MainMenu().setVisible(true);
@@ -199,7 +199,7 @@ public class SelectGrade extends javax.swing.JFrame {
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         Object source = evt.getSource();
         if (source == btn3) {
-            UserInteractionsConfigurator.set_interactive_grade_level_str("3");
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.THIRD);
             System.out.println(UserInteractionsConfigurator.get_interactive_grade_level_enum());
             new MainMenu().setVisible(true);
             this.setVisible(false);

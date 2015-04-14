@@ -165,6 +165,7 @@ public class FirstGradeTutorials extends javax.swing.JFrame {
        Object source = evt.getSource();
        if(source == jButton5){
           new FirstGradeAddTutorial().setVisible(true);
+
           this.setVisible(false);
        }
     }//GEN-LAST:event_jButton5ActionPerformed
