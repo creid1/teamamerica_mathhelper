@@ -43,7 +43,7 @@ public class ImageButton extends JButton {
 
         this.setIcon(null);
         this.setText(fileName);
-        this.setFont(new Font("DejaVu Serif", 0,40));
+        this.setFont(new Font("DejaVu Serif", 0, 40));
         this.setBackground(Color.WHITE);
         this.setPreferredSize(new Dimension(width, height));
         this.setMaximumSize(new Dimension(width, height));
@@ -107,14 +107,11 @@ public class ImageButton extends JButton {
         this.setFont(new Font("Times New Roman", 0, 16));
         this.setBackground(Color.GREEN);
         this.setIcon(null);
-
-        this.setPreferredSize(new Dimension(width, height));
-        this.setMaximumSize(new Dimension(width, height));
-        this.setFocusPainted(false);
-        this.setRolloverEnabled(false);
-        this.setOpaque(false);
         this.setContentAreaFilled(true);
         this.setBorderPainted(true);
+        this.setPreferredSize(new Dimension(width, height));
+        this.setMaximumSize(new Dimension(width, height));
+
         this.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createBevelBorder(BevelBorder.LOWERED, Color.BLACK.darker(), Color.BLACK),
                 BorderFactory.createEtchedBorder(EtchedBorder.LOWERED)));

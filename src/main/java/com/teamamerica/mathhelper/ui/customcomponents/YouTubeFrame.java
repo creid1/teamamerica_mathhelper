@@ -2,6 +2,8 @@ package com.teamamerica.mathhelper.ui.customcomponents;
 
 import chrriis.dj.nativeswing.swtimpl.NativeInterface;
 import chrriis.dj.nativeswing.swtimpl.components.JFlashPlayer;
+import com.teamamerica.mathhelper.configurators.TutorialsPageConfigurator;
+import com.teamamerica.mathhelper.ui.panels.FirstGradeTutorials;
 
 import javax.swing.*;
 import java.awt.*;
@@ -60,18 +62,23 @@ public class YouTubeFrame extends JFrame {
 
     private void btnNextActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                flashPlayer.getWebBrowser().navigate(TutorialsPageConfigurator.getTutorial().getTutorial());
+            }
+        });
+    }
 
 
-        System.out.println("NEXT BUTTON" +
-                "+ CLICKED!!!!");
 
-        this.frame.setVisible(false);
 
-        new YouTubeFrame("https://www.youtube.com/v/AQ7THUKx6Es?fs=1").setVisible(true);
+    private void btnTutorialsActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        this.frame.dispose();
+        new FirstGradeTutorials().setVisible(true);
 
 
     }
-
 
     private JPanel createHeaderPanel() {
         JPanel pnButtons = new JPanel();
@@ -82,6 +89,12 @@ public class YouTubeFrame extends JFrame {
         btnTutorialMain.setFont(new java.awt.Font("Comic Sans MS", 0, 34)); // NOI18N
         btnTutorialMain.setBounds(10, 10, 100, 40);
         btnTutorialMain.setBackground(new java.awt.Color(153, 204, 255));
+
+        btnTutorialMain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTutorialsActionPerformed(evt);
+            }
+        });
 
         final JButton btnNext = new JButton("Next Page");
         btnNext.setFont(new java.awt.Font("Comic Sans MS", 0, 34)); // NOI18N

@@ -104,6 +104,22 @@ public class sqlMathHelperCreateDBScript {
 
             createGradesTable(stmt);
             createTutorialsTable(stmt);
+
+            value = "INSERT INTO tutorials(grade_level,category_type,has_video,tutorial)" +
+                    "VALUES ('K','Addition'," + true + ",'https://www.youtube.com/v/AQ7THUKx6Es?fs=1');";
+
+            addTutorialToDB(stmt,value);
+
+            value = "INSERT INTO tutorials(grade_level,category_type,has_video,tutorial)" +
+                    "VALUES ('K','Addition'," + true + ",'https://www.youtube.com/v/b-Cr0EWwaTk?fs=1');";
+
+            addTutorialToDB(stmt,value);
+
+            value = "INSERT INTO tutorials(grade_level,category_type,has_video,tutorial)" +
+                    "VALUES ('K','Addition'," + true + ",'https://www.youtube.com/v/AQ7THUKx6Es?fs=1');";
+
+            addTutorialToDB(stmt,value);
+
             // Use the groupproject database
             sql = "USE mathhelper";
             stmt.execute(sql);
@@ -256,20 +272,16 @@ public class sqlMathHelperCreateDBScript {
             // Retrieve entry's attributes by column name
             int id = rs.getInt("tutorial_id");
             String gradelevel = rs.getString("grade_level");
-            String difficultyLevel = rs.getString("difficulty_level");
             String categoryType = rs.getString("category_type");
-            boolean hasImage = rs.getBoolean("has_image");
+            boolean hasVideo = rs.getBoolean("has_video");
             String tutorial = rs.getString("tutorial");
 
             // Display values
             System.out.println("ID: " + id);
             System.out.println(", Grade Level: " + gradelevel);
-            System.out.println(", Tutorial Level: " + difficultyLevel);
             System.out.println(", Tutorial Type: " + categoryType);
-            System.out.println(", Has Image: " + hasImage);
+            System.out.println(", Has Video: " + hasVideo);
             System.out.println(", Tutorial: " + tutorial);
-
-
         }
 
         // Close result set.
@@ -367,6 +379,27 @@ public class sqlMathHelperCreateDBScript {
         }
     }
 
+
+
+    private static void addTutorialToDB(Statement stmt, String value) {
+
+        // Use the mathhelper database
+        String sql = "USE mathhelper";
+        try {
+            stmt.execute(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            stmt.executeUpdate(value);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
     private static void addQuestionToDB(Statement stmt, String value) {
 
         // Use the mathhelper database
@@ -396,14 +429,13 @@ public class sqlMathHelperCreateDBScript {
             sql = "CREATE TABLE tutorials" +
                     "(tutorial_id INT UNSIGNED NOT NULL AUTO_INCREMENT, " +
                     "grade_level CHAR(30) NOT NULL, " +
-                    "difficulty_level CHAR(40) NOT NULL, " +
                     "category_type CHAR(40) NOT NULL, " +
-                    "has_image BOOLEAN NOT NULL, " +
+                    "has_video BOOLEAN NOT NULL, " +
                     "tutorial TEXT NOT NULL, " +
                     "PRIMARY KEY(tutorial_id));";
             stmt.execute(sql);
-            sql = "INSERT INTO tutorials(grade_level,difficulty_level,category_type,has_image,tutorial)" +
-                    "VALUES ('K','Easy'," + false + ",'Addition','2 + 2 = 4');";
+            sql = "INSERT INTO tutorials(grade_level,category_type,has_video,tutorial)" +
+                    "VALUES ('K','Addition'" + false + ",'2 + 2 = 4');";
             stmt.executeUpdate(sql);
         } catch (SQLException se) {
             System.out.println("Found!      Using existing tutorials table.");

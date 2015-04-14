@@ -44,7 +44,6 @@ public class GlobalTestMain extends JFrame {
 
     public GlobalTestMain() {
 
-        QuestionsPageConfigurator.loadQuestionsList();
         question = QuestionsPageConfigurator.getQuestion();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

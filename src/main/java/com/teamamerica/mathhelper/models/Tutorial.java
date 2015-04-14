@@ -10,10 +10,9 @@ public class Tutorial {
     //the data fields for a Tutorial object
     private int tutorial_id;
     private String grade_level;
-    private String difficulty_level;
     private String category_type;
     private String tutorial;
-    private boolean has_image;
+    private boolean has_video;
 
     //default constructor
     public Tutorial() {
@@ -21,14 +20,12 @@ public class Tutorial {
     }
 
     //constructor that takes all values
-    public Tutorial(int tutorial_id, String grade_level,
-                    String difficulty_level, String category_type, String tutorial, boolean has_image) {
+    public Tutorial(int tutorial_id, String grade_level,String category_type, String tutorial, boolean has_video) {
         this.tutorial_id = tutorial_id;
         this.grade_level = grade_level;
-        this.difficulty_level = difficulty_level;
         this.category_type = category_type;
         this.tutorial = tutorial;
-        this.has_image = has_image;
+        this.has_video = has_video;
     }
 
 
@@ -44,10 +41,6 @@ public class Tutorial {
         this.grade_level = grade_level;
     }
 
-    public void setDifficulty_level(String difficulty) {
-        this.difficulty_level = difficulty;
-    }
-
     public void setCategory_type(String category) {
         this.category_type = category;
     }
@@ -56,8 +49,8 @@ public class Tutorial {
         this.tutorial = tutorial;
     }
 
-    public void setHas_image(boolean has_image) {
-        this.has_image = has_image;
+    public void setHas_video(boolean has_video) {
+        this.has_video = has_video;
     }
 
 
@@ -72,10 +65,6 @@ public class Tutorial {
         return grade_level;
     }
 
-    public String getDifficulty_level() {
-        return difficulty_level;
-    }
-
     public String getCategory_type() {
         return category_type;
     }
@@ -84,7 +73,7 @@ public class Tutorial {
         return tutorial;
     }
 
-    public boolean getHas_image(){ return has_image; }
+    public boolean getHas_video(){ return has_video; }
 
     /********************************** STATIC CLASS SEARCH METHODS *******************************/
 
@@ -104,8 +93,8 @@ public class Tutorial {
                     & tutorial.getGrade_level().equalsIgnoreCase(searchCriteria.toString())) {
                 tutorials.add(tutorial);
             }
-            if (searchType.equalsIgnoreCase("difficulty_level")
-                    & tutorial.getDifficulty_level().equalsIgnoreCase(searchCriteria.toString())) {
+            if (searchType.equalsIgnoreCase("has_video")
+                    & tutorial.getHas_video() == true) {
                 tutorials.add(tutorial);
             }
             if (searchType.equalsIgnoreCase("category_type")

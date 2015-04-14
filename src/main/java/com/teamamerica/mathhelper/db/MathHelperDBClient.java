@@ -200,14 +200,14 @@ public class MathHelperDBClient {
      * and returns a list of Tutorials.  If no results are found it returns an empty string.
      *
      * @param grade_level
-     * @param difficulty_level
+     * @param category_type
      * @return ArrayList
      */
-    public ArrayList<Tutorial> searchTutorials_grLevel_difLevel(GradeLevel grade_level,
-                                                                  DifficultyLevel difficulty_level) {
+    public ArrayList<Tutorial> searchTutorials_grLevel_catType(GradeLevel grade_level,
+                                                                  CategoryType category_type) {
         ArrayList<Tutorial> allTutorialsList = get_allTutorialList();
         allTutorialsList = Tutorial.searchTutorials(allTutorialsList, "grade_level", grade_level);
-        return Tutorial.searchTutorials(allTutorialsList, "difficulty_level", difficulty_level);
+        return Tutorial.searchTutorials(allTutorialsList, "difficulty_level", category_type);
     }
 
     /**
@@ -215,17 +215,33 @@ public class MathHelperDBClient {
      * and returns a list of Tutorials.  If no results are found it returns an empty string.
      *
      * @param grade_level
-     * @param difficulty_level
+     * @param has_video
      * @param category_type
      * @return ArrayList
      */
-    public ArrayList<Tutorial> searchTutorials_grLevel_difLevel_catType(
-            GradeLevel grade_level, DifficultyLevel difficulty_level, CategoryType category_type) {
-
+    public ArrayList<Tutorial> searchTutorials_grLevel_catType_hasVid(
+            GradeLevel grade_level, CategoryType category_type, boolean has_video) {
         ArrayList<Tutorial> allTutorialsList = get_allTutorialList();
         allTutorialsList = Tutorial.searchTutorials(allTutorialsList, "grade_level", grade_level);
-        allTutorialsList = Tutorial.searchTutorials(allTutorialsList, "difficulty_level", difficulty_level);
-        return Tutorial.searchTutorials(allTutorialsList, "category_type", category_type);
+        allTutorialsList = Tutorial.searchTutorials(allTutorialsList, "category_type", category_type);
+
+        ArrayList<Tutorial> checkVideoList = get_allTutorialList();
+        if(!has_video){
+            for(Tutorial tut : allTutorialsList){
+                if(!tut.getHas_video()){
+                    checkVideoList.add(tut);
+                }
+            }
+            return checkVideoList;
+        }else {
+            for (Tutorial tut : allTutorialsList) {
+                if (tut.getHas_video()) {
+                    checkVideoList.add(tut);
+                }
+
+            }
+            return checkVideoList;
+        }
     }
 
     /**
@@ -237,18 +253,6 @@ public class MathHelperDBClient {
      */
     public ArrayList<Tutorial> searchTutorials_grLevel(GradeLevel grade_level) {
         return Tutorial.searchTutorials(get_allTutorialList(), "grade_level", grade_level);
-    }
-
-    /**
-     * This method searches the Tutorials list by difficulty_level and returns a list of Tutorials.  If there are no
-     * Tutorials found it returns an empty list.
-     *
-     * @param difficulty_level
-     * @return ArrayList
-     */
-
-    public ArrayList<Tutorial> searchTutorials_difLevel(DifficultyLevel difficulty_level) {
-        return Tutorial.searchTutorials(get_allTutorialList(), "difficulty_level", difficulty_level);
     }
 
 
@@ -318,11 +322,11 @@ public class MathHelperDBClient {
             // Display values
             System.out.println("tutorial_id: " + tutorial.getTutorial_id() +
                     ", grade_level: " + tutorial.getGrade_level() +
-                    ", difficulty_level: " + tutorial.getDifficulty_level() +
                     ", category_type: " + tutorial.getCategory_type() +
                     ", tutorial: " + tutorial.getTutorial());
             System.out.println("     ");
         }
     }
+
 
 }

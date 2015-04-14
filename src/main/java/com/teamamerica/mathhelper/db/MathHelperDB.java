@@ -261,9 +261,8 @@ public class MathHelperDB {
                 Tutorial tutorial = new Tutorial();
                 tutorial.setTutorial_id(rs.getInt("tutorial_id"));
                 tutorial.setGrade_level(rs.getString("grade_level"));
-                tutorial.setDifficulty_level(rs.getString("difficulty_level"));
                 tutorial.setCategory_type(rs.getString("category_type"));
-                tutorial.setHas_image(rs.getBoolean("has_image"));
+                tutorial.setHas_video(rs.getBoolean("has_video"));
                 tutorial.setTutorial(rs.getString("tutorial"));
                 tutorials.add(tutorial);
             }

@@ -1,6 +1,11 @@
 package com.teamamerica.mathhelper.ui.panels;
 
 
+import com.teamamerica.mathhelper.configurators.TutorialsPageConfigurator;
+import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
+import com.teamamerica.mathhelper.controllers.CategoryType;
+import com.teamamerica.mathhelper.ui.customcomponents.YouTubeFrame;
+
 public class FirstGradeTutorials extends javax.swing.JFrame {
 
     public FirstGradeTutorials() {
@@ -11,12 +16,12 @@ public class FirstGradeTutorials extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        btnMoney = new javax.swing.JButton();
+        btnAddition = new javax.swing.JButton();
+        btnSub = new javax.swing.JButton();
+        btnTime = new javax.swing.JButton();
+        btnMeasure = new javax.swing.JButton();
+        btnShapes = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -28,77 +33,77 @@ public class FirstGradeTutorials extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(436, 308));
         jPanel1.setLayout(null);
 
-        jButton4.setBackground(new java.awt.Color(255, 255, 0));
-        jButton4.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jButton4.setText("Money");
-        jButton4.setPreferredSize(new java.awt.Dimension(107, 35));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnMoney.setBackground(new java.awt.Color(255, 255, 0));
+        btnMoney.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnMoney.setText("Money");
+        btnMoney.setPreferredSize(new java.awt.Dimension(107, 35));
+        btnMoney.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnMoneyActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4);
-        jButton4.setBounds(242, 214, 112, 86);
+        jPanel1.add(btnMoney);
+        btnMoney.setBounds(242, 214, 112, 86);
 
-        jButton5.setBackground(new java.awt.Color(102, 255, 102));
-        jButton5.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jButton5.setText("Addition");
-        jButton5.setPreferredSize(new java.awt.Dimension(107, 35));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnAddition.setBackground(new java.awt.Color(102, 255, 102));
+        btnAddition.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnAddition.setText("Addition");
+        btnAddition.setPreferredSize(new java.awt.Dimension(107, 35));
+        btnAddition.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnAdditionActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5);
-        jButton5.setBounds(31, 110, 112, 86);
+        jPanel1.add(btnAddition);
+        btnAddition.setBounds(31, 110, 112, 86);
 
-        jButton6.setBackground(new java.awt.Color(102, 255, 102));
-        jButton6.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        jButton6.setText("Subtraction ");
-        jButton6.setPreferredSize(new java.awt.Dimension(107, 35));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnSub.setBackground(new java.awt.Color(102, 255, 102));
+        btnSub.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        btnSub.setText("Subtraction ");
+        btnSub.setPreferredSize(new java.awt.Dimension(107, 35));
+        btnSub.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnSubActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton6);
-        jButton6.setBounds(31, 216, 112, 86);
+        jPanel1.add(btnSub);
+        btnSub.setBounds(31, 216, 112, 86);
 
-        jButton7.setBackground(new java.awt.Color(255, 255, 0));
-        jButton7.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jButton7.setText("Time");
-        jButton7.setPreferredSize(new java.awt.Dimension(107, 35));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnTime.setBackground(new java.awt.Color(255, 255, 0));
+        btnTime.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnTime.setText("Time");
+        btnTime.setPreferredSize(new java.awt.Dimension(107, 35));
+        btnTime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnTimeActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton7);
-        jButton7.setBounds(242, 110, 112, 86);
+        jPanel1.add(btnTime);
+        btnTime.setBounds(242, 110, 112, 86);
 
-        jButton8.setBackground(new java.awt.Color(255, 0, 51));
-        jButton8.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jButton8.setText("Measure");
-        jButton8.setPreferredSize(new java.awt.Dimension(107, 35));
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btnMeasure.setBackground(new java.awt.Color(255, 0, 51));
+        btnMeasure.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnMeasure.setText("Measure");
+        btnMeasure.setPreferredSize(new java.awt.Dimension(107, 35));
+        btnMeasure.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btnMeasureActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton8);
-        jButton8.setBounds(455, 110, 112, 86);
+        jPanel1.add(btnMeasure);
+        btnMeasure.setBounds(455, 110, 112, 86);
 
-        jButton9.setBackground(new java.awt.Color(255, 0, 51));
-        jButton9.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jButton9.setText("Shapes");
-        jButton9.setPreferredSize(new java.awt.Dimension(107, 35));
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        btnShapes.setBackground(new java.awt.Color(255, 0, 51));
+        btnShapes.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnShapes.setText("Shapes");
+        btnShapes.setPreferredSize(new java.awt.Dimension(107, 35));
+        btnShapes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton9);
-        jButton9.setBounds(455, 214, 112, 86);
+        jPanel1.add(btnShapes);
+        btnShapes.setBounds(455, 214, 112, 86);
 
         jButton1.setBackground(new java.awt.Color(153, 204, 255));
         jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
@@ -153,51 +158,67 @@ public class FirstGradeTutorials extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
        Object source = evt.getSource();
-       if(source == jButton4){
+       if(source == btnMoney){
+           UserInteractionsConfigurator.set_category_type_enum(CategoryType.MONEY);
+           TutorialsPageConfigurator.loadTutorialsList();
           new FirstGradeAddTutorial().setVisible(true);
           this.setVisible(false);
        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnAdditionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
        Object source = evt.getSource();
-       if(source == jButton5){
-          new FirstGradeAddTutorial().setVisible(true);
-
-          this.setVisible(false);
+       if(source == btnAddition){
+           UserInteractionsConfigurator.set_category_type_enum(CategoryType.ADDITION);
+           TutorialsPageConfigurator.loadTutorialsList();
+         //  this.setVisible(false);
+           this.dispose();
+           new YouTubeFrame(TutorialsPageConfigurator.getTutorial().getTutorial()).setVisible(true);
        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
        Object source = evt.getSource();
-       if(source == jButton6){
-          new FirstGradeAddTutorial().setVisible(true);
+       if(source == btnSub){
+           UserInteractionsConfigurator.set_category_type_enum(CategoryType.SUBTRACTION);
+           TutorialsPageConfigurator.loadTutorialsList();
+
+           new FirstGradeAddTutorial().setVisible(true);
           this.setVisible(false);
        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btnTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
        Object source = evt.getSource();
-       if(source == jButton7){
-          new FirstGradeAddTutorial().setVisible(true);
+       if(source == btnTime){
+           UserInteractionsConfigurator.set_category_type_enum(CategoryType.TIME);
+           TutorialsPageConfigurator.loadTutorialsList();
+
+           new FirstGradeAddTutorial().setVisible(true);
           this.setVisible(false);
        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btnMeasureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
        Object source = evt.getSource();
-       if(source == jButton8){
-          new FirstGradeAddTutorial().setVisible(true);
+       if(source == btnMeasure){
+           UserInteractionsConfigurator.set_category_type_enum(CategoryType.MEASURE);
+           TutorialsPageConfigurator.loadTutorialsList();
+
+           new FirstGradeAddTutorial().setVisible(true);
           this.setVisible(false);
        }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
        Object source = evt.getSource();
-       if(source == jButton9){
-          new FirstGradeAddTutorial().setVisible(true);
+       if(source == btnShapes){
+           UserInteractionsConfigurator.set_category_type_enum(CategoryType.SHAPES);
+           TutorialsPageConfigurator.loadTutorialsList();
+
+           new FirstGradeAddTutorial().setVisible(true);
           this.setVisible(false);
        }
     }//GEN-LAST:event_jButton9ActionPerformed
@@ -227,12 +248,12 @@ public class FirstGradeTutorials extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton btnMoney;
+    private javax.swing.JButton btnAddition;
+    private javax.swing.JButton btnSub;
+    private javax.swing.JButton btnTime;
+    private javax.swing.JButton btnMeasure;
+    private javax.swing.JButton btnShapes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
