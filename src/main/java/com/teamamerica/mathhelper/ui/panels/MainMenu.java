@@ -163,6 +163,8 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        new LogIn().setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     public static void main(String args[]) {
