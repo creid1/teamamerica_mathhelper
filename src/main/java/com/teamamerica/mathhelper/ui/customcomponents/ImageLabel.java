@@ -1,10 +1,6 @@
 package com.teamamerica.mathhelper.ui.customcomponents;
 
-import com.teamamerica.mathhelper.environment.ConfigDirectory;
-
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.EtchedBorder;
 import java.awt.*;
 
 /**
@@ -50,6 +46,7 @@ public class ImageLabel extends JLabel {
      * Creates the button according to the fields set by the constructor.
      */
     private void createLabelImage(String fileName){
+        this.setText(null);
         this.setIcon(getImageIcon(fileName));
         this.setPreferredSize(new Dimension(width, height));
         this.setMaximumSize(new Dimension(width, height));

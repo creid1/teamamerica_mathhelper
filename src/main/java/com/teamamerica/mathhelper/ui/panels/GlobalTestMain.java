@@ -47,8 +47,9 @@ public class GlobalTestMain extends JFrame {
         question = QuestionsPageConfigurator.getQuestion();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(500, 500);
+        setSize(800, 600);
         setLayout(new BorderLayout());
+        setBackground(Color.WHITE);
         // pack();
         setLocationRelativeTo(null);
         initComponents();
@@ -88,12 +89,13 @@ public class GlobalTestMain extends JFrame {
 
         pnAnswerButtons = new JPanel();
         pnAnswerButtons.setLayout(new GridLayout(2, 2));
+        pnAnswerButtons.setBackground(Color.WHITE);
 
-        btnA = new ImageButton(question.getHas_image(),checkHasFileToGenerateFullPath(question.getAnswer()), 50, 50);
+        btnA = new ImageButton(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()), 100, 105);
         correctAnswer = btnA;
-        btnB = new ImageButton(question.getHas_image(),checkHasFileToGenerateFullPath(question.getWrong_1()), 50, 50);
-        btnC = new ImageButton(question.getHas_image(),checkHasFileToGenerateFullPath(question.getWrong_2()), 50, 50);
-        btnD = new ImageButton(question.getHas_image(),checkHasFileToGenerateFullPath(question.getWrong_3()), 50, 50);
+        btnB = new ImageButton(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_1()), 100, 105);
+        btnC = new ImageButton(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_2()), 100, 105);
+        btnD = new ImageButton(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_3()), 100, 105);
 
         btnA.setPreferredSize(new Dimension(120, 40));
         btnB.setPreferredSize(new Dimension(120, 40));
@@ -149,24 +151,28 @@ public class GlobalTestMain extends JFrame {
 
         pnQuestionAnswer = new JPanel();
         pnQuestionAnswer.setLayout(new BorderLayout());
+        pnQuestionAnswer.setBackground(Color.WHITE);
 
-        pnQuestionAnswer.add(pnQuestion,BorderLayout.NORTH);
+
+        pnQuestionAnswer.add(pnQuestion, BorderLayout.NORTH);
         pnQuestionAnswer.add(pnAnswerButtons, BorderLayout.CENTER);
 
 
     }
 
-    private void createQuestionPanel(){
+    private void createQuestionPanel() {
 
         pnQuestion = new JPanel();
-        pnQuestion.setLayout(new GridLayout(1,3));
+        pnQuestion.setLayout(new GridLayout(1, 3));
+        pnQuestion.setBackground(Color.WHITE);
+
 
         lblQuestion = new JLabel(question.getQuestion());
         lblQuestion.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         lblQuestion.setVisible(true);
         lblQuestion.setPreferredSize(new Dimension(100, 40));
 
-        lblAnswer = new ImageLabel(question.getHas_image(),checkHasFileToGenerateFullPath(question.getAnswer()),300,100);
+        lblAnswer = new ImageLabel(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()), 100, 105);
         lblAnswer.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         lblAnswer.setVisible(false);
         lblAnswer.setPreferredSize(new Dimension(100, 40));
@@ -174,7 +180,7 @@ public class GlobalTestMain extends JFrame {
         lblQuestionTitle = new JLabel("Question: ");
         lblQuestionTitle.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         lblQuestionTitle.setVisible(true);
-        lblQuestionTitle.setPreferredSize(new Dimension(300,40));
+        lblQuestionTitle.setPreferredSize(new Dimension(300, 40));
 
 
         pnQuestion.add(lblQuestionTitle);
@@ -188,6 +194,8 @@ public class GlobalTestMain extends JFrame {
 
         pnHeader = new JPanel();
         pnHeader.setLayout(new GridLayout(1, 3));
+        pnHeader.setBackground(Color.WHITE);
+
 
         lblTest = new JLabel();
         btnNext = new JButton();
@@ -235,7 +243,7 @@ public class GlobalTestMain extends JFrame {
 
         question = QuestionsPageConfigurator.getQuestion();
         lblQuestion.setText(question.getQuestion());
-        lblAnswer.changeLabelImage(question.getHas_image(),checkHasFileToGenerateFullPath(question.getAnswer()));
+        lblAnswer.changeLabelImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()));
         lblAnswer.setVisible(false);
         generateAnswerButtons();
 
@@ -283,18 +291,18 @@ public class GlobalTestMain extends JFrame {
         if (button == btnA) {
             System.out.println("ButtonA");
             correctAnswer = btnA;
-            btnA.changeButtonImage(question.getHas_image(),checkHasFileToGenerateFullPath(question.getAnswer()));
-            btnB.changeButtonImage(question.getHas_image(),checkHasFileToGenerateFullPath(question.getWrong_1()));
-            btnC.changeButtonImage(question.getHas_image(),checkHasFileToGenerateFullPath(question.getWrong_2()));
-            btnD.changeButtonImage(question.getHas_image(),checkHasFileToGenerateFullPath(question.getWrong_3()));
+            btnA.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()));
+            btnB.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_1()));
+            btnC.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_2()));
+            btnD.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_3()));
         }
         if (listOfButtons.get(answer) == btnB) {
             System.out.println("ButtonB");
             correctAnswer = btnB;
-            btnB.changeButtonImage(question.getHas_image(),checkHasFileToGenerateFullPath(question.getAnswer()));
+            btnB.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()));
             btnA.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_3()));
-            btnC.changeButtonImage(question.getHas_image(),checkHasFileToGenerateFullPath(question.getWrong_1()));
-            btnD.changeButtonImage(question.getHas_image(),checkHasFileToGenerateFullPath(question.getWrong_2()));
+            btnC.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_1()));
+            btnD.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_2()));
 
 
         }
@@ -302,20 +310,19 @@ public class GlobalTestMain extends JFrame {
         if (listOfButtons.get(answer) == btnC) {
             System.out.println("ButtonC");
             correctAnswer = btnC;
-            btnC.changeButtonImage(question.getHas_image(),checkHasFileToGenerateFullPath(question.getAnswer()));
-            btnA.changeButtonImage(question.getHas_image(),checkHasFileToGenerateFullPath(question.getWrong_3()));
-            btnB.changeButtonImage(question.getHas_image(),checkHasFileToGenerateFullPath(question.getWrong_2()));
-            btnD.changeButtonImage(question.getHas_image(),checkHasFileToGenerateFullPath(question.getWrong_1()));
+            btnC.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()));
+            btnA.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_3()));
+            btnB.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_2()));
+            btnD.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_1()));
 
         }
         if (listOfButtons.get(answer) == btnD) {
             System.out.println("ButtonD");
             correctAnswer = btnD;
-            btnD.changeButtonImage(question.getHas_image(),checkHasFileToGenerateFullPath(question.getAnswer()));
-            btnA.changeButtonImage(question.getHas_image(),checkHasFileToGenerateFullPath(question.getWrong_3()));
-            btnC.changeButtonImage(question.getHas_image(),checkHasFileToGenerateFullPath(question.getWrong_2()));
-            btnB.changeButtonImage(question.getHas_image(),checkHasFileToGenerateFullPath(question.getWrong_1()));
-
+            btnD.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()));
+            btnA.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_3()));
+            btnC.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_2()));
+            btnB.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_1()));
 
 
         }

@@ -332,8 +332,8 @@ public class sqlMathHelperCreateDBScript {
                     "role CHAR(40) NOT NULL, " +
                     "PRIMARY KEY(user_id));";
             stmt.execute(sql);
-            String[] users = {"testUser1", "testUser2", "creid", "billybob"};
-            String[] role = {"A", "S", "A", "S"};
+            String[] users = {"testUser1", "testUser2", "creid", "billybob","inielsen","cousensb","jsharma0223"};
+            String[] role = {"A", "S", "A", "S","A","A","A"};
             for (int i = 0; i < users.length; i++) {
                 sql = "INSERT INTO users (username,password,role)" +
                         "VALUES ('" + users[i] + "', 'password','" + role[i] + "');";
@@ -435,7 +435,7 @@ public class sqlMathHelperCreateDBScript {
                     "PRIMARY KEY(tutorial_id));";
             stmt.execute(sql);
             sql = "INSERT INTO tutorials(grade_level,category_type,has_video,tutorial)" +
-                    "VALUES ('K','Addition'" + false + ",'2 + 2 = 4');";
+                    "VALUES ('K','Addition'," + false + ",'2 + 2 = 4');";
             stmt.executeUpdate(sql);
         } catch (SQLException se) {
             System.out.println("Found!      Using existing tutorials table.");

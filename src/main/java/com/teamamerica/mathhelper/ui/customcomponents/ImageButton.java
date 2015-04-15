@@ -83,6 +83,7 @@ public class ImageButton extends JButton {
         this.setFont(new Font("Times New Roman", 0, 16));
         this.setIcon(null);
         this.setBackground(Color.RED);
+        this.setForeground(Color.RED);
         this.setPreferredSize(new Dimension(width, height));
         this.setMaximumSize(new Dimension(width, height));
         this.setFocusPainted(false);
@@ -106,6 +107,7 @@ public class ImageButton extends JButton {
         this.setText("CORRECT");
         this.setFont(new Font("Times New Roman", 0, 16));
         this.setBackground(Color.GREEN);
+        this.setForeground(Color.GREEN);
         this.setIcon(null);
         this.setContentAreaFilled(true);
         this.setBorderPainted(true);
