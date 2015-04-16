@@ -79,17 +79,16 @@ public class ImageButton extends JButton {
     }
 
     public void createWrongAnswerButton() {
-        this.setText("WRONG");
+       // this.setText("WRONG");
         this.setFont(new Font("Times New Roman", 0, 16));
-        this.setIcon(null);
+     //   this.setIcon(null);
         this.setBackground(Color.RED);
-        this.setForeground(Color.RED);
         this.setPreferredSize(new Dimension(width, height));
         this.setMaximumSize(new Dimension(width, height));
         this.setFocusPainted(false);
         this.setRolloverEnabled(false);
         this.setOpaque(false);
-        this.setContentAreaFilled(true);
+        this.setContentAreaFilled(false);
         this.setBorderPainted(true);
         this.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createBevelBorder(BevelBorder.RAISED, Color.BLACK, Color.BLACK),
@@ -104,12 +103,11 @@ public class ImageButton extends JButton {
 
     public void createRightAnswerButton() {
 
-        this.setText("CORRECT");
-        this.setFont(new Font("Times New Roman", 0, 16));
+     //   this.setText("CORRECT");
+     //   this.setFont(new Font("Times New Roman", 0, 16));
         this.setBackground(Color.GREEN);
-        this.setForeground(Color.GREEN);
-        this.setIcon(null);
-        this.setContentAreaFilled(true);
+      //  this.setIcon(null);
+        this.setContentAreaFilled(false);
         this.setBorderPainted(true);
         this.setPreferredSize(new Dimension(width, height));
         this.setMaximumSize(new Dimension(width, height));

@@ -3,6 +3,12 @@ package com.teamamerica.mathhelper.ui.panels;
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 import com.teamamerica.mathhelper.controllers.MainMenuSelection;
 
+import javax.sound.sampled.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class MainMenu extends javax.swing.JFrame {
 
     public MainMenu() {
@@ -157,8 +163,33 @@ public class MainMenu extends javax.swing.JFrame {
        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
+
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        // Creates a File object
+        File yourFile = new File("C:" + File.separator + "Windows" + File.separator + "Media" + File.separator + "notify.wav");
+
+        AudioInputStream stream;
+        AudioFormat format;
+        DataLine.Info info;
+        Clip clip;
+
+        // A try/catch block to play the .wav file
+        try {
+            stream = AudioSystem.getAudioInputStream(yourFile);
+            format = stream.getFormat();
+            info = new DataLine.Info(Clip.class, format);
+            clip = (Clip) AudioSystem.getLine(info);
+            clip.open(stream);
+            clip.start();
+        } catch (UnsupportedAudioFileException | IOException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

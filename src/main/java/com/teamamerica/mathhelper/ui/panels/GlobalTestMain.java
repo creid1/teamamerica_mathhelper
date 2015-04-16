@@ -172,7 +172,7 @@ public class GlobalTestMain extends JFrame {
         lblQuestion.setVisible(true);
         lblQuestion.setPreferredSize(new Dimension(100, 40));
 
-        lblAnswer = new ImageLabel(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()), 100, 105);
+        lblAnswer = new ImageLabel(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()), 240, 160);
         lblAnswer.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         lblAnswer.setVisible(false);
         lblAnswer.setPreferredSize(new Dimension(100, 40));
