@@ -7,6 +7,9 @@ public class ConfigDirectory {
 
    public static String imageDirectory = "images/";
 
+    public static String audioDirectory = "audio/";
+
+
     public static String getImageFileFromDirectory(String filename){
         return imageDirectory + configureImageDBFile(filename);
 
@@ -18,4 +21,7 @@ public class ConfigDirectory {
     }
 
 
+    public static String getAudioFileFromDirectory(String file) {
+        return audioDirectory + file;
+    }
 }

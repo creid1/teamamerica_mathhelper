@@ -17,10 +17,12 @@ public class MathHelperDB {
 
     // JDBC driver name and database URL
     protected final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    protected final String DB_URL = "jdbc:mysql://localhost:3306";
+   // protected final String DB_URL = "jdbc:mysql://localhost:3306";
+    //TODO: change this to be the mathhelper url
+    protected final String DB_URL = "jdbc:mysql://csc362dbinstance.c9giv8vwad8d.us-east-1.rds.amazonaws.com:3306";
     //  Database credentials
-    protected final String USER = "root";    //default
-    protected final String PASS = "csc400";
+    protected final String USER = "mathhelper";    //default
+    protected final String PASS = "teamamerica";
     protected Connection conn = null;
     protected Statement statement = null;
     protected String sql = null;

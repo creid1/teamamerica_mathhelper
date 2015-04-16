@@ -115,8 +115,6 @@ public class ImageButton extends JButton {
         this.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createBevelBorder(BevelBorder.LOWERED, Color.BLACK.darker(), Color.BLACK),
                 BorderFactory.createEtchedBorder(EtchedBorder.LOWERED)));
-
-
         this.setEnabled(false);
 
 
@@ -124,7 +122,9 @@ public class ImageButton extends JButton {
 
 
     public ImageIcon getImageIcon(String fileName) {
+        System.out.println(fileName);
         URL imageUrl = ImageButton.class.getClassLoader().getResource(fileName);
+        System.out.println(imageUrl);
         return new ImageIcon(imageUrl);
     }
 }

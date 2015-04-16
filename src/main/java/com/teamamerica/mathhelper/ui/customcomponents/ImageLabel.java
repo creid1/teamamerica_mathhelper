@@ -56,7 +56,7 @@ public class ImageLabel extends JLabel {
     }
 
     public ImageIcon getImageIcon(String fileName) {
-        URL imageUrl = ImageButton.class.getClassLoader().getResource(fileName);
+        URL imageUrl = ImageLabel.class.getClassLoader().getResource(fileName);
         return new ImageIcon(imageUrl);
     }
 

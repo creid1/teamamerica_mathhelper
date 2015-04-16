@@ -11,11 +11,11 @@ import java.sql.SQLException;
 public class sqlMathHelperCreateDBScript {
     // JDBC driver name and database URL
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3306";    // Use MySQL workbench home window to figure out what comes after localhost
+    static final String DB_URL = "jdbc:mysql://csc362dbinstance.c9giv8vwad8d.us-east-1.rds.amazonaws.com:3306";    // Use MySQL workbench home window to figure out what comes after localhost
 
     //  Database credentials
-    static final String USER = "root";    //default
-    static final String PASS = "csc400";        //no password by default
+    static final String USER = "mathhelper";    //default
+    static final String PASS = "teamamerica";        //no password by default
 
     static MathHelperDB mathHelperDB;
 

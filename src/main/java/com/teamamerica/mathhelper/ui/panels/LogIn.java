@@ -3,6 +3,9 @@ package com.teamamerica.mathhelper.ui.panels;
 
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 import com.teamamerica.mathhelper.db.MathHelperDBClient;
+import com.teamamerica.mathhelper.environment.ConfigDirectory;
+import com.teamamerica.mathhelper.ui.customcomponents.AudioListener;
+import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,8 +18,9 @@ public class LogIn extends JFrame {
     private MathHelperDBClient mathHelperDBClient = null;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private JButton btnSignIn;
-    private JButton btnHelp;
+    private ImageButton btnSignIn;
+    private ImageButton btnHelp;
+    //  private JButton btnHelp;
     private JFormattedTextField txtUserName;
     private JLabel lblUserName;
     private JLabel jLabel2;
@@ -42,21 +46,22 @@ public class LogIn extends JFrame {
         txtUserName = new JFormattedTextField();
         lblUserName = new JLabel();
         lblPassword = new JLabel();
-        btnSignIn = new JButton();
-        btnHelp = new JButton();
+        btnSignIn = new ImageButton(true,ConfigDirectory.getImageFileFromDirectory("panels_openDoorIcon.jpg"),100,100);
+        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpIcon.jpeg"), 90, 90);
         jLabel4 = new JLabel();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(Color.WHITE);
 
 
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension d = toolkit.getScreenSize();
-        setLocation((d.width - this.getWidth())/2,(d.height - this.getHeight())/2);
+        setLocationRelativeTo(null);
 
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 204));
         jPanel1.setLayout(null);
+        jPanel1.setBackground(Color.WHITE);
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 70)); // NOI18N
@@ -83,9 +88,7 @@ public class LogIn extends JFrame {
         jPanel1.add(lblPassword);
         lblPassword.setBounds(250, 360, 165, 30);
 
-        btnSignIn.setBackground(new java.awt.Color(204, 204, 255));
         btnSignIn.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        btnSignIn.setText("Sign-In ");
         btnSignIn.setMaximumSize(new java.awt.Dimension(87, 35));
         btnSignIn.setMinimumSize(new java.awt.Dimension(87, 35));
         btnSignIn.setPreferredSize(new java.awt.Dimension(87, 35));
@@ -95,21 +98,20 @@ public class LogIn extends JFrame {
             }
         });
         jPanel1.add(btnSignIn);
-        btnSignIn.setBounds(400, 440, 170, 80);
+        btnSignIn.setBounds(400, 440, 100, 100);
 
-        btnHelp.setBackground(new java.awt.Color(204, 204, 255));
         btnHelp.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        btnHelp.setText("Help");
-        btnHelp.setMaximumSize(new java.awt.Dimension(87, 35));
-        btnHelp.setMinimumSize(new java.awt.Dimension(87, 35));
-        btnHelp.setPreferredSize(new java.awt.Dimension(87, 35));
+
+        btnHelp.setMaximumSize(new java.awt.Dimension(90, 90));
+        btnHelp.setMinimumSize(new java.awt.Dimension(90, 90));
+        btnHelp.setPreferredSize(new java.awt.Dimension(90, 90));
         btnHelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnHelpActionPerformed(evt);
             }
         });
         jPanel1.add(btnHelp);
-        btnHelp.setBounds(840, 530, 150, 60);
+        btnHelp.setBounds(840, 480, 90, 90);
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         jLabel4.setText("Please Sign In");
@@ -131,7 +133,7 @@ public class LogIn extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
- String username = txtUserName.getText();
+        String username = txtUserName.getText();
         String password = new String(jPasswordField.getPassword());
         if (mathHelperDBClient.validate_user_login(username, password)) {
             UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username(username));
@@ -150,8 +152,9 @@ public class LogIn extends JFrame {
 
     //GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        AudioListener.runAudioListener("exclamationSound.wav");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
