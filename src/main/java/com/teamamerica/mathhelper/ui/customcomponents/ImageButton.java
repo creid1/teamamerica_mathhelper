@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 import java.awt.*;
+import java.net.URL;
 
 /**
  * Created by Christina on 4/10/2015.
@@ -80,7 +81,7 @@ public class ImageButton extends JButton {
 
     public void createWrongAnswerButton() {
        // this.setText("WRONG");
-        this.setFont(new Font("Times New Roman", 0, 16));
+      //  this.setFont(new Font("Times New Roman", 0, 16));
      //   this.setIcon(null);
         this.setBackground(Color.RED);
         this.setPreferredSize(new Dimension(width, height));
@@ -103,14 +104,13 @@ public class ImageButton extends JButton {
 
     public void createRightAnswerButton() {
 
-     //   this.setText("CORRECT");
-     //   this.setFont(new Font("Times New Roman", 0, 16));
-        this.setBackground(Color.GREEN);
-      //  this.setIcon(null);
-        this.setContentAreaFilled(false);
-        this.setBorderPainted(true);
         this.setPreferredSize(new Dimension(width, height));
         this.setMaximumSize(new Dimension(width, height));
+        this.setFocusPainted(false);
+        this.setRolloverEnabled(false);
+        this.setOpaque(false);
+        this.setContentAreaFilled(false);
+        this.setBorderPainted(true);
 
         this.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createBevelBorder(BevelBorder.LOWERED, Color.BLACK.darker(), Color.BLACK),
@@ -124,7 +124,8 @@ public class ImageButton extends JButton {
 
 
     public ImageIcon getImageIcon(String fileName) {
-        return new ImageIcon(fileName);
+        URL imageUrl = ImageButton.class.getClassLoader().getResource(fileName);
+        return new ImageIcon(imageUrl);
     }
 }
 

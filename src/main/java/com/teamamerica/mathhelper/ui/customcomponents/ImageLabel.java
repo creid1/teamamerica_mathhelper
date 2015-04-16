@@ -2,6 +2,7 @@ package com.teamamerica.mathhelper.ui.customcomponents;
 
 import javax.swing.*;
 import java.awt.*;
+import java.net.URL;
 
 /**
  * Created by Christina on 4/10/2015.
@@ -54,9 +55,9 @@ public class ImageLabel extends JLabel {
         this.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
     }
 
-    public ImageIcon getImageIcon(String fileName){
-        return new ImageIcon(fileName);
+    public ImageIcon getImageIcon(String fileName) {
+        URL imageUrl = ImageButton.class.getClassLoader().getResource(fileName);
+        return new ImageIcon(imageUrl);
     }
-
 
 }
