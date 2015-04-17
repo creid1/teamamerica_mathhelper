@@ -1,5 +1,6 @@
 package com.teamamerica.mathhelper.ui.panels;
 
+import com.teamamerica.mathhelper.configurators.GradeConfigurator;
 import com.teamamerica.mathhelper.configurators.QuestionsPageConfigurator;
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 import com.teamamerica.mathhelper.controllers.CategoryType;
@@ -12,6 +13,7 @@ import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
 import com.teamamerica.mathhelper.ui.customcomponents.ImageLabel;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -30,7 +32,7 @@ public class Test extends JFrame {
     private ImageButton btnHelp;
     private ImageButton btnD;
     private ImageButton btnB;
-    private JLabel lblQuestionHeader;
+    private JLabel lblQuestionCounter;
     private ImageLabel lblAnswer;
     private JLabel lblNext;
     private ImageLabel lblCorrect;
@@ -44,9 +46,17 @@ public class Test extends JFrame {
     private ImageButton correctAnswer;
     private ArrayList<ImageButton> listOfButtons;
 
+    private int testQuestionCounter;
+    private double questionsMax;
+    private double correct;
+
 
     public Test() {
         QuestionsPageConfigurator.loadQuestionsList();
+        testQuestionCounter = 0;
+        questionsMax = QuestionsPageConfigurator.getNumberOfTestQuestions();
+        correct = 0;
+
         initComponents();
         listOfButtons = new ArrayList<>();
         listOfButtons.add(btnA);
@@ -76,27 +86,27 @@ public class Test extends JFrame {
         btnC = new ImageButton(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_2()), 150, 150);
         btnD = new ImageButton(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_3()), 150, 150);
 
-        lblQuestionHeader = new JLabel();
+        lblQuestionCounter = new JLabel();
         lblAnswer = new ImageLabel(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()), 150, 150);
-        lblCorrect = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"),150,150);
-        lblQuestion = new ImageLabel(question.getHas_image(), checkHasFileToGenerateFullPath(question.getQuestion()), 150, 150);
+        lblCorrect = new ImageLabel(150, 150);
+        lblQuestion = new ImageLabel(question.getHas_image(), checkHasFileToGenerateFullPath(question.getQuestion()), 1000, 150);
         btnNext = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_arrow.jpg"), 150, 101);
         lblMainMenu = new JLabel();
 
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        btnMain.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnMain.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 btnMainActionPerformed(evt);
             }
         });
         jPanel1.add(btnMain);
         btnMain.setBounds(10, 10, 150, 100);
 
-        btnHelp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnHelp.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 btnHelpActionPerformed(evt);
             }
         });
@@ -104,11 +114,21 @@ public class Test extends JFrame {
         btnHelp.setBounds(880, 500, 80, 80);
 
 
-        lblNext.setBackground(new java.awt.Color(255, 255, 255));
-        lblNext.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        lblNext.setBackground(new Color(255, 255, 255));
+        lblNext.setFont(new Font("Comic Sans MS", 0, 24)); // NOI18N
         lblNext.setText("      Next");
         jPanel1.add(lblNext);
         lblNext.setBounds(840, 70, 150, 34);
+        lblNext.setVisible(false);
+
+
+        lblNext.setBackground(new Color(255, 255, 255));
+        lblNext.setFont(new Font("Comic Sans MS", 0, 24)); // NOI18N
+        lblNext.setText("      Next");
+        jPanel1.add(lblNext);
+        lblNext.setBounds(840, 100, 150, 34);
+        lblNext.setVisible(false);
+
 
         btnA.addActionListener(new ActionListener() {
             @Override
@@ -116,8 +136,17 @@ public class Test extends JFrame {
                 Object source = e.getSource();
                 if (source == btnA) {
                     if (btnA == correctAnswer) {
- //                       lblCorrect.setText("Correct");
+                        correct++;
+                        System.out.println("CORRECT: " + correct);
+                        System.out.println("MAX FROM DB: " + questionsMax);
+                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
+                    } else {
+                        System.out.println("CORRECT: " + correct);
+                        System.out.println("MAX FROM DB: " + questionsMax);
+                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
+
                     }
+                    lblCorrect.setVisible(true);
                     checkAnswerButtons();
                 }
             }
@@ -131,14 +160,22 @@ public class Test extends JFrame {
                 Object source = e.getSource();
                 if (source == btnD) {
                     if (btnD == correctAnswer) {
-                       // lblCorrect.setText("Correct");
+                        correct++;
+                        System.out.println("CORRECT: " + correct);
+                        System.out.println("MAX FROM DB: " + questionsMax);
+                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
+                    } else {
+                        System.out.println("CORRECT: " + correct);
+                        System.out.println("MAX FROM DB: " + questionsMax);
+                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
+
                     }
+                    lblCorrect.setVisible(true);
                     checkAnswerButtons();
                 }
             }
         });
         jPanel1.add(btnD);
-        btnD.setBounds(575, 410, 150, 150);
 
         btnB.addActionListener(new ActionListener() {
             @Override
@@ -146,63 +183,89 @@ public class Test extends JFrame {
                 Object source = e.getSource();
                 if (source == btnB) {
                     if (btnB == correctAnswer) {
-                      //  lblCorrect.setText("Correct");
+                        correct++;
+                        System.out.println("CORRECT: " + correct);
+                        System.out.println("MAX: " + questionsMax);
+                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
+                    } else {
+                        System.out.println("CORRECT: " + correct);
+                        System.out.println("MAX FROM DB: " + questionsMax);
+
+                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
+
                     }
+                    lblCorrect.setVisible(true);
                     checkAnswerButtons();
                 }
             }
         });
         jPanel1.add(btnB);
-        btnB.setBounds(160, 410, 150, 150);
         btnC.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Object source = e.getSource();
                 if (source == btnC) {
-                    if (btnA == correctAnswer) {
-                     //   lblCorrect.setText("Correct!");
+                    correct++;
+                    System.out.println("CORRECT: " + correct);
+                    System.out.println("MAX: " + questionsMax);
+                    if (btnC == correctAnswer) {
+                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
                     } else {
-                     //   lblCorrect.setText("Wrong!");
+                        System.out.println("CORRECT: " + correct);
+                        System.out.println("MAX FROM DB: " + questionsMax);
+
+                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
+
                     }
+                    lblCorrect.setVisible(true);
                     checkAnswerButtons();
                 }
             }
         });
         jPanel1.add(btnC);
 
-        btnA.setBounds(160,230, 150, 150);
-        btnC.setBounds(575, 230, 150, 150);
+        btnA.setBounds(100, 350, 150, 150);
+        btnB.setBounds(300, 350, 150, 150);
 
-        lblQuestionHeader.setFont(new java.awt.Font("Comic Sans MS", 0, 58)); // NOI18N
-        lblQuestionHeader.setText("Question: 1/5");
-        jPanel1.add(lblQuestionHeader);
-        lblQuestionHeader.setBounds(300, 10, 370, 60);
+        btnC.setBounds(500, 350, 150, 150);
+        btnD.setBounds(700, 350, 150, 150);
 
-        lblAnswer.setFont(new java.awt.Font("Comic Sans MS", 0, 100)); // NOI18N
+
+        lblAnswer.setFont(new Font("Comic Sans MS", 0, 100)); // NOI18N
         jPanel1.add(lblAnswer);
-        lblAnswer.setBounds(400, 80, 150, 150);
         lblAnswer.setVisible(false);
 
         jPanel1.add(lblCorrect);
-        lblCorrect.setBounds(730, 80, 150, 150);
-        lblCorrect.setVisible(true);
 
-        lblQuestion.setFont(new java.awt.Font("Comic Sans MS", 0, 40)); // NOI18N
+
+        lblQuestion.setFont(new Font("Comic Sans MS", 0, 58)); // NOI18N
         jPanel1.add(lblQuestion);
-        lblQuestion.setBounds(75, 80, 150, 150);
 
-        btnNext.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        lblQuestionCounter.setFont(new Font("Comic Sans MS", 0, 58)); // NOI18N
+        lblQuestionCounter.setText("Question: " + (testQuestionCounter + 1) + "/" + (int) questionsMax);
+        jPanel1.add(lblQuestionCounter);
+        lblQuestionCounter.setBounds(300, 10, 1000, 60);
+
+        lblQuestion.setBounds(100, 150, 1000, 150);
+        lblAnswer.setBounds(425, 150, 150, 150);
+        lblCorrect.setBounds(700, 150, 150, 150);
+
+        lblCorrect.setVisible(false);
+
+
+        btnNext.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 btnNextActionPerformed(evt);
             }
         });
         jPanel1.add(btnNext);
         btnNext.setBounds(820, 10, 150, 101);
+        btnNext.setVisible(false);
 
-        lblMainMenu.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        lblMainMenu.setFont(new Font("Comic Sans MS", 0, 24)); // NOI18N
         lblMainMenu.setText("  Main Menu");
         jPanel1.add(lblMainMenu);
-        lblMainMenu.setBounds(10, 70, 150, 30);
+        lblMainMenu.setBounds(10, 115, 150, 30);
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -242,17 +305,32 @@ public class Test extends JFrame {
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
+        btnNext.setVisible(false);
+        lblNext.setVisible(false);
+        testQuestionCounter++;
+        if (testQuestionCounter >= questionsMax) {
 
-        question = QuestionsPageConfigurator.getQuestion();
-        lblQuestion.setText(question.getQuestion());
-        lblAnswer.changeLabelImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()));
-        lblAnswer.setVisible(false);
-        generateAnswerButtons();
+            GradeConfigurator.calculateGradeAndSubmit(correct, questionsMax);
+            JOptionPane.showMessageDialog(null, "TEST COMPLETED SCORE: " +
+                    UserInteractionsConfigurator.get_interactive_grade().getGrade_id() + ":" +
+                    UserInteractionsConfigurator.get_interactive_grade().getUser_id() + ":" +
+                    UserInteractionsConfigurator.get_interactive_grade().getGrade() + "%");
+        } else {
+            question = QuestionsPageConfigurator.getQuestion();
+            lblQuestionCounter.setText("Question: " + (testQuestionCounter + 1) + "/" + (int) questionsMax);
+            lblQuestion.setText(question.getQuestion());
+            lblAnswer.changeLabelImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()));
+            lblAnswer.setVisible(false);
+            lblCorrect.setVisible(false);
+            generateAnswerButtons();
+        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
 
     private void checkAnswerButtons() {
         lblAnswer.setVisible(true);
+        btnNext.setVisible(true);
+        lblNext.setVisible(true);
         for (ImageButton button : listOfButtons) {
             if (button == correctAnswer) {
                 correctAnswer.createRightAnswerButton();
@@ -275,10 +353,8 @@ public class Test extends JFrame {
 
     private void generateAnswerButtons() {
         int answer = randInt(0, 3);
-        System.out.println(answer);
         ImageButton button = listOfButtons.get(answer);
         if (button == btnA) {
-            System.out.println("ButtonA");
             correctAnswer = btnA;
             btnA.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()));
             btnB.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_1()));
@@ -286,7 +362,6 @@ public class Test extends JFrame {
             btnD.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_3()));
         }
         if (listOfButtons.get(answer) == btnB) {
-            System.out.println("ButtonB");
             correctAnswer = btnB;
             btnB.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()));
             btnA.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_3()));
@@ -297,7 +372,6 @@ public class Test extends JFrame {
         }
 
         if (listOfButtons.get(answer) == btnC) {
-            System.out.println("ButtonC");
             correctAnswer = btnC;
             btnC.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()));
             btnA.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_3()));
@@ -306,7 +380,6 @@ public class Test extends JFrame {
 
         }
         if (listOfButtons.get(answer) == btnD) {
-            System.out.println("ButtonD");
             correctAnswer = btnD;
             btnD.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()));
             btnA.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_3()));

@@ -12,7 +12,6 @@ public class Tutorial {
     private String grade_level;
     private String category_type;
     private String tutorial;
-    private boolean has_video;
 
     //default constructor
     public Tutorial() {
@@ -20,12 +19,11 @@ public class Tutorial {
     }
 
     //constructor that takes all values
-    public Tutorial(int tutorial_id, String grade_level,String category_type, String tutorial, boolean has_video) {
+    public Tutorial(int tutorial_id, String grade_level,String category_type, String tutorial) {
         this.tutorial_id = tutorial_id;
         this.grade_level = grade_level;
         this.category_type = category_type;
         this.tutorial = tutorial;
-        this.has_video = has_video;
     }
 
 
@@ -49,9 +47,6 @@ public class Tutorial {
         this.tutorial = tutorial;
     }
 
-    public void setHas_video(boolean has_video) {
-        this.has_video = has_video;
-    }
 
 
     /**
@@ -73,8 +68,6 @@ public class Tutorial {
         return tutorial;
     }
 
-    public boolean getHas_video(){ return has_video; }
-
     /********************************** STATIC CLASS SEARCH METHODS *******************************/
 
     /**
@@ -91,10 +84,6 @@ public class Tutorial {
         for (Tutorial tutorial : tutorialList) {
             if (searchType.equalsIgnoreCase("grade_level")
                     & tutorial.getGrade_level().equalsIgnoreCase(searchCriteria.toString())) {
-                tutorials.add(tutorial);
-            }
-            if (searchType.equalsIgnoreCase("has_video")
-                    & tutorial.getHas_video() == true) {
                 tutorials.add(tutorial);
             }
             if (searchType.equalsIgnoreCase("category_type")

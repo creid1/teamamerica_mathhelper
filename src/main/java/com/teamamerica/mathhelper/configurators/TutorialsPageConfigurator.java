@@ -17,9 +17,9 @@ public class TutorialsPageConfigurator {
 
     public static void loadTutorialsList() {
         mathHelperDBClient = new MathHelperDBClient();
-        tutorials = mathHelperDBClient.searchTutorials_grLevel_catType_hasVid(
+        tutorials = mathHelperDBClient.searchTutorials_grLevel_catType(
                 UserInteractionsConfigurator.get_interactive_grade_level_enum(),
-                UserInteractionsConfigurator.get_category_type_enum(),true);
+                UserInteractionsConfigurator.get_category_type_enum());
         maxQuestions = tutorials.size();
     }
 

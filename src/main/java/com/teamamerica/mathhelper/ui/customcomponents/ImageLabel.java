@@ -10,20 +10,32 @@ import java.net.URL;
 public class ImageLabel extends JLabel {
 
 
-    /** Filename of the image to be used as the button's icon. */
+    /**
+     * Filename of the image to be used as the button's icon.
+     */
     private String fileName;
-    /** The width of the button */
+    /**
+     * The width of the button
+     */
     private int width;
-    /** The height of the button. */
+    /**
+     * The height of the button.
+     */
     private int height;
 
-    public ImageLabel(boolean hasImage,String fileName, int width, int height){
+    public ImageLabel(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    public ImageLabel(boolean hasImage, String fileName, int width, int height) {
         this.fileName = fileName;
         this.width = width;
         this.height = height;
         changeLabelImage(hasImage, fileName);
 
     }
+
 
     public void changeLabelImage(boolean hasImage, String fileName) {
         this.setEnabled(true);
@@ -38,6 +50,7 @@ public class ImageLabel extends JLabel {
 
 
     private void createLabelText(String fileName) {
+        this.setPreferredSize(new Dimension(width, height));
         this.setIcon(null);
         this.setText(fileName);
 
@@ -46,13 +59,13 @@ public class ImageLabel extends JLabel {
     /**
      * Creates the button according to the fields set by the constructor.
      */
-    private void createLabelImage(String fileName){
+    private void createLabelImage(String fileName) {
         this.setText(null);
         this.setIcon(getImageIcon(fileName));
         this.setPreferredSize(new Dimension(width, height));
         this.setMaximumSize(new Dimension(width, height));
         this.setOpaque(false);
-        this.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+        this.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
     }
 
     public ImageIcon getImageIcon(String fileName) {

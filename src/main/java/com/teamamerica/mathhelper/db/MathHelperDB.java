@@ -139,7 +139,7 @@ public class MathHelperDB {
         try {
             ps = conn.prepareStatement(sql);
             ps.setInt(1, grade.getUser_id());
-            ps.setFloat(2, grade.getGrade());
+            ps.setInt(2, grade.getGrade());
             ps.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -197,7 +197,7 @@ public class MathHelperDB {
                 Grade grade = new Grade();
                 grade.setGrade_id(rs.getInt("grade_id"));
                 grade.setUser_id(rs.getInt("user_id"));
-                grade.setGrade(rs.getFloat("grade"));
+                grade.setGrade(rs.getInt("grade"));
                 grades.add(grade);
             }
             // Close result set.
@@ -262,7 +262,6 @@ public class MathHelperDB {
                 tutorial.setTutorial_id(rs.getInt("tutorial_id"));
                 tutorial.setGrade_level(rs.getString("grade_level"));
                 tutorial.setCategory_type(rs.getString("category_type"));
-                tutorial.setHas_video(rs.getBoolean("has_video"));
                 tutorial.setTutorial(rs.getString("tutorial"));
                 tutorials.add(tutorial);
             }

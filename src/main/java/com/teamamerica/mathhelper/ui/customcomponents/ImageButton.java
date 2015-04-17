@@ -80,9 +80,7 @@ public class ImageButton extends JButton {
     }
 
     public void createWrongAnswerButton() {
-        // this.setText("WRONG");
-        //  this.setFont(new Font("Times New Roman", 0, 16));
-        //   this.setIcon(null);
+
         this.setBackground(Color.RED);
         this.setPreferredSize(new Dimension(width, height));
         this.setMaximumSize(new Dimension(width, height));

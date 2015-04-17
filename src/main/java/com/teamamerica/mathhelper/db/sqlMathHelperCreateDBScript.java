@@ -94,28 +94,22 @@ public class sqlMathHelperCreateDBScript {
                     "'shapes_star.jpg','shapes_circle.jpg');";
             addQuestionToDB(stmt, value);
 
-            value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
-                    "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
-                    "VALUES ('K','Easy','Addition'," + true + ",'Square: ','shapes_square.jpg','shapes_star.jpg'," +
-                    "'shapes_heart.jpeg','shapes_diamond.png');";
-            addQuestionToDB(stmt, value);
-
 
             createGradesTable(stmt);
             createTutorialsTable(stmt);
 
-            value = "INSERT INTO tutorials(grade_level,category_type,has_video,tutorial)" +
-                    "VALUES ('K','Addition'," + true + ",'https://www.youtube.com/v/AQ7THUKx6Es?fs=1');";
+            value = "INSERT INTO tutorials(grade_level,category_type,tutorial)" +
+                    "VALUES ('K','Addition','https://www.youtube.com/v/AQ7THUKx6Es?fs=1');";
 
             addTutorialToDB(stmt,value);
 
-            value = "INSERT INTO tutorials(grade_level,category_type,has_video,tutorial)" +
-                    "VALUES ('K','Addition'," + true + ",'https://www.youtube.com/v/b-Cr0EWwaTk?fs=1');";
+            value = "INSERT INTO tutorials(grade_level,category_type,tutorial)" +
+                    "VALUES ('K','Addition','https://www.youtube.com/v/b-Cr0EWwaTk?fs=1');";
 
             addTutorialToDB(stmt,value);
 
-            value = "INSERT INTO tutorials(grade_level,category_type,has_video,tutorial)" +
-                    "VALUES ('K','Addition'," + true + ",'https://www.youtube.com/v/AQ7THUKx6Es?fs=1');";
+            value = "INSERT INTO tutorials(grade_level,category_type,tutorial)" +
+                    "VALUES ('K','Addition','https://www.youtube.com/v/AQ7THUKx6Es?fs=1');";
 
             addTutorialToDB(stmt,value);
 
@@ -201,8 +195,8 @@ public class sqlMathHelperCreateDBScript {
         while (rs.next()) { // Advances to the next entry (row) in the result set.
             // Retrieve entry's attributes by column name
             int id = rs.getInt("grade_id");
-            String userid = rs.getString("user_id");
-            String grade = rs.getString("grade");
+            int userid = rs.getInt("user_id");
+            int grade = rs.getInt("grade");
 
             // Display values
             System.out.println("ID: " + id);
@@ -272,14 +266,12 @@ public class sqlMathHelperCreateDBScript {
             int id = rs.getInt("tutorial_id");
             String gradelevel = rs.getString("grade_level");
             String categoryType = rs.getString("category_type");
-            boolean hasVideo = rs.getBoolean("has_video");
             String tutorial = rs.getString("tutorial");
 
             // Display values
             System.out.println("ID: " + id);
             System.out.println(", Grade Level: " + gradelevel);
             System.out.println(", Tutorial Type: " + categoryType);
-            System.out.println(", Has Video: " + hasVideo);
             System.out.println(", Tutorial: " + tutorial);
         }
 
@@ -429,12 +421,11 @@ public class sqlMathHelperCreateDBScript {
                     "(tutorial_id INT UNSIGNED NOT NULL AUTO_INCREMENT, " +
                     "grade_level CHAR(30) NOT NULL, " +
                     "category_type CHAR(40) NOT NULL, " +
-                    "has_video BOOLEAN NOT NULL, " +
                     "tutorial TEXT NOT NULL, " +
                     "PRIMARY KEY(tutorial_id));";
             stmt.execute(sql);
-            sql = "INSERT INTO tutorials(grade_level,category_type,has_video,tutorial)" +
-                    "VALUES ('K','Addition'," + false + ",'2 + 2 = 4');";
+            sql = "INSERT INTO tutorials(grade_level,category_type,tutorial)" +
+                    "VALUES ('K','Addition','https://www.youtube.com/v/LzeXlWAOTHI?fs=1');";
             stmt.executeUpdate(sql);
         } catch (SQLException se) {
             System.out.println("Found!      Using existing tutorials table.");
@@ -455,7 +446,7 @@ public class sqlMathHelperCreateDBScript {
             sql = "CREATE TABLE grades" +
                     "(grade_id INT UNSIGNED NOT NULL AUTO_INCREMENT, " +
                     "user_id INT UNSIGNED NOT NULL, " +
-                    "grade FLOAT UNSIGNED NOT NULL, " +
+                    "grade INT UNSIGNED NOT NULL, " +
                     "PRIMARY KEY(grade_id));";
             stmt.execute(sql);
             sql = "INSERT INTO grades(user_id,grade)" +

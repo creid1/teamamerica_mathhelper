@@ -10,21 +10,21 @@ public class Grade {
 
     private int grade_id;
     private int user_id;
-    private float grade;
+    private int grade;
 
     public Grade() {
 
 
     }
 
-    public Grade(int user_id, float grade) {
+    public Grade(int user_id, int grade) {
         this.grade_id = -1;
         this.user_id = user_id;
         this.grade = grade;
 
     }
 
-    public Grade(int grade_id, int user_id, float grade) {
+    public Grade(int grade_id, int user_id, int grade) {
         this.grade_id = grade_id;
         this.user_id = user_id;
         this.grade = grade;
@@ -38,7 +38,7 @@ public class Grade {
         this.user_id = user_id;
     }
 
-    public void setGrade(float grade) {
+    public void setGrade(int grade) {
         this.grade = grade;
     }
 
@@ -52,7 +52,7 @@ public class Grade {
         return user_id;
     }
 
-    public float getGrade() {
+    public int getGrade() {
         return grade;
     }
 
@@ -74,6 +74,15 @@ public class Grade {
         return userGrades;
     }
 
+    public static Grade searchForGradeByGradeId (ArrayList<Grade> grades, int grade_id) {
+        Grade grade = new Grade();
+        for (Grade temp : grades) {
+            if (temp.getGrade_id() == grade_id) {
+              return temp;
+            }
+        }
+        return grade;
+    }
 
     /**
      * This method searches the list of grades based on a min max grade range.  If no grades are found

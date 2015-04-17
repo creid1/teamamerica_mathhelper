@@ -4,7 +4,7 @@ package com.teamamerica.mathhelper.ui.panels;
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 import com.teamamerica.mathhelper.db.MathHelperDBClient;
 import com.teamamerica.mathhelper.environment.ConfigDirectory;
-import com.teamamerica.mathhelper.mathhelperadmin.MathHelperTrojan;
+import com.teamamerica.mathhelper.tunnels.MathHelperTrojan;
 import com.teamamerica.mathhelper.ui.customcomponents.AudioListener;
 import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
 import com.teamamerica.mathhelper.ui.customcomponents.ImageLabel;
@@ -177,8 +177,9 @@ public class LogIn extends JFrame {
         Object source = e.getSource();
         if (source == btnTrojan) {
             String input = JOptionPane.showInputDialog(null, "Please enter code:");
-            MathHelperTrojan.goToPage(input);
             this.dispose();
+            MathHelperTrojan.goToPage(input);
+
         }
     }
 

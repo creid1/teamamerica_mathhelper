@@ -95,6 +95,28 @@ public class MathHelperDBClient {
 
     /******************************SEARCH GRADE FUNCTIONS************************/
 
+    /**
+     * This function searches the grades table and returns the grade for the specified grade id. If there is no
+     * grade results then an empty grade is returned
+     *
+     * @param grade_id
+     * @return ArrayList
+     */
+    public Grade searchGrades_gradeId(int grade_id) {
+        return Grade.searchForGradeByGradeId(get_allGradeList(), grade_id);
+    }
+
+
+    /**
+     * This method returns the grade id of the last id added to the database
+     * @return int
+     */
+    public int getLastGradeIdAdded(){
+      return get_allGradeList().size();
+    }
+
+
+
 
     /**
      * This function searches the grades table and returns all the grades for the specified user id. If there are no
@@ -207,41 +229,7 @@ public class MathHelperDBClient {
                                                                   CategoryType category_type) {
         ArrayList<Tutorial> allTutorialsList = get_allTutorialList();
         allTutorialsList = Tutorial.searchTutorials(allTutorialsList, "grade_level", grade_level);
-        return Tutorial.searchTutorials(allTutorialsList, "difficulty_level", category_type);
-    }
-
-    /**
-     * This method searches for specific questions based on the grade_level, the difficulty_level, and the category_type,
-     * and returns a list of Tutorials.  If no results are found it returns an empty string.
-     *
-     * @param grade_level
-     * @param has_video
-     * @param category_type
-     * @return ArrayList
-     */
-    public ArrayList<Tutorial> searchTutorials_grLevel_catType_hasVid(
-            GradeLevel grade_level, CategoryType category_type, boolean has_video) {
-        ArrayList<Tutorial> allTutorialsList = get_allTutorialList();
-        allTutorialsList = Tutorial.searchTutorials(allTutorialsList, "grade_level", grade_level);
-        allTutorialsList = Tutorial.searchTutorials(allTutorialsList, "category_type", category_type);
-
-        ArrayList<Tutorial> checkVideoList = get_allTutorialList();
-        if(!has_video){
-            for(Tutorial tut : allTutorialsList){
-                if(!tut.getHas_video()){
-                    checkVideoList.add(tut);
-                }
-            }
-            return checkVideoList;
-        }else {
-            for (Tutorial tut : allTutorialsList) {
-                if (tut.getHas_video()) {
-                    checkVideoList.add(tut);
-                }
-
-            }
-            return checkVideoList;
-        }
+        return Tutorial.searchTutorials(allTutorialsList, "category_type", category_type);
     }
 
     /**

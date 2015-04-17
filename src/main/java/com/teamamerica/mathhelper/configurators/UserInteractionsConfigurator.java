@@ -4,6 +4,7 @@ import com.teamamerica.mathhelper.controllers.CategoryType;
 import com.teamamerica.mathhelper.controllers.DifficultyLevel;
 import com.teamamerica.mathhelper.controllers.GradeLevel;
 import com.teamamerica.mathhelper.controllers.MainMenuSelection;
+import com.teamamerica.mathhelper.models.Grade;
 import com.teamamerica.mathhelper.models.User;
 
 /**
@@ -11,7 +12,9 @@ import com.teamamerica.mathhelper.models.User;
  */
 public class UserInteractionsConfigurator {
 
+
     private static User interactive_user = null;
+    private static Grade interactive_grade = null;
     private static GradeLevel interactive_grade_level = null;
     private static MainMenuSelection main_menu_selection = null;
     private static CategoryType category_type = null;
@@ -24,10 +27,6 @@ public class UserInteractionsConfigurator {
         return interactive_user;
     }
 
-
-    public static void set_interactive_grade_level_str(String grade_level){
-        interactive_grade_level = GradeLevel.valueOf(grade_level);
-    }
     public static void set_interactive_grade_level_enum(GradeLevel grade_level){
         interactive_grade_level = grade_level;
     }
@@ -40,10 +39,6 @@ public class UserInteractionsConfigurator {
         return interactive_grade_level;
     }
 
-
-    public static void set_main_menu_selection_str(String selection){
-        main_menu_selection = MainMenuSelection.valueOf(selection);
-    }
 
     public static void set_main_menu_selection_enum(MainMenuSelection selection){
         main_menu_selection = selection;
@@ -58,10 +53,6 @@ public class UserInteractionsConfigurator {
     }
 
 
-    public static void set_category_type_str(String type){
-        category_type = CategoryType.valueOf(type);
-    }
-
     public static void set_category_type_enum(CategoryType type){
         category_type = type;
     }
@@ -74,9 +65,6 @@ public class UserInteractionsConfigurator {
         return category_type;
     }
 
-    public static void set_difficulty_level_str(String level){
-        difficulty_level = DifficultyLevel.valueOf(level);
-    }
 
     public static void set_difficulty_level_enum(DifficultyLevel level){
         difficulty_level = level;
@@ -88,6 +76,15 @@ public class UserInteractionsConfigurator {
 
     public static DifficultyLevel get_difficulty_level_enum(){
         return difficulty_level;
+    }
+
+
+    public static Grade get_interactive_grade() {
+        return interactive_grade;
+    }
+
+    public static void set_interactive_grade(Grade interactive_grade) {
+        UserInteractionsConfigurator.interactive_grade = interactive_grade;
     }
 
 
