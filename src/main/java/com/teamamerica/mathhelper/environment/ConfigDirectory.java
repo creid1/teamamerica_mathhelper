@@ -22,6 +22,7 @@ public class ConfigDirectory {
 
 
     public static String getAudioFileFromDirectory(String file) {
+        System.out.println(audioDirectory + file);
         return audioDirectory + file;
     }
 }
