@@ -6,6 +6,7 @@ import com.teamamerica.mathhelper.db.MathHelperDBClient;
 import com.teamamerica.mathhelper.environment.ConfigDirectory;
 import com.teamamerica.mathhelper.ui.customcomponents.AudioListener;
 import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
+import com.teamamerica.mathhelper.ui.customcomponents.ImageLabel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,7 +24,7 @@ public class LogIn extends JFrame {
     //  private JButton btnHelp;
     private JFormattedTextField txtUserName;
     private JLabel lblUserName;
-    private JLabel jLabel2;
+    private JLabel jLabel2, lblOne,lblTwo,lblThree,lbl4;
     private JLabel lblPassword;
     private JLabel jLabel4;
     private JPanel jPanel1;
@@ -46,9 +47,14 @@ public class LogIn extends JFrame {
         txtUserName = new JFormattedTextField();
         lblUserName = new JLabel();
         lblPassword = new JLabel();
-        btnSignIn = new ImageButton(true,ConfigDirectory.getImageFileFromDirectory("panels_openDoorIcon.jpg"),100,100);
+        btnSignIn = new ImageButton(true,ConfigDirectory.getImageFileFromDirectory("panels_openDoor.gif"),400,400);
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpIcon.jpeg"), 90, 90);
         jLabel4 = new JLabel();
+
+        lblOne = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_oneTwoThree.jpg"),200,160);
+        lblTwo = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_oneTwoThree.jpg"),200,160);
+
+
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBackground(Color.WHITE);
@@ -74,9 +80,15 @@ public class LogIn extends JFrame {
         jPanel1.add(jPasswordField);
         jPasswordField.setBounds(510, 350, 250, 60);
 
+        lblTwo.setBounds(775,130,200,160);
+        jPanel1.add(lblTwo);
+
         txtUserName.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         jPanel1.add(txtUserName);
         txtUserName.setBounds(510, 250, 250, 60);
+
+        lblOne.setBounds(20,130,200,160);
+        jPanel1.add(lblOne);
 
         lblUserName.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         lblUserName.setText("Username:");
@@ -88,17 +100,16 @@ public class LogIn extends JFrame {
         jPanel1.add(lblPassword);
         lblPassword.setBounds(250, 360, 165, 30);
 
-        btnSignIn.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        btnSignIn.setMaximumSize(new java.awt.Dimension(87, 35));
-        btnSignIn.setMinimumSize(new java.awt.Dimension(87, 35));
-        btnSignIn.setPreferredSize(new java.awt.Dimension(87, 35));
+        btnSignIn.setMaximumSize(new java.awt.Dimension(400, 400));
+        btnSignIn.setMinimumSize(new java.awt.Dimension(400, 400));
+        btnSignIn.setPreferredSize(new java.awt.Dimension(400, 400));
         btnSignIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSignInActionPerformed(evt);
             }
         });
         jPanel1.add(btnSignIn);
-        btnSignIn.setBounds(400, 440, 100, 100);
+        btnSignIn.setBounds(300, 300, 400, 400);
 
         btnHelp.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
 
@@ -139,11 +150,12 @@ public class LogIn extends JFrame {
             UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username(username));
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
-            new SplashPage1().setVisible(true);
-            setVisible(false);
+            new SelectGrade().setVisible(true);
+           this.dispose();
         } else {
+            AudioListener.runAudioListener("SpeechOn.wav");
             JOptionPane.showMessageDialog(null,
-                    "Please check your username and password.", "Login Error", JOptionPane.ERROR_MESSAGE);
+                    "Please check your username and/or password.", "Login Error", JOptionPane.ERROR_MESSAGE);
             txtUserName.setText("");
             jPasswordField.setText("");
         }
@@ -154,7 +166,7 @@ public class LogIn extends JFrame {
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        AudioListener.runAudioListener("exclamationSound.wav");
+        AudioListener.runAudioListener("SpeechOn.wav");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
