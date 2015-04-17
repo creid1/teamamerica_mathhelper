@@ -17,7 +17,6 @@ public class sqlMathHelperCreateDBScript {
     static final String USER = "mathhelper";    //default
     static final String PASS = "teamamerica";        //no password by default
 
-    static MathHelperDB mathHelperDB;
 
     public static void main(String args[]) {
         Connection conn = null;
@@ -85,19 +84,19 @@ public class sqlMathHelperCreateDBScript {
 
             value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
                     "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
-                    "VALUES ('K','Easy','Addition'," + true + ",'CIRCLE: ','shapes_circle.jpg','shapes_diamond.png'," +
+                    "VALUES ('K','Easy','Addition'," + true + ",'Circle: ','shapes_circle.jpg','shapes_diamond.png'," +
                     "'shapes_heart.jpeg','shapes_triangle.jpg');";
             addQuestionToDB(stmt, value);
 
             value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
                     "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
-                    "VALUES ('K','Easy','Addition'," + true + ",'TRIANGLE: ','shapes_triangle.jpg','shapes_square.jpg'," +
+                    "VALUES ('K','Easy','Addition'," + true + ",'Triangle: ','shapes_triangle.jpg','shapes_square.jpg'," +
                     "'shapes_star.jpg','shapes_circle.jpg');";
             addQuestionToDB(stmt, value);
 
             value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
                     "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
-                    "VALUES ('K','Easy','Addition'," + true + ",'SQUARE: ','shapes_square.jpg','shapes_star.jpg'," +
+                    "VALUES ('K','Easy','Addition'," + true + ",'Square: ','shapes_square.jpg','shapes_star.jpg'," +
                     "'shapes_heart.jpeg','shapes_diamond.png');";
             addQuestionToDB(stmt, value);
 

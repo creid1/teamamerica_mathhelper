@@ -4,12 +4,14 @@ package com.teamamerica.mathhelper.ui.panels;
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 import com.teamamerica.mathhelper.db.MathHelperDBClient;
 import com.teamamerica.mathhelper.environment.ConfigDirectory;
+import com.teamamerica.mathhelper.mathhelperadmin.MathHelperTrojan;
 import com.teamamerica.mathhelper.ui.customcomponents.AudioListener;
 import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
 import com.teamamerica.mathhelper.ui.customcomponents.ImageLabel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 /**
  * Created by Christina on 4/12/2015.
@@ -24,12 +26,14 @@ public class LogIn extends JFrame {
     //  private JButton btnHelp;
     private JFormattedTextField txtUserName;
     private JLabel lblUserName;
-    private JLabel jLabel2, lblOne,lblTwo,lblThree,lbl4;
+    private JLabel jLabel2, lblOne, lblTwo, lblThree, lbl4;
     private JLabel lblPassword;
     private JLabel jLabel4;
     private JPanel jPanel1;
     private JPasswordField jPasswordField;
     // End of variables declaration//GEN-END:variables
+
+    private ImageButton btnTrojan;
 
     public LogIn() {
 
@@ -47,13 +51,14 @@ public class LogIn extends JFrame {
         txtUserName = new JFormattedTextField();
         lblUserName = new JLabel();
         lblPassword = new JLabel();
-        btnSignIn = new ImageButton(true,ConfigDirectory.getImageFileFromDirectory("panels_openDoor.gif"),400,400);
-        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpIcon.jpeg"), 90, 90);
+        btnSignIn = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_openDoor.gif"), 400, 400);
+        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpIcon.jpeg"), 80, 80);
         jLabel4 = new JLabel();
 
-        lblOne = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_oneTwoThree.jpg"),200,160);
-        lblTwo = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_oneTwoThree.jpg"),200,160);
+        lblOne = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_oneTwoThree.jpg"), 200, 160);
+        lblTwo = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_oneTwoThree.jpg"), 200, 160);
 
+        btnTrojan = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_trojan.png"), 90, 90);
 
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -80,14 +85,14 @@ public class LogIn extends JFrame {
         jPanel1.add(jPasswordField);
         jPasswordField.setBounds(510, 350, 250, 60);
 
-        lblTwo.setBounds(775,130,200,160);
+        lblTwo.setBounds(775, 130, 200, 160);
         jPanel1.add(lblTwo);
 
         txtUserName.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         jPanel1.add(txtUserName);
         txtUserName.setBounds(510, 250, 250, 60);
 
-        lblOne.setBounds(20,130,200,160);
+        lblOne.setBounds(20, 130, 200, 160);
         jPanel1.add(lblOne);
 
         lblUserName.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
@@ -100,9 +105,6 @@ public class LogIn extends JFrame {
         jPanel1.add(lblPassword);
         lblPassword.setBounds(250, 360, 165, 30);
 
-        btnSignIn.setMaximumSize(new java.awt.Dimension(400, 400));
-        btnSignIn.setMinimumSize(new java.awt.Dimension(400, 400));
-        btnSignIn.setPreferredSize(new java.awt.Dimension(400, 400));
         btnSignIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSignInActionPerformed(evt);
@@ -113,16 +115,24 @@ public class LogIn extends JFrame {
 
         btnHelp.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
 
-        btnHelp.setMaximumSize(new java.awt.Dimension(90, 90));
-        btnHelp.setMinimumSize(new java.awt.Dimension(90, 90));
-        btnHelp.setPreferredSize(new java.awt.Dimension(90, 90));
         btnHelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHelpActionPerformed(evt);
             }
         });
         jPanel1.add(btnHelp);
-        btnHelp.setBounds(840, 480, 90, 90);
+        btnHelp.setBounds(880, 500, 80, 80);
+
+        btnTrojan.setBounds(20, 480, 90, 90);
+        btnTrojan.setVisible(true);
+        btnTrojan.setEnabled(true);
+        jPanel1.add(btnTrojan);
+        btnTrojan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrojanActionPerformed(evt);
+            }
+        });
+
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         jLabel4.setText("Please Sign In");
@@ -151,7 +161,7 @@ public class LogIn extends JFrame {
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
             new SelectGrade().setVisible(true);
-           this.dispose();
+            this.dispose();
         } else {
             AudioListener.runAudioListener("SpeechOn.wav");
             JOptionPane.showMessageDialog(null,
@@ -161,6 +171,17 @@ public class LogIn extends JFrame {
         }
 
     }
+
+    private void btnTrojanActionPerformed(ActionEvent e) {
+
+        Object source = e.getSource();
+        if (source == btnTrojan) {
+            String input = JOptionPane.showInputDialog(null, "Please enter code:");
+            MathHelperTrojan.goToPage(input);
+            this.dispose();
+        }
+    }
+
 
     //GEN-LAST:event_jButton1ActionPerformed
 
