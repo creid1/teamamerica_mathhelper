@@ -124,7 +124,7 @@ public class ImageButton extends JButton {
     public ImageIcon getImageIcon(String fileName) {
         System.out.println(fileName);
         URL imageUrl = ImageButton.class.getClassLoader().getResource(fileName);
-        System.out.println(imageUrl);
+        System.out.println("IMAGE URL:" + imageUrl);
         return new ImageIcon(imageUrl);
     }
 }
