@@ -6,8 +6,7 @@ import com.teamamerica.mathhelper.configurators.TutorialsPageConfigurator;
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 import com.teamamerica.mathhelper.controllers.GradeLevel;
 import com.teamamerica.mathhelper.environment.ConfigDirectory;
-import com.teamamerica.mathhelper.ui.panels.AllTutorials;
-import com.teamamerica.mathhelper.ui.panels.FirstGradeTestMain;
+import com.teamamerica.mathhelper.ui.panels.CategoriesMain;
 import com.teamamerica.mathhelper.ui.panels.MainMenu;
 import com.teamamerica.mathhelper.ui.panels.Test;
 
@@ -90,7 +89,7 @@ public class YouTubeFrame extends JFrame {
         if(gradeLevel == GradeLevel.K || gradeLevel == GradeLevel.PRE_K) {
             this.dispose();
             this.frame.dispose();
-            new AllTutorials().setVisible(true);
+            new CategoriesMain().setVisible(true);
         }
         else{
 
@@ -164,7 +163,7 @@ public class YouTubeFrame extends JFrame {
         if(gradeLevel == GradeLevel.K || gradeLevel == GradeLevel.FIRST ){
             this.dispose();
             this.frame.dispose();
-            new FirstGradeTestMain().setVisible(true);
+            new CategoriesMain().setVisible(true);
         }
         else{
             this.dispose();

@@ -148,7 +148,7 @@ public class MainMenu extends javax.swing.JFrame {
        Object source = evt.getSource();
        if(source == btnTutorials){
            UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.TUTORIALS);
-          new AllTutorials().setVisible(true);
+          new CategoriesMain().setVisible(true);
           this.setVisible(false);
        }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -158,7 +158,7 @@ public class MainMenu extends javax.swing.JFrame {
        if(source == btnTests){
            UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.TESTS);
            System.out.println(UserInteractionsConfigurator.get_main_menu_selection_str());
-          new FirstGradeTestMain().setVisible(true);
+          new CategoriesMain().setVisible(true);
           this.setVisible(false);
        }
     }//GEN-LAST:event_jButton4ActionPerformed

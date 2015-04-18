@@ -21,8 +21,8 @@ public class SelectGrade extends javax.swing.JFrame {
         btnK = new javax.swing.JButton();
         btn3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnWelcom = new javax.swing.JButton();
+        btnHelp = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -106,27 +106,27 @@ public class SelectGrade extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(130, 10, 340, 60);
 
-        jButton2.setBackground(new java.awt.Color(153, 204, 255));
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        jButton2.setText("Welcome Page");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnWelcom.setBackground(new java.awt.Color(153, 204, 255));
+        btnWelcom.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        btnWelcom.setText("Welcome Page");
+        btnWelcom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnWelcomeActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(40, 330, 110, 40);
+        jPanel1.add(btnWelcom);
+        btnWelcom.setBounds(40, 330, 110, 40);
 
-        jButton3.setBackground(new java.awt.Color(153, 204, 255));
-        jButton3.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        jButton3.setText("Help");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnHelp.setBackground(new java.awt.Color(153, 204, 255));
+        btnHelp.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        btnHelp.setText("Help");
+        btnHelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnHelpActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3);
-        jButton3.setBounds(440, 330, 110, 40);
+        jPanel1.add(btnHelp);
+        btnHelp.setBounds(440, 330, 110, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ian\\Documents\\backround.jpeg")); // NOI18N
         jPanel1.add(jLabel1);
@@ -206,15 +206,15 @@ public class SelectGrade extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton10ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnWelcomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Object source = evt.getSource();
-        if (source == jButton2) {
-            new SplashPage1().setVisible(true);
+        if (source == btnWelcom) {
+            new MainMenu().setVisible(true);
             this.setVisible(false);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -233,8 +233,8 @@ public class SelectGrade extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn3;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnWelcom;
+    private javax.swing.JButton btnHelp;
     private javax.swing.JButton btn2;
     private javax.swing.JButton btnnPreK;
     private javax.swing.JButton btn1;

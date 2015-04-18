@@ -18,11 +18,18 @@ public class GradeConfigurator {
         System.out.println("SCORE TEMP: " + temp);
         int score = (int) ( temp * 100);
 
-        Grade grade = new Grade(-1,UserInteractionsConfigurator.get_interactive_user().getUser_id(),score);
+        boolean has_receivedReward;
+        if(score >= 90){
+            has_receivedReward = true;
+        }else{
+            has_receivedReward = false;
+        }
+
+        Grade grade = new Grade(-1,UserInteractionsConfigurator.get_interactive_user().getUser_id(),score,has_receivedReward);
         mathHelperDBClient.add_newGrade(grade);
         System.out.println("Grade submitted");
         UserInteractionsConfigurator.set_interactive_grade(new Grade(mathHelperDBClient.getLastGradeIdAdded(),
-                UserInteractionsConfigurator.get_interactive_user().getUser_id(), score));
+                UserInteractionsConfigurator.get_interactive_user().getUser_id(), score,has_receivedReward));
 
     }
 

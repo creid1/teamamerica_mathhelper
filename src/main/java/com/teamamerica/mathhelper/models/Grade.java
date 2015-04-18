@@ -11,6 +11,7 @@ public class Grade {
     private int grade_id;
     private int user_id;
     private int grade;
+    private boolean receive_reward;
 
     public Grade() {
 
@@ -24,11 +25,14 @@ public class Grade {
 
     }
 
-    public Grade(int grade_id, int user_id, int grade) {
+    public Grade(int grade_id, int user_id, int grade, boolean hasReward) {
         this.grade_id = grade_id;
         this.user_id = user_id;
         this.grade = grade;
+        this.receive_reward = hasReward;
     }
+
+    //********************************SETTERS FOR THE DATA STRUCTURE*************************************//
 
     public void setGrade_id(int grade_id) {
         this.grade_id = grade_id;
@@ -41,6 +45,18 @@ public class Grade {
     public void setGrade(int grade) {
         this.grade = grade;
     }
+
+    public void setReceive_reward(boolean receive_reward) {
+        this.receive_reward = receive_reward;
+    }
+
+    //*******************************GETTERS FOR THE DATA STRUCTURE**********************************//
+
+
+    public boolean hasReceive_reward() {
+        return receive_reward;
+    }
+
 
     public int getGrade_id() {
 
@@ -74,11 +90,11 @@ public class Grade {
         return userGrades;
     }
 
-    public static Grade searchForGradeByGradeId (ArrayList<Grade> grades, int grade_id) {
+    public static Grade searchForGradeByGradeId(ArrayList<Grade> grades, int grade_id) {
         Grade grade = new Grade();
         for (Grade temp : grades) {
             if (temp.getGrade_id() == grade_id) {
-              return temp;
+                return temp;
             }
         }
         return grade;
@@ -101,5 +117,17 @@ public class Grade {
             }
         }
         return gradeRange;
+    }
+
+    public static int searchGradesByUser_idForRewards(ArrayList<Grade> grades, int user_id) {
+        int rewards = 0;
+        for (Grade grade : grades) {
+            if (grade.getUser_id() == user_id) {
+                if (grade.hasReceive_reward()) {
+                    rewards++;
+                }
+            }
+        }
+        return rewards;
     }
 }

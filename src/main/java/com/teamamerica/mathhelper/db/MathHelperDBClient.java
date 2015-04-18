@@ -48,9 +48,8 @@ public class MathHelperDBClient {
     }
 
 
-    /**
-     * **************LIST GETTERS FOR TABLES******************************************
-     */
+    //**********************************************SEARCH USER GETTERS***************************//
+
     public ArrayList<User> get_allUserList() {
         return mathHelperDB.getUserTableList();
     }
@@ -69,6 +68,25 @@ public class MathHelperDBClient {
 
 
     /*************SEARCH USER GETTER****************************************/
+
+    /**
+     * This method returns a list of users based on the role of the admin assigned during account creation time
+     *
+     * @param username
+     * @return ArayList
+     */
+    public ArrayList<User> getUsersForAdminUser(String username) {
+        ArrayList<User> temp = get_allUserList();
+        ArrayList<User> usersAssigned = new ArrayList<>();
+
+        for (User user : temp) {
+            if (user.getRole().contains(username)) {
+                usersAssigned.add(user);
+
+            }
+        }
+        return usersAssigned;
+    }
 
 
     /**
@@ -109,13 +127,12 @@ public class MathHelperDBClient {
 
     /**
      * This method returns the grade id of the last id added to the database
+     *
      * @return int
      */
-    public int getLastGradeIdAdded(){
-      return get_allGradeList().size();
+    public int getLastGradeIdAdded() {
+        return get_allGradeList().size();
     }
-
-
 
 
     /**
@@ -226,7 +243,7 @@ public class MathHelperDBClient {
      * @return ArrayList
      */
     public ArrayList<Tutorial> searchTutorials_grLevel_catType(GradeLevel grade_level,
-                                                                  CategoryType category_type) {
+                                                               CategoryType category_type) {
         ArrayList<Tutorial> allTutorialsList = get_allTutorialList();
         allTutorialsList = Tutorial.searchTutorials(allTutorialsList, "grade_level", grade_level);
         return Tutorial.searchTutorials(allTutorialsList, "category_type", category_type);
@@ -265,7 +282,11 @@ public class MathHelperDBClient {
             // Display values
             System.out.println("user_id: " + user.getUser_id() +
                     ", username: " + user.getUsername() +
-                    ", userpassword: " + user.getPassword() +
+                    ", password: " + user.getPassword() +
+                    ", first_name: " + user.getFirst_name() +
+                    ", last_name: " + user.getLast_name() +
+                    ", security_question: " + user.getSecurity_question() +
+                    ", security_answer: " + user.getSecurity_answer() +
                     ", role: " + user.getRole());
             System.out.println("     ");
         }

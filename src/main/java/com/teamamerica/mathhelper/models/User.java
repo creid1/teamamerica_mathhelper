@@ -10,6 +10,10 @@ public class User {
     private int user_id;
     private String username;
     private String password;
+    private String first_name;
+    private String last_name;
+    private String security_question;
+    private String security_answer;
     private String role;
 
 
@@ -17,10 +21,15 @@ public class User {
 
     }
 
-    public User(int user_id, String username, String password, String role) {
+    public User(int user_id, String username, String password,String first_name, String last_name,
+                String security_question, String security_answer, String role) {
         this.user_id = user_id;
         this.username = username;
         this.password = password;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.security_question = security_question;
+        this.security_answer = security_answer;
         this.role = role;
     }
 
@@ -48,6 +57,25 @@ public class User {
         this.username = username;
     }
 
+    /*********************************GETTERS FOR THE DATA STRUCTURES***************************************/
+
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public void setSecurity_question(String security_question) {
+        this.security_question = security_question;
+    }
+
+    public void setSecurity_answer(String security_answer) {
+        this.security_answer = security_answer;
+    }
+
+    /*********************************GETTERS FOR THE DATA STRUCTURE*****************************************/
 
     public String getUsername() {
         return username;
@@ -59,6 +87,23 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public String getSecurity_question() {
+        return security_question;
+    }
+
+    public String getSecurity_answer() {
+        return security_answer;
     }
 
     public String getRole() {

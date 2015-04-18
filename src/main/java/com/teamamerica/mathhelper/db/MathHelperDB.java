@@ -109,12 +109,17 @@ public class MathHelperDB {
     public boolean addNewUser(User user) {
         openDBConnection();
         sql = "INSERT users " +
-                "SET username = ?, password = ?, role = ?";
+                "SET username = ?, password = ?, first_name = ?, last_name = ?, " +
+                "security_question = ?, security_answer = ?, role = ?";
         PreparedStatement ps;
         try {
             ps = conn.prepareStatement(sql);
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getPassword());
+            ps.setString(3, user.getFirst_name());
+            ps.setString(4, user.getLast_name());
+            ps.setString(5, user.getSecurity_question());
+            ps.setString(6, user.getSecurity_answer());
             ps.setString(3, user.getRole());
 
             ps.executeUpdate();
@@ -134,12 +139,13 @@ public class MathHelperDB {
     public boolean addNewGrade(Grade grade) {
         openDBConnection();
         sql = "INSERT grades " +
-                "SET user_id = ?, grade = ?";
+                "SET user_id = ?, grade = ?, received_reward = ?";
         PreparedStatement ps;
         try {
             ps = conn.prepareStatement(sql);
             ps.setInt(1, grade.getUser_id());
             ps.setInt(2, grade.getGrade());
+            ps.setBoolean(3, grade.hasReceive_reward());
             ps.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -167,6 +173,10 @@ public class MathHelperDB {
                 user.setUser_id(rs.getInt("user_id"));
                 user.setUsername(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
+                user.setFirst_name(rs.getString("first_name"));
+                user.setLast_name(rs.getString("last_name"));
+                user.setSecurity_question(rs.getString("security_question"));
+                user.setSecurity_answer(rs.getString("security_answer"));
                 user.setRole(rs.getString("role"));
                 users.add(user);
             }
@@ -198,6 +208,7 @@ public class MathHelperDB {
                 grade.setGrade_id(rs.getInt("grade_id"));
                 grade.setUser_id(rs.getInt("user_id"));
                 grade.setGrade(rs.getInt("grade"));
+                grade.setReceive_reward(rs.getBoolean("received_reward"));
                 grades.add(grade);
             }
             // Close result set.

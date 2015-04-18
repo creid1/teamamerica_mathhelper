@@ -48,38 +48,37 @@ public class sqlMathHelperCreateDBScript {
                     "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
                     "VALUES ('K','Easy','Addition'," + false + ",'2 + 3 = ','5','4','7','6');";
             addQuestionToDB(stmt, value);
-             value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+            value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
                     "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
                     "VALUES ('K','Easy','Addition'," + false + ",'1 + 2 = ','3','4','8','5');";
             addQuestionToDB(stmt, value);
-             value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+            value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
                     "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
                     "VALUES ('K','Easy','Addition'," + false + ",'4 + 5 = ','9','8','7','6');";
             addQuestionToDB(stmt, value);
-             value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+            value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
                     "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
                     "VALUES ('K','Easy','Addition'," + false + ",'3 + 4 = ','7','3','8','9');";
             addQuestionToDB(stmt, value);
 
-             value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+            value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
                     "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
                     "VALUES ('K','Easy','Addition'," + false + ",'6 + 2 = ','8','3','6','9');";
             addQuestionToDB(stmt, value);
 
-             value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+            value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
                     "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
                     "VALUES ('K','Easy','Addition'," + false + ",'8 + 3 = ','11','12','5','9');";
             addQuestionToDB(stmt, value);
 
-             value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+            value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
                     "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
                     "VALUES ('K','Easy','Addition'," + false + ",'6 + 3 = ','9','3','8','6');";
             addQuestionToDB(stmt, value);
 
-             value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
+            value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
                     "has_image,question,answer,wrong_1,wrong_2,wrong_3)" +
                     "VALUES ('K','Easy','Addition'," + false + ",'3 + 3 = ','6','3','5','9');";
-
 
 
             value = "INSERT INTO questions (grade_level,difficulty_level,category_type," +
@@ -151,13 +150,22 @@ public class sqlMathHelperCreateDBScript {
             int id = rs.getInt("user_id");
             String username = rs.getString("username");
             String password = rs.getString("password");
+            String firstName = rs.getString("first_name");
+            String lastName = rs.getString("last_name");
+            String securityQuestion = rs.getString("security_question");
+            String securityAnswer = rs.getString("security_answer");
             String role = rs.getString("role");
+
 
             // Display values
             System.out.println("ID: " + id);
             System.out.println(", UserName: " + username);
             System.out.println(", Password: " + password);
-            System.out.println(",Role: " + role);
+            System.out.println(", FirstName: " + firstName);
+            System.out.println(", LastName: " + lastName);
+            System.out.println(", SecurityQuestion: " + securityQuestion);
+            System.out.println(", SecurityAnswer: " + securityAnswer);
+            System.out.println(", Role: " + role);
             System.out.println("     ");
         }
 
@@ -182,11 +190,13 @@ public class sqlMathHelperCreateDBScript {
             int id = rs.getInt("grade_id");
             int userid = rs.getInt("user_id");
             int grade = rs.getInt("grade");
+            boolean reward = rs.getBoolean("received_reward");
 
             // Display values
             System.out.println("ID: " + id);
             System.out.println(", userid: " + userid);
             System.out.println(", grade: " + grade);
+            System.out.println(", rewards: " + reward);
         }
 
         // Close result set.
@@ -303,16 +313,20 @@ public class sqlMathHelperCreateDBScript {
             // Creates a users table
             sql = "CREATE TABLE users" +
                     "(user_id INT UNSIGNED NOT NULL AUTO_INCREMENT, " +
-                    "username CHAR(30) NOT NULL, " +
-                    "password CHAR(40) NOT NULL, " +
-                    "role CHAR(40) NOT NULL, " +
+                    "username TEXT NOT NULL, " +
+                    "password TEXT NOT NULL, " +
+                    "first_name TEXT NOT NULL, " +
+                    "last_name TEXT NOT NULL, " +
+                    "security_question TEXT NOT NULL, " +
+                    "security_answer TEXT NOT NULL, " +
+                    "role TEXT NOT NULL, " +
                     "PRIMARY KEY(user_id));";
             stmt.execute(sql);
-            String[] users = {"testUser1", "testUser2", "creid", "billybob","inielsen","cousensb","jsharma0223"};
-            String[] role = {"A", "S", "A", "S","A","A","A"};
+            String[] users = {"testUser1", "testUser2", "creid", "billybob", "inielsen", "cousensb", "jsharma0223"};
+            String[] role = {"S_creid", "S_creid", "A", "S_jsharma0223", "A", "A", "A"};
             for (int i = 0; i < users.length; i++) {
-                sql = "INSERT INTO users (username,password,role)" +
-                        "VALUES ('" + users[i] + "', 'password','" + role[i] + "');";
+                sql = "INSERT INTO users (username,password,first_name,last_name,security_question,security_answer,role)" +
+                        "VALUES ('" + users[i] + "','password','FakeFirstName','FakeLastName','What is the name of your school?','FSU','" + role[i] + "');";
                 stmt.executeUpdate(sql);
             }
         } catch (SQLException se) {
@@ -354,7 +368,6 @@ public class sqlMathHelperCreateDBScript {
             // Table already exists, continue.
         }
     }
-
 
 
     private static void addTutorialToDB(Statement stmt, String value) {
@@ -425,15 +438,16 @@ public class sqlMathHelperCreateDBScript {
         stmt.execute(sql);
 
         try {
-            // Creates a testproblems table
+            // Creates a grades table
             sql = "CREATE TABLE grades" +
                     "(grade_id INT UNSIGNED NOT NULL AUTO_INCREMENT, " +
                     "user_id INT UNSIGNED NOT NULL, " +
                     "grade INT UNSIGNED NOT NULL, " +
+                    "received_reward BOOLEAN NOT NULL, " +
                     "PRIMARY KEY(grade_id));";
             stmt.execute(sql);
-            sql = "INSERT INTO grades(user_id,grade)" +
-                    "VALUES (1,97);";
+            sql = "INSERT INTO grades(user_id,grade,received_reward)" +
+                    "VALUES (1,97," + true + ");";
             stmt.executeUpdate(sql);
         } catch (SQLException se) {
             System.out.println("Found!      Using existing grades table.");

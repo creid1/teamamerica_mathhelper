@@ -311,6 +311,11 @@ public class Test extends JFrame {
                     UserInteractionsConfigurator.get_interactive_grade().getGrade_id() + ":" +
                     UserInteractionsConfigurator.get_interactive_grade().getUser_id() + ":" +
                     UserInteractionsConfigurator.get_interactive_grade().getGrade() + "%");
+
+            JFrame jframe = new  JFrame();
+            jframe.add(new ImageLabel(true,ConfigDirectory.getImageFileFromDirectory("panels_reward.jpg"),275,283));
+            this.dispose();
+            jframe.setVisible(true);
         } else {
             question = QuestionsPageConfigurator.getQuestion();
             lblQuestionCounter.setText("Question: " + (testQuestionCounter + 1) + "/" + (int) questionsMax);
@@ -410,7 +415,7 @@ public class Test extends JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new GlobalTestMain().setVisible(true);
+                new Test().setVisible(true);
             }
         });
     }

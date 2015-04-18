@@ -139,8 +139,8 @@ public class Difficulty extends javax.swing.JFrame {
            UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.MEDIUM);
            System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
 
-           new FirstGradeAddTest().setVisible(true);
-          this.setVisible(false);
+           new Test().setVisible(true);
+           this.setVisible(false);
        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -149,7 +149,7 @@ public class Difficulty extends javax.swing.JFrame {
        if(source == btnHard){
            UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.HARD);
            System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
-           new FirstGradeTestMain().setVisible(true);
+           new CategoriesMain().setVisible(true);
           this.setVisible(false);
        }
     }//GEN-LAST:event_jButton8ActionPerformed
@@ -157,7 +157,7 @@ public class Difficulty extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        Object source = evt.getSource();
        if(source == btnTutorials){
-          new AllTutorials().setVisible(true);
+          new CategoriesMain().setVisible(true);
           this.setVisible(false);
        }
     }//GEN-LAST:event_jButton1ActionPerformed
