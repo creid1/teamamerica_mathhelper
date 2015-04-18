@@ -50,6 +50,7 @@ public class QuestionsPageConfigurator {
                     UserInteractionsConfigurator.get_interactive_grade_level_enum());
         }
         Collections.shuffle(questions);
+        System.out.println("MAX QUESTIONS: " + maxQuestions);
         maxQuestions = questions.size();
     }
 
@@ -58,15 +59,11 @@ public class QuestionsPageConfigurator {
         if (maxQuestions == 0) {
             return null;
         }
-
-        if(counter < maxQuestions){
-            return questions.get(counter++);
-        }
-        else {
+        if (counter >= maxQuestions) {
             //reset the counter to start over again
             counter = 0;
-            return questions.get(counter++);
         }
+        return questions.get(counter++);
     }
 
     public static double getNumberOfTestQuestions(){
