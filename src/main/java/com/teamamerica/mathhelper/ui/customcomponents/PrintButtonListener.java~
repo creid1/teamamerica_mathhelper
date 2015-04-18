@@ -1,0 +1,30 @@
+//  code that needs to be implemented in the 
+
+public class PrintButtonListener implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == saveFile) {
+                BufferedWriter bfWrite = null;
+                try {
+                    bfWrite = new BufferedWriter(new FileWriter("name.txt"));
+                    bfWrite.write(theValue);
+                } catch (IOException x) {
+                } finally {
+                    try {
+                        if (bfWrite != null) {
+                            bfWrite.close();
+                        }
+                    } catch (IOException x) {
+                    }
+                }
+            }
+            if (e.getSource() == printFile) {
+                try {
+                    System.out.println("trying to print: " + textArea);
+                    textArea.print();
+                } catch (PrinterException x) {
+                    // Print job did not complete.
+                }
+            }
+        }
+    }
