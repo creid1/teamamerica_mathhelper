@@ -78,7 +78,7 @@ public class Test extends JFrame {
 
 
         jPanel1 = new JPanel();
-        btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 101);
+        btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 113);
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
         lblNext = new JLabel();
         btnA = new ImageButton(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()), 150, 150);
@@ -103,7 +103,7 @@ public class Test extends JFrame {
             }
         });
         jPanel1.add(btnMain);
-        btnMain.setBounds(10, 10, 150, 101);
+        btnMain.setBounds(10, 25, 150, 113);
 
         btnHelp.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -118,7 +118,7 @@ public class Test extends JFrame {
         lblNext.setFont(new Font("Comic Sans MS", 0, 24)); // NOI18N
         lblNext.setText("      Next");
         jPanel1.add(lblNext);
-        lblNext.setBounds(840, 100, 150, 34);
+        lblNext.setBounds(840, 130, 150, 34);
         lblNext.setVisible(false);
 
 
@@ -223,23 +223,23 @@ public class Test extends JFrame {
         btnD.setBounds(700, 350, 150, 150);
 
 
-        lblAnswer.setFont(new Font("Comic Sans MS", 0, 100)); // NOI18N
+        lblAnswer.setFont(new Font("Comic Sans MS", 0, 75)); // NOI18N
         jPanel1.add(lblAnswer);
         lblAnswer.setVisible(false);
 
         jPanel1.add(lblCorrect);
 
 
-        lblQuestion.setFont(new Font("Comic Sans MS", 0, 58)); // NOI18N
+        lblQuestion.setFont(new Font("Comic Sans MS", 0, 75)); // NOI18N
         jPanel1.add(lblQuestion);
 
         lblQuestionCounter.setFont(new Font("Comic Sans MS", 0, 58)); // NOI18N
         lblQuestionCounter.setText("Question: " + (testQuestionCounter + 1) + "/" + (int) questionsMax);
         jPanel1.add(lblQuestionCounter);
-        lblQuestionCounter.setBounds(300, 10, 1000, 60);
+        lblQuestionCounter.setBounds(300, 25, 1000, 60);
 
-        lblQuestion.setBounds(100, 150, 1000, 150);
-        lblAnswer.setBounds(425, 150, 150, 150);
+        lblQuestion.setBounds(100, 170, 1000, 150);
+        lblAnswer.setBounds(425, 170, 150, 150);
         lblCorrect.setBounds(700, 150, 150, 150);
 
         lblCorrect.setVisible(false);
@@ -251,13 +251,13 @@ public class Test extends JFrame {
             }
         });
         jPanel1.add(btnNext);
-        btnNext.setBounds(820, 10, 150, 101);
+        btnNext.setBounds(820, 30, 150, 101);
         btnNext.setVisible(false);
 
         lblMainMenu.setFont(new Font("Comic Sans MS", 0, 24)); // NOI18N
         lblMainMenu.setText("  Main Menu");
         jPanel1.add(lblMainMenu);
-        lblMainMenu.setBounds(10, 115, 150, 30);
+        lblMainMenu.setBounds(10, 135, 150, 34);
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

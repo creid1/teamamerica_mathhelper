@@ -1,4 +1,4 @@
-package com.teamamerica.mathhelper.db;
+package com.teamamerica.mathhelper.dbscripts;
 
 import java.sql.*;
 import java.sql.SQLException;
@@ -97,21 +97,6 @@ public class sqlMathHelperCreateDBScript {
 
             createGradesTable(stmt);
             createTutorialsTable(stmt);
-
-            value = "INSERT INTO tutorials(grade_level,category_type,tutorial)" +
-                    "VALUES ('K','Addition','https://www.youtube.com/v/AQ7THUKx6Es?fs=1');";
-
-            addTutorialToDB(stmt,value);
-
-            value = "INSERT INTO tutorials(grade_level,category_type,tutorial)" +
-                    "VALUES ('K','Addition','https://www.youtube.com/v/b-Cr0EWwaTk?fs=1');";
-
-            addTutorialToDB(stmt,value);
-
-            value = "INSERT INTO tutorials(grade_level,category_type,tutorial)" +
-                    "VALUES ('K','Addition','https://www.youtube.com/v/AQ7THUKx6Es?fs=1');";
-
-            addTutorialToDB(stmt,value);
 
             // Use the groupproject database
             sql = "USE mathhelper";
@@ -424,9 +409,7 @@ public class sqlMathHelperCreateDBScript {
                     "tutorial TEXT NOT NULL, " +
                     "PRIMARY KEY(tutorial_id));";
             stmt.execute(sql);
-            sql = "INSERT INTO tutorials(grade_level,category_type,tutorial)" +
-                    "VALUES ('K','Addition','https://www.youtube.com/v/LzeXlWAOTHI?fs=1');";
-            stmt.executeUpdate(sql);
+
         } catch (SQLException se) {
             System.out.println("Found!      Using existing tutorials table.");
             System.out.println(se.getMessage());

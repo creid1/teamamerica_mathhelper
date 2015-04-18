@@ -15,7 +15,7 @@ public class PrintButtonListener extends JPanel {
     private JTextArea textArea;
     private String theValue;
 
-    public PrintWindow(String nf) {
+    public PrintButtonListener(String nf) {
         super();
         buildPanel();
         theValue = nf;
@@ -23,7 +23,7 @@ public class PrintButtonListener extends JPanel {
 
     public static void main(String[] args) {
         JFrame test = new JFrame();
-        test.add(new PrintWindow("testing"));
+        test.add(new PrintButtonListener("testing"));
         test.setVisible(true);
         test.setSize(400, 400);
         test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -39,7 +39,7 @@ public class PrintButtonListener extends JPanel {
         add(saveFile);
         printFile.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-              if (e.getSource() == printFile) {
+              if (evt.getSource() == printFile) {
                 try {
                     System.out.println("trying to print: " + textArea);
                     textArea.print();

@@ -27,6 +27,7 @@ public class YouTubeFrame extends JFrame {
     private String url;
 
     public YouTubeFrame(String url) {
+        setBackground(Color.WHITE);
 
         this.url = url;
         NativeInterface.open();
@@ -37,11 +38,14 @@ public class YouTubeFrame extends JFrame {
 
 
     public void createFrame() {
-        setBackground(Color.WHITE);
-        frame = new JFrame();
+
+        frame = new JFrame("Math Helper Tutorials");
+
         frame.setBackground(Color.WHITE);
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.setLocationRelativeTo(null);
+
+
 
 
         getJFlashPlayer(url);
@@ -99,17 +103,17 @@ public class YouTubeFrame extends JFrame {
         pnButtons.setBackground(Color.WHITE);
         pnButtons.setLayout(new GridLayout(1, 6));
 
-        final ImageButton btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 101);
+        final ImageButton btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 125);
         btnMain.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 btnMainActionPerformed(evt);
             }
         });
-        btnMain.setBounds(10, 10, 150, 101);
+        btnMain.setBounds(10, 10, 150, 125);
 
 
-        ImageButton btnTutorialMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_videoTutorial.jpg"), 150, 101);
-        btnTutorialMain.setBounds(10, 100, 150, 101);
+        ImageButton btnTutorialMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_videoTutorial.jpg"), 150, 113);
+        btnTutorialMain.setBounds(10, 300, 150, 113);
 
         btnTutorialMain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,7 +127,7 @@ public class YouTubeFrame extends JFrame {
                 btnHelpActionPerformed(evt);
             }
         });
-        btnHelp.setBounds(10, 200, 150, 101);
+        btnHelp.setBounds(10, 100, 150, 101);
 
         final ImageButton btnNext = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_arrow.jpg"), 150, 101);
         btnNext.setBounds(820, 10, 150, 101);
@@ -142,13 +146,6 @@ public class YouTubeFrame extends JFrame {
                 btnTestsActionPerformed(evt);
             }
         });
-
-        JLabel lblTutorial = new JLabel("Tutorials");
-        lblTutorial.setFont(new java.awt.Font("Comic Sans MS", 0, 32)); // NOI18N
-        lblTutorial.setBounds(200, 10, 150, 101);
-
-        lblTutorial.setFont(new Font("Comic Sans MS", 0, 58)); // NOI18N
-        lblTutorial.setBounds(10, 300, 150, 101);
 
 
         pnButtons.add(btnMain);

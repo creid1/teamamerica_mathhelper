@@ -1,0 +1,135 @@
+package com.teamamerica.mathhelper.dbscripts;
+
+import com.teamamerica.mathhelper.db.MathHelperDBClient;
+import com.teamamerica.mathhelper.environment.ConfigDirectory;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+/**
+ * Created by Christina on 4/17/2015.
+ */
+public class sqlMathHelperUpload extends sqlMathHelperDBClean{
+
+
+    public static void main(String args[]) {
+
+        sqlMathHelperUpload.uploadTutorials();
+        System.out.println("TUTORIAL TABLE LENGTH: " + new MathHelperDBClient().get_allTutorialList().size());
+
+
+
+    }
+
+
+    public static void uploadTutorials() {
+
+        ArrayList<String> preparedStatements = getPreparedStatements("Tutorials");
+        openDBConnection();
+
+        for(String sql : preparedStatements){
+            try {
+                statement.executeUpdate(sql);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
+
+
+    public static void uploadQuestions() {
+
+        ArrayList<String> preparedStatements = getPreparedStatements("Questions");
+        openDBConnection();
+
+        for(String sql : preparedStatements){
+            try {
+                statement.executeUpdate(sql);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
+
+
+
+    public static ArrayList<String> getPreparedStatements(String type) {
+        ArrayList<String> tutorialsToUpload;
+        ArrayList<String> questionsToUpload;
+
+        if (type.equalsIgnoreCase("tutorials")) {
+            tutorialsToUpload = new ArrayList<>();
+
+            BufferedReader br = null;
+
+            try {
+
+                String sCurrentLine;
+
+                try {
+                    br = new BufferedReader(new FileReader((ConfigDirectory.getFileStringForFullPath("db/TutorialsDB.txt"))));
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+                while ((sCurrentLine = br.readLine()) != null) {
+                    tutorialsToUpload.add(sCurrentLine);
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (br != null) br.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+            return tutorialsToUpload;
+        }
+
+        if (type.equalsIgnoreCase("questions")) {
+
+            questionsToUpload = new ArrayList<>();
+            BufferedReader br = null;
+
+            try {
+
+                String sCurrentLine;
+
+                try {
+                    br = new BufferedReader(new FileReader((ConfigDirectory.getFileStringForFullPath("db/QuestionsDB.txt"))));
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+                while ((sCurrentLine = br.readLine()) != null) {
+                    questionsToUpload.add(sCurrentLine);
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (br != null) br.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+            return questionsToUpload;
+        }
+
+        return  null;
+    }
+
+}

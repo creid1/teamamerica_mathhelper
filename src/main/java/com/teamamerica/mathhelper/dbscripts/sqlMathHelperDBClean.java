@@ -1,4 +1,4 @@
-package com.teamamerica.mathhelper.db;
+package com.teamamerica.mathhelper.dbscripts;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,42 +8,32 @@ import java.sql.Statement;
 /**
  * Created by Christina on 4/16/2015.
  */
-public class MathHelperDBClean {
+public class sqlMathHelperDBClean {
 
-    private final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    private final String DB_URL = "jdbc:mysql://csc362dbinstance.c9giv8vwad8d.us-east-1.rds.amazonaws.com:3306";    // Use MySQL workbench home window to figure out what comes after localhost
+    protected static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    protected static final String DB_URL = "jdbc:mysql://csc362dbinstance.c9giv8vwad8d.us-east-1.rds.amazonaws.com:3306";    // Use MySQL workbench home window to figure out what comes after localhost
 
     //  Database credentials
-    private final String USER = "mathhelper";    //default
-    private final String PASS = "teamamerica";        //no password by default
+    protected static final String USER = "mathhelper";    //default
+    protected static final String PASS = "teamamerica";        //no password by default
 
 
-    private Connection conn = null;
-    private Statement statement = null;
-    private String sql = null;
+    protected static Connection conn = null;
+    protected static Statement statement = null;
+    protected static String sql = null;
 
     public static void main(String[] args){
-        new MathHelperDBClean().dbDrop();
+        sqlMathHelperDBClean.dbDrop();
     }
 
-    public void dbDrop() {
+    public static void dbDrop() {
         try {
             System.out.println("Connecting to database...");
             conn = connectToDatabase();
-
-            // A Statement object is used to execute SQL statements. It has 3 methods:
-            // Statement.execute(String sql), which simply executes the SQL statement.
-            // Statement.executeUpdate(String sql), which executes a SQL statement that changes the database (i.e. UPDATE/INSERT).
-            // Statement.executeQuery(String sql), which executes a SQL statement that returns a Result Set (i.e. SELECT).
-            System.out.println("Creating statement...");
+         System.out.println("Creating statement...");
             statement = conn.createStatement();
 
-
-            System.out.println("Checking for database...     ");
-            initializeDatabase(statement);
-            System.out.println("Not found.  Created new database.");
         } catch (SQLException se) {
-            System.out.println("Found!      Using existing database.");
             // Database already exists, continue.
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -62,6 +52,7 @@ public class MathHelperDBClean {
         }
         finally {
             try {
+                statement.close();
                 conn.close();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -72,20 +63,9 @@ public class MathHelperDBClean {
     }
 
 
-    /**
-     * Initialize the database. Only needs to be run once, when your database is empty.
-     */
-    private static void initializeDatabase(Statement stmt) throws SQLException {
-        // Creates a new database
-        String sql = "CREATE DATABASE mathhelper";
-        stmt.execute(sql);    // executeUpdate method is used for SQL statements which change the database without returning information.
 
-        // Use the mathhelper database
-        sql = "USE mathhelper";
-        stmt.execute(sql);
-    }
 
-    private Connection connectToDatabase() throws SQLException, ClassNotFoundException {
+    protected static Connection connectToDatabase() throws SQLException, ClassNotFoundException {
         //STEP 2: Register JDBC driver
         Class.forName(JDBC_DRIVER);
 
@@ -96,7 +76,7 @@ public class MathHelperDBClean {
     /**
      * Establishes and returns a Connection object for the database.
      */
-    private void openDBConnection() {
+    protected static void openDBConnection() {
         //connect to the database
         dbConnect();
         //create statement
@@ -105,7 +85,7 @@ public class MathHelperDBClean {
         userMathHelperDB();
     }
 
-    private void closeDBConnection() {
+    protected static void closeDBConnection() {
         try {
             //Logger.get//Logger(loggerName).log(Level.INFO,"Closing Connection to Math Helper DB.....");
             conn.close();
@@ -125,7 +105,7 @@ public class MathHelperDBClean {
     }
 
 
-    private void dbConnect() {
+    protected static void dbConnect() {
         //Logger.get//Logger(loggerName).log(Level.INFO, "Connecting to database...");
         try {
             Class.forName(JDBC_DRIVER);
@@ -142,7 +122,7 @@ public class MathHelperDBClean {
         }
     }
 
-    private void createStatement() {
+    protected static void createStatement() {
         try {
             //create a new statement
             statement = conn.createStatement();
@@ -154,7 +134,7 @@ public class MathHelperDBClean {
         }
     }
 
-    private void userMathHelperDB() {
+    protected static void userMathHelperDB() {
         // Use the mathhelper database
         //Logger.get//Logger(loggerName).log(Level.INFO,"Connecting to Math Helper DB.....");
         String sql = "USE mathhelper";

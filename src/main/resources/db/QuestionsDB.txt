@@ -1,0 +1,1 @@
+INSERT INTO questions (grade_level,difficulty_level,category_type,has_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Easy','Addition'," + false + ",'2 + 3 = ','5','4','7','6');"
