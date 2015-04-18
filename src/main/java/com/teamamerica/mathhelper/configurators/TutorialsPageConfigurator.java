@@ -4,6 +4,7 @@ import com.teamamerica.mathhelper.db.MathHelperDBClient;
 import com.teamamerica.mathhelper.models.Tutorial;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by Christina on 4/11/2015.
@@ -20,6 +21,7 @@ public class TutorialsPageConfigurator {
         tutorials = mathHelperDBClient.searchTutorials_grLevel_catType(
                 UserInteractionsConfigurator.get_interactive_grade_level_enum(),
                 UserInteractionsConfigurator.get_category_type_enum());
+        Collections.shuffle(tutorials);
         maxQuestions = tutorials.size();
     }
 

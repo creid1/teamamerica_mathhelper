@@ -5,6 +5,7 @@ import com.teamamerica.mathhelper.db.MathHelperDBClient;
 import com.teamamerica.mathhelper.models.Question;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by Christina on 4/11/2015.
@@ -25,6 +26,7 @@ public class QuestionsPageConfigurator {
                 UserInteractionsConfigurator.get_interactive_grade_level_enum(),
                 UserInteractionsConfigurator.get_difficulty_level_enum(),
                 UserInteractionsConfigurator.get_category_type_enum());
+        Collections.shuffle(questions);
         maxQuestions = questions.size();
     }
 
