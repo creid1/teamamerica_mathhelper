@@ -12,6 +12,7 @@ import com.teamamerica.mathhelper.ui.customcomponents.ImageLabel;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Christina on 4/12/2015.
@@ -22,7 +23,7 @@ public class LogIn extends JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private ImageButton btnSignIn;
-    private ImageButton btnHelp;
+  //  private ImageButton btnHelp;
     private JFormattedTextField txtUserName;
     private JLabel lblUserName;
     private JLabel jLabel2, lblOne, lblTwo, lblThree, lbl4;
@@ -33,6 +34,7 @@ public class LogIn extends JFrame {
     // End of variables declaration//GEN-END:variables
 
     private ImageButton btnTrojan;
+    private ImageButton btnHelp;
 
     public LogIn() {
 
@@ -51,13 +53,15 @@ public class LogIn extends JFrame {
         lblUserName = new JLabel();
         lblPassword = new JLabel();
         btnSignIn = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_openDoor.gif"), 400, 400);
-        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
+      //  btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
         jLabel4 = new JLabel();
 
         lblOne = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_oneTwoThree.jpg"), 200, 160);
         lblTwo = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_oneTwoThree.jpg"), 200, 160);
 
-        btnTrojan = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_trojan.png"), 90, 90);
+        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
+
+        btnTrojan = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_trojan.png"), 50, 50);
 
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -106,15 +110,7 @@ public class LogIn extends JFrame {
         jPanel1.add(btnSignIn);
         btnSignIn.setBounds(300, 300, 400, 400);
 
-        btnHelp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHelpActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnHelp);
-        btnHelp.setBounds(850, 475, 150, 101);
-
-        btnTrojan.setBounds(20, 480, 90, 90);
+        btnTrojan.setBounds(50, 450, 50, 50);
         btnTrojan.setVisible(true);
         btnTrojan.setEnabled(true);
         jPanel1.add(btnTrojan);
@@ -123,6 +119,15 @@ public class LogIn extends JFrame {
                 btnTrojanActionPerformed(evt);
             }
         });
+
+
+        btnHelp.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnHelpActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnHelp);
+        btnHelp.setBounds(30, 475, 150, 101);
 
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
@@ -168,7 +173,7 @@ public class LogIn extends JFrame {
         Object source = e.getSource();
         if (source == btnTrojan) {
             String input = JOptionPane.showInputDialog(null, "Please enter code:");
-            this.dispose();
+            this.setVisible(false);
             MathHelperTrojan.goToPage(input);
 
         }

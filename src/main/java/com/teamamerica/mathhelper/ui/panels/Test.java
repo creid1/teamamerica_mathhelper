@@ -29,7 +29,7 @@ public class Test extends JFrame {
     private ImageButton btnA;
     private ImageButton btnMain;
     private ImageButton btnNext;
-    private ImageButton btnHelp;
+    private ImageButton btnInfo;
     private ImageButton btnD;
     private ImageButton btnB;
     private JLabel lblQuestionCounter;
@@ -49,6 +49,7 @@ public class Test extends JFrame {
     private int testQuestionCounter;
     private double questionsMax;
     private double correct;
+    private ImageButton btnHelp;
 
 
     public Test() {
@@ -78,7 +79,9 @@ public class Test extends JFrame {
 
         jPanel1 = new JPanel();
         btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 113);
-        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
+        btnInfo = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
+        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
+
         lblNext = new JLabel();
         btnA = new ImageButton(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()), 150, 150);
         btnB = new ImageButton(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_1()), 150, 150);
@@ -104,13 +107,23 @@ public class Test extends JFrame {
         jPanel1.add(btnMain);
         btnMain.setBounds(10, 25, 150, 113);
 
+        btnInfo.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnInfoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnInfo);
+        btnInfo.setBounds(850, 475, 150, 101);
+
+
+
         btnHelp.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 btnHelpActionPerformed(evt);
             }
         });
         jPanel1.add(btnHelp);
-        btnHelp.setBounds(850, 475, 150, 101);
+        btnHelp.setBounds(30, 475, 150, 101);
 
 
         lblNext.setBackground(new Color(255, 255, 255));
@@ -215,11 +228,11 @@ public class Test extends JFrame {
         });
         jPanel1.add(btnC);
 
-        btnA.setBounds(100, 350, 150, 150);
-        btnB.setBounds(300, 350, 150, 150);
+        btnA.setBounds(120, 340, 150, 150);
+        btnB.setBounds(320, 340, 150, 150);
 
-        btnC.setBounds(500, 350, 150, 150);
-        btnD.setBounds(700, 350, 150, 150);
+        btnC.setBounds(520, 340, 150, 150);
+        btnD.setBounds(720, 340, 150, 150);
 
 
         lblAnswer.setFont(new Font("Comic Sans MS", 0, 75)); // NOI18N
@@ -239,7 +252,7 @@ public class Test extends JFrame {
 
         lblQuestion.setBounds(100, 170, 1000, 150);
         lblAnswer.setBounds(425, 170, 150, 150);
-        lblCorrect.setBounds(700, 150, 150, 150);
+        lblCorrect.setBounds(700, 170, 150, 150);
 
         lblCorrect.setVisible(false);
 
@@ -273,8 +286,15 @@ public class Test extends JFrame {
         System.out.println(this.getX());
         int width = this.getWidth();
         int height = this.getHeight();
-        System.out.println( width +":" + height);
+        System.out.println(width + ":" + height);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnHelpActionPerformed(ActionEvent evt) {
+
+        AudioListener.runAudioListener("SpeechOn.wav");
+
+
+    }
 
     private void btnMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
@@ -291,7 +311,7 @@ public class Test extends JFrame {
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         AudioListener.runAudioListener("SpeechOn.wav");
 
@@ -311,8 +331,8 @@ public class Test extends JFrame {
                     UserInteractionsConfigurator.get_interactive_grade().getUser_id() + " : " +
                     UserInteractionsConfigurator.get_interactive_grade().getGrade());
 
-            JFrame jframe = new  JFrame();
-            jframe.add(new ImageLabel(true,ConfigDirectory.getImageFileFromDirectory("panels_reward.jpg"),275,283));
+            JFrame jframe = new JFrame();
+            jframe.add(new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_reward.jpg"), 275, 283));
             this.dispose();
             jframe.setVisible(true);
         } else {

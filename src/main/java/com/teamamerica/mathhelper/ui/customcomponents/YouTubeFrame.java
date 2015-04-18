@@ -116,7 +116,7 @@ public class YouTubeFrame extends JFrame {
 
 
         ImageButton btnTutorialMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_videoTutorial.jpg"), 150, 113);
-        btnTutorialMain.setBounds(10, 300, 150, 113);
+        btnTutorialMain.setBounds(10, 10, 150, 113);
 
         btnTutorialMain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

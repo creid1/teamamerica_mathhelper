@@ -1,6 +1,7 @@
 package com.teamamerica.mathhelper.ui.panels;
 
 import com.teamamerica.mathhelper.configurators.QuestionsPageConfigurator;
+import com.teamamerica.mathhelper.configurators.TutorialsPageConfigurator;
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 import com.teamamerica.mathhelper.controllers.CategoryType;
 import com.teamamerica.mathhelper.controllers.DifficultyLevel;
@@ -10,6 +11,7 @@ import com.teamamerica.mathhelper.models.Question;
 import com.teamamerica.mathhelper.ui.customcomponents.AudioListener;
 import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
 import com.teamamerica.mathhelper.ui.customcomponents.ImageLabel;
+import com.teamamerica.mathhelper.ui.customcomponents.YouTubeFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,6 +30,7 @@ public class PracticeTest extends JFrame {
     private ImageButton btnA;
     private ImageButton btnMain;
     private ImageButton btnNext;
+    private ImageButton btnInfo;
     private ImageButton btnHelp;
     private ImageButton btnD;
     private ImageButton btnB;
@@ -38,13 +41,16 @@ public class PracticeTest extends JFrame {
     private ImageLabel lblQuestion;
     private JLabel lblMainMenu;
     private JPanel jPanel1;
+
+
+    ImageButton btnWatchTutorial;
+
     // End of variables declaration//GEN-END:variables
 
     //private variable for data creation
     private Question question;
     private ImageButton correctAnswer;
     private ArrayList<ImageButton> listOfButtons;
-
 
 
     public PracticeTest() {
@@ -71,7 +77,9 @@ public class PracticeTest extends JFrame {
 
         jPanel1 = new JPanel();
         btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 113);
-        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
+        btnInfo = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
+        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
+
         lblNext = new JLabel();
         btnA = new ImageButton(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()), 150, 150);
         btnB = new ImageButton(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_1()), 150, 150);
@@ -83,6 +91,8 @@ public class PracticeTest extends JFrame {
         lblCorrect = new ImageLabel(150, 150);
         lblQuestion = new ImageLabel(question.getHas_image(), checkHasFileToGenerateFullPath(question.getQuestion()), 1000, 150);
         btnNext = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_arrow.jpg"), 150, 101);
+
+        btnWatchTutorial = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_videoTutorial.jpg"), 150, 113);
         lblMainMenu = new JLabel();
 
 
@@ -97,14 +107,31 @@ public class PracticeTest extends JFrame {
         jPanel1.add(btnMain);
         btnMain.setBounds(10, 25, 150, 113);
 
+        btnInfo.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnInfoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnInfo);
+        btnInfo.setBounds(850, 475, 150, 101);
+
+
+
         btnHelp.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 btnHelpActionPerformed(evt);
             }
         });
         jPanel1.add(btnHelp);
-        btnHelp.setBounds(850, 475, 150, 101);
+        btnHelp.setBounds(30, 475, 150, 101);
 
+        btnWatchTutorial.setBounds(575, 10, 150, 113);
+        jPanel1.add(btnWatchTutorial);
+        btnWatchTutorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnWatchTutorialActionPerformed(evt);
+            }
+        });
 
         lblNext.setBackground(new Color(255, 255, 255));
         lblNext.setFont(new Font("Comic Sans MS", 0, 24)); // NOI18N
@@ -120,9 +147,9 @@ public class PracticeTest extends JFrame {
                 Object source = e.getSource();
                 if (source == btnA) {
                     if (btnA == correctAnswer) {
-                         lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
+                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
                     } else {
-                         lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
+                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
 
                     }
                     lblCorrect.setVisible(true);
@@ -139,7 +166,7 @@ public class PracticeTest extends JFrame {
                 Object source = e.getSource();
                 if (source == btnD) {
                     if (btnD == correctAnswer) {
-                         lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
+                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
                     } else {
                         lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
 
@@ -186,11 +213,11 @@ public class PracticeTest extends JFrame {
         });
         jPanel1.add(btnC);
 
-        btnA.setBounds(100, 350, 150, 150);
-        btnB.setBounds(300, 350, 150, 150);
+        btnA.setBounds(120, 340, 150, 150);
+        btnB.setBounds(320, 340, 150, 150);
 
-        btnC.setBounds(500, 350, 150, 150);
-        btnD.setBounds(700, 350, 150, 150);
+        btnC.setBounds(520, 340, 150, 150);
+        btnD.setBounds(720, 340, 150, 150);
 
 
         lblAnswer.setFont(new Font("Comic Sans MS", 0, 75)); // NOI18N
@@ -206,11 +233,11 @@ public class PracticeTest extends JFrame {
         lblQuestionCounter.setFont(new Font("Comic Sans MS", 0, 58)); // NOI18N
         lblQuestionCounter.setText("Practice Test");
         jPanel1.add(lblQuestionCounter);
-        lblQuestionCounter.setBounds(300, 25, 1000, 60);
+        lblQuestionCounter.setBounds(200, 25, 1000, 60);
 
         lblQuestion.setBounds(100, 170, 1000, 150);
         lblAnswer.setBounds(425, 170, 150, 150);
-        lblCorrect.setBounds(700, 150, 150, 150);
+        lblCorrect.setBounds(700, 170, 150, 150);
 
         lblCorrect.setVisible(false);
 
@@ -247,6 +274,20 @@ public class PracticeTest extends JFrame {
         System.out.println(width + ":" + height);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnHelpActionPerformed(ActionEvent evt) {
+
+        AudioListener.runAudioListener("SpeechOn.wav");
+
+    }
+
+    private void btnWatchTutorialActionPerformed(ActionEvent evt) {
+        if (evt.getSource().equals(btnWatchTutorial)) {
+            TutorialsPageConfigurator.loadTutorialsList();
+            this.setVisible(false);
+            new YouTubeFrame(TutorialsPageConfigurator.getTutorial().getTutorial()).setVisible(true);
+        }
+    }
+
     private void btnMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
 
@@ -262,7 +303,7 @@ public class PracticeTest extends JFrame {
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         AudioListener.runAudioListener("SpeechOn.wav");
 
