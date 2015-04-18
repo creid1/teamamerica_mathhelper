@@ -1,7 +1,11 @@
 package com.teamamerica.mathhelper.ui.panels;
 
-import com.teamamerica.mathhelper.controllers.CategoryType;
+import com.teamamerica.mathhelper.configurators.QuestionsPageConfigurator;
+import com.teamamerica.mathhelper.configurators.TutorialsPageConfigurator;
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
+import com.teamamerica.mathhelper.controllers.CategoryType;
+import com.teamamerica.mathhelper.controllers.MainMenuSelection;
+import com.teamamerica.mathhelper.ui.customcomponents.YouTubeFrame;
 
 public class CategoriesMain extends javax.swing.JFrame {
 
@@ -15,7 +19,7 @@ public class CategoriesMain extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btnMoney = new javax.swing.JButton();
         btnAddition = new javax.swing.JButton();
-        btnSubstraction = new javax.swing.JButton();
+        btnSubtraction = new javax.swing.JButton();
         btnTime = new javax.swing.JButton();
         btnMeasure = new javax.swing.JButton();
         btnHelp = new javax.swing.JButton();
@@ -54,17 +58,17 @@ public class CategoriesMain extends javax.swing.JFrame {
         jPanel1.add(btnAddition);
         btnAddition.setBounds(31, 110, 112, 86);
 
-        btnSubstraction.setBackground(new java.awt.Color(102, 255, 102));
-        btnSubstraction.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        btnSubstraction.setText("Subtraction ");
-        btnSubstraction.setPreferredSize(new java.awt.Dimension(107, 35));
-        btnSubstraction.addActionListener(new java.awt.event.ActionListener() {
+        btnSubtraction.setBackground(new java.awt.Color(102, 255, 102));
+        btnSubtraction.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        btnSubtraction.setText("Subtraction ");
+        btnSubtraction.setPreferredSize(new java.awt.Dimension(107, 35));
+        btnSubtraction.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubtraction(evt);
             }
         });
-        jPanel1.add(btnSubstraction);
-        btnSubstraction.setBounds(31, 216, 112, 86);
+        jPanel1.add(btnSubtraction);
+        btnSubtraction.setBounds(31, 216, 112, 86);
 
         btnTime.setBackground(new java.awt.Color(255, 255, 0));
         btnTime.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -131,7 +135,7 @@ public class CategoriesMain extends javax.swing.JFrame {
         jLabel2.setBounds(240, 70, 130, 26);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
-        jLabel1.setText("First Grade Tests");
+        jLabel1.setText("CategoriesMain");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(97, 16, 420, 44);
 
@@ -143,77 +147,90 @@ public class CategoriesMain extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+
+    private void checkForMenuSelectionType() {
+        if (UserInteractionsConfigurator.getMain_menu_selection_enum().equals(MainMenuSelection.TESTS)) {
+            new Difficulty().setVisible(true);
+            this.setVisible(false);
+        }
+        if (UserInteractionsConfigurator.getMain_menu_selection_enum().equals(MainMenuSelection.PRACTICE)) {
+            QuestionsPageConfigurator.loadQuestionsListForPractice();
+            new PracticeTest().setVisible(true);
+            this.setVisible(false);
+        }
+        if (UserInteractionsConfigurator.getMain_menu_selection_enum().equals(MainMenuSelection.TUTORIALS)) {
+            TutorialsPageConfigurator.loadTutorialsList();
+            //  this.setVisible(false);
+            this.dispose();
+            new YouTubeFrame(TutorialsPageConfigurator.getTutorial().getTutorial()).setVisible(true);
+        }
+    }
+
     private void btnMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       Object source = evt.getSource();
-       if(source == btnMoney){
-           UserInteractionsConfigurator.set_category_type_enum(CategoryType.MONEY);
-           System.out.println(UserInteractionsConfigurator.get_category_type_str());
-          new Difficulty().setVisible(true);
-          this.setVisible(false);
-       }
-    }//GEN-LAST:event_jButton4ActionPerformed
+        if (evt.getSource() == btnMoney) {
+            UserInteractionsConfigurator.set_category_type_enum(CategoryType.MONEY);
+            System.out.println(UserInteractionsConfigurator.get_category_type_str());
+            checkForMenuSelectionType();
+
+        }//GEN-LAST:event_jButton5ActionPerformed
+    }
+
 
     private void btnAdditionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-       Object source = evt.getSource();
-       if(source == btnAddition){
-           UserInteractionsConfigurator.set_category_type_enum(CategoryType.ADDITION);
-           System.out.println(UserInteractionsConfigurator.get_category_type_str());
+        if (evt.getSource() == btnAddition) {
+            UserInteractionsConfigurator.set_category_type_enum(CategoryType.ADDITION);
+            System.out.println(UserInteractionsConfigurator.get_category_type_str());
+            checkForMenuSelectionType();
 
-           new Difficulty().setVisible(true);
-          this.setVisible(false);
-       }
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void btnSubtraction(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-       Object source = evt.getSource();
-       if(source == btnSubstraction){
-           UserInteractionsConfigurator.set_category_type_enum(CategoryType.SUBTRACTION);
-           System.out.println(UserInteractionsConfigurator.get_category_type_str());
-          new Difficulty().setVisible(true);
-          this.setVisible(false);
-       }
+        if (evt.getSource() == btnSubtraction) {
+            UserInteractionsConfigurator.set_category_type_enum(CategoryType.SUBTRACTION);
+            System.out.println(UserInteractionsConfigurator.get_category_type_str());
+            checkForMenuSelectionType();
+
+        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void btnTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-       Object source = evt.getSource();
-       if(source == btnTime){
-           UserInteractionsConfigurator.set_category_type_enum(CategoryType.TIME);
-           System.out.println(UserInteractionsConfigurator.get_category_type_str());
-          new Difficulty().setVisible(true);
-          this.setVisible(false);
-       }
+        if (evt.getSource() == btnTime) {
+            UserInteractionsConfigurator.set_category_type_enum(CategoryType.TIME);
+            System.out.println(UserInteractionsConfigurator.get_category_type_str());
+            checkForMenuSelectionType();
+
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void btnMeasureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-       Object source = evt.getSource();
-       if(source == btnMeasure){
-           UserInteractionsConfigurator.set_category_type_enum(CategoryType.MEASURE);
-           System.out.println(UserInteractionsConfigurator.get_category_type_enum());
-          new Difficulty().setVisible(true);
-          this.setVisible(false);
-       }
+        if (evt.getSource() == btnMeasure) {
+            UserInteractionsConfigurator.set_category_type_enum(CategoryType.MEASURE);
+            System.out.println(UserInteractionsConfigurator.get_category_type_str());
+            checkForMenuSelectionType();
+
+        }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void btnShapesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-       Object source = evt.getSource();
-       if(source == btnShapes){
-           UserInteractionsConfigurator.set_category_type_enum(CategoryType.SHAPES);
-           System.out.println(UserInteractionsConfigurator.get_category_type_str());
-          new Difficulty().setVisible(true);
-          this.setVisible(false);
-       }
+        Object source = evt.getSource();
+        if (evt.getSource() == btnShapes) {
+            UserInteractionsConfigurator.set_category_type_enum(CategoryType.SHAPES);
+            System.out.println(UserInteractionsConfigurator.get_category_type_str());
+            checkForMenuSelectionType();
+        }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -221,15 +238,15 @@ public class CategoriesMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       Object source = evt.getSource();
-       if(source == jButton2){
-          new MainMenu().setVisible(true);
-          this.setVisible(false);
-       }
+        Object source = evt.getSource();
+        if (source == jButton2) {
+            new MainMenu().setVisible(true);
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
-       
+
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
@@ -237,12 +254,13 @@ public class CategoriesMain extends javax.swing.JFrame {
             }
         });
     }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHelp;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton btnMoney;
     private javax.swing.JButton btnAddition;
-    private javax.swing.JButton btnSubstraction;
+    private javax.swing.JButton btnSubtraction;
     private javax.swing.JButton btnTime;
     private javax.swing.JButton btnMeasure;
     private javax.swing.JButton btnShapes;

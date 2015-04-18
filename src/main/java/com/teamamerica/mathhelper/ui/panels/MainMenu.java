@@ -1,7 +1,11 @@
 package com.teamamerica.mathhelper.ui.panels;
 
+import com.teamamerica.mathhelper.configurators.QuestionsPageConfigurator;
+import com.teamamerica.mathhelper.configurators.TutorialsPageConfigurator;
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
+import com.teamamerica.mathhelper.controllers.GradeLevel;
 import com.teamamerica.mathhelper.controllers.MainMenuSelection;
+import com.teamamerica.mathhelper.ui.customcomponents.YouTubeFrame;
 
 import javax.sound.sampled.*;
 import java.io.File;
@@ -12,7 +16,7 @@ import java.util.logging.Logger;
 public class MainMenu extends javax.swing.JFrame {
 
     public MainMenu() {
-      initComponents();
+        initComponents();
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -26,7 +30,7 @@ public class MainMenu extends javax.swing.JFrame {
         btnHelp = new javax.swing.JButton();
         btnTests = new javax.swing.JButton();
         btnTutorials = new javax.swing.JButton();
-        btnScores = new javax.swing.JButton();
+        btnPractice = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -99,16 +103,16 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel1.add(btnTutorials);
         btnTutorials.setBounds(40, 160, 107, 86);
 
-        btnScores.setBackground(new java.awt.Color(255, 0, 0));
-        btnScores.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        btnScores.setText("Scores");
-        btnScores.addActionListener(new java.awt.event.ActionListener() {
+        btnPractice.setBackground(new java.awt.Color(255, 0, 0));
+        btnPractice.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnPractice.setText("Practice");
+        btnPractice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnScoresActionPerformed(evt);
+                btnPracticeActionPerformed(evt);
             }
         });
-        jPanel1.add(btnScores);
-        btnScores.setBounds(450, 160, 110, 86);
+        jPanel1.add(btnPractice);
+        btnPractice.setBounds(450, 160, 110, 86);
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 48)); // NOI18N
@@ -118,49 +122,76 @@ public class MainMenu extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon("backround.jpg")); // NOI18N
-       	//jLabel1.setText("Learn a new subject!");
-       	jLabel1.setToolTipText("Check your progress!");
+        //jLabel1.setText("Learn a new subject!");
+        jLabel1.setToolTipText("Check your progress!");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 769, 374);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnScoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnPracticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
-        UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.SCORES);
+        UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.PRACTICE);
+        Object source = evt.getSource();
+        if (source == btnPractice) {
+            if (UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.K) ||
+                    UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.PRE_K)) {
+                new CategoriesMain().setVisible(true);
+                this.setVisible(false);
+            } else {
+                QuestionsPageConfigurator.loadQuestionsListForPractice();
+                new PracticeTest().setVisible(true);
+                this.setVisible(false);
+            }
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-   }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnTutorialsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       Object source = evt.getSource();
-       if(source == btnTutorials){
-           UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.TUTORIALS);
-          new CategoriesMain().setVisible(true);
-          this.setVisible(false);
-       }
+        Object source = evt.getSource();
+        if (source == btnTutorials) {
+            if (UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.K) ||
+                    UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.PRE_K)) {
+                UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.TUTORIALS);
+                new CategoriesMain().setVisible(true);
+                this.setVisible(false);
+            } else {
+                TutorialsPageConfigurator.loadTutorialsList();
+                //  this.setVisible(false);
+                this.dispose();
+                new YouTubeFrame(TutorialsPageConfigurator.getTutorial().getTutorial()).setVisible(true);
+            }
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnTestsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       Object source = evt.getSource();
-       if(source == btnTests){
-           UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.TESTS);
-           System.out.println(UserInteractionsConfigurator.get_main_menu_selection_str());
-          new CategoriesMain().setVisible(true);
-          this.setVisible(false);
-       }
+        Object source = evt.getSource();
+        if (source == btnTests) {
+            UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.TESTS);
+            System.out.println(UserInteractionsConfigurator.get_main_menu_selection_str());
+            if (UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.K) ||
+                    UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.PRE_K)) {
+                new CategoriesMain().setVisible(true);
+                this.setVisible(false);
+            } else {
+                QuestionsPageConfigurator.loadQuestionsList();
+                new Test().setVisible(true);
+                this.setVisible(false);
+            }
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
 
@@ -188,7 +219,6 @@ public class MainMenu extends javax.swing.JFrame {
         } catch (LineUnavailableException ex) {
             Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
-
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -225,14 +255,15 @@ public class MainMenu extends javax.swing.JFrame {
         //</editor-fold>
 
         java.awt.EventQueue.invokeLater(new Runnable() {
-        public void run() {
+            public void run() {
                 new MainMenu().setVisible(true);
             }
         });
     }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHelp;
-    private javax.swing.JButton btnScores;
+    private javax.swing.JButton btnPractice;
     private javax.swing.JButton btnTutorials;
     private javax.swing.JButton btnTests;
     private javax.swing.JButton btnLogout;

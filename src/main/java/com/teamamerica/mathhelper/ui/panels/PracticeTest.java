@@ -1,6 +1,5 @@
 package com.teamamerica.mathhelper.ui.panels;
 
-import com.teamamerica.mathhelper.configurators.GradeConfigurator;
 import com.teamamerica.mathhelper.configurators.QuestionsPageConfigurator;
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 import com.teamamerica.mathhelper.controllers.CategoryType;
@@ -19,10 +18,10 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 
-
-//TODO: fix the frame to bring things in close relative to the image in the center of the frame and adjust outwards from there
-
-public class Test extends JFrame {
+/**
+ * Created by Christina on 4/18/2015.
+ */
+public class PracticeTest extends JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private ImageButton btnC;
@@ -46,15 +45,9 @@ public class Test extends JFrame {
     private ImageButton correctAnswer;
     private ArrayList<ImageButton> listOfButtons;
 
-    private int testQuestionCounter;
-    private double questionsMax;
-    private double correct;
 
 
-    public Test() {
-        testQuestionCounter = 0;
-        questionsMax = QuestionsPageConfigurator.getNumberOfTestQuestions();
-        correct = 0;
+    public PracticeTest() {
 
         initComponents();
         listOfButtons = new ArrayList<>();
@@ -127,14 +120,9 @@ public class Test extends JFrame {
                 Object source = e.getSource();
                 if (source == btnA) {
                     if (btnA == correctAnswer) {
-                        correct++;
-                        System.out.println("CORRECT: " + correct);
-                        System.out.println("MAX FROM DB: " + questionsMax);
-                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
+                         lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
                     } else {
-                        System.out.println("CORRECT: " + correct);
-                        System.out.println("MAX FROM DB: " + questionsMax);
-                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
+                         lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
 
                     }
                     lblCorrect.setVisible(true);
@@ -151,13 +139,8 @@ public class Test extends JFrame {
                 Object source = e.getSource();
                 if (source == btnD) {
                     if (btnD == correctAnswer) {
-                        correct++;
-                        System.out.println("CORRECT: " + correct);
-                        System.out.println("MAX FROM DB: " + questionsMax);
-                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
+                         lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
                     } else {
-                        System.out.println("CORRECT: " + correct);
-                        System.out.println("MAX FROM DB: " + questionsMax);
                         lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
 
                     }
@@ -174,14 +157,8 @@ public class Test extends JFrame {
                 Object source = e.getSource();
                 if (source == btnB) {
                     if (btnB == correctAnswer) {
-                        correct++;
-                        System.out.println("CORRECT: " + correct);
-                        System.out.println("MAX: " + questionsMax);
                         lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
                     } else {
-                        System.out.println("CORRECT: " + correct);
-                        System.out.println("MAX FROM DB: " + questionsMax);
-
                         lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
 
                     }
@@ -196,15 +173,9 @@ public class Test extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 Object source = e.getSource();
                 if (source == btnC) {
-                    correct++;
-                    System.out.println("CORRECT: " + correct);
-                    System.out.println("MAX: " + questionsMax);
                     if (btnC == correctAnswer) {
                         lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
                     } else {
-                        System.out.println("CORRECT: " + correct);
-                        System.out.println("MAX FROM DB: " + questionsMax);
-
                         lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
 
                     }
@@ -233,7 +204,7 @@ public class Test extends JFrame {
         jPanel1.add(lblQuestion);
 
         lblQuestionCounter.setFont(new Font("Comic Sans MS", 0, 58)); // NOI18N
-        lblQuestionCounter.setText("Question: " + (testQuestionCounter + 1) + "/" + (int) questionsMax);
+        lblQuestionCounter.setText("Practice Test");
         jPanel1.add(lblQuestionCounter);
         lblQuestionCounter.setBounds(300, 25, 1000, 60);
 
@@ -273,7 +244,7 @@ public class Test extends JFrame {
         System.out.println(this.getX());
         int width = this.getWidth();
         int height = this.getHeight();
-        System.out.println( width +":" + height);
+        System.out.println(width + ":" + height);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -302,28 +273,13 @@ public class Test extends JFrame {
         // TODO add your handling code here:
         btnNext.setVisible(false);
         lblNext.setVisible(false);
-        testQuestionCounter++;
-        if (testQuestionCounter >= questionsMax) {
+        question = QuestionsPageConfigurator.getQuestion();
+        lblQuestion.setText(question.getQuestion());
+        lblAnswer.changeLabelImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()));
+        lblAnswer.setVisible(false);
+        lblCorrect.setVisible(false);
+        generateAnswerButtons();
 
-            GradeConfigurator.calculateGradeAndSubmit(correct, questionsMax);
-            JOptionPane.showMessageDialog(null, "TEST COMPLETED SCORE: " +
-                    UserInteractionsConfigurator.get_interactive_grade().getGrade_id() + " : " +
-                    UserInteractionsConfigurator.get_interactive_grade().getUser_id() + " : " +
-                    UserInteractionsConfigurator.get_interactive_grade().getGrade());
-
-            JFrame jframe = new  JFrame();
-            jframe.add(new ImageLabel(true,ConfigDirectory.getImageFileFromDirectory("panels_reward.jpg"),275,283));
-            this.dispose();
-            jframe.setVisible(true);
-        } else {
-            question = QuestionsPageConfigurator.getQuestion();
-            lblQuestionCounter.setText("Question: " + (testQuestionCounter + 1) + "/" + (int) questionsMax);
-            lblQuestion.setText(question.getQuestion());
-            lblAnswer.changeLabelImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()));
-            lblAnswer.setVisible(false);
-            lblCorrect.setVisible(false);
-            generateAnswerButtons();
-        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
 
@@ -414,7 +370,7 @@ public class Test extends JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new Test().setVisible(true);
+                new PracticeTest().setVisible(true);
             }
         });
     }

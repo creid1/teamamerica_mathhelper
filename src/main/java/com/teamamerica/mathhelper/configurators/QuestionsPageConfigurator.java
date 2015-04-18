@@ -1,6 +1,7 @@
 package com.teamamerica.mathhelper.configurators;
 
 import com.teamamerica.mathhelper.controllers.DifficultyLevel;
+import com.teamamerica.mathhelper.controllers.GradeLevel;
 import com.teamamerica.mathhelper.db.MathHelperDBClient;
 import com.teamamerica.mathhelper.models.Question;
 
@@ -22,10 +23,32 @@ public class QuestionsPageConfigurator {
 
     public static void loadQuestionsList() {
         mathHelperDBClient = new MathHelperDBClient();
-        questions = mathHelperDBClient.searchQuestions_grLevel_difLevel_catType(
-                UserInteractionsConfigurator.get_interactive_grade_level_enum(),
-                UserInteractionsConfigurator.get_difficulty_level_enum(),
-                UserInteractionsConfigurator.get_category_type_enum());
+        if(UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.K) ||
+                UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.PRE_K)) {
+            questions = mathHelperDBClient.searchQuestions_grLevel_difLevel_catType(
+                    UserInteractionsConfigurator.get_interactive_grade_level_enum(),
+                    UserInteractionsConfigurator.get_difficulty_level_enum(),
+                    UserInteractionsConfigurator.get_category_type_enum());
+        }else{
+            questions = mathHelperDBClient.searchQuestions_grLevel_difLevel(
+                    UserInteractionsConfigurator.get_interactive_grade_level_enum(),
+                    UserInteractionsConfigurator.get_difficulty_level_enum());
+        }
+        Collections.shuffle(questions);
+        maxQuestions = questions.size();
+    }
+
+    public static void loadQuestionsListForPractice() {
+        mathHelperDBClient = new MathHelperDBClient();
+        if(UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.K) ||
+                UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.PRE_K)) {
+            questions = mathHelperDBClient.searchQuestions_grLevel_catType(
+                    UserInteractionsConfigurator.get_interactive_grade_level_enum(),
+                    UserInteractionsConfigurator.get_category_type_enum());
+        }else{
+            questions = mathHelperDBClient.searchQuestions_grLevel(
+                    UserInteractionsConfigurator.get_interactive_grade_level_enum());
+        }
         Collections.shuffle(questions);
         maxQuestions = questions.size();
     }

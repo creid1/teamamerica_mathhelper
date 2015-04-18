@@ -19,10 +19,10 @@ public enum MainMenuSelection {
         }
     },
 
-    SCORES {
+    PRACTICE {
         @Override
         public String toString() {
-            return "Scores";
+            return "Practice";
         }
     }
 
