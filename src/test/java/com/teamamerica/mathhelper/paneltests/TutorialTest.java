@@ -2,7 +2,7 @@ package com.teamamerica.mathhelper.paneltests;
 
 
 import com.teamamerica.mathhelper.ui.customcomponents.YouTubeFrame;
-import com.teamamerica.mathhelper.ui.panels.FirstGradeTutorials;
+import com.teamamerica.mathhelper.ui.panels.AllTutorials;
 
 import javax.swing.*;
 
@@ -128,7 +128,7 @@ public class TutorialTest extends JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Object source = evt.getSource();
         if (source == jButton3) {
-            new FirstGradeTutorials().setVisible(true);
+            new AllTutorials().setVisible(true);
             this.setVisible(false);
         }
     }//GEN-LAST:event_jButton3ActionPerformed

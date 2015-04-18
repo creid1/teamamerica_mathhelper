@@ -148,7 +148,7 @@ public class MainMenu extends javax.swing.JFrame {
        Object source = evt.getSource();
        if(source == btnTutorials){
            UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.TUTORIALS);
-          new FirstGradeTutorials().setVisible(true);
+          new AllTutorials().setVisible(true);
           this.setVisible(false);
        }
     }//GEN-LAST:event_jButton3ActionPerformed

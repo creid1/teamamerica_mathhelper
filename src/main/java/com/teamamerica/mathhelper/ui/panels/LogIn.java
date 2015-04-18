@@ -23,7 +23,6 @@ public class LogIn extends JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private ImageButton btnSignIn;
     private ImageButton btnHelp;
-    //  private JButton btnHelp;
     private JFormattedTextField txtUserName;
     private JLabel lblUserName;
     private JLabel jLabel2, lblOne, lblTwo, lblThree, lbl4;
@@ -52,7 +51,7 @@ public class LogIn extends JFrame {
         lblUserName = new JLabel();
         lblPassword = new JLabel();
         btnSignIn = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_openDoor.gif"), 400, 400);
-        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpIcon.jpeg"), 80, 80);
+        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
         jLabel4 = new JLabel();
 
         lblOne = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_oneTwoThree.jpg"), 200, 160);
@@ -63,12 +62,6 @@ public class LogIn extends JFrame {
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBackground(Color.WHITE);
-
-
-        Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Dimension d = toolkit.getScreenSize();
-        setLocationRelativeTo(null);
-
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 204));
         jPanel1.setLayout(null);
@@ -113,15 +106,13 @@ public class LogIn extends JFrame {
         jPanel1.add(btnSignIn);
         btnSignIn.setBounds(300, 300, 400, 400);
 
-        btnHelp.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-
         btnHelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHelpActionPerformed(evt);
             }
         });
         jPanel1.add(btnHelp);
-        btnHelp.setBounds(880, 500, 80, 80);
+        btnHelp.setBounds(850, 475, 150, 101);
 
         btnTrojan.setBounds(20, 480, 90, 90);
         btnTrojan.setVisible(true);

@@ -78,8 +78,8 @@ public class Test extends JFrame {
 
 
         jPanel1 = new JPanel();
-        btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_homepage.png"), 150, 100);
-        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpIcon.jpeg"), 80, 80);
+        btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 101);
+        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
         lblNext = new JLabel();
         btnA = new ImageButton(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()), 150, 150);
         btnB = new ImageButton(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_1()), 150, 150);
@@ -103,7 +103,7 @@ public class Test extends JFrame {
             }
         });
         jPanel1.add(btnMain);
-        btnMain.setBounds(10, 10, 150, 100);
+        btnMain.setBounds(10, 10, 150, 101);
 
         btnHelp.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -111,15 +111,7 @@ public class Test extends JFrame {
             }
         });
         jPanel1.add(btnHelp);
-        btnHelp.setBounds(880, 500, 80, 80);
-
-
-        lblNext.setBackground(new Color(255, 255, 255));
-        lblNext.setFont(new Font("Comic Sans MS", 0, 24)); // NOI18N
-        lblNext.setText("      Next");
-        jPanel1.add(lblNext);
-        lblNext.setBounds(840, 70, 150, 34);
-        lblNext.setVisible(false);
+        btnHelp.setBounds(850, 475, 150, 101);
 
 
         lblNext.setBackground(new Color(255, 255, 255));
@@ -279,6 +271,10 @@ public class Test extends JFrame {
         );
 
         pack();
+        System.out.println(this.getX());
+        int width = this.getWidth();
+        int height = this.getHeight();
+        System.out.println( width +":" + height);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

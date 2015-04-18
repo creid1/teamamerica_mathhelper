@@ -119,7 +119,7 @@ public class FirstGradeAddTutorial extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        Object source = evt.getSource();
        if(source == jButton3){
-          new FirstGradeTutorials().setVisible(true);
+          new AllTutorials().setVisible(true);
           this.setVisible(false);
        }
     }//GEN-LAST:event_jButton3ActionPerformed

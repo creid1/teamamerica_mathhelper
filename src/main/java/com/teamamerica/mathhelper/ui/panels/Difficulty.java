@@ -10,7 +10,6 @@
 
 package com.teamamerica.mathhelper.ui.panels;
 
-import com.teamamerica.mathhelper.configurators.QuestionsPageConfigurator;
 import com.teamamerica.mathhelper.controllers.DifficultyLevel;
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 
@@ -158,7 +157,7 @@ public class Difficulty extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        Object source = evt.getSource();
        if(source == btnTutorials){
-          new FirstGradeTutorials().setVisible(true);
+          new AllTutorials().setVisible(true);
           this.setVisible(false);
        }
     }//GEN-LAST:event_jButton1ActionPerformed
