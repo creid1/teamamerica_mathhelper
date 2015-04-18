@@ -308,9 +308,9 @@ public class Test extends JFrame {
 
             GradeConfigurator.calculateGradeAndSubmit(correct, questionsMax);
             JOptionPane.showMessageDialog(null, "TEST COMPLETED SCORE: " +
-                    UserInteractionsConfigurator.get_interactive_grade().getGrade_id() + ":" +
-                    UserInteractionsConfigurator.get_interactive_grade().getUser_id() + ":" +
-                    UserInteractionsConfigurator.get_interactive_grade().getGrade() + "%");
+                    UserInteractionsConfigurator.get_interactive_grade().getGrade_id() + " : " +
+                    UserInteractionsConfigurator.get_interactive_grade().getUser_id() + " : " +
+                    UserInteractionsConfigurator.get_interactive_grade().getGrade());
 
             JFrame jframe = new  JFrame();
             jframe.add(new ImageLabel(true,ConfigDirectory.getImageFileFromDirectory("panels_reward.jpg"),275,283));

@@ -189,7 +189,7 @@ public class sqlMathHelperCreateDBScript {
             // Retrieve entry's attributes by column name
             int id = rs.getInt("grade_id");
             int userid = rs.getInt("user_id");
-            int grade = rs.getInt("grade");
+            String grade = rs.getString("grade");
             boolean reward = rs.getBoolean("received_reward");
 
             // Display values
@@ -442,12 +442,12 @@ public class sqlMathHelperCreateDBScript {
             sql = "CREATE TABLE grades" +
                     "(grade_id INT UNSIGNED NOT NULL AUTO_INCREMENT, " +
                     "user_id INT UNSIGNED NOT NULL, " +
-                    "grade INT UNSIGNED NOT NULL, " +
+                    "grade TEXT NOT NULL, " +
                     "received_reward BOOLEAN NOT NULL, " +
                     "PRIMARY KEY(grade_id));";
             stmt.execute(sql);
             sql = "INSERT INTO grades(user_id,grade,received_reward)" +
-                    "VALUES (1,97," + true + ");";
+                    "VALUES (1,'A'," + true + ");";
             stmt.executeUpdate(sql);
         } catch (SQLException se) {
             System.out.println("Found!      Using existing grades table.");

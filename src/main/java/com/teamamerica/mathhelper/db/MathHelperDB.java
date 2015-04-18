@@ -144,7 +144,7 @@ public class MathHelperDB {
         try {
             ps = conn.prepareStatement(sql);
             ps.setInt(1, grade.getUser_id());
-            ps.setInt(2, grade.getGrade());
+            ps.setString(2, grade.getGrade());
             ps.setBoolean(3, grade.hasReceive_reward());
             ps.executeUpdate();
             return true;
@@ -207,7 +207,7 @@ public class MathHelperDB {
                 Grade grade = new Grade();
                 grade.setGrade_id(rs.getInt("grade_id"));
                 grade.setUser_id(rs.getInt("user_id"));
-                grade.setGrade(rs.getInt("grade"));
+                grade.setGrade(rs.getString("grade"));
                 grade.setReceive_reward(rs.getBoolean("received_reward"));
                 grades.add(grade);
             }

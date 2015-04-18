@@ -148,18 +148,6 @@ public class MathHelperDBClient {
 
 
     /**
-     * This method searches the grade table for a list of grades based on a min max grade range.  If no grades are found
-     * the list is returned empty.
-     *
-     * @param min
-     * @param max
-     * @return ArrayList
-     */
-    public ArrayList<Grade> searchGrades_grRange(int min, int max) {
-        return Grade.searchForGradesByGradeRange(get_allGradeList(), min, max);
-    }
-
-    /**
      * *****************SEARCH QUESTION FUNCTIONS***************************************************
      */
 
