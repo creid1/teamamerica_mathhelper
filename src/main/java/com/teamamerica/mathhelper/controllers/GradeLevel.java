@@ -23,27 +23,27 @@ public enum GradeLevel {
     FIRST {
         @Override
         public String toString() {
-            return "1";
+            return "FIRST";
         }
     },
     SECOND {
         @Override
         public String toString() {
-            return "2";
+            return "SECOND";
         }
     },
 
     THIRD {
         @Override
         public String toString() {
-            return "3";
+            return "THIRD";
         }
     },
 
     FOURTH {
         @Override
         public String toString() {
-            return "4";
+            return "FOURTH";
         }
     }
 }

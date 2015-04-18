@@ -26,6 +26,8 @@ public class YouTubeFrame extends JFrame {
     private String url;
 
     public YouTubeFrame(String url) {
+
+        System.out.println("YouTubeAddress: " + url);
         setBackground(Color.WHITE);
 
         this.url = url;
@@ -77,7 +79,9 @@ public class YouTubeFrame extends JFrame {
         // TODO add your handling code here:
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                flashPlayer.getWebBrowser().navigate(TutorialsPageConfigurator.getTutorial().getTutorial());
+                String url = TutorialsPageConfigurator.getTutorial().getTutorial();
+                System.out.println("YouTubeAddress: " + url);
+                flashPlayer.getWebBrowser().navigate(url);
             }
         });
     }
@@ -87,8 +91,8 @@ public class YouTubeFrame extends JFrame {
         // TODO add your handling code here:
         GradeLevel gradeLevel = UserInteractionsConfigurator.get_interactive_grade_level_enum();
         if(gradeLevel == GradeLevel.K || gradeLevel == GradeLevel.PRE_K) {
-            this.dispose();
-            this.frame.dispose();
+            this.setVisible(false);
+            this.frame.setVisible(false);
             new CategoriesMain().setVisible(true);
         }
         else{
@@ -161,13 +165,13 @@ public class YouTubeFrame extends JFrame {
 
         GradeLevel gradeLevel = UserInteractionsConfigurator.get_interactive_grade_level_enum();
         if(gradeLevel == GradeLevel.K || gradeLevel == GradeLevel.FIRST ){
-            this.dispose();
-            this.frame.dispose();
+            this.setVisible(false);
+            this.frame.setVisible(false);
             new CategoriesMain().setVisible(true);
         }
         else{
-            this.dispose();
-            this.frame.dispose();
+            this.setVisible(false);
+            this.frame.setVisible(false);
             new Test().setVisible(true);
         }
 
@@ -176,8 +180,8 @@ public class YouTubeFrame extends JFrame {
     private void btnMainActionPerformed(ActionEvent evt) {
 
         AudioListener.runAudioListener("SpeechOn.wav");
-        this.dispose();
-        this.frame.dispose();
+        this.setVisible(false);
+        this.frame.setVisible(false);
         new MainMenu().setVisible(true);
 
     }
