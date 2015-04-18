@@ -1,6 +1,5 @@
 package com.teamamerica.mathhelper.ui.panels;
 
-import com.teamamerica.mathhelper.configurators.QuestionsPageConfigurator;
 import com.teamamerica.mathhelper.configurators.TutorialsPageConfigurator;
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 import com.teamamerica.mathhelper.controllers.GradeLevel;
@@ -152,7 +151,6 @@ public class MainMenu extends javax.swing.JFrame {
                 new CategoriesMain().setVisible(true);
                 this.setVisible(false);
             } else {
-                QuestionsPageConfigurator.loadQuestionsListForPractice();
                 new PracticeTest().setVisible(true);
                 this.setVisible(false);
             }
@@ -187,7 +185,6 @@ public class MainMenu extends javax.swing.JFrame {
                 new CategoriesMain().setVisible(true);
                 this.setVisible(false);
             } else {
-                QuestionsPageConfigurator.loadQuestionsList();
                 new Test().setVisible(true);
                 this.setVisible(false);
             }
@@ -225,7 +222,13 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        this.dispose();
+        UserInteractionsConfigurator.set_difficulty_level_enum(null);
+        UserInteractionsConfigurator.set_category_type_enum(null);
+        UserInteractionsConfigurator.set_interactive_grade(null);
+        UserInteractionsConfigurator.set_main_menu_selection_enum(null);
+        UserInteractionsConfigurator.set_interactive_grade_level_enum(null);
+        UserInteractionsConfigurator.set_interactive_user(null);
+        this.setVisible(false);
         new LogIn().setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 

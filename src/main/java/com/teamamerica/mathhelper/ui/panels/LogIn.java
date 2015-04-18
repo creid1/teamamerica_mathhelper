@@ -110,7 +110,7 @@ public class LogIn extends JFrame {
         jPanel1.add(btnSignIn);
         btnSignIn.setBounds(300, 300, 400, 400);
 
-        btnTrojan.setBounds(50, 450, 50, 50);
+        btnTrojan.setBounds(85, 470, 20, 20);
         btnTrojan.setVisible(true);
         btnTrojan.setEnabled(true);
         jPanel1.add(btnTrojan);

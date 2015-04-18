@@ -1,6 +1,5 @@
 package com.teamamerica.mathhelper.ui.panels;
 
-import com.teamamerica.mathhelper.configurators.QuestionsPageConfigurator;
 import com.teamamerica.mathhelper.configurators.TutorialsPageConfigurator;
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 import com.teamamerica.mathhelper.controllers.CategoryType;
@@ -166,7 +165,6 @@ public class CategoriesMain extends javax.swing.JFrame {
             this.setVisible(false);
         }
         if (UserInteractionsConfigurator.getMain_menu_selection_enum().equals(MainMenuSelection.PRACTICE)) {
-            QuestionsPageConfigurator.loadQuestionsListForPractice();
             new PracticeTest().setVisible(true);
             this.setVisible(false);
         }

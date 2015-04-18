@@ -21,6 +21,8 @@ public class sqlMathHelperUpload extends sqlMathHelperDBClean{
         sqlMathHelperUpload.uploadTutorials();
         System.out.println("TUTORIAL TABLE LENGTH: " + new MathHelperDBClient().get_allTutorialList().size());
 
+        sqlMathHelperUpload.uploadQuestions();
+        System.out.println("QUESTION TABLE LENGTH: " + new MathHelperDBClient().get_allQuestionList().size());
 
 
     }

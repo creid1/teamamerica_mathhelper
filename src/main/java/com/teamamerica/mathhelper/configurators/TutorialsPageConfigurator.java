@@ -15,7 +15,7 @@ public class TutorialsPageConfigurator {
     private static ArrayList<Tutorial> tutorials;
     private static MathHelperDBClient mathHelperDBClient = null;
     private static int counter = 0;
-    private static int maxQuestions;
+    private static int maxTutorials;
 
     public static void loadTutorialsList() {
         mathHelperDBClient = new MathHelperDBClient();
@@ -31,15 +31,15 @@ public class TutorialsPageConfigurator {
 
         }
        Collections.shuffle(tutorials);
-        maxQuestions = tutorials.size();
+        maxTutorials = tutorials.size();
     }
 
     public static Tutorial getTutorial() {
 
-        if (maxQuestions == 0) {
+        if (maxTutorials == 0) {
             return null;
         }
-        if (counter >= maxQuestions) {
+        if (counter >= maxTutorials) {
             //reset the counter to start over again
             counter = 0;
         }

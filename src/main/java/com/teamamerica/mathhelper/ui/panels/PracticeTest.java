@@ -36,14 +36,13 @@ public class PracticeTest extends JFrame {
     private ImageButton btnB;
     private JLabel lblQuestionCounter;
     private ImageLabel lblAnswer;
-    private JLabel lblNext;
     private ImageLabel lblCorrect;
     private ImageLabel lblQuestion;
-    private JLabel lblMainMenu;
     private JPanel jPanel1;
+    private ImageButton btnPencilReady;
 
 
-    ImageButton btnWatchTutorial;
+    ImageButton btnLearnNow;
 
     // End of variables declaration//GEN-END:variables
 
@@ -55,6 +54,7 @@ public class PracticeTest extends JFrame {
 
     public PracticeTest() {
 
+        QuestionsPageConfigurator.loadQuestions();
         initComponents();
         listOfButtons = new ArrayList<>();
         listOfButtons.add(btnA);
@@ -76,25 +76,23 @@ public class PracticeTest extends JFrame {
 
 
         jPanel1 = new JPanel();
-        btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 113);
+        btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 125);
         btnInfo = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
 
-        lblNext = new JLabel();
-        btnA = new ImageButton(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()), 150, 150);
-        btnB = new ImageButton(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_1()), 150, 150);
-        btnC = new ImageButton(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_2()), 150, 150);
-        btnD = new ImageButton(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_3()), 150, 150);
+        btnA = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(),question.getHas_answer_image()), 150, 150);
+        btnB = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_1(),question.getHas_answer_image()), 150, 150);
+        btnC = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_2(),question.getHas_answer_image()), 150, 150);
+        btnD = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_3(),question.getHas_answer_image()), 150, 150);
 
         lblQuestionCounter = new JLabel();
-        lblAnswer = new ImageLabel(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()), 150, 150);
+        lblAnswer = new ImageLabel(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(),question.getHas_answer_image()), 150, 150);
         lblCorrect = new ImageLabel(150, 150);
-        lblQuestion = new ImageLabel(question.getHas_image(), checkHasFileToGenerateFullPath(question.getQuestion()), 1000, 150);
+        lblQuestion = new ImageLabel(question.getHas_question_image(), checkHasFileToGenerateFullPath(question.getQuestion(),question.getHas_question_image()), 1000, 150);
         btnNext = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_arrow.jpg"), 150, 101);
+        btnPencilReady = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_psharpener.png"), 150, 113);
 
-        btnWatchTutorial = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_videoTutorial.jpg"), 150, 113);
-        lblMainMenu = new JLabel();
-
+        btnLearnNow = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_videoTutorial.jpg"), 150, 113);
 
         jPanel1.setBackground(new Color(255, 255, 255));
         jPanel1.setLayout(null);
@@ -105,7 +103,6 @@ public class PracticeTest extends JFrame {
             }
         });
         jPanel1.add(btnMain);
-        btnMain.setBounds(10, 25, 150, 113);
 
         btnInfo.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -116,7 +113,6 @@ public class PracticeTest extends JFrame {
         btnInfo.setBounds(850, 475, 150, 101);
 
 
-
         btnHelp.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 btnHelpActionPerformed(evt);
@@ -125,20 +121,12 @@ public class PracticeTest extends JFrame {
         jPanel1.add(btnHelp);
         btnHelp.setBounds(30, 475, 150, 101);
 
-        btnWatchTutorial.setBounds(575, 10, 150, 113);
-        jPanel1.add(btnWatchTutorial);
-        btnWatchTutorial.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.add(btnLearnNow);
+        btnLearnNow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnWatchTutorialActionPerformed(evt);
+                btnLearnNowActionPerformed(evt);
             }
         });
-
-        lblNext.setBackground(new Color(255, 255, 255));
-        lblNext.setFont(new Font("Comic Sans MS", 0, 24)); // NOI18N
-        lblNext.setText("      Next");
-        jPanel1.add(lblNext);
-        lblNext.setBounds(840, 130, 150, 34);
-        lblNext.setVisible(false);
 
 
         btnA.addActionListener(new ActionListener() {
@@ -227,13 +215,21 @@ public class PracticeTest extends JFrame {
         jPanel1.add(lblCorrect);
 
 
+        jPanel1.add(btnPencilReady);
+
+        btnPencilReady.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTestsActionPerformed(evt);
+            }
+        });
+
+
         lblQuestion.setFont(new Font("Comic Sans MS", 0, 75)); // NOI18N
         jPanel1.add(lblQuestion);
 
-        lblQuestionCounter.setFont(new Font("Comic Sans MS", 0, 58)); // NOI18N
-        lblQuestionCounter.setText("Practice Test");
+        lblQuestionCounter.setFont(new Font("Comic Sans MS", 0, 85)); // NOI18N
+        lblQuestionCounter.setText("Practice");
         jPanel1.add(lblQuestionCounter);
-        lblQuestionCounter.setBounds(200, 25, 1000, 60);
 
         lblQuestion.setBounds(100, 170, 1000, 150);
         lblAnswer.setBounds(425, 170, 150, 150);
@@ -248,13 +244,15 @@ public class PracticeTest extends JFrame {
             }
         });
         jPanel1.add(btnNext);
-        btnNext.setBounds(820, 30, 150, 101);
         btnNext.setVisible(false);
 
-        lblMainMenu.setFont(new Font("Comic Sans MS", 0, 24)); // NOI18N
-        lblMainMenu.setText("  Main Menu");
-        jPanel1.add(lblMainMenu);
-        lblMainMenu.setBounds(10, 135, 150, 34);
+        btnMain.setBounds(10, 10, 150, 125);
+        btnPencilReady.setBounds(150, 20, 150, 101);
+        lblQuestionCounter.setBounds(300, 30, 1000, 101);
+        btnLearnNow.setBounds(650, 20, 150, 113);
+        btnNext.setBounds(820, 30, 150, 101);
+
+
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -274,14 +272,18 @@ public class PracticeTest extends JFrame {
         System.out.println(width + ":" + height);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnTestsActionPerformed(ActionEvent evt) {
+
+    }
+
     private void btnHelpActionPerformed(ActionEvent evt) {
 
         AudioListener.runAudioListener("SpeechOn.wav");
 
     }
 
-    private void btnWatchTutorialActionPerformed(ActionEvent evt) {
-        if (evt.getSource().equals(btnWatchTutorial)) {
+    private void btnLearnNowActionPerformed(ActionEvent evt) {
+        if (evt.getSource().equals(btnLearnNow)) {
             TutorialsPageConfigurator.loadTutorialsList();
             this.setVisible(false);
             new YouTubeFrame(TutorialsPageConfigurator.getTutorial().getTutorial()).setVisible(true);
@@ -313,10 +315,10 @@ public class PracticeTest extends JFrame {
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         btnNext.setVisible(false);
-        lblNext.setVisible(false);
         question = QuestionsPageConfigurator.getQuestion();
+        System.out.println(question.getQuestion());
         lblQuestion.setText(question.getQuestion());
-        lblAnswer.changeLabelImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()));
+        lblAnswer.changeLabelImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(),question.getHas_answer_image()));
         lblAnswer.setVisible(false);
         lblCorrect.setVisible(false);
         generateAnswerButtons();
@@ -327,7 +329,6 @@ public class PracticeTest extends JFrame {
     private void checkAnswerButtons() {
         lblAnswer.setVisible(true);
         btnNext.setVisible(true);
-        lblNext.setVisible(true);
         for (ImageButton button : listOfButtons) {
             if (button == correctAnswer) {
                 correctAnswer.createRightAnswerButton();
@@ -337,9 +338,9 @@ public class PracticeTest extends JFrame {
         }
     }
 
-    private String checkHasFileToGenerateFullPath(String fileName) {
+    private String checkHasFileToGenerateFullPath(String fileName, boolean isImage) {
 
-        if (question.getHas_image()) {
+        if (isImage) {
             return ConfigDirectory.getImageFileFromDirectory(fileName);
         } else {
             return fileName;
@@ -353,35 +354,35 @@ public class PracticeTest extends JFrame {
         ImageButton button = listOfButtons.get(answer);
         if (button == btnA) {
             correctAnswer = btnA;
-            btnA.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()));
-            btnB.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_1()));
-            btnC.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_2()));
-            btnD.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_3()));
+            btnA.changeButtonImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(),question.getHas_answer_image()));
+            btnB.changeButtonImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_1(),question.getHas_answer_image()));
+            btnC.changeButtonImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_2(),question.getHas_answer_image()));
+            btnD.changeButtonImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_3(),question.getHas_answer_image()));
         }
         if (listOfButtons.get(answer) == btnB) {
             correctAnswer = btnB;
-            btnB.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()));
-            btnA.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_3()));
-            btnC.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_1()));
-            btnD.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_2()));
+            btnB.changeButtonImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(),question.getHas_answer_image()));
+            btnA.changeButtonImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_3(),question.getHas_answer_image()));
+            btnC.changeButtonImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_1(),question.getHas_answer_image()));
+            btnD.changeButtonImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_2(),question.getHas_answer_image()));
 
 
         }
 
         if (listOfButtons.get(answer) == btnC) {
             correctAnswer = btnC;
-            btnC.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()));
-            btnA.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_3()));
-            btnB.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_2()));
-            btnD.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_1()));
+            btnC.changeButtonImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(),question.getHas_answer_image()));
+            btnA.changeButtonImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_3(),question.getHas_answer_image()));
+            btnB.changeButtonImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_2(),question.getHas_answer_image()));
+            btnD.changeButtonImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_1(),question.getHas_answer_image()));
 
         }
         if (listOfButtons.get(answer) == btnD) {
             correctAnswer = btnD;
-            btnD.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getAnswer()));
-            btnA.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_3()));
-            btnC.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_2()));
-            btnB.changeButtonImage(question.getHas_image(), checkHasFileToGenerateFullPath(question.getWrong_1()));
+            btnD.changeButtonImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(),question.getHas_answer_image()));
+            btnA.changeButtonImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_3(),question.getHas_answer_image()));
+            btnC.changeButtonImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_2(),question.getHas_answer_image()));
+            btnB.changeButtonImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_1(),question.getHas_answer_image()));
 
 
         }

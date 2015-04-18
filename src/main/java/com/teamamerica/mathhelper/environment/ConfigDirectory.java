@@ -18,6 +18,7 @@ public class ConfigDirectory {
     }
 
     private static String configureImageDBFile(String filename){
+        System.out.println("Configure image db file name: " + filename);
         String[] split = filename.split("_");
         return split[0] +"/"+ split[1];
     }

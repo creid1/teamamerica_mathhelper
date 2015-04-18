@@ -2,6 +2,7 @@ package com.teamamerica.mathhelper.configurators;
 
 import com.teamamerica.mathhelper.controllers.DifficultyLevel;
 import com.teamamerica.mathhelper.controllers.GradeLevel;
+import com.teamamerica.mathhelper.controllers.MainMenuSelection;
 import com.teamamerica.mathhelper.db.MathHelperDBClient;
 import com.teamamerica.mathhelper.models.Question;
 
@@ -21,18 +22,27 @@ public class QuestionsPageConfigurator {
     private static final double medium = 10;
     private static final double hard = 15;
 
+    public static void loadQuestions() {
+        counter = 0;
+
+        if (UserInteractionsConfigurator.getMain_menu_selection_enum().equals(MainMenuSelection.PRACTICE)) {
+            loadQuestionsListForPractice();
+        }
+        if (UserInteractionsConfigurator.getMain_menu_selection_enum().equals(MainMenuSelection.TESTS)) {
+            loadQuestionsList();
+        }
+    }
+
     public static void loadQuestionsList() {
         mathHelperDBClient = new MathHelperDBClient();
-        if(UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.K) ||
+        if (UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.K) ||
                 UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.PRE_K)) {
-            questions = mathHelperDBClient.searchQuestions_grLevel_difLevel_catType(
+            questions = mathHelperDBClient.searchQuestions_grLevel_catType(
                     UserInteractionsConfigurator.get_interactive_grade_level_enum(),
-                    UserInteractionsConfigurator.get_difficulty_level_enum(),
                     UserInteractionsConfigurator.get_category_type_enum());
-        }else{
-            questions = mathHelperDBClient.searchQuestions_grLevel_difLevel(
-                    UserInteractionsConfigurator.get_interactive_grade_level_enum(),
-                    UserInteractionsConfigurator.get_difficulty_level_enum());
+        } else {
+            questions = mathHelperDBClient.searchQuestions_grLevel(
+                    UserInteractionsConfigurator.get_interactive_grade_level_enum());
         }
         Collections.shuffle(questions);
         maxQuestions = questions.size();
@@ -40,16 +50,19 @@ public class QuestionsPageConfigurator {
 
     public static void loadQuestionsListForPractice() {
         mathHelperDBClient = new MathHelperDBClient();
-        if(UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.K) ||
+        if (UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.K) ||
                 UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.PRE_K)) {
             questions = mathHelperDBClient.searchQuestions_grLevel_catType(
                     UserInteractionsConfigurator.get_interactive_grade_level_enum(),
                     UserInteractionsConfigurator.get_category_type_enum());
-        }else{
+        } else {
             questions = mathHelperDBClient.searchQuestions_grLevel(
                     UserInteractionsConfigurator.get_interactive_grade_level_enum());
         }
         Collections.shuffle(questions);
+        for (Question q : questions) {
+            System.out.println(q.getQuestion());
+        }
         System.out.println("MAX QUESTIONS: " + maxQuestions);
         maxQuestions = questions.size();
     }
@@ -59,27 +72,28 @@ public class QuestionsPageConfigurator {
         if (maxQuestions == 0) {
             return null;
         }
+
         if (counter >= maxQuestions) {
             //reset the counter to start over again
             counter = 0;
         }
         return questions.get(counter++);
+
     }
 
-    public static double getNumberOfTestQuestions(){
-        if(UserInteractionsConfigurator.get_difficulty_level_enum().equals(DifficultyLevel.EASY)){
+    public static double getNumberOfTestQuestions() {
+        if (UserInteractionsConfigurator.get_difficulty_level_enum().equals(DifficultyLevel.EASY)) {
             return easy;
         }
-        if(UserInteractionsConfigurator.get_difficulty_level_enum().equals(DifficultyLevel.MEDIUM)){
+        if (UserInteractionsConfigurator.get_difficulty_level_enum().equals(DifficultyLevel.MEDIUM)) {
             return medium;
         }
-        if(UserInteractionsConfigurator.get_difficulty_level_enum().equals(DifficultyLevel.HARD)){
+        if (UserInteractionsConfigurator.get_difficulty_level_enum().equals(DifficultyLevel.HARD)) {
             return hard;
         }
 
         return 0;
     }
-
 
 
 }
