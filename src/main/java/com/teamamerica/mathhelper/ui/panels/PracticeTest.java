@@ -271,6 +271,10 @@ public class PracticeTest extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTestsActionPerformed(ActionEvent evt) {
+        AudioListener.runAudioListener("SpeechOn.wav");
+
+        this.setVisible(false);
+        new Difficulty().setVisible(true);
 
     }
 
@@ -281,7 +285,10 @@ public class PracticeTest extends JFrame {
     }
 
     private void btnLearnNowActionPerformed(ActionEvent evt) {
+        AudioListener.runAudioListener("SpeechOn.wav");
+
         if (evt.getSource().equals(btnLearnNow)) {
+
             TutorialsPageConfigurator.loadTutorialsList();
             this.setVisible(false);
             new YouTubeFrame(TutorialsPageConfigurator.getTutorial().getTutorial()).setVisible(true);
