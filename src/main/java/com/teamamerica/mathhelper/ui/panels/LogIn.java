@@ -53,7 +53,6 @@ public class LogIn extends JFrame {
         lblUserName = new JLabel();
         lblPassword = new JLabel();
         btnSignIn = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_openDoor.gif"), 400, 400);
-      //  btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
         jLabel4 = new JLabel();
 
         lblOne = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_oneTwoThree.jpg"), 200, 160);

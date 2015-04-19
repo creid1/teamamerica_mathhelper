@@ -12,16 +12,20 @@ import java.awt.*;
 public class HelpfulHints extends JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     JPanel jPanel1;
-    private ImageButton btnMain;
+    private ImageButton btnHome;
     private ImageButton btnNext;
-    private ImageButton btnInfo;
-    private ImageButton btnHelp;
+    private ImageButton btnHints;
+    private ImageButton btnINeedHelp;
     private ImageButton btnPencilReady;
     private ImageButton btnLearnNow;
-    private ImageButton btnReadyToPractice;
+    private ImageButton btnLetMeTry;
     private ImageButton btnPrint;
     private ImageButton btnLogout;
-    private JLabel lblHelpfulHints;
+    private JLabel lblHelpDeskHints;
+
+    private JLabel lblINeedHelp,lblHints,lblLogout;
+    private JLabel lblHome, lblLetMeTry,lblNext;
+    private JLabel lblPencilsReady,lblLearnNow,lblPrint;
 
     private ImageButton btnBus;
 
@@ -40,22 +44,34 @@ public class HelpfulHints extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+     //   setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        setResizable(false);
 
         jPanel1 = new JPanel();
-        lblHelpfulHints = new JLabel();
-        btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 125);
-        btnInfo = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
-        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
+        lblHelpDeskHints = new JLabel();
+        btnHome = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 101);
+        btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 115);
+        btnINeedHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
         btnNext = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_arrow.jpg"), 150, 101);
         btnPencilReady = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_psharpener.png"), 150, 113);
         btnLearnNow = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_videoTutorial.jpg"), 150, 113);
 
         btnLogout= new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_logout.gif"), 150, 101);
-        btnReadyToPractice = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_practice.jpg"), 150, 113);
+        btnLetMeTry = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_practice.jpg"), 150, 113);
         btnPrint = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_print.png"), 150, 113);
 
         btnBus = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_bus6.gif"), 150, 113);
+
+        lblHints = new JLabel("HelpDesk Hints!");
+        lblHome = new JLabel("Home!");
+        lblINeedHelp = new JLabel("I Need Help!");
+        lblLearnNow = new JLabel("Learn Now!");
+        lblLogout = new JLabel("Schools Out!");
+        lblNext = new JLabel("Next!");
+        lblPencilsReady = new JLabel("Pencils Ready!");
+        lblLetMeTry = new JLabel("Let Me Try!");
+        lblPrint = new JLabel("Print Me!");
+
 
 
 
@@ -65,42 +81,86 @@ public class HelpfulHints extends JFrame {
         jPanel1.setBackground(new Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        jPanel1.add(btnMain);
-        jPanel1.add(btnInfo);
-        jPanel1.add(btnHelp);
+        jPanel1.add(btnHome);
+        jPanel1.add(btnHints);
+        jPanel1.add(btnINeedHelp);
 
         jPanel1.add(btnLearnNow);
         jPanel1.add(btnPencilReady);
         jPanel1.add(btnNext);
 
 
-        jPanel1.add(btnReadyToPractice);
+        jPanel1.add(btnLetMeTry);
         jPanel1.add(btnLogout);
         jPanel1.add(btnPrint);
 
         jPanel1.add(btnBus);
 
+        jPanel1.add(lblINeedHelp);
+        jPanel1.add(lblHints);
+        jPanel1.add(lblLogout);
 
-        lblHelpfulHints.setFont(new Font("Comic Sans MS", 0, 68)); // NOI18N
-        lblHelpfulHints.setText("Helpful Hints");
-        jPanel1.add(lblHelpfulHints);
-        lblHelpfulHints.setBounds(30, 10, 1000, 90);
-
-
-        btnHelp.setBounds(30, 125, 125, 101);
-        btnInfo.setBounds(175, 125, 150, 101);
-        btnLogout.setBounds(260, 125,300, 101);
+        jPanel1.add(lblHome);
+        jPanel1.add(lblLetMeTry);
+        jPanel1.add(lblNext);
 
 
-        btnMain.setBounds(10, 250, 150, 125);
-        btnReadyToPractice.setBounds(165, 250, 150, 101);
-        btnNext.setBounds(250, 270,325, 101);
+        jPanel1.add(lblLearnNow);
+        jPanel1.add(lblPencilsReady);
+        jPanel1.add(lblPrint);
 
-        btnLearnNow.setBounds(20, 400, 150, 113);
-        btnPencilReady.setBounds(200, 400, 125, 101);
-        btnPrint.setBounds(250, 400, 325, 113);
+        lblHelpDeskHints.setFont(new Font("Comic Sans MS", 0, 60)); // NOI18N
+        lblHelpDeskHints.setText("HelpDesk Hints!");
+        jPanel1.add(lblHelpDeskHints);
+        lblHelpDeskHints.setBounds(30, 10, 1000, 90);
+
+
+        btnINeedHelp.setBounds(30, 115, 150, 101);
+        btnHints.setBounds(185, 115, 150, 101);
+        btnLogout.setBounds(265, 120,300, 101);
+
+        lblINeedHelp.setBounds(55, 175, 150, 101);
+        lblINeedHelp.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
+        lblHints.setBounds(200, 175, 150, 101);
+        lblHints.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
+        lblLogout.setBounds(370, 175, 300, 101);
+        lblLogout.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
+
+
+        btnHome.setBounds(10, 240, 150, 115);
+        btnLetMeTry.setBounds(165, 250, 150, 101);
+        btnNext.setBounds(248, 260,325, 101);
+
+        lblHome.setBounds(65, 315, 150, 101);
+        lblHome.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
+
+        lblLetMeTry.setBounds(190, 315, 150, 101);
+        lblLetMeTry.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
+
+        lblNext.setBounds(378, 315,150, 101);
+        lblNext.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
+
+        btnLearnNow.setBounds(25, 395, 150, 113);
+        btnPencilReady.setBounds(200, 395, 125, 101);
+        btnPrint.setBounds(250, 388, 325, 113);
+
+
+        lblLearnNow.setBounds(60, 468, 150, 101);
+        lblLearnNow.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
+
+        lblPencilsReady.setBounds(215, 468, 150, 101);
+        lblPencilsReady.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
+
+        lblPrint.setBounds(380, 468,150, 101);
+        lblPrint.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
 
         btnBus.setBounds(100,525,247,181);
+
+
+
+
+
+
 
 
 
