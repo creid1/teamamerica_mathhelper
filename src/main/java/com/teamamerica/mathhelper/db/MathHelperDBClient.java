@@ -1,7 +1,6 @@
 package com.teamamerica.mathhelper.db;
 
 import com.teamamerica.mathhelper.controllers.CategoryType;
-import com.teamamerica.mathhelper.controllers.DifficultyLevel;
 import com.teamamerica.mathhelper.controllers.GradeLevel;
 import com.teamamerica.mathhelper.models.Grade;
 import com.teamamerica.mathhelper.models.Question;
@@ -151,39 +150,6 @@ public class MathHelperDBClient {
      * *****************SEARCH QUESTION FUNCTIONS***************************************************
      */
 
-    /**
-     * This method searches for specific questions based on the grade_level, the difficulty_level, and the category_type,
-     * and returns a list of Questions.  If no results are found it returns an empty string.
-     *
-     * @param grade_level
-     * @param difficulty_level
-     * @return ArrayList
-     */
-    public ArrayList<Question> searchQuestions_grLevel_difLevel(GradeLevel grade_level,
-                                                                DifficultyLevel difficulty_level) {
-        ArrayList<Question> allQuestionList = get_allQuestionList();
-        allQuestionList = Question.searchQuestions(allQuestionList, "grade_level", grade_level);
-        return Question.searchQuestions(allQuestionList, "difficulty_level", difficulty_level);
-    }
-
-    /**
-     * This method searches for specific questions based on the grade_level, the difficulty_level, and the category_type,
-     * and returns a list of Questions.  If no results are found it returns an empty string.
-     *
-     * @param grade_level
-     * @param difficulty_level
-     * @param category_type
-     * @return ArrayList
-     */
-    public ArrayList<Question> searchQuestions_grLevel_difLevel_catType(GradeLevel grade_level,
-                                                                        DifficultyLevel difficulty_level,
-                                                                        CategoryType category_type) {
-        ArrayList<Question> allQuestionList = get_allQuestionList();
-        allQuestionList = Question.searchQuestions(allQuestionList, "grade_level", grade_level);
-        allQuestionList = Question.searchQuestions(allQuestionList, "difficulty_level", difficulty_level);
-        return Question.searchQuestions(allQuestionList, "category_type", category_type);
-    }
-
 
     public ArrayList<Question> searchQuestions_grLevel_catType(GradeLevel grade_level, CategoryType category_type) {
 
@@ -209,10 +175,6 @@ public class MathHelperDBClient {
          * @param difficulty_level
          * @return ArrayList
          */
-
-        public ArrayList<Question> searchQuestions_difLevel (GradeLevel difficulty_level){
-            return Question.searchQuestions(get_allQuestionList(), "difficulty_level", difficulty_level);
-        }
 
 
         /**
@@ -307,8 +269,9 @@ public class MathHelperDBClient {
         for (Question question : questions) {
             System.out.println("question_id: " + question.getQuestion_id() +
                     ", grade_level: " + question.getGrade_level() +
-                    ", difficulty_level: " + question.getDifficulty_level() +
                     ", category_type: " + question.getCategory_type() +
+                    ", has_question_image: " + question.getHas_question_image() +
+                    ", has_answer_image: " + question.getHas_answer_image() +
                     ", question: " + question.getQuestion() +
                     ", answer: " + question.getAnswer() +
                     ", wrong_1: " + question.getWrong_1() +

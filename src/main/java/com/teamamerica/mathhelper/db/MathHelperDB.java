@@ -237,9 +237,9 @@ public class MathHelperDB {
                 Question question = new Question();
                 question.setQuestion_id(rs.getInt("question_id"));
                 question.setGrade_level(rs.getString("grade_level"));
-                question.setDifficulty_level(rs.getString("difficulty_level"));
                 question.setCategory_type(rs.getString("category_type"));
-                question.setHas_image(rs.getBoolean("has_image"));
+                question.setHas_question_image(rs.getBoolean("has_question_image"));
+                question.setHas_answer_image(rs.getBoolean("has_answer_image"));
                 question.setQuestion(rs.getString("question"));
                 question.setAnswer(rs.getString("answer"));
                 question.setWrong_1(rs.getString("wrong_1"));
