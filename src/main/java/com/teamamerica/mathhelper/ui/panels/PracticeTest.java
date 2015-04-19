@@ -40,9 +40,7 @@ public class PracticeTest extends JFrame {
     private ImageLabel lblQuestion;
     private JPanel jPanel1;
     private ImageButton btnPencilReady;
-
-
-    ImageButton btnLearnNow;
+    private ImageButton btnLearnNow;
 
     // End of variables declaration//GEN-END:variables
 

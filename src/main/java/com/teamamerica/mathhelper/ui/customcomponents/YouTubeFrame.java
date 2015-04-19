@@ -112,28 +112,24 @@ public class YouTubeFrame extends JFrame {
                 btnMainActionPerformed(evt);
             }
         });
-        btnMain.setBounds(10, 10, 150, 125);
 
 
-        ImageButton btnTutorialMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_videoTutorial.jpg"), 150, 113);
-        btnTutorialMain.setBounds(10, 10, 150, 113);
+        ImageButton btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 113);
 
-        btnTutorialMain.addActionListener(new java.awt.event.ActionListener() {
+        btnHelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTutorialsActionPerformed(evt);
             }
         });
 
-        final ImageButton btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
-        btnHelp.addActionListener(new ActionListener() {
+        final ImageButton btnInfo = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
+        btnInfo.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 btnHelpActionPerformed(evt);
             }
         });
-        btnHelp.setBounds(10, 100, 150, 101);
 
         final ImageButton btnNext = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_arrow.jpg"), 150, 101);
-        btnNext.setBounds(820, 10, 150, 101);
         btnNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNextActionPerformed(evt);
@@ -141,20 +137,25 @@ public class YouTubeFrame extends JFrame {
         });
 
 
-        ImageButton btnTests = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_test.png"), 150, 101);
-        btnTests.setBounds(10, 700, 150, 101);
+        ImageButton btnPractice = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_practice.jpg"), 150, 101);
 
-        btnTests.addActionListener(new java.awt.event.ActionListener() {
+        btnPractice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTestsActionPerformed(evt);
             }
         });
 
+        btnMain.setBounds(10, 10, 150, 125);
+        btnHelp.setBounds(10, 100, 150, 113);
+        btnPractice.setBounds(10, 300, 150, 101);
+        btnInfo.setBounds(10, 700, 150, 101);
+        btnNext.setBounds(820, 10, 150, 101);
+
 
         pnButtons.add(btnMain);
         pnButtons.add(btnHelp);
-        pnButtons.add(btnTutorialMain);
-        pnButtons.add(btnTests);
+        pnButtons.add(btnPractice);
+        pnButtons.add(btnInfo);
         pnButtons.add(btnNext);
 
 
