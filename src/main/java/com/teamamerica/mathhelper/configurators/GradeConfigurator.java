@@ -73,14 +73,27 @@ public class GradeConfigurator {
             letterGrade = "D-";
             has_receivedReward = true;
         }
+        if (UserInteractionsConfigurator.get_category_type_enum() != null) {
 
-        Grade grade = new Grade(-1, UserInteractionsConfigurator.get_interactive_user().getUser_id(), letterGrade, has_receivedReward);
-        mathHelperDBClient.add_newGrade(grade);
-        System.out.println("Grade submitted:  " + grade.getGrade());
-        UserInteractionsConfigurator.set_interactive_grade(new Grade(mathHelperDBClient.getLastGradeIdAdded(),
-                UserInteractionsConfigurator.get_interactive_user().getUser_id(), letterGrade, has_receivedReward));
+            Grade grade = new Grade(-1, UserInteractionsConfigurator.get_interactive_user().getUser_id(), letterGrade,
+                    UserInteractionsConfigurator.get_category_type_enum().toString(), has_receivedReward);
+            mathHelperDBClient.add_newGrade(grade);
+            System.out.println("Grade submitted:  " + grade.getGrade());
+            UserInteractionsConfigurator.set_interactive_grade(new Grade(mathHelperDBClient.getLastGradeIdAdded(),
+                    UserInteractionsConfigurator.get_interactive_user().getUser_id(), letterGrade,
+                    UserInteractionsConfigurator.get_category_type_enum().toString(), has_receivedReward));
+        } else {
+            Grade grade = new Grade(-1, UserInteractionsConfigurator.get_interactive_user().getUser_id(), letterGrade,
+                    "", has_receivedReward);
+            mathHelperDBClient.add_newGrade(grade);
+            System.out.println("Grade submitted:  " + grade.getGrade());
+            UserInteractionsConfigurator.set_interactive_grade(new Grade(mathHelperDBClient.getLastGradeIdAdded(),
+                    UserInteractionsConfigurator.get_interactive_user().getUser_id(), letterGrade,
+                    "", has_receivedReward));
+        }
 
     }
+
 
     public static Grade findGradeById(int id) {
         return mathHelperDBClient.searchGrades_gradeId(id);

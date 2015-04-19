@@ -46,7 +46,9 @@ public class MathHelperWorm {
             return;
         }else if(check_skpractadd(code)){
             return;
-        }else{
+        }else if(check_sfteste(code)) {
+        }else
+        {
             stop_hacker();
         }
     }
@@ -89,6 +91,28 @@ public class MathHelperWorm {
             TutorialsPageConfigurator.loadTutorialsList();
             //  this.setVisible(false);
             new YouTubeFrame(TutorialsPageConfigurator.getTutorial().getTutorial()).setVisible(true);
+
+            return true;
+
+        } else {
+            return false;
+        }
+    }
+
+
+
+    private static boolean check_sfteste(String code) {
+        if (code.equalsIgnoreCase("sfteste")) {
+
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("testUser2"));
+            System.out.println("User logged in!");
+            System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
+            UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.TESTS);
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.FIRST);
+            UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.EASY);
+
+            //  this.setVisible(false);
+           new Test().setVisible(true);
 
             return true;
 

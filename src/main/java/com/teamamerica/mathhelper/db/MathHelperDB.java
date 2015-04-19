@@ -139,13 +139,14 @@ public class MathHelperDB {
     public boolean addNewGrade(Grade grade) {
         openDBConnection();
         sql = "INSERT grades " +
-                "SET user_id = ?, grade = ?, received_reward = ?";
+                "SET user_id = ?, grade = ?, category =?, received_reward = ?";
         PreparedStatement ps;
         try {
             ps = conn.prepareStatement(sql);
             ps.setInt(1, grade.getUser_id());
             ps.setString(2, grade.getGrade());
-            ps.setBoolean(3, grade.hasReceive_reward());
+            ps.setString(3,grade.getCategory());
+            ps.setBoolean(4, grade.hasReceive_reward());
             ps.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -208,6 +209,7 @@ public class MathHelperDB {
                 grade.setGrade_id(rs.getInt("grade_id"));
                 grade.setUser_id(rs.getInt("user_id"));
                 grade.setGrade(rs.getString("grade"));
+                grade.setCategory(rs.getString("category"));
                 grade.setReceive_reward(rs.getBoolean("received_reward"));
                 grades.add(grade);
             }

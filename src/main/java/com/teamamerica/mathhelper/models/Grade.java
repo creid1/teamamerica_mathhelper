@@ -11,6 +11,7 @@ public class Grade {
     private int grade_id;
     private int user_id;
     private String grade;
+    private String category;
     private boolean receive_reward;
 
     public Grade() {
@@ -25,10 +26,11 @@ public class Grade {
 
     }
 
-    public Grade(int grade_id, int user_id, String grade, boolean hasReward) {
+    public Grade(int grade_id, int user_id, String grade, String category, boolean hasReward) {
         this.grade_id = grade_id;
         this.user_id = user_id;
         this.grade = grade;
+        this.category = category;
         this.receive_reward = hasReward;
     }
 
@@ -45,6 +47,8 @@ public class Grade {
     public void setGrade(String grade) {
         this.grade = grade;
     }
+
+    public void setCategory(String category){this.category =category; }
 
     public void setReceive_reward(boolean receive_reward) {
         this.receive_reward = receive_reward;
@@ -63,6 +67,9 @@ public class Grade {
         return grade_id;
     }
 
+    public String getCategory(){
+        return category;
+    }
 
     public int getUser_id() {
         return user_id;

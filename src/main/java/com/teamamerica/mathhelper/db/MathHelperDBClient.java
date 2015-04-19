@@ -153,85 +153,86 @@ public class MathHelperDBClient {
 
     public ArrayList<Question> searchQuestions_grLevel_catType(GradeLevel grade_level, CategoryType category_type) {
 
-            ArrayList<Question> allQuestionList = get_allQuestionList();
-            allQuestionList = Question.searchQuestions(allQuestionList, "grade_level", grade_level);
-            return Question.searchQuestions(allQuestionList, "category_type", category_type);
-        }
-        /**
-         * This method searches the Questions table for Questions by Grade Level and returns a list of Questions. If no
-         * Questions are found, it returns an empty list.
-         *
-         * @param grade_level
-         * @return ArrayList
-         */
-        public ArrayList<Question> searchQuestions_grLevel (GradeLevel grade_level){
-            return Question.searchQuestions(get_allQuestionList(), "grade_level", grade_level);
-        }
+        ArrayList<Question> allQuestionList = get_allQuestionList();
+        allQuestionList = Question.searchQuestions(allQuestionList, "grade_level", grade_level);
+        return Question.searchQuestions(allQuestionList, "category_type", category_type);
+    }
 
-        /**
-         * This method searches the Questions list by difficulty_level and returns a list of Questions.  If there are no
-         * Questions found it returns an empty list.
-         *
-         * @param difficulty_level
-         * @return ArrayList
-         */
+    /**
+     * This method searches the Questions table for Questions by Grade Level and returns a list of Questions. If no
+     * Questions are found, it returns an empty list.
+     *
+     * @param grade_level
+     * @return ArrayList
+     */
+    public ArrayList<Question> searchQuestions_grLevel(GradeLevel grade_level) {
+        return Question.searchQuestions(get_allQuestionList(), "grade_level", grade_level);
+    }
 
-
-        /**
-         * This method searches the Questions list by category_type and returns a list of Questions.  If there are no
-         * Questions found it returns an empty list.
-         *
-         * @param category_type
-         * @return ArrayList
-         */
-        public ArrayList<Question> searchQuestions_catType (CategoryType category_type){
-            return Question.searchQuestions(get_allQuestionList(), "category_type", category_type);
-
-        }
-
-        /*****************************TUTORIAL SEARCH FUNCTIONS********************************/
-
-        /**
-         * This method searches for specific questions based on the grade_level, the difficulty_level, and the category_type,
-         * and returns a list of Tutorials.  If no results are found it returns an empty string.
-         *
-         * @param grade_level
-         * @param category_type
-         * @return ArrayList
-         */
-        public ArrayList<Tutorial> searchTutorials_grLevel_catType (GradeLevel grade_level,
-                CategoryType category_type){
-            ArrayList<Tutorial> allTutorialsList = get_allTutorialList();
-            allTutorialsList = Tutorial.searchTutorials(allTutorialsList, "grade_level", grade_level);
-            return Tutorial.searchTutorials(allTutorialsList, "category_type", category_type);
-        }
-
-        /**
-         * This method searches the Tutorials table for Questions by Grade Level and returns a list of Tutorials. If no
-         * Tutorials are found, it returns an empty list.
-         *
-         * @param grade_level
-         * @return ArrayList
-         */
-        public ArrayList<Tutorial> searchTutorials_grLevel (GradeLevel grade_level){
-            return Tutorial.searchTutorials(get_allTutorialList(), "grade_level", grade_level);
-        }
+    /**
+     * This method searches the Questions list by difficulty_level and returns a list of Questions.  If there are no
+     * Questions found it returns an empty list.
+     *
+     * @param difficulty_level
+     * @return ArrayList
+     */
 
 
-        /**
-         * This method searches the Tutorials list by category_type and returns a list of Tutorials.  If there are no
-         * Tutorials found it returns an empty list.
-         *
-         * @param category_type
-         * @return ArrayList
-         */
-        public ArrayList<Tutorial> searchTutorial_catType (CategoryType category_type){
-            return Tutorial.searchTutorials(get_allTutorialList(), "category_type", category_type);
-        }
+    /**
+     * This method searches the Questions list by category_type and returns a list of Questions.  If there are no
+     * Questions found it returns an empty list.
+     *
+     * @param category_type
+     * @return ArrayList
+     */
+    public ArrayList<Question> searchQuestions_catType(CategoryType category_type) {
+        return Question.searchQuestions(get_allQuestionList(), "category_type", category_type);
 
-        /**
-         * ***************************PRINT FUNCTIONS**********************************
-         */
+    }
+
+    /*****************************TUTORIAL SEARCH FUNCTIONS********************************/
+
+    /**
+     * This method searches for specific questions based on the grade_level, the difficulty_level, and the category_type,
+     * and returns a list of Tutorials.  If no results are found it returns an empty string.
+     *
+     * @param grade_level
+     * @param category_type
+     * @return ArrayList
+     */
+    public ArrayList<Tutorial> searchTutorials_grLevel_catType(GradeLevel grade_level,
+                                                               CategoryType category_type) {
+        ArrayList<Tutorial> allTutorialsList = get_allTutorialList();
+        allTutorialsList = Tutorial.searchTutorials(allTutorialsList, "grade_level", grade_level);
+        return Tutorial.searchTutorials(allTutorialsList, "category_type", category_type);
+    }
+
+    /**
+     * This method searches the Tutorials table for Questions by Grade Level and returns a list of Tutorials. If no
+     * Tutorials are found, it returns an empty list.
+     *
+     * @param grade_level
+     * @return ArrayList
+     */
+    public ArrayList<Tutorial> searchTutorials_grLevel(GradeLevel grade_level) {
+        return Tutorial.searchTutorials(get_allTutorialList(), "grade_level", grade_level);
+    }
+
+
+    /**
+     * This method searches the Tutorials list by category_type and returns a list of Tutorials.  If there are no
+     * Tutorials found it returns an empty list.
+     *
+     * @param category_type
+     * @return ArrayList
+     */
+    public ArrayList<Tutorial> searchTutorial_catType(CategoryType category_type) {
+        return Tutorial.searchTutorials(get_allTutorialList(), "category_type", category_type);
+    }
+
+    /**
+     * ***************************PRINT FUNCTIONS**********************************
+     */
 
     public void print_users() {
 
@@ -257,7 +258,9 @@ public class MathHelperDBClient {
         for (Grade grade : grades) {
             System.out.println("grade_id: " + grade.getGrade_id() +
                     ", user_id: " + grade.getUser_id() +
-                    ", grade: " + grade.getGrade());
+                    ", grade: " + grade.getGrade() +
+                    ", category: " + grade.getCategory() +
+                    ", received_reward: " + grade.hasReceive_reward());
             System.out.println("     ");
         }
     }
