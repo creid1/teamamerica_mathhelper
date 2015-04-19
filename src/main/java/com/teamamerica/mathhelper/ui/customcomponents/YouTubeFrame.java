@@ -53,15 +53,17 @@ public class YouTubeFrame extends JFrame {
         frame.getContentPane().add(webBrowserPanel, BorderLayout.CENTER);
 
 
-        frame.setSize(new Dimension(1016, 638));
+        frame.setSize(new Dimension(1016, 738));
 
         frame.setLocationByPlatform(true);
         frame.setVisible(true);
 
 
         frame.getContentPane().add(createHeaderPanel(), BorderLayout.NORTH);
+        frame.setResizable(false);
 
         add(frame, BorderLayout.CENTER); //this throws an exception but it is the only way the browser loads and the frame loads in the frame
+        setResizable(false);
 
 
         NativeInterface.runEventPump();

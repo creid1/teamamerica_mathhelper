@@ -109,7 +109,7 @@ public class Test extends JFrame {
             }
         });
         jPanel1.add(btnInfo);
-        btnInfo.setBounds(850, 475, 150, 101);
+        btnInfo.setBounds(850, 575, 150, 101);
 
 
 
@@ -119,7 +119,7 @@ public class Test extends JFrame {
             }
         });
         jPanel1.add(btnHelp);
-        btnHelp.setBounds(30, 475, 150, 101);
+        btnHelp.setBounds(30, 575, 150, 101);
 
         btnA.addActionListener(new ActionListener() {
             @Override
@@ -215,11 +215,11 @@ public class Test extends JFrame {
         });
         jPanel1.add(btnC);
 
-        btnA.setBounds(120, 340, 150, 150);
-        btnB.setBounds(320, 340, 150, 150);
+        btnA.setBounds(115, 390, 150, 150);
+        btnB.setBounds(315, 390, 150, 150);
 
-        btnC.setBounds(520, 340, 150, 150);
-        btnD.setBounds(720, 340, 150, 150);
+        btnC.setBounds(515, 390, 150, 150);
+        btnD.setBounds(715, 390, 150, 150);
 
 
         lblAnswer.setFont(new Font("Comic Sans MS", 0, 75)); // NOI18N
@@ -235,7 +235,7 @@ public class Test extends JFrame {
         lblQuestionCounter.setFont(new Font("Comic Sans MS", 0, 65)); // NOI18N
         lblQuestionCounter.setText("Question: " + (testQuestionCounter + 1) + "/" + (int) questionsMax);
         jPanel1.add(lblQuestionCounter);
-        lblQuestionCounter.setBounds(275, 30, 1000, 90);
+        lblQuestionCounter.setBounds(265, 30, 1000, 90);
 
         lblQuestion.setBounds(100, 170, 1000, 150);
         lblAnswer.setBounds(425, 170, 150, 150);
@@ -261,7 +261,7 @@ public class Test extends JFrame {
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
 
         pack();

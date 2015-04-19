@@ -26,7 +26,7 @@ public class LogIn extends JFrame {
   //  private ImageButton btnHelp;
     private JFormattedTextField txtUserName;
     private JLabel lblUserName;
-    private JLabel jLabel2, lblOne, lblTwo, lblThree, lbl4;
+    private JLabel jLabel2, lblOne, lblTwo;
     private JLabel lblPassword;
     private JLabel jLabel4;
     private JPanel jPanel1;
@@ -61,7 +61,7 @@ public class LogIn extends JFrame {
 
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
 
-        btnTrojan = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_trojan.png"), 50, 50);
+        btnTrojan = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_trojan.png"), 20, 20);
 
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -80,27 +80,27 @@ public class LogIn extends JFrame {
         jPasswordField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jPasswordField.setToolTipText("");
         jPanel1.add(jPasswordField);
-        jPasswordField.setBounds(510, 350, 250, 60);
+        jPasswordField.setBounds(510, 425, 250, 60);
 
-        lblTwo.setBounds(775, 130, 200, 160);
+        lblTwo.setBounds(775, 140, 200, 160);
         jPanel1.add(lblTwo);
 
         txtUserName.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         jPanel1.add(txtUserName);
-        txtUserName.setBounds(510, 250, 250, 60);
+        txtUserName.setBounds(510, 325, 250, 60);
 
-        lblOne.setBounds(20, 130, 200, 160);
+        lblOne.setBounds(20, 140, 200, 160);
         jPanel1.add(lblOne);
 
         lblUserName.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         lblUserName.setText("Username:");
         jPanel1.add(lblUserName);
-        lblUserName.setBounds(240, 260, 178, 40);
+        lblUserName.setBounds(240, 325, 178, 40);
 
         lblPassword.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         lblPassword.setText("Password:");
         jPanel1.add(lblPassword);
-        lblPassword.setBounds(250, 360, 165, 30);
+        lblPassword.setBounds(250, 425, 165, 30);
 
         btnSignIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,9 +108,9 @@ public class LogIn extends JFrame {
             }
         });
         jPanel1.add(btnSignIn);
-        btnSignIn.setBounds(300, 300, 400, 400);
+        btnSignIn.setBounds(300, 400, 400, 400);
 
-        btnTrojan.setBounds(85, 470, 20, 20);
+        btnTrojan.setBounds(80, 560, 20, 20);
         btnTrojan.setVisible(true);
         btnTrojan.setEnabled(true);
         jPanel1.add(btnTrojan);
@@ -127,13 +127,13 @@ public class LogIn extends JFrame {
             }
         });
         jPanel1.add(btnHelp);
-        btnHelp.setBounds(30, 475, 150, 101);
+        btnHelp.setBounds(30, 575, 150, 101);
 
 
-        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 56)); // NOI18N
         jLabel4.setText("Please Sign In");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(360, 150, 260, 60);
+        jLabel4.setBounds(300, 175, 1000, 90);
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,10 +143,11 @@ public class LogIn extends JFrame {
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
 
         pack();
+        setResizable(false);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

@@ -28,7 +28,7 @@ public class PracticeTest extends JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private ImageButton btnC;
     private ImageButton btnA;
-    private ImageButton btnMain;
+    private ImageButton btnHome;
     private ImageButton btnNext;
     private ImageButton btnInfo;
     private ImageButton btnHelp;
@@ -74,11 +74,11 @@ public class PracticeTest extends JFrame {
 
 
         jPanel1 = new JPanel();
-        btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 125);
+        btnHome = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 125);
         btnInfo = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
 
-        btnA = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(),question.getHas_answer_image()), 150, 150);
+        btnA = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(), question.getHas_answer_image()), 150, 150);
         btnB = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_1(),question.getHas_answer_image()), 150, 150);
         btnC = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_2(),question.getHas_answer_image()), 150, 150);
         btnD = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_3(),question.getHas_answer_image()), 150, 150);
@@ -95,12 +95,12 @@ public class PracticeTest extends JFrame {
         jPanel1.setBackground(new Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        btnMain.addActionListener(new ActionListener() {
+        btnHome.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 btnMainActionPerformed(evt);
             }
         });
-        jPanel1.add(btnMain);
+        jPanel1.add(btnHome);
 
         btnInfo.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -108,7 +108,7 @@ public class PracticeTest extends JFrame {
             }
         });
         jPanel1.add(btnInfo);
-        btnInfo.setBounds(850, 475, 150, 101);
+        btnInfo.setBounds(850, 575, 150, 101);
 
 
         btnHelp.addActionListener(new ActionListener() {
@@ -117,7 +117,7 @@ public class PracticeTest extends JFrame {
             }
         });
         jPanel1.add(btnHelp);
-        btnHelp.setBounds(30, 475, 150, 101);
+        btnHelp.setBounds(30, 575, 150, 101);
 
         jPanel1.add(btnLearnNow);
         btnLearnNow.addActionListener(new java.awt.event.ActionListener() {
@@ -199,11 +199,11 @@ public class PracticeTest extends JFrame {
         });
         jPanel1.add(btnC);
 
-        btnA.setBounds(120, 340, 150, 150);
-        btnB.setBounds(320, 340, 150, 150);
+        btnA.setBounds(115, 390, 150, 150);
+        btnB.setBounds(315, 390, 150, 150);
 
-        btnC.setBounds(520, 340, 150, 150);
-        btnD.setBounds(720, 340, 150, 150);
+        btnC.setBounds(515, 390, 150, 150);
+        btnD.setBounds(715, 390, 150, 150);
 
 
         lblAnswer.setFont(new Font("Comic Sans MS", 0, 75)); // NOI18N
@@ -244,8 +244,8 @@ public class PracticeTest extends JFrame {
         jPanel1.add(btnNext);
         btnNext.setVisible(false);
 
-        btnMain.setBounds(10, 10, 150, 125);
-        btnPencilReady.setBounds(150, 20, 150, 101);
+        btnHome.setBounds(10, 10, 150, 125);
+        btnPencilReady.setBounds(145, 25, 150, 101);
         lblQuestionCounter.setBounds(300, 30, 1000, 101);
         btnLearnNow.setBounds(650, 20, 150, 113);
         btnNext.setBounds(820, 30, 150, 101);
@@ -260,7 +260,7 @@ public class PracticeTest extends JFrame {
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
 
         pack();
