@@ -34,10 +34,8 @@ public class Test extends JFrame {
     private ImageButton btnB;
     private JLabel lblQuestionCounter;
     private ImageLabel lblAnswer;
-    private JLabel lblNext;
     private ImageLabel lblCorrect;
     private ImageLabel lblQuestion;
-    private JLabel lblMainMenu;
     private JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
@@ -83,7 +81,6 @@ public class Test extends JFrame {
         btnInfo = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
 
-        lblNext = new JLabel();
         btnA = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(),question.getHas_answer_image()), 150, 150);
         btnB = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_1(),question.getHas_answer_image()), 150, 150);
         btnC = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_2(),question.getHas_answer_image()), 150, 150);
@@ -94,8 +91,6 @@ public class Test extends JFrame {
         lblCorrect = new ImageLabel(150, 150);
         lblQuestion = new ImageLabel(question.getHas_question_image(), checkHasFileToGenerateFullPath(question.getQuestion(), question.getHas_question_image()), 1000, 150);
         btnNext = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_arrow.jpg"), 150, 101);
-        lblMainMenu = new JLabel();
-
 
         jPanel1.setBackground(new Color(255, 255, 255));
         jPanel1.setLayout(null);
@@ -125,15 +120,6 @@ public class Test extends JFrame {
         });
         jPanel1.add(btnHelp);
         btnHelp.setBounds(30, 475, 150, 101);
-
-
-        lblNext.setBackground(new Color(255, 255, 255));
-        lblNext.setFont(new Font("Comic Sans MS", 0, 24)); // NOI18N
-        lblNext.setText("      Next");
-        jPanel1.add(lblNext);
-        lblNext.setBounds(840, 130, 150, 34);
-        lblNext.setVisible(false);
-
 
         btnA.addActionListener(new ActionListener() {
             @Override
@@ -246,10 +232,10 @@ public class Test extends JFrame {
         lblQuestion.setFont(new Font("Comic Sans MS", 0, 75)); // NOI18N
         jPanel1.add(lblQuestion);
 
-        lblQuestionCounter.setFont(new Font("Comic Sans MS", 0, 58)); // NOI18N
+        lblQuestionCounter.setFont(new Font("Comic Sans MS", 0, 65)); // NOI18N
         lblQuestionCounter.setText("Question: " + (testQuestionCounter + 1) + "/" + (int) questionsMax);
         jPanel1.add(lblQuestionCounter);
-        lblQuestionCounter.setBounds(300, 25, 1000, 60);
+        lblQuestionCounter.setBounds(275, 30, 1000, 90);
 
         lblQuestion.setBounds(100, 170, 1000, 150);
         lblAnswer.setBounds(425, 170, 150, 150);
@@ -267,12 +253,7 @@ public class Test extends JFrame {
         btnNext.setBounds(820, 30, 150, 101);
         btnNext.setVisible(false);
 
-        lblMainMenu.setFont(new Font("Comic Sans MS", 0, 24)); // NOI18N
-        lblMainMenu.setText("  Main Menu");
-        jPanel1.add(lblMainMenu);
-        lblMainMenu.setBounds(10, 135, 150, 34);
-
-        GroupLayout layout = new GroupLayout(getContentPane());
+          GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -322,7 +303,6 @@ public class Test extends JFrame {
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         btnNext.setVisible(false);
-        lblNext.setVisible(false);
         testQuestionCounter++;
         if (testQuestionCounter >= questionsMax) {
 
@@ -352,7 +332,6 @@ public class Test extends JFrame {
     private void checkAnswerButtons() {
         lblAnswer.setVisible(true);
         btnNext.setVisible(true);
-        lblNext.setVisible(true);
         for (ImageButton button : listOfButtons) {
             if (button == correctAnswer) {
                 correctAnswer.createRightAnswerButton();
