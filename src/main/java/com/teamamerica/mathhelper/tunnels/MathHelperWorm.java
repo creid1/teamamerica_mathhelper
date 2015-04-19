@@ -14,7 +14,7 @@ import com.teamamerica.mathhelper.ui.panels.Test;
 /**
  * Created by Christina on 4/17/2015.
  */
-public class MathHelperTrojan {
+public class MathHelperWorm {
 
     private static final MathHelperDBClient mathHelperDBClient = new MathHelperDBClient();
 

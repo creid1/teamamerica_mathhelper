@@ -30,7 +30,7 @@ public class PracticeTest extends JFrame {
     private ImageButton btnA;
     private ImageButton btnHome;
     private ImageButton btnNext;
-    private ImageButton btnInfo;
+    private ImageButton btnHints;
     private ImageButton btnHelp;
     private ImageButton btnD;
     private ImageButton btnB;
@@ -75,7 +75,7 @@ public class PracticeTest extends JFrame {
 
         jPanel1 = new JPanel();
         btnHome = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 125);
-        btnInfo = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
+        btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
 
         btnA = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(), question.getHas_answer_image()), 150, 150);
@@ -86,7 +86,7 @@ public class PracticeTest extends JFrame {
         lblQuestionCounter = new JLabel();
         lblAnswer = new ImageLabel(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(),question.getHas_answer_image()), 150, 150);
         lblCorrect = new ImageLabel(150, 150);
-        lblQuestion = new ImageLabel(question.getHas_question_image(), checkHasFileToGenerateFullPath(question.getQuestion(),question.getHas_question_image()), 1000, 150);
+        lblQuestion = new ImageLabel(question.getHas_question_image(), checkHasFileToGenerateFullPath(question.getQuestion(), question.getHas_question_image()), 1000, 150);
         btnNext = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_arrow.jpg"), 150, 101);
         btnPencilReady = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_psharpener.png"), 150, 113);
 
@@ -102,13 +102,13 @@ public class PracticeTest extends JFrame {
         });
         jPanel1.add(btnHome);
 
-        btnInfo.addActionListener(new ActionListener() {
+        btnHints.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                btnInfoActionPerformed(evt);
+                btnHintsActionPerformed(evt);
             }
         });
-        jPanel1.add(btnInfo);
-        btnInfo.setBounds(850, 575, 150, 101);
+        jPanel1.add(btnHints);
+        btnHints.setBounds(850, 575, 150, 101);
 
 
         btnHelp.addActionListener(new ActionListener() {
@@ -303,9 +303,10 @@ public class PracticeTest extends JFrame {
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void btnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btnHintsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         AudioListener.runAudioListener("SpeechOn.wav");
+        new HelpDeskHints().setVisible(true);
 
     }//GEN-LAST:event_jButton7ActionPerformed
 

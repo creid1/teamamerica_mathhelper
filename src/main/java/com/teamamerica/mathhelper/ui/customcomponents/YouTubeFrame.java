@@ -4,11 +4,11 @@ import chrriis.dj.nativeswing.swtimpl.NativeInterface;
 import chrriis.dj.nativeswing.swtimpl.components.JFlashPlayer;
 import com.teamamerica.mathhelper.configurators.TutorialsPageConfigurator;
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
-import com.teamamerica.mathhelper.controllers.GradeLevel;
+import com.teamamerica.mathhelper.controllers.MainMenuSelection;
 import com.teamamerica.mathhelper.environment.ConfigDirectory;
-import com.teamamerica.mathhelper.ui.panels.CategoriesMain;
+import com.teamamerica.mathhelper.ui.panels.HelpDeskHints;
 import com.teamamerica.mathhelper.ui.panels.MainMenu;
-import com.teamamerica.mathhelper.ui.panels.Test;
+import com.teamamerica.mathhelper.ui.panels.PracticeTest;
 
 import javax.swing.*;
 import java.awt.*;
@@ -47,13 +47,12 @@ public class YouTubeFrame extends JFrame {
         frame.setLocationRelativeTo(null);
 
 
-
-
         getJFlashPlayer(url);
         frame.getContentPane().add(webBrowserPanel, BorderLayout.CENTER);
 
 
-        frame.setSize(new Dimension(1016, 738));
+        frame.setSize(new Dimension(1016, 736));
+        frame.setLocation(0,0);
 
         frame.setLocationByPlatform(true);
         frame.setVisible(true);
@@ -64,6 +63,7 @@ public class YouTubeFrame extends JFrame {
 
         add(frame, BorderLayout.CENTER); //this throws an exception but it is the only way the browser loads and the frame loads in the frame
         setResizable(false);
+        setLocation(0,0);
 
 
         NativeInterface.runEventPump();
@@ -89,19 +89,6 @@ public class YouTubeFrame extends JFrame {
     }
 
 
-    private void btnTutorialsActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        GradeLevel gradeLevel = UserInteractionsConfigurator.get_interactive_grade_level_enum();
-        if(gradeLevel == GradeLevel.K || gradeLevel == GradeLevel.PRE_K) {
-            this.setVisible(false);
-            this.frame.setVisible(false);
-            new CategoriesMain().setVisible(true);
-        }
-        else{
-
-
-        }
-    }
 
     private JPanel createHeaderPanel() {
         JPanel pnButtons = new JPanel();
@@ -117,17 +104,16 @@ public class YouTubeFrame extends JFrame {
 
 
         ImageButton btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 113);
-
         btnHelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTutorialsActionPerformed(evt);
+                btnHelpActionPerformed(evt);
             }
         });
 
-        final ImageButton btnInfo = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
-        btnInfo.addActionListener(new ActionListener() {
+        final ImageButton btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
+        btnHints.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                btnHelpActionPerformed(evt);
+                btnHintsActionPerformed(evt);
             }
         });
 
@@ -140,43 +126,36 @@ public class YouTubeFrame extends JFrame {
 
 
         ImageButton btnPractice = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_practice.jpg"), 150, 101);
-
         btnPractice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTestsActionPerformed(evt);
+                btnPracticeActionPerformed(evt);
             }
         });
 
         btnMain.setBounds(10, 10, 150, 125);
         btnHelp.setBounds(10, 100, 150, 113);
         btnPractice.setBounds(10, 300, 150, 101);
-        btnInfo.setBounds(10, 700, 150, 101);
+        btnHints.setBounds(10, 700, 150, 101);
         btnNext.setBounds(820, 10, 150, 101);
 
 
         pnButtons.add(btnMain);
         pnButtons.add(btnHelp);
         pnButtons.add(btnPractice);
-        pnButtons.add(btnInfo);
+        pnButtons.add(btnHints);
         pnButtons.add(btnNext);
 
 
         return pnButtons;
     }
 
-    private void btnTestsActionPerformed(ActionEvent evt) {
+    private void btnPracticeActionPerformed(ActionEvent evt) {
+            AudioListener.runAudioListener("SpeechOn.wav");
+            this.setVisible(false);
+            this.frame.setVisible(false);
+        UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.PRACTICE);
+            new PracticeTest().setVisible(true);
 
-        GradeLevel gradeLevel = UserInteractionsConfigurator.get_interactive_grade_level_enum();
-        if(gradeLevel == GradeLevel.K || gradeLevel == GradeLevel.FIRST ){
-            this.setVisible(false);
-            this.frame.setVisible(false);
-            new CategoriesMain().setVisible(true);
-        }
-        else{
-            this.setVisible(false);
-            this.frame.setVisible(false);
-            new Test().setVisible(true);
-        }
 
     }
 
@@ -192,6 +171,12 @@ public class YouTubeFrame extends JFrame {
 
     private void btnHelpActionPerformed(ActionEvent evt) {
         AudioListener.runAudioListener("SpeechOn.wav");
+
+    }
+
+    private void btnHintsActionPerformed(ActionEvent evt) {
+        AudioListener.runAudioListener("SpeechOn.wav");
+        new HelpDeskHints().setVisible(true);
 
     }
 

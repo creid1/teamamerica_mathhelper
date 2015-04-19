@@ -1,15 +1,18 @@
 package com.teamamerica.mathhelper.ui.panels;
 
 import com.teamamerica.mathhelper.environment.ConfigDirectory;
+import com.teamamerica.mathhelper.ui.customcomponents.AudioListener;
 import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Christina on 4/18/2015.
  */
-public class HelpfulHints extends JFrame {
+public class HelpDeskHints extends JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     JPanel jPanel1;
     private ImageButton btnHome;
@@ -35,7 +38,7 @@ public class HelpfulHints extends JFrame {
     // End of variables declaration//GEN-END:variables
 
 
-    public HelpfulHints() {
+    public HelpDeskHints() {
         initComponents();
 
     }
@@ -44,8 +47,9 @@ public class HelpfulHints extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-     //   setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
+        setLocation(850,0);
 
         jPanel1 = new JPanel();
         lblHelpDeskHints = new JLabel();
@@ -116,8 +120,32 @@ public class HelpfulHints extends JFrame {
 
 
         btnINeedHelp.setBounds(30, 115, 150, 101);
+        btnINeedHelp.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource() == btnINeedHelp){
+                    AudioListener.runAudioListener("SpeechOn.wav");
+                }
+            }
+        });
         btnHints.setBounds(185, 115, 150, 101);
+        btnHints.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource() == btnHints){
+                    AudioListener.runAudioListener("SpeechOn.wav");
+                }
+            }
+        });
         btnLogout.setBounds(265, 120,300, 101);
+        btnLogout.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource() == btnLogout){
+                    AudioListener.runAudioListener("SpeechOn.wav");
+                }
+            }
+        });
 
         lblINeedHelp.setBounds(55, 175, 150, 101);
         lblINeedHelp.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
@@ -128,8 +156,32 @@ public class HelpfulHints extends JFrame {
 
 
         btnHome.setBounds(10, 240, 150, 115);
+        btnHome.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource() == btnHome){
+                    AudioListener.runAudioListener("SpeechOn.wav");
+                }
+            }
+        });
         btnLetMeTry.setBounds(165, 250, 150, 101);
+        btnLetMeTry.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource() == btnLetMeTry){
+                    AudioListener.runAudioListener("SpeechOn.wav");
+                }
+            }
+        });
         btnNext.setBounds(248, 260,325, 101);
+        btnNext.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource() == btnNext){
+                    AudioListener.runAudioListener("SpeechOn.wav");
+                }
+            }
+        });
 
         lblHome.setBounds(65, 315, 150, 101);
         lblHome.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
@@ -141,8 +193,32 @@ public class HelpfulHints extends JFrame {
         lblNext.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
 
         btnLearnNow.setBounds(25, 395, 150, 113);
+        btnLearnNow.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource() == btnLearnNow){
+                    AudioListener.runAudioListener("SpeechOn.wav");
+                }
+            }
+        });
         btnPencilReady.setBounds(200, 395, 125, 101);
+        btnPencilReady.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource() == btnPencilReady){
+                    AudioListener.runAudioListener("SpeechOn.wav");
+                }
+            }
+        });
         btnPrint.setBounds(250, 388, 325, 113);
+        btnPrint.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource() == btnPrint){
+                    AudioListener.runAudioListener("SpeechOn.wav");
+                }
+            }
+        });
 
 
         lblLearnNow.setBounds(60, 468, 150, 101);
@@ -155,6 +231,12 @@ public class HelpfulHints extends JFrame {
         lblPrint.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
 
         btnBus.setBounds(100,525,247,181);
+        btnBus.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnBusActionPerformed(evt);
+            }
+        });
+
 
 
 
@@ -173,7 +255,7 @@ public class HelpfulHints extends JFrame {
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
         );
 
         pack();
@@ -181,11 +263,21 @@ public class HelpfulHints extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
+
+
+    private void btnBusActionPerformed(ActionEvent evt) {
+        AudioListener.runAudioListener("SpeechOn.wav");
+        if(evt.getSource() == btnBus){
+            this.setVisible(false);
+        }
+    }
+
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new HelpfulHints().setVisible(true);
+                new HelpDeskHints().setVisible(true);
             }
         });
     }

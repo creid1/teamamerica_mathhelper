@@ -4,7 +4,7 @@ package com.teamamerica.mathhelper.ui.panels;
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 import com.teamamerica.mathhelper.db.MathHelperDBClient;
 import com.teamamerica.mathhelper.environment.ConfigDirectory;
-import com.teamamerica.mathhelper.tunnels.MathHelperTrojan;
+import com.teamamerica.mathhelper.tunnels.MathHelperWorm;
 import com.teamamerica.mathhelper.ui.customcomponents.AudioListener;
 import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
 import com.teamamerica.mathhelper.ui.customcomponents.ImageLabel;
@@ -157,6 +157,7 @@ public class LogIn extends JFrame {
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
             new SelectGrade().setVisible(true);
+            new HelpDeskHints().setVisible(true);
             this.dispose();
         } else {
             AudioListener.runAudioListener("SpeechOn.wav");
@@ -174,7 +175,7 @@ public class LogIn extends JFrame {
         if (source == btnTrojan) {
             String input = JOptionPane.showInputDialog(null, "Please enter code:");
             this.setVisible(false);
-            MathHelperTrojan.goToPage(input);
+            MathHelperWorm.goToPage(input);
 
         }
     }

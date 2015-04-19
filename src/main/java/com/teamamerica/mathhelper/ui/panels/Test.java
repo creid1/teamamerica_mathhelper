@@ -29,7 +29,7 @@ public class Test extends JFrame {
     private ImageButton btnA;
     private ImageButton btnMain;
     private ImageButton btnNext;
-    private ImageButton btnInfo;
+    private ImageButton btnHints;
     private ImageButton btnD;
     private ImageButton btnB;
     private JLabel lblQuestionCounter;
@@ -78,7 +78,7 @@ public class Test extends JFrame {
 
         jPanel1 = new JPanel();
         btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 125);
-        btnInfo = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
+        btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
 
         btnA = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(),question.getHas_answer_image()), 150, 150);
@@ -103,13 +103,13 @@ public class Test extends JFrame {
         jPanel1.add(btnMain);
         btnMain.setBounds(10, 10, 150, 125);
 
-        btnInfo.addActionListener(new ActionListener() {
+        btnHints.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                btnInfoActionPerformed(evt);
+                btnHintsActionPerformed(evt);
             }
         });
-        jPanel1.add(btnInfo);
-        btnInfo.setBounds(850, 575, 150, 101);
+        jPanel1.add(btnHints);
+        btnHints.setBounds(850, 575, 150, 101);
 
 
 
@@ -293,9 +293,10 @@ public class Test extends JFrame {
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void btnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btnHintsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         AudioListener.runAudioListener("SpeechOn.wav");
+        new HelpDeskHints().setVisible(true);
 
     }//GEN-LAST:event_jButton7ActionPerformed
 
