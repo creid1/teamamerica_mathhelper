@@ -46,7 +46,7 @@ public class AddAStudent extends JFrame {
     private void checkForEditUser() {
         if (AdminConfigurator.getIsEditStudent()) {
             User user = AdminConfigurator.getUser();
-            lblAddStudent.setText("      Add MathHelper");
+            lblAddStudent.setText("  Update MathHelper");
             txtFirstName.setText(user.getFirst_name());
             txtLastName.setText(user.getLast_name());
             txtUserName.setText(user.getUsername());
@@ -62,7 +62,7 @@ public class AddAStudent extends JFrame {
             }
 
         } else {
-            lblAddStudent.setText("  Update MathHelper");
+            lblAddStudent.setText("    Add MathHelper");
             txtFirstName.setText("");
             txtLastName.setText("");
             txtUserName.setText("");
