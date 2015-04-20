@@ -46,6 +46,7 @@ public class AddAStudent extends JFrame {
     private void checkForEditUser() {
         if (AdminConfigurator.getIsEditStudent()) {
             User user = AdminConfigurator.getUser();
+            lblAddStudent.setText("      Add MathHelper");
             txtFirstName.setText(user.getFirst_name());
             txtLastName.setText(user.getLast_name());
             txtUserName.setText(user.getUsername());
@@ -61,6 +62,7 @@ public class AddAStudent extends JFrame {
             }
 
         } else {
+            lblAddStudent.setText("  Update MathHelper");
             txtFirstName.setText("");
             txtLastName.setText("");
             txtUserName.setText("");
@@ -130,7 +132,7 @@ public class AddAStudent extends JFrame {
         jLabel1.setBounds(0, 0, 0, 380);
 
         lblAddStudent.setFont(new java.awt.Font("Comic Sans MS", 0, 40)); // NOI18N
-        lblAddStudent.setText("New MathHelper User");
+
         jPanel1.add(lblAddStudent);
 
         createStudentInfoComponents();
