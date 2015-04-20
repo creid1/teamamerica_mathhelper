@@ -154,9 +154,15 @@ public class LogIn extends JFrame {
         String password = new String(jPasswordField.getPassword());
         if (mathHelperDBClient.validate_user_login(username, password)) {
             UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username(username));
-            new SelectGrade().setVisible(true);
-            new HelpDeskHints().setVisible(true);
-            this.dispose();
+            if(UserInteractionsConfigurator.get_interactive_user().getRole().equalsIgnoreCase(("A"))){
+                new MathHelperAdmin().setVisible(true);
+                new HelpDeskAdminHints().setVisible(true);
+                this.setVisible(false);
+            }else {
+                new SelectGrade().setVisible(true);
+                new HelpDeskHints().setVisible(true);
+                this.setVisible(false);
+            }
         } else {
             AudioListener.runAudioListener("SpeechOn.wav");
             JOptionPane.showMessageDialog(null,

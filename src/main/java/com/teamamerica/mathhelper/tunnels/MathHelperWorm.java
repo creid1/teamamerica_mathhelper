@@ -11,7 +11,7 @@ import com.teamamerica.mathhelper.ui.customcomponents.YouTubeFrame;
 import com.teamamerica.mathhelper.ui.panels.AddAStudent;
 import com.teamamerica.mathhelper.ui.panels.PracticeTest;
 import com.teamamerica.mathhelper.ui.panels.Test;
-import com.teamamerica.mathhelper.ui.panels.ViewStudents;
+import com.teamamerica.mathhelper.ui.panels.MathHelperAdmin;
 
 /**
  * Created by Christina on 4/17/2015.
@@ -149,7 +149,7 @@ public class MathHelperWorm {
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
 
-            new ViewStudents().setVisible(true);
+            new MathHelperAdmin().setVisible(true);
 
             return true;
 
