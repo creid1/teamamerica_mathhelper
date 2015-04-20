@@ -72,7 +72,6 @@ public class sqlMathHelperCreateDBScript {
 
         {
             //Handle errors for Class.forName
-            e.printStackTrace();
         } finally
 
         {
@@ -83,7 +82,6 @@ public class sqlMathHelperCreateDBScript {
                 if (conn != null)
                     conn.close();
             } catch (SQLException se) {
-                se.printStackTrace();
             }//end finally try
         }//end try
 
@@ -282,6 +280,10 @@ public class sqlMathHelperCreateDBScript {
                         "VALUES ('" + users[i] + "','password','FakeFirstName','FakeLastName','What is the name of your school?','FSU','" + role[i] + "');";
                 stmt.executeUpdate(sql);
             }
+
+            sql = "INSERT INTO users (username,password,first_name,last_name,security_question,security_answer,role)" +
+                    "VALUES ('testUser3','password','Chris','Cole','What is the name of your school?','FSU','S_creid');";
+            stmt.executeUpdate(sql);
         } catch (SQLException se) {
             System.out.println("Found!      Using existing users table.");
             System.out.println(se.getMessage());
@@ -313,7 +315,6 @@ public class sqlMathHelperCreateDBScript {
         } catch (SQLException se) {
             System.out.println("Found!      Using existing questions table.");
             System.out.println(se.getMessage());
-            System.out.println(se.getStackTrace().toString());
             // Table already exists, continue.
         }
     }
@@ -375,7 +376,6 @@ public class sqlMathHelperCreateDBScript {
         } catch (SQLException se) {
             System.out.println("Found!      Using existing tutorials table.");
             System.out.println(se.getMessage());
-            System.out.println(se.getStackTrace().toString());
             // Table already exists, continue.
         }
     }
@@ -399,9 +399,11 @@ public class sqlMathHelperCreateDBScript {
             sql = "INSERT INTO grades(user_id,grade,category,received_reward)" +
                     "VALUES (1,'A','Addition'," + true + ");";
             stmt.executeUpdate(sql);
+            sql = "INSERT INTO grades(user_id,grade,category,received_reward)" +
+                    "VALUES (8,'B','Addition'," + false + ");";
+            stmt.executeUpdate(sql);
         } catch (SQLException se) {
             System.out.println("Found!      Using existing grades table.");
-            System.out.println(se.getMessage());
             // Table already exists, continue.
         }
     }

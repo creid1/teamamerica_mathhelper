@@ -11,6 +11,7 @@ import com.teamamerica.mathhelper.ui.customcomponents.YouTubeFrame;
 import com.teamamerica.mathhelper.ui.panels.AddAStudent;
 import com.teamamerica.mathhelper.ui.panels.PracticeTest;
 import com.teamamerica.mathhelper.ui.panels.Test;
+import com.teamamerica.mathhelper.ui.panels.ViewStudents;
 
 /**
  * Created by Christina on 4/17/2015.
@@ -36,7 +37,8 @@ public class MathHelperWorm {
             return;
         }else if(check_sprektutsha(code)){
             return;
-
+        }else if(check_avie(code)){
+            return;
         }else if(check_sktutti(code)){
             return;
         }else if(check_sprektutti(code)){
@@ -132,6 +134,22 @@ public class MathHelperWorm {
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
 
             new AddAStudent().setVisible(true);
+
+            return true;
+
+        } else {
+            return false;
+        }
+    }
+
+    private static boolean check_avie(String code){
+        if (code.equalsIgnoreCase("avie")) {
+
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("creid"));
+            System.out.println("User logged in!");
+            System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
+
+            new ViewStudents().setVisible(true);
 
             return true;
 

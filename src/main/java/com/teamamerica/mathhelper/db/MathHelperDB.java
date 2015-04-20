@@ -15,7 +15,7 @@ public class MathHelperDB {
 
     // JDBC driver name and database URL
     protected final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-   // protected final String DB_URL = "jdbc:mysql://localhost:3306";
+    // protected final String DB_URL = "jdbc:mysql://localhost:3306";
     //TODO: change this to be the mathhelper url
     protected final String DB_URL = "jdbc:mysql://csc362dbinstance.c9giv8vwad8d.us-east-1.rds.amazonaws.com:3306";
     //  Database credentials
@@ -48,7 +48,7 @@ public class MathHelperDB {
             //Logger.get//Logger(loggerName).log(Level.INFO,"Closing Connection to Math Helper DB.....");
             conn.close();
             //Logger.get//Logger(loggerName).log(Level.INFO,"Connection Closed.....");
-        } catch (SQLException e){
+        } catch (SQLException e) {
             //Logger.get//Logger(loggerName).log(Level.SEVERE, e.getMessage());
             //Logger.get//Logger(loggerName).log(Level.SEVERE, e.getStackTrace().toString());
         }
@@ -80,7 +80,7 @@ public class MathHelperDB {
         }
     }
 
-    private void createStatement(){
+    private void createStatement() {
         try {
             //create a new statement
             statement = conn.createStatement();
@@ -92,7 +92,7 @@ public class MathHelperDB {
         }
     }
 
-    private void userMathHelperDB(){
+    private void userMathHelperDB() {
         // Use the mathhelper database
         //Logger.get//Logger(loggerName).log(Level.INFO,"Connecting to Math Helper DB.....");
         String sql = "USE mathhelper";
@@ -120,13 +120,44 @@ public class MathHelperDB {
             ps.setString(4, user.getLast_name());
             ps.setString(5, user.getSecurity_question());
             ps.setString(6, user.getSecurity_answer());
-            ps.setString(3, user.getRole());
+            ps.setString(7, user.getRole());
 
             ps.executeUpdate();
             return true;
         } catch (SQLException e) {
             //Logger.get//Logger(loggerName).log(Level.INFO, e.getMessage());
-           e.printStackTrace();
+            e.printStackTrace();
+
+        } finally {
+            closeDBConnection();
+        }
+
+        return false;
+    }
+
+
+    public boolean editUser(User user) {
+        openDBConnection();
+        String sql = "UPDATE users SET username=?, password=?, first_name=?, last_name=?, security_question=?, " +
+                "security_answer=?, role=? " +
+                "WHERE user_id=?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, user.getUsername());
+            ps.setString(2, user.getPassword());
+            ps.setString(3, user.getFirst_name());
+            ps.setString(4, user.getLast_name());
+            ps.setString(5, user.getSecurity_question());
+            ps.setString(6, user.getSecurity_answer());
+            ps.setString(7, user.getRole());
+            ps.setInt(8, user.getUser_id());
+            ps.execute();
+            ps.close();
+            return true;
+        } catch (SQLException e) {
+            //Logger.get//Logger(loggerName).log(Level.INFO, e.getMessage());
+            e.printStackTrace();
 
         } finally {
             closeDBConnection();
@@ -145,7 +176,7 @@ public class MathHelperDB {
             ps = conn.prepareStatement(sql);
             ps.setInt(1, grade.getUser_id());
             ps.setString(2, grade.getGrade());
-            ps.setString(3,grade.getCategory());
+            ps.setString(3, grade.getCategory());
             ps.setBoolean(4, grade.hasReceive_reward());
             ps.executeUpdate();
             return true;
@@ -217,7 +248,7 @@ public class MathHelperDB {
             rs.close();
         } catch (SQLException se) {
             //Logger.get//Logger(loggerName).log(Level.INFO, se.getMessage());
-           se.printStackTrace();
+            se.printStackTrace();
         } finally {
             closeDBConnection();
         }
@@ -240,6 +271,7 @@ public class MathHelperDB {
                 question.setQuestion_id(rs.getInt("question_id"));
                 question.setGrade_level(rs.getString("grade_level"));
                 question.setCategory_type(rs.getString("category_type"));
+                question.setHas_question_image(rs.getBoolean("has_question_image"));
                 question.setHas_question_image(rs.getBoolean("has_question_image"));
                 question.setHas_answer_image(rs.getBoolean("has_answer_image"));
                 question.setQuestion(rs.getString("question"));
@@ -268,7 +300,7 @@ public class MathHelperDB {
         try {
             String sql = "SELECT * FROM tutorials";
             ResultSet rs = statement.executeQuery(sql);
-         // Extract data from result set.
+            // Extract data from result set.
             while (rs.next()) { // Advances to the next entry (row) in the result set.
                 // Retrieve entry's attributes by column name
                 Tutorial tutorial = new Tutorial();

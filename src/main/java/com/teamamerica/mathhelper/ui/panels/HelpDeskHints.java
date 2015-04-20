@@ -23,7 +23,7 @@ public class HelpDeskHints extends JFrame {
     private ImageButton btnLearnNow;
     private ImageButton btnLetMeTry;
     private ImageButton btnPrint;
-    private ImageButton btnLogout;
+    private ImageButton btnSchoolsOut;
     private JLabel lblHelpDeskHints;
 
     private JLabel lblINeedHelp,lblHints,lblLogout;
@@ -60,7 +60,7 @@ public class HelpDeskHints extends JFrame {
         btnPencilReady = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_psharpener.png"), 150, 113);
         btnLearnNow = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_videoTutorial.jpg"), 150, 113);
 
-        btnLogout= new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_logout.gif"), 150, 101);
+        btnSchoolsOut = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_logout.gif"), 150, 101);
         btnLetMeTry = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_practice.jpg"), 150, 113);
         btnPrint = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_print.png"), 150, 113);
 
@@ -95,7 +95,7 @@ public class HelpDeskHints extends JFrame {
 
 
         jPanel1.add(btnLetMeTry);
-        jPanel1.add(btnLogout);
+        jPanel1.add(btnSchoolsOut);
         jPanel1.add(btnPrint);
 
         jPanel1.add(btnBus);
@@ -123,7 +123,7 @@ public class HelpDeskHints extends JFrame {
         btnINeedHelp.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(e.getSource() == btnINeedHelp){
+                if (e.getSource() == btnINeedHelp) {
                     AudioListener.runAudioListener("SpeechOn.wav");
                 }
             }
@@ -132,16 +132,16 @@ public class HelpDeskHints extends JFrame {
         btnHints.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(e.getSource() == btnHints){
+                if (e.getSource() == btnHints) {
                     AudioListener.runAudioListener("SpeechOn.wav");
                 }
             }
         });
-        btnLogout.setBounds(265, 120,300, 101);
-        btnLogout.addActionListener(new ActionListener() {
+        btnSchoolsOut.setBounds(265, 120, 300, 101);
+        btnSchoolsOut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(e.getSource() == btnLogout){
+                if (e.getSource() == btnSchoolsOut) {
                     AudioListener.runAudioListener("SpeechOn.wav");
                 }
             }

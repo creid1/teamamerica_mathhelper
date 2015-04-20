@@ -10,19 +10,16 @@ import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Arrays;
 
 public class AddAStudent extends JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private ImageButton btnSubmit;
-    private ImageButton btnHelp, btnHints;
-    private JPasswordField txtPassword;
+    private ImageButton btnSubmit, btnClose;
+    private JFormattedTextField txtPassword;
     private JFormattedTextField txtFirstName;
     private JFormattedTextField txtLastName;
     private JFormattedTextField txtUserName;
-    private JPasswordField txtConfirmPassword;
+    private JFormattedTextField txtConfirmPassword;
     private JLabel lblConfirmPassword;
 
     private JComboBox cboSecurityQuestion;
@@ -33,57 +30,68 @@ public class AddAStudent extends JFrame {
     private JLabel jLabel1;
     private JLabel lblLastName;
     private JLabel lblUserName;
-    public JLabel lblAddStudent;
+    private JLabel lblAddStudent;
     private JLabel lblPassword;
     private JLabel lblFirstName;
     private JPanel jPanel1;
-    private JCheckBox ckAdmin, ckStudent;
-    private ButtonGroup grRole;
-
+    private JRadioButton rbAdmin;
 
     // End of variables declaration//GEN-END:variables
     public AddAStudent() {
 
-
         initComponents();
+        checkForEditUser();
+    }
+
+    private void checkForEditUser() {
+        if (AdminConfigurator.getIsEditStudent()) {
+            User user = AdminConfigurator.getUser();
+            txtFirstName.setText(user.getFirst_name());
+            txtLastName.setText(user.getLast_name());
+            txtUserName.setText(user.getUsername());
+            txtPassword.setText(user.getPassword());
+            txtConfirmPassword.setText(user.getPassword());
+            txtSecurityAnswer.setText(user.getSecurity_answer());
+
+            for (int i = 0; i < comboList.length; i++) {
+                if (comboList[i].equals(user.getSecurity_question())) {
+                    cboSecurityQuestion.setSelectedIndex(i);
+                    break;
+                }
+            }
+
+        } else {
+            txtFirstName.setText("");
+            txtLastName.setText("");
+            txtUserName.setText("");
+            txtPassword.setText("");
+            txtConfirmPassword.setText("");
+            txtSecurityAnswer.setText("");
+            cboSecurityQuestion.setSelectedIndex(0);
+            rbAdmin.setSelected(false);
+
+        }
     }
 
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 
         setLocation(850, 0);
+        setResizable(false);
 
 
         jPanel1 = new JPanel();
-        btnSubmit = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_teacherNotes.jpg"), 175, 112);
-        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 96);
-        btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
+        btnSubmit = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_teacherNotes.jpg"), 200, 150);
+        btnClose = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_bookWorm.gif"), 175, 150);
+        jPanel1.add(btnClose);
 
-        btnHelp.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (e.getSource() == btnHelp) {
-                    AudioListener.runAudioListener("SpeechOn.wav");
-
-                }
-            }
-        });
-
-        btnHints.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (e.getSource() == btnHints) {
-                    new HelpDeskHints().setVisible(true);
-                }
-            }
-        });
         jLabel1 = new JLabel();
         lblAddStudent = new JLabel();
         lblPassword = new JLabel();
-        txtPassword = new JPasswordField();
+        txtPassword = new JFormattedTextField();
         lblFirstName = new JLabel();
         lblLastName = new JLabel();
         lblUserName = new JLabel();
@@ -92,19 +100,14 @@ public class AddAStudent extends JFrame {
         txtUserName = new JFormattedTextField();
 
         lblConfirmPassword = new JLabel();
-        txtConfirmPassword = new JPasswordField();
+        txtConfirmPassword = new JFormattedTextField();
 
         cboSecurityQuestion = new JComboBox(comboList);
         cboSecurityQuestion.setBackground(Color.WHITE);
         cboSecurityQuestion.setSelectedIndex(0);
         txtSecurityAnswer = new JFormattedTextField();
 
-        ckAdmin = new JCheckBox("Admin User");
-        ckStudent = new JCheckBox("Student User");
-        grRole = new ButtonGroup();
-        grRole.add(ckAdmin);
-        grRole.add(ckStudent);
-
+        rbAdmin = new JRadioButton("Admin User");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
@@ -113,26 +116,13 @@ public class AddAStudent extends JFrame {
                 btnSubmitActionListener(evt);
             }
         });
+
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCloseActionListener(evt);
+            }
+        });
         jPanel1.add(btnSubmit);
-
-
-        btnHelp.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                btnHelpActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnHelp);
-        btnHelp.setBounds(30, 575, 150, 101);
-
-
-        btnHints.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                btnHintsActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnHints);
-        btnHints.setBounds(350, 575, 150, 101);
-
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
@@ -159,15 +149,18 @@ public class AddAStudent extends JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnHintsActionPerformed(ActionEvent evt) {
-        AudioListener.runAudioListener("SpeechOn.wav");
-        new HelpDeskHints().setVisible(true);
 
-    }
+    private void btnCloseActionListener(ActionEvent evt) {
+        if (evt.getSource() == btnClose) {
+            AudioListener.runAudioListener("SpeechOn.wav");
+            int userInput = JOptionPane.showConfirmDialog(
+                    null, "Are you sure you want to exit?", "Exit Add/Edit User?", JOptionPane.YES_NO_OPTION);
+            if (userInput == 0) {
+                this.setVisible(false);
+            } else {
 
-    private void btnHelpActionPerformed(ActionEvent evt) {
-        AudioListener.runAudioListener("SpeechOn.wav");
-
+            }
+        }
     }
 
     private void createStudentInfoComponents() {
@@ -179,7 +172,7 @@ public class AddAStudent extends JFrame {
         lblFirstName.setBounds(50, 150, 150, 30);
 
         jPanel1.add(txtFirstName);
-        txtFirstName.setBounds(300, 150, 150, 30);
+        txtFirstName.setBounds(310, 150, 150, 30);
 
         lblLastName.setFont(new java.awt.Font("Comic Sans MS", 0, 22)); // NOI18N
         lblLastName.setText("Last Name:");
@@ -187,7 +180,7 @@ public class AddAStudent extends JFrame {
         lblLastName.setBounds(50, 200, 150, 30);
 
         jPanel1.add(txtLastName);
-        txtLastName.setBounds(300, 200, 150, 30);
+        txtLastName.setBounds(310, 200, 150, 30);
 
         lblUserName.setFont(new java.awt.Font("Comic Sans MS", 0, 22)); // NOI18N
         lblUserName.setText("Username:");
@@ -195,7 +188,7 @@ public class AddAStudent extends JFrame {
         lblUserName.setBounds(50, 250, 150, 30);
 
         jPanel1.add(txtUserName);
-        txtUserName.setBounds(300, 250, 150, 30);
+        txtUserName.setBounds(310, 250, 150, 30);
 
 
         lblPassword.setFont(new java.awt.Font("Comic Sans MS", 0, 22)); // NOI18N
@@ -205,7 +198,7 @@ public class AddAStudent extends JFrame {
         lblPassword.setBounds(50, 300, 150, 30);
 
         jPanel1.add(txtPassword);
-        txtPassword.setBounds(300, 300, 150, 30);
+        txtPassword.setBounds(310, 300, 150, 30);
 
 
         lblConfirmPassword.setFont(new java.awt.Font("Comic Sans MS", 0, 22)); // NOI18N
@@ -215,28 +208,24 @@ public class AddAStudent extends JFrame {
         lblConfirmPassword.setBounds(50, 350, 200, 30);
 
         jPanel1.add(txtConfirmPassword);
-        txtConfirmPassword.setBounds(300, 350, 150, 30);
+        txtConfirmPassword.setBounds(310, 350, 150, 30);
 
 
         jPanel1.add(cboSecurityQuestion);
-        cboSecurityQuestion.setBounds(50, 400, 225, 30);
+        cboSecurityQuestion.setBounds(50, 400, 250, 30);
         cboSecurityQuestion.setFont(new Font("Comic Sans MS", 0, 12));
 
         jPanel1.add(txtSecurityAnswer);
-        txtSecurityAnswer.setBounds(300, 400, 150, 30);
+        txtSecurityAnswer.setBounds(310, 400, 150, 30);
 
-        jPanel1.add(ckAdmin);
-        jPanel1.add(ckStudent);
+        jPanel1.add(rbAdmin);
 
-        ckAdmin.setFont(new Font("Comic Sans MS", 0, 22));
-        ckAdmin.setBackground(Color.WHITE);
-        ckStudent.setFont(new Font("Comic Sans MS", 0, 22));
-        ckStudent.setBackground(Color.WHITE);
+        rbAdmin.setFont(new Font("Comic Sans MS", 0, 22));
+        rbAdmin.setBackground(Color.WHITE);
+        rbAdmin.setBounds(50, 465, 1000, 30);
 
-        ckAdmin.setBounds(50, 465, 1000, 30);
-        ckStudent.setBounds(50, 500, 1000, 30);
-
-        btnSubmit.setBounds(225, 450, 175, 112);
+        btnSubmit.setBounds(250, 525, 200, 150);
+        btnClose.setBounds(50, 525, 175, 150);
 
 
     }
@@ -253,17 +242,11 @@ public class AddAStudent extends JFrame {
                     cboSecurityQuestion.getSelectedIndex() == 0 || txtSecurityAnswer.getText().equalsIgnoreCase("") ||
                     txtSecurityAnswer.getText().equals(null)) {
                 JOptionPane.showMessageDialog(null, "Please enter all the required fields!");
-
-            } else if (!ckStudent.isSelected() & !ckAdmin.isSelected()) {
-                JOptionPane.showMessageDialog(null, "Please select the role of the new user!");
-            } else if (AdminConfigurator.doesUserNameExist(txtUserName.getText())) {
-                JOptionPane.showMessageDialog(null, "Username already exists!");
-                txtUserName.setText("");
-            } else if (!Arrays.equals(txtPassword.getPassword(), txtConfirmPassword.getPassword())) {
+            } else if (!txtPassword.getText().equals(txtConfirmPassword.getText())) {
                 JOptionPane.showMessageDialog(null, "The passwords entered do not match!");
                 txtPassword.setText("");
                 txtConfirmPassword.setText("");
-            } else if (!(txtPassword.getPassword().length >= 6 & txtPassword.getPassword().length <= 12)) {
+            } else if (!(txtPassword.getText().length() >= 6 & txtPassword.getText().length() <= 12)) {
                 JOptionPane.showMessageDialog(null, "The password length must be between 6 and 12 characters!!");
                 txtPassword.setText("");
                 txtConfirmPassword.setText("");
@@ -272,16 +255,31 @@ public class AddAStudent extends JFrame {
                 txtUserName.setText("");
             } else {
                 User user;
-                if (ckAdmin.isSelected()) {
-                    user = new User(txtUserName.getText(), txtPassword.getPassword().toString(), txtFirstName.getText(), txtLastName.getText(),
+                if (rbAdmin.isSelected()) {
+                    user = new User(txtUserName.getText(), txtPassword.getText(), txtFirstName.getText(), txtLastName.getText(),
                             comboList[cboSecurityQuestion.getSelectedIndex()], txtSecurityAnswer.getText(), AdminConfigurator.generateAdminRole());
                 } else {
-                    user = new User(txtUserName.getText(), txtPassword.getPassword().toString(), txtFirstName.getText(), txtLastName.getText(),
+                    user = new User(txtUserName.getText(), txtPassword.getText(), txtFirstName.getText(), txtLastName.getText(),
                             comboList[cboSecurityQuestion.getSelectedIndex()], txtSecurityAnswer.getText(), AdminConfigurator.generateStudentRole());
                 }
-                boolean isAdded = AdminConfigurator.addNewUser(user);
-                if (isAdded) {
-                    JOptionPane.showMessageDialog(null, "New MathHelper user has been added!");
+                boolean success;
+                if (AdminConfigurator.getIsEditStudent()) {
+                    user.setUser_id(AdminConfigurator.getUser().getUser_id());
+                    success = AdminConfigurator.updateUser(user);
+                } else {
+                    if (AdminConfigurator.doesUserNameExist(txtUserName.getText())) {
+                        JOptionPane.showMessageDialog(null, "Username already exists!");
+                        txtUserName.setText("");
+                        success = false;
+                    } else {
+                        success = AdminConfigurator.addNewUser(user);
+
+                    }
+                }
+
+                if (success) {
+                    JOptionPane.showMessageDialog(null, "MathHelper Admin Information is updated!");
+
                 } else {
                     JOptionPane.showMessageDialog(null, "There was an issue processing your request. Please try again later.");
                 }
@@ -293,7 +291,9 @@ public class AddAStudent extends JFrame {
                 txtUserName.setText("");
                 txtSecurityAnswer.setText("");
                 cboSecurityQuestion.setSelectedIndex(0);
-                grRole.clearSelection();
+                rbAdmin.setSelected(false);
+                AdminConfigurator.setIsEditStudent(false);
+                this.setVisible(false);
 
 
             }

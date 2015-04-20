@@ -37,6 +37,7 @@ public class MathHelperDBClient {
         }
     }
 
+    public boolean edit_user(User user) {return mathHelperDB.editUser(user);}
 
     public boolean add_newUser(User user) {
         return mathHelperDB.addNewUser(user);

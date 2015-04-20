@@ -1,104 +1,287 @@
 package com.teamamerica.mathhelper.ui.panels;
 
-public class ViewStudents extends javax.swing.JFrame {
+import com.teamamerica.mathhelper.configurators.AdminConfigurator;
+import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
+import com.teamamerica.mathhelper.environment.ConfigDirectory;
+import com.teamamerica.mathhelper.models.Grade;
+import com.teamamerica.mathhelper.models.User;
+import com.teamamerica.mathhelper.ui.customcomponents.AudioListener;
+import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
 
-   
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+public class ViewStudents extends JFrame {
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private ImageButton btnHelp, btnHints, btnSchoolsOut, btnWelcome, btnWelcomeBack, btnGenerateStudents;
+    private JLabel lblTitle, lblGrades;
+    private JPanel jPanel1;
+    private JScrollPane jScrollPane1;
+    private JComboBox cboStudents;
+    private JList listGrades;
+    // End of variables declaration//GEN-END:variables
+
+    //variables for the interactions
+    private ArrayList<User> students;
+    private String[] cboStudentList = null;
+    private String[] gradeList = null;
+    private ArrayList<Grade> grades;
+    private DefaultListModel listModel;
+    private boolean generateNewList = false;
+
     public ViewStudents() {
+
+        students = AdminConfigurator.getStudents();
+        initializeStudentsList();
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         initComponents();
     }
 
-    
+    private void initializeStudentsList() {
+        int counter = 0;
+        cboStudentList = new String[students.size() + 1];
+        cboStudentList[counter++] = "Student Names";
+
+        for (User user : students) {
+            cboStudentList[counter++] = user.getFirst_name() + " " + user.getLast_name();
+        }
+    }
+
+    private int findSelectedUser(String fullName) {
+        String[] split = fullName.split(" ");
+        String first = split[0];
+        String last = split[1];
+        for (User user : students) {
+            if (user.getFirst_name().equals(first.trim()) && user.getLast_name().equals(last.trim())) {
+                return user.getUser_id();
+            }
+        }
+        return -1;
+    }
+
+
+    private void initializeStudentGrades(int studentId) {
+        grades = AdminConfigurator.getStudentGrades(studentId);
+        gradeList = new String[grades.size()];
+        int counter = 0;
+        listModel.clear();
+        for (Grade grade : grades) {
+            if (grade.getCategory().equals("")) {
+                gradeList[counter] = "GradeId : " + grade.getGrade_id() + " |Category: N/A }Grade : " +
+                        grade.getGrade() + " |Receive Reward : " + grade.hasReceive_reward();
+                listModel.addElement(gradeList[counter]);
+                counter++;
+            } else {
+                gradeList[counter] = "GradeId : " + grade.getGrade_id() + " |Category: " + grade.getCategory()
+                        + " |Grade : " + grade.getGrade() + " |Receive Reward : " + grade.hasReceive_reward();
+                listModel.addElement(gradeList[counter]);
+                counter++;
+            }
+        }
+    }
+
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton7 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton6 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
+        jPanel1 = new JPanel();
+        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 96);
+        btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
+        btnSchoolsOut = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_logout.gif"), 150, 101);
+        btnWelcome = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_welcomeToSchool.jpg"), 225, 225);
+        btnWelcomeBack = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_welcomeBack.jpg"), 225, 225);
+        btnGenerateStudents = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_generateStudents.png"), 150, 150);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        btnGenerateStudents.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerateStudentsActionPerformed(evt);
+            }
+        });
+
+
+        jPanel1.add(btnGenerateStudents);
+
+        btnSchoolsOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSchoolsOutActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSchoolsOut);
+        btnSchoolsOut.setBounds(850, 10, 110, 101);
+
+
+        btnHelp.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (e.getSource() == btnHelp) {
+                    AudioListener.runAudioListener("SpeechOn.wav");
+
+                }
+            }
+        });
+
+
+        btnHints.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (e.getSource() == btnHints) {
+                    new HelpDeskHints().setVisible(true);
+                }
+            }
+        });
+
+        btnWelcome = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_welcomeToSchool.jpg"), 200, 200);
+        btnWelcome.setBounds(650, 375, 200, 225);
+        jPanel1.add(btnWelcome);
+
+        btnWelcome.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (e.getSource() == btnWelcome) {
+                    AdminConfigurator.setIsEditStudent(false);
+                    new AddAStudent().setVisible(true);
+                    cboStudents.setSelectedIndex(0);
+
+                }
+            }
+        });
+        btnWelcomeBack = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_welcomeBack.jpg"), 200, 200);
+        btnWelcomeBack.setBounds(650, 150, 200, 200);
+        jPanel1.add(btnWelcomeBack);
+        btnWelcomeBack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (e.getSource() == btnWelcomeBack) {
+                    if (cboStudents.getSelectedIndex() == 0) {
+                        JOptionPane.showMessageDialog(null, "Please select a student from the Student Drop Down List.");
+                    } else {
+                        AdminConfigurator.setIsEditStudent(true);
+                        String fullName = cboStudents.getSelectedItem().toString();
+                        System.out.println(fullName);
+                        int studentId = findSelectedUser(cboStudents.getSelectedItem().toString());
+                        AdminConfigurator.setUserInfo(studentId);
+                        new AddAStudent().setVisible(true);
+                        cboStudents.setSelectedIndex(0);
+
+                    }
+                }
+            }
+        });
+
+        lblTitle = new JLabel();
+        jScrollPane1 = new JScrollPane();
+
+        cboStudents = new JComboBox(cboStudentList);
+        cboStudents.setBounds(50, 125, 500, 50);
+        cboStudents.setBackground(Color.WHITE);
+        cboStudents.setFont(new Font("Comic Sans MS", 0, 26));
+        cboStudents.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboStudentsActionPerformed(evt);
+            }
+        });
+        listModel = new DefaultListModel();
+        listGrades = new JList(listModel);
+        listGrades.setBackground(Color.WHITE);
+        listGrades.setBounds(50, 225, 500, 325);
+        listGrades.setFont(new Font("Comic Sans MS", 0, 24));
+        listGrades.setEnabled(false);
+        jScrollPane1.setBounds(50, 225, 500, 325);
+
+        lblGrades = new JLabel("Student Progress Grades:");
+        lblGrades.setBounds(50, 25, 500, 350);
+        lblGrades.setFont(new Font("Comic Sans MS", 0, 24));
+
+        jPanel1.add(lblGrades);
+
+        jPanel1.add(cboStudents);
+        jScrollPane1.setViewportView(listGrades);
+
+        jPanel1.add(jScrollPane1);
+
+        btnGenerateStudents.setBounds(400, 550, 150, 150);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        jButton7.setBackground(new java.awt.Color(153, 204, 255));
-        jButton7.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton7);
-        jButton7.setBounds(930, 530, 60, 60);
+        jPanel1.add(btnHelp);
+        btnHelp.setBounds(30, 575, 150, 101);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 0, 380);
+        jPanel1.add(btnHints);
+        btnHints.setBounds(850, 575, 150, 101);
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 60)); // NOI18N
-        jLabel2.setText("View Students");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(290, 10, 420, 60);
+        lblTitle.setFont(new java.awt.Font("Comic Sans MS", 0, 60)); // NOI18N
+        lblTitle.setText("Math Helper Admin Main");
+        jPanel1.add(lblTitle);
+        lblTitle.setBounds(75, 10, 1000, 60);
 
-        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel7.setText("Help");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(940, 500, 50, 30);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("This is where information of each Student will be listed\n\nSuch as names, usernames, grades, passwords, ect...");
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(220, 130, 570, 450);
-
-        jButton6.setBackground(new java.awt.Color(153, 204, 255));
-        jButton6.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton6);
-        jButton6.setBounds(10, 10, 150, 60);
-
-        jLabel8.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel8.setText("  Main Menu");
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(10, 70, 150, 30);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    private void btnGenerateStudentsActionPerformed(ActionEvent evt) {
+        if (evt.getSource() == btnGenerateStudents) {
+            generateNewList = true;
+            cboStudents.removeAllItems();
+            students = AdminConfigurator.getStudents();
+            initializeStudentsList();
+            for (String student : cboStudentList) {
+                cboStudents.addItem(student);
+            }
+            cboStudents.setSelectedIndex(0);
+            generateNewList = false;
+        }
+    }
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void cboStudentsActionPerformed(ActionEvent evt) {
+        if (evt.getSource() == cboStudents) {
 
-    
+            if (cboStudents.getSelectedIndex() == 0) {
+                //do not show anything
+            }else if(generateNewList){
+
+                //do nothing - the list is being removed from another action listener
+            } else {
+                int studentId = findSelectedUser(cboStudents.getSelectedItem().toString());
+                initializeStudentGrades(studentId);
+            }
+        }
+    }
+
+    private void btnSchoolsOutActionPerformed(ActionEvent evt) {
+
+        if (evt.getSource() == btnSchoolsOut) {
+            UserInteractionsConfigurator.set_difficulty_level_enum(null);
+            UserInteractionsConfigurator.set_category_type_enum(null);
+            UserInteractionsConfigurator.set_interactive_grade(null);
+            UserInteractionsConfigurator.set_main_menu_selection_enum(null);
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(null);
+            UserInteractionsConfigurator.set_interactive_user(null);
+            this.setVisible(false);
+            new LogIn().setVisible(true);
+
+        }
+    }
+
+
     public static void main(String args[]) {
-       
+
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
@@ -106,15 +289,5 @@ public class ViewStudents extends javax.swing.JFrame {
             }
         });
     }
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    // End of variables declaration//GEN-END:variables
+
 }
