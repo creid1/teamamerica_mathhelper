@@ -7,56 +7,76 @@ import com.teamamerica.mathhelper.controllers.MainMenuSelection;
 import com.teamamerica.mathhelper.ui.customcomponents.YouTubeFrame;
 
 import javax.sound.sampled.*;
+import javax.swing.*;
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class MainMenu extends javax.swing.JFrame {
+public class MathHelperOptions extends JFrame {
 
-    public MainMenu() {
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private JButton btnHelp;
+    private JButton btnPractice;
+    private JButton btnTutorials;
+    private JButton btnTests;
+    private JButton btnLogout;
+    private JLabel jLabel1;
+    private JLabel jLabel2;
+    private JLabel lblLearnNewSubject;
+    private JLabel lblTestYourKnowledge;
+    private JLabel lblPracticeMakesPerfect;
+    private JPanel jPanel1;
+    // End of variables declaration//GEN-END:variables
+
+    public MathHelperOptions() {
         initComponents();
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        btnLogout = new javax.swing.JButton();
-        btnHelp = new javax.swing.JButton();
-        btnTests = new javax.swing.JButton();
-        btnTutorials = new javax.swing.JButton();
-        btnPractice = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 700));
+        setBackground(Color.WHITE);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(610, 410));
+        jPanel1 = new JPanel();
+        jPanel1.setBackground(Color.WHITE);
+        lblLearnNewSubject = new JLabel();
+        lblTestYourKnowledge = new JLabel();
+        lblPracticeMakesPerfect = new JLabel();
+        btnLogout = new JButton();
+        btnHelp = new JButton();
+        btnTests = new JButton();
+        btnTutorials = new JButton();
+        btnPractice = new JButton();
+        jLabel2 = new JLabel();
+        jLabel1 = new JLabel();
+
 
         jPanel1.setLayout(null);
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 255, 0));
-        jLabel3.setText("Learn a new subject!");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(10, 130, 180, 26);
+        lblLearnNewSubject.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        lblLearnNewSubject.setForeground(new java.awt.Color(0, 255, 0));
+        lblLearnNewSubject.setText("Learn a new subject!");
+        jPanel1.add(lblLearnNewSubject);
+        lblLearnNewSubject.setBounds(10, 130, 180, 26);
 
-        jLabel4.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 255, 0));
-        jLabel4.setText("Test your knowledge!");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(210, 130, 190, 26);
+        lblTestYourKnowledge.setBackground(new java.awt.Color(0, 255, 0));
+        lblTestYourKnowledge.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        lblTestYourKnowledge.setForeground(new java.awt.Color(0, 255, 0));
+        lblTestYourKnowledge.setText("Test your knowledge!");
+        jPanel1.add(lblTestYourKnowledge);
+        lblTestYourKnowledge.setBounds(210, 130, 190, 26);
 
-        jLabel5.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 255, 0));
-        jLabel5.setText("Check your progress!");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(420, 130, 180, 26);
+        lblPracticeMakesPerfect.setBackground(new java.awt.Color(0, 255, 0));
+        lblPracticeMakesPerfect.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        lblPracticeMakesPerfect.setForeground(new java.awt.Color(0, 255, 0));
+        lblPracticeMakesPerfect.setText("Practice Makes Perfect!");
+        jPanel1.add(lblPracticeMakesPerfect);
+        lblPracticeMakesPerfect.setBounds(420, 130, 180, 26);
 
         btnLogout.setBackground(new java.awt.Color(153, 204, 255));
         btnLogout.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
@@ -120,25 +140,26 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel2.setBounds(170, 10, 237, 81);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon("backround.jpg")); // NOI18N
+        jLabel1.setIcon(new ImageIcon("backround.jpg")); // NOI18N
         //jLabel1.setText("Learn a new subject!");
         jLabel1.setToolTipText("Check your progress!");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 769, 374);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 700, GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
-        setLocationRelativeTo(null);
+
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPracticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -212,9 +233,9 @@ public class MainMenu extends javax.swing.JFrame {
             clip.open(stream);
             clip.start();
         } catch (UnsupportedAudioFileException | IOException ex) {
-            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MathHelperOptions.class.getName()).log(Level.SEVERE, null, ex);
         } catch (LineUnavailableException ex) {
-            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MathHelperOptions.class.getName()).log(Level.SEVERE, null, ex);
         }
 
 
@@ -240,41 +261,29 @@ public class MainMenu extends javax.swing.JFrame {
          * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MathHelperOptions.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MathHelperOptions.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MathHelperOptions.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(MathHelperOptions.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainMenu().setVisible(true);
+                new MathHelperOptions().setVisible(true);
             }
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnHelp;
-    private javax.swing.JButton btnPractice;
-    private javax.swing.JButton btnTutorials;
-    private javax.swing.JButton btnTests;
-    private javax.swing.JButton btnLogout;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    // End of variables declaration//GEN-END:variables
+
 }

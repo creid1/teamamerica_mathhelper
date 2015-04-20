@@ -302,7 +302,7 @@ public class PracticeTest extends JFrame {
         int userInput = JOptionPane.showConfirmDialog(
                 null, "Are you sure you want to exit the test?", "Test Exit?", JOptionPane.YES_NO_OPTION);
         if (userInput == 0) {
-            new MainMenu().setVisible(true);
+            new MathHelperOptions().setVisible(true);
             this.dispose();
         } else {
 

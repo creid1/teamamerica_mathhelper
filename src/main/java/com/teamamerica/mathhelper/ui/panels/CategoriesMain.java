@@ -238,7 +238,7 @@ public class CategoriesMain extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Object source = evt.getSource();
         if (source == jButton2) {
-            new MainMenu().setVisible(true);
+            new MathHelperOptions().setVisible(true);
             this.setVisible(false);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
