@@ -23,7 +23,7 @@ public class LogIn extends JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private ImageButton btnSignIn;
-  //  private ImageButton btnHelp;
+    //  private ImageButton btnHelp;
     private JFormattedTextField txtUserName;
     private JLabel lblUserName;
     private JLabel jLabel2, lblOne, lblTwo;
@@ -154,8 +154,6 @@ public class LogIn extends JFrame {
         String password = new String(jPasswordField.getPassword());
         if (mathHelperDBClient.validate_user_login(username, password)) {
             UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username(username));
-            System.out.println("User logged in!");
-            System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
             new SelectGrade().setVisible(true);
             new HelpDeskHints().setVisible(true);
             this.dispose();

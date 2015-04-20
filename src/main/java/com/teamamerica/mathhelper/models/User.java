@@ -34,10 +34,15 @@ public class User {
     }
 
 
-    public User(String username, String password, String role) {
+    public User(String username, String password,String first_name, String last_name, String security_question,
+               String security_answer, String role) {
         this.user_id = -1;
         this.username = username;
         this.password = password;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.security_question = security_question;
+        this.security_answer = security_answer;
         this.role = role;
     }
 

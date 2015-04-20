@@ -8,6 +8,7 @@ import com.teamamerica.mathhelper.controllers.GradeLevel;
 import com.teamamerica.mathhelper.controllers.MainMenuSelection;
 import com.teamamerica.mathhelper.db.MathHelperDBClient;
 import com.teamamerica.mathhelper.ui.customcomponents.YouTubeFrame;
+import com.teamamerica.mathhelper.ui.panels.AddAStudent;
 import com.teamamerica.mathhelper.ui.panels.PracticeTest;
 import com.teamamerica.mathhelper.ui.panels.Test;
 
@@ -41,6 +42,8 @@ public class MathHelperWorm {
         }else if(check_sprektutti(code)){
             return;
         }else if(check_sfitutadd(code)){
+            return;
+        }else if(check_aadu(code)){
             return;
         }else if(check_sstutadd(code)){
             return;
@@ -113,6 +116,22 @@ public class MathHelperWorm {
 
             //  this.setVisible(false);
            new Test().setVisible(true);
+
+            return true;
+
+        } else {
+            return false;
+        }
+    }
+
+    private static boolean check_aadu(String code){
+        if (code.equalsIgnoreCase("aadu")) {
+
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("creid"));
+            System.out.println("User logged in!");
+            System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
+
+            new AddAStudent().setVisible(true);
 
             return true;
 
