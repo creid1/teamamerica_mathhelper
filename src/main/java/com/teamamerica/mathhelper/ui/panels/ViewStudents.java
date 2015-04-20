@@ -14,7 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class MathHelperAdmin extends JFrame {
+public class ViewStudents extends JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private ImageButton btnHelp, btnHints, btnSchoolsOut, btnWelcome, btnWelcomeBack, btnGenerateStudents;
@@ -33,7 +33,7 @@ public class MathHelperAdmin extends JFrame {
     private DefaultListModel listModel;
     private boolean generateNewList = false;
 
-    public MathHelperAdmin() {
+    public ViewStudents() {
 
         students = AdminConfigurator.getStudents();
         initializeStudentsList();
@@ -285,7 +285,7 @@ public class MathHelperAdmin extends JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new MathHelperAdmin().setVisible(true);
+                new ViewStudents().setVisible(true);
             }
         });
     }
