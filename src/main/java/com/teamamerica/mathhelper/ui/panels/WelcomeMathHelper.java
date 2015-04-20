@@ -2,32 +2,70 @@ package com.teamamerica.mathhelper.ui.panels;
 
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 import com.teamamerica.mathhelper.controllers.GradeLevel;
+import com.teamamerica.mathhelper.environment.ConfigDirectory;
+import com.teamamerica.mathhelper.ui.customcomponents.AudioListener;
+import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
+import com.teamamerica.mathhelper.ui.customcomponents.ImageLabel;
 
-public class SelectGrade extends javax.swing.JFrame {
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-    public SelectGrade() {
+public class WelcomeMathHelper extends JFrame {
+    
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private JButton btn3;
+    private ImageButton btnHelp, btnHints;
+    private ImageButton btn2;
+    private ImageButton btnnPreK;
+    private ImageButton btn1;
+    private ImageButton btn4;
+    private ImageButton btnK;
+    private JLabel lblWelcomeTitle;
+    private JPanel jPanel1;
+    // End of variables declaration//GEN-END:variables
+
+    private ImageLabel lblWelcomeBackImage, lblSchoolImage;
+
+    public WelcomeMathHelper() {
         initComponents();
     }
 
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        setBackground(Color.WHITE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1 = new javax.swing.JPanel();
-        btn2 = new javax.swing.JButton();
-        btnnPreK = new javax.swing.JButton();
-        btn1 = new javax.swing.JButton();
-        btn4 = new javax.swing.JButton();
-        btnK = new javax.swing.JButton();
-        btn3 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        btnWelcom = new javax.swing.JButton();
-        btnHelp = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblWelcomeTitle = new JLabel();
+        jPanel1 = new JPanel();
+        jPanel1.setBackground(Color.WHITE);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        btn2 = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_2gradefinal.gif"), 250, 101);
+        btnnPreK =new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_prekfinal.gif"), 250, 101);
+        btn1 = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_1gradefinal.gif"), 250, 101);
+        btn4 = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_4gradefinal.gif"), 250, 101);
+        btnK = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_Kinderfinal.gif"), 250, 101);
+        btn3 = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_3gradefinal.gif"), 250, 101);
+
+        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
+        btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
+
+        lblWelcomeBackImage = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_childrenSchool.jpg"), 290, 174);
+        lblSchoolImage = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_elementary.jpg"), 224, 134);
 
         jPanel1.setLayout(null);
+
+
+        btnHints.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnHintsActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnHints);
+        btnHints.setBounds(850, 575, 150, 101);
+
 
         btn2.setBackground(new java.awt.Color(102, 255, 102));
         btn2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -39,7 +77,6 @@ public class SelectGrade extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btn2);
-        btn2.setBounds(40, 220, 112, 86);
 
         btnnPreK.setBackground(new java.awt.Color(102, 255, 102));
         btnnPreK.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -51,7 +88,6 @@ public class SelectGrade extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnnPreK);
-        btnnPreK.setBounds(40, 100, 112, 86);
 
         btn1.setBackground(new java.awt.Color(255, 0, 0));
         btn1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -63,9 +99,7 @@ public class SelectGrade extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btn1);
-        btn1.setBounds(440, 100, 112, 86);
-
-        btn4.setBackground(new java.awt.Color(255, 0, 0));
+         btn4.setBackground(new java.awt.Color(255, 0, 0));
         btn4.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btn4.setText("4th");
         btn4.setPreferredSize(new java.awt.Dimension(107, 35));
@@ -75,7 +109,7 @@ public class SelectGrade extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btn4);
-        btn4.setBounds(440, 220, 112, 86);
+
 
         btnK.setBackground(new java.awt.Color(255, 255, 0));
         btnK.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -87,7 +121,7 @@ public class SelectGrade extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnK);
-        btnK.setBounds(240, 100, 112, 86);
+
 
         btn3.setBackground(new java.awt.Color(255, 255, 0));
         btn3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -99,53 +133,62 @@ public class SelectGrade extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btn3);
-        btn3.setBounds(240, 220, 112, 86);
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
-        jLabel2.setText("Select Your Grade");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(130, 10, 340, 60);
+        lblWelcomeTitle.setFont(new Font("Comic Sans MS", 0, 60)); // NOI18N
+        jPanel1.add(lblWelcomeBackImage);
+        lblWelcomeTitle.setText("Welcome To The Math Helper");
+        jPanel1.add(lblWelcomeTitle);
+        jPanel1.add(lblSchoolImage);
 
-        btnWelcom.setBackground(new java.awt.Color(153, 204, 255));
-        btnWelcom.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        btnWelcom.setText("Welcome Page");
-        btnWelcom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnWelcomeActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnWelcom);
-        btnWelcom.setBounds(40, 330, 110, 40);
-
-        btnHelp.setBackground(new java.awt.Color(153, 204, 255));
-        btnHelp.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        btnHelp.setText("Help");
         btnHelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHelpActionPerformed(evt);
             }
         });
         jPanel1.add(btnHelp);
-        btnHelp.setBounds(440, 330, 110, 40);
+        btnHelp.setBounds(30, 575, 150, 101);
+        btnHelp.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnHelpActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ian\\Documents\\backround.jpeg")); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 595, 374);
+        lblWelcomeTitle.setBounds(75, 10, 1000, 100);
+        lblWelcomeBackImage.setBounds(500, 100, 290, 174);
+        lblSchoolImage.setBounds(175,120,224,134);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        btnnPreK.setBounds(75, 315, 250, 101);
+        btnK.setBounds(375, 315, 250, 101);
+        btn1.setBounds(675, 315, 250, 101);
+
+        btn2.setBounds(75, 450, 250, 101);
+        btn3.setBounds(375, 450, 250, 101);
+        btn4.setBounds(675, 450, 250, 101);
+
+          GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 1000, GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 700, GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
-        setLocationRelativeTo(null);
+
+
     }// </editor-fold>//GEN-END:initComponents
+
+
+    private void btnHintsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        AudioListener.runAudioListener("SpeechOn.wav");
+        new HelpDeskHints().setVisible(true);
+
+    }//GEN-LAST:event_jButton7ActionPerformed
+
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         Object source = evt.getSource();
@@ -206,16 +249,9 @@ public class SelectGrade extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton10ActionPerformed
 
-    private void btnWelcomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Object source = evt.getSource();
-        if (source == btnWelcom) {
-            new MainMenu().setVisible(true);
-            this.setVisible(false);
-        }
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        AudioListener.runAudioListener("SpeechOn.wav");
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -226,22 +262,9 @@ public class SelectGrade extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new SelectGrade().setVisible(true);
+                new WelcomeMathHelper().setVisible(true);
             }
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn3;
-    private javax.swing.JButton btnWelcom;
-    private javax.swing.JButton btnHelp;
-    private javax.swing.JButton btn2;
-    private javax.swing.JButton btnnPreK;
-    private javax.swing.JButton btn1;
-    private javax.swing.JButton btn4;
-    private javax.swing.JButton btnK;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    // End of variables declaration//GEN-END:variables
 }

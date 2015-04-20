@@ -159,7 +159,7 @@ public class LogIn extends JFrame {
                 new HelpDeskAdminHints().setVisible(true);
                 this.setVisible(false);
             }else {
-                new SelectGrade().setVisible(true);
+                new WelcomeMathHelper().setVisible(true);
                 new HelpDeskHints().setVisible(true);
                 this.setVisible(false);
             }
