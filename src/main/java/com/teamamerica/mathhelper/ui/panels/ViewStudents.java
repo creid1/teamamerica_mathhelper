@@ -130,7 +130,7 @@ public class ViewStudents extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == btnHints) {
-                    new HelpDeskHints().setVisible(true);
+                    new HelpDeskAdminHints().setVisible(true);
                 }
             }
         });
