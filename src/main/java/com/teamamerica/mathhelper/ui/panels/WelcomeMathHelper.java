@@ -194,7 +194,7 @@ public class WelcomeMathHelper extends JFrame {
         Object source = evt.getSource();
         if (source == btn2) {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.SECOND);
-            new MathHelperOptions().setVisible(true);
+            new MathHelperMain().setVisible(true);
             this.setVisible(false);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -203,7 +203,7 @@ public class WelcomeMathHelper extends JFrame {
         Object source = evt.getSource();
         if (source == btnnPreK) {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.PRE_K);
-            new MathHelperOptions().setVisible(true);
+            new MathHelperMain().setVisible(true);
             this.setVisible(false);
         }
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -213,7 +213,7 @@ public class WelcomeMathHelper extends JFrame {
         if (source == btn1) {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.FIRST);
 
-            new MathHelperOptions().setVisible(true);
+            new MathHelperMain().setVisible(true);
             this.setVisible(false);
         }
     }//GEN-LAST:event_jButton7ActionPerformed
@@ -223,7 +223,7 @@ public class WelcomeMathHelper extends JFrame {
         if (source == btn4) {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.FOURTH);
 
-            new MathHelperOptions().setVisible(true);
+            new MathHelperMain().setVisible(true);
             this.setVisible(false);
         }
     }//GEN-LAST:event_jButton8ActionPerformed
@@ -234,7 +234,7 @@ public class WelcomeMathHelper extends JFrame {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.K);
             System.out.println(UserInteractionsConfigurator.get_interactive_grade_level_enum());
 
-            new MathHelperOptions().setVisible(true);
+            new MathHelperMain().setVisible(true);
             this.setVisible(false);
         }
     }//GEN-LAST:event_jButton9ActionPerformed
@@ -244,7 +244,7 @@ public class WelcomeMathHelper extends JFrame {
         if (source == btn3) {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.THIRD);
             System.out.println(UserInteractionsConfigurator.get_interactive_grade_level_enum());
-            new MathHelperOptions().setVisible(true);
+            new MathHelperMain().setVisible(true);
             this.setVisible(false);
         }
     }//GEN-LAST:event_jButton10ActionPerformed

@@ -7,7 +7,7 @@ import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 import com.teamamerica.mathhelper.controllers.MainMenuSelection;
 import com.teamamerica.mathhelper.environment.ConfigDirectory;
 import com.teamamerica.mathhelper.ui.panels.HelpDeskHints;
-import com.teamamerica.mathhelper.ui.panels.MathHelperOptions;
+import com.teamamerica.mathhelper.ui.panels.MathHelperMain;
 import com.teamamerica.mathhelper.ui.panels.PracticeTest;
 
 import javax.swing.*;
@@ -164,7 +164,7 @@ public class YouTubeFrame extends JFrame {
         AudioListener.runAudioListener("SpeechOn.wav");
         this.setVisible(false);
         this.frame.setVisible(false);
-        new MathHelperOptions().setVisible(true);
+        new MathHelperMain().setVisible(true);
 
     }
 
