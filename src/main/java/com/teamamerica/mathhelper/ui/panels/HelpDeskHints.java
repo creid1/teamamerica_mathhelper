@@ -26,13 +26,11 @@ public class HelpDeskHints extends JFrame {
     private ImageButton btnSchoolsOut;
     private JLabel lblHelpDeskHints;
 
-    private JLabel lblINeedHelp,lblHints,lblLogout;
-    private JLabel lblHome, lblLetMeTry,lblNext;
-    private JLabel lblPencilsReady,lblLearnNow,lblPrint;
+    private JLabel lblINeedHelp, lblHints, lblLogout;
+    private JLabel lblHome, lblLetMeTry, lblNext;
+    private JLabel lblPencilsReady, lblLearnNow, lblPrint;
 
     private ImageButton btnBus;
-
-
 
 
     // End of variables declaration//GEN-END:variables
@@ -49,7 +47,7 @@ public class HelpDeskHints extends JFrame {
 
         setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
-        setLocation(850,0);
+        setLocation(850, 0);
 
         jPanel1 = new JPanel();
         lblHelpDeskHints = new JLabel();
@@ -75,11 +73,6 @@ public class HelpDeskHints extends JFrame {
         lblPencilsReady = new JLabel("Pencils Ready!");
         lblLetMeTry = new JLabel("Let Me Try!");
         lblPrint = new JLabel("Print Me!");
-
-
-
-
-
 
 
         jPanel1.setBackground(new Color(255, 255, 255));
@@ -148,18 +141,18 @@ public class HelpDeskHints extends JFrame {
         });
 
         lblINeedHelp.setBounds(55, 175, 150, 101);
-        lblINeedHelp.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
+        lblINeedHelp.setFont(new Font("Comic Sans MS", 1, 16)); // NOI18N
         lblHints.setBounds(200, 175, 150, 101);
-        lblHints.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
+        lblHints.setFont(new Font("Comic Sans MS", 1, 16)); // NOI18N
         lblLogout.setBounds(370, 175, 300, 101);
-        lblLogout.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
+        lblLogout.setFont(new Font("Comic Sans MS", 1, 16)); // NOI18N
 
 
         btnHome.setBounds(10, 240, 150, 115);
         btnHome.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(e.getSource() == btnHome){
+                if (e.getSource() == btnHome) {
                     AudioListener.runAudioListener("SpeechOn.wav");
                 }
             }
@@ -168,35 +161,35 @@ public class HelpDeskHints extends JFrame {
         btnLetMeTry.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(e.getSource() == btnLetMeTry){
+                if (e.getSource() == btnLetMeTry) {
                     AudioListener.runAudioListener("SpeechOn.wav");
                 }
             }
         });
-        btnNext.setBounds(248, 260,325, 101);
+        btnNext.setBounds(248, 260, 325, 101);
         btnNext.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(e.getSource() == btnNext){
+                if (e.getSource() == btnNext) {
                     AudioListener.runAudioListener("SpeechOn.wav");
                 }
             }
         });
 
         lblHome.setBounds(65, 315, 150, 101);
-        lblHome.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
+        lblHome.setFont(new Font("Comic Sans MS", 1, 16)); // NOI18N
 
         lblLetMeTry.setBounds(190, 315, 150, 101);
-        lblLetMeTry.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
+        lblLetMeTry.setFont(new Font("Comic Sans MS", 1, 16)); // NOI18N
 
-        lblNext.setBounds(378, 315,150, 101);
-        lblNext.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
+        lblNext.setBounds(378, 315, 150, 101);
+        lblNext.setFont(new Font("Comic Sans MS", 1, 16)); // NOI18N
 
         btnLearnNow.setBounds(25, 395, 150, 113);
         btnLearnNow.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(e.getSource() == btnLearnNow){
+                if (e.getSource() == btnLearnNow) {
                     AudioListener.runAudioListener("SpeechOn.wav");
                 }
             }
@@ -205,7 +198,7 @@ public class HelpDeskHints extends JFrame {
         btnPencilReady.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(e.getSource() == btnPencilReady){
+                if (e.getSource() == btnPencilReady) {
                     AudioListener.runAudioListener("SpeechOn.wav");
                 }
             }
@@ -214,7 +207,7 @@ public class HelpDeskHints extends JFrame {
         btnPrint.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(e.getSource() == btnPrint){
+                if (e.getSource() == btnPrint) {
                     AudioListener.runAudioListener("SpeechOn.wav");
                 }
             }
@@ -222,30 +215,20 @@ public class HelpDeskHints extends JFrame {
 
 
         lblLearnNow.setBounds(60, 468, 150, 101);
-        lblLearnNow.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
+        lblLearnNow.setFont(new Font("Comic Sans MS", 1, 16)); // NOI18N
 
         lblPencilsReady.setBounds(215, 468, 150, 101);
-        lblPencilsReady.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
+        lblPencilsReady.setFont(new Font("Comic Sans MS", 1, 16)); // NOI18N
 
-        lblPrint.setBounds(380, 468,150, 101);
-        lblPrint.setFont(new Font("Comic Sans MS", 0, 16)); // NOI18N
+        lblPrint.setBounds(380, 468, 150, 101);
+        lblPrint.setFont(new Font("Comic Sans MS", 1, 16)); // NOI18N
 
-        btnBus.setBounds(100,525,247,181);
+        btnBus.setBounds(120, 525, 247, 181);
         btnBus.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 btnBusActionPerformed(evt);
             }
         });
-
-
-
-
-
-
-
-
-
-
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -263,11 +246,9 @@ public class HelpDeskHints extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
-
-
     private void btnBusActionPerformed(ActionEvent evt) {
         AudioListener.runAudioListener("SpeechOn.wav");
-        if(evt.getSource() == btnBus){
+        if (evt.getSource() == btnBus) {
             this.setVisible(false);
         }
     }

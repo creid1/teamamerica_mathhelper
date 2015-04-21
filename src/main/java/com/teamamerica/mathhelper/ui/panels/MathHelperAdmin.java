@@ -93,7 +93,7 @@ public class MathHelperAdmin extends JFrame {
         jPanel1 = new JPanel();
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 96);
         btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
-        btnSchoolsOut = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_logout.gif"), 150, 101);
+        btnSchoolsOut = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_logout.gif"), 300, 101);
         btnNewMathHelper = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_welcomeToSchool.jpg"), 175, 175);
         btnUpdateMathHelper = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_welcomeBack.jpg"), 175, 175);
         btnFindMathHelpers = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_generateStudents.png"), 150, 150);
@@ -126,7 +126,7 @@ public class MathHelperAdmin extends JFrame {
             }
         });
         jPanel1.add(btnSchoolsOut);
-        btnSchoolsOut.setBounds(850, 10, 110, 101);
+        btnSchoolsOut.setBounds(750, 20, 300, 101);
 
 
         btnHelp.addActionListener(new ActionListener() {
