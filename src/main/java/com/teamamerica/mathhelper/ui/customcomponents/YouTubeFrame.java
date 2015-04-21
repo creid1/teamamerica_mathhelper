@@ -29,7 +29,8 @@ public class YouTubeFrame extends JFrame {
 
         System.out.println("YouTubeAddress: " + url);
         setBackground(Color.WHITE);
-
+        setResizable(true);
+        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         this.url = url;
         NativeInterface.open();
 
@@ -43,7 +44,8 @@ public class YouTubeFrame extends JFrame {
         frame = new JFrame("Math Helper Tutorials");
 
         frame.setBackground(Color.WHITE);
-        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        frame.setResizable(true);
         frame.setLocationRelativeTo(null);
 
 

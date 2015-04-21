@@ -1,19 +1,36 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Ian
- */
-
 package com.teamamerica.mathhelper.ui.panels;
 
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 import com.teamamerica.mathhelper.controllers.DifficultyLevel;
+import com.teamamerica.mathhelper.environment.ConfigDirectory;
+import com.teamamerica.mathhelper.ui.customcomponents.AudioListener;
+import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
 
-public class Difficulty extends javax.swing.JFrame {
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+/**
+ * Created by Christina on 4/21/2015.
+ */
+public class Difficulty extends JFrame {
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private ImageButton btnSchoolsOut;
+    private ImageButton btnMain;
+    private ImageButton btnHelp;
+    private ImageButton btnHints;
+
+    private ImageButton btnEasy;
+    private ImageButton btnMedium;
+    private ImageButton btnHard;
+    private JLabel lblTitleDifficulty;
+    private JLabel lblEasy;
+    private JLabel lblHard;
+    private JLabel lblMedium;
+    private JPanel jPanel1;
+    // End of variables declaration//GEN-END:variables
+
 
     /**
      * Creates new form Difficulty
@@ -31,136 +48,198 @@ public class Difficulty extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        btnEasy = new javax.swing.JButton();
-        btnMedium = new javax.swing.JButton();
-        btnHard = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        btnTutorials = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        setResizable(false);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(610, 410));
+        jPanel1 = new JPanel();
+        btnEasy = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_easy.png"), 220, 220);
+        btnMedium = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_medium2.jpg"), 240, 160);
+        btnHard = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_hard.jpg"), 224, 187);
+        lblTitleDifficulty = new JLabel();
+        lblEasy = new JLabel();
+        lblHard = new JLabel();
+        lblMedium = new JLabel();
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(436, 308));
+        btnSchoolsOut = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_logout.gif"), 150, 101);
+        btnSchoolsOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSchoolsOutActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSchoolsOut);
+        btnSchoolsOut.setBounds(850, 10, 110, 101);
+
+        btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 125);
+        btnMain.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnMainActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnMain);
+        btnMain.setBounds(10, 10, 150, 125);
+
+        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
+        btnHelp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHelpActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnHelp);
+        btnHelp.setBounds(30, 575, 150, 101);
+
+        btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
+        btnHints.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnHintsActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnHints);
+        btnHints.setBounds(850, 575, 150, 101);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1000, 600));
         jPanel1.setLayout(null);
 
-        btnEasy.setBackground(new java.awt.Color(102, 255, 102));
-        btnEasy.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        btnEasy.setText("Easy");
-        btnEasy.setPreferredSize(new java.awt.Dimension(107, 35));
-        btnEasy.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jPanel1.add(btnEasy);
+        btnEasy.setBounds(100, 220, 220, 220);
+        btnEasy.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 btnEasyActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEasy);
-        btnEasy.setBounds(30, 150, 112, 86);
 
-        btnMedium.setBackground(new java.awt.Color(255, 255, 0));
-        btnMedium.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        btnMedium.setText("Medium");
-        btnMedium.setPreferredSize(new java.awt.Dimension(107, 35));
-        btnMedium.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnMedium.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 btnMediumActionPerformed(evt);
             }
         });
-        jPanel1.add(btnMedium);
-        btnMedium.setBounds(230, 150, 112, 86);
 
-        btnHard.setBackground(new java.awt.Color(255, 0, 51));
-        btnHard.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        btnHard.setText("Hard");
-        btnHard.setPreferredSize(new java.awt.Dimension(107, 35));
+        jPanel1.add(btnMedium);
+        btnMedium.setBounds(350, 235, 240, 160);
+
+
         btnHard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHardActionPerformed(evt);
             }
         });
         jPanel1.add(btnHard);
-        btnHard.setBounds(440, 150, 112, 86);
+        btnHard.setBounds(650, 185, 233, 216);
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 48)); // NOI18N
-        jLabel2.setText("Select Difficulty");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(100, 20, 393, 70);
+        lblEasy.setBounds(50, 375, 1000, 150);
+        lblMedium.setBounds(335, 375, 1000, 150);
+        lblHard.setBounds(630, 375, 1000, 150);
 
-        jButton3.setBackground(new java.awt.Color(153, 204, 255));
-        jButton3.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        jButton3.setText("Help");
-        jPanel1.add(jButton3);
-        jButton3.setBounds(440, 320, 112, 43);
+        lblTitleDifficulty.setFont(new java.awt.Font("Comic Sans MS", 0, 70)); // NOI18N
+        lblTitleDifficulty.setText("Select Difficulty");
+        jPanel1.add(lblTitleDifficulty);
+        lblTitleDifficulty.setBounds(220, 30, 557, 100);
 
-        btnTutorials.setBackground(new java.awt.Color(153, 204, 255));
-        btnTutorials.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        btnTutorials.setText("Tutorials");
-        btnTutorials.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnTutorials);
-        btnTutorials.setBounds(30, 320, 112, 43);
+        lblEasy.setFont(new java.awt.Font("Comic Sans MS", 1, 30)); // NOI18N
+        lblEasy.setText("         Easy");
+        lblEasy.setToolTipText("");
+        lblEasy.setPreferredSize(new java.awt.Dimension(1000, 400));
+        jPanel1.add(lblEasy);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ian\\Documents\\backround.jpeg")); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 595, 374);
+        lblHard.setFont(new java.awt.Font("Comic Sans MS", 1, 30)); // NOI18N
+        lblHard.setText("        Hard");
+        lblHard.setToolTipText("");
+        lblHard.setPreferredSize(new java.awt.Dimension(1000, 400));
+        jPanel1.add(lblHard);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+
+        lblMedium.setFont(new java.awt.Font("Comic Sans MS", 1, 30)); // NOI18N
+        lblMedium.setText("      Medium");
+        lblMedium.setToolTipText("");
+        lblMedium.setPreferredSize(new java.awt.Dimension(1000, 400));
+        jPanel1.add(lblMedium);
+
+        GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnEasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-       Object source = evt.getSource();
-       if(source == btnEasy){
 
-           UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.EASY);
-           System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
-           new Test().setVisible(true);
-          this.dispose();
-       }
+    private void btnEasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        Object source = evt.getSource();
+        if (source == btnEasy) {
+
+            UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.EASY);
+            System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
+            new Test().setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
+
     private void btnMediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-       Object source = evt.getSource();
-       if(source == btnMedium){
-           UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.MEDIUM);
-           System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
-           new Test().setVisible(true);
-           this.dispose();
-       }
+        Object source = evt.getSource();
+        if (source == btnMedium) {
+            UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.MEDIUM);
+            System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
+            new Test().setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void btnHardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-       Object source = evt.getSource();
-       if(source == btnHard){
-           UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.HARD);
-           System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
-           new CategoriesMain().setVisible(true);
-          this.dispose();
-       }
+        Object source = evt.getSource();
+        if (source == btnHard) {
+            UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.HARD);
+            System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
+            new Test().setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       Object source = evt.getSource();
-       if(source == btnTutorials){
-          new CategoriesMain().setVisible(true);
-          this.dispose();
-       }
-    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnMainActionPerformed(ActionEvent evt) {
+
+        AudioListener.runAudioListener("SpeechOn.wav");
+        new MainMenu().setVisible(true);
+        this.dispose();
+
+    }
+
+    private void btnSchoolsOutActionPerformed(ActionEvent evt) {
+
+        if (evt.getSource() == btnSchoolsOut) {
+            UserInteractionsConfigurator.set_difficulty_level_enum(null);
+            UserInteractionsConfigurator.set_category_type_enum(null);
+            UserInteractionsConfigurator.set_interactive_grade(null);
+            UserInteractionsConfigurator.set_main_menu_selection_enum(null);
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(null);
+            UserInteractionsConfigurator.set_interactive_user(null);
+            this.setVisible(false);
+            new LogIn().setVisible(true);
+
+        }
+    }
+
+
+    private void btnHelpActionPerformed(ActionEvent evt) {
+
+        AudioListener.runAudioListener("SpeechOn.wav");
+
+
+    }
+
+
+    private void btnHintsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        AudioListener.runAudioListener("SpeechOn.wav");
+        new HelpDeskHints().setVisible(true);
+
+    }
 
     /**
      * @param args the command line arguments
@@ -176,20 +255,20 @@ public class Difficulty extends javax.swing.JFrame {
          * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Difficulty.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewDifficulty.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Difficulty.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewDifficulty.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Difficulty.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Difficulty.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewDifficulty.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(NewDifficulty.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -199,18 +278,9 @@ public class Difficulty extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new Difficulty().setVisible(true);
+                new NewDifficulty().setVisible(true);
             }
         });
     }
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnTutorials;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton btnEasy;
-    private javax.swing.JButton btnMedium;
-    private javax.swing.JButton btnHard;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    // End of variables declaration//GEN-END:variables
+
 }

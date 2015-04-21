@@ -34,6 +34,11 @@ public class MathHelperWorm {
             return;
         } else if (check_sktutsha(code)) {
             return;
+        } else if(check_sktestadd(code)){
+            return;
+        }
+        else if (check_sktutsha(code)) {
+            return;
         } else if (check_sprektutsha(code)) {
             return;
         } else if (check_avie(code)) {
@@ -346,6 +351,22 @@ public class MathHelperWorm {
             UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.K);
             new MainMenu().setVisible(true);
+
+            return true;
+
+        } else {
+            return false;
+        }
+    }
+
+    private static boolean check_sktestadd(String code) {
+        if (code.equalsIgnoreCase("sktestadd")) {
+
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.K);
+            UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.TESTS);
+            UserInteractionsConfigurator.set_category_type_enum(CategoryType.ADDITION);
+            new NewDifficulty().setVisible(true);
 
             return true;
 

@@ -161,7 +161,7 @@ public class CategoriesMain extends javax.swing.JFrame {
 
     private void checkForMenuSelectionType() {
         if (UserInteractionsConfigurator.getMain_menu_selection_enum().equals(MainMenuSelection.TESTS)) {
-            new Difficulty().setVisible(true);
+            new NewDifficulty().setVisible(true);
             this.dispose();
         }
         if (UserInteractionsConfigurator.getMain_menu_selection_enum().equals(MainMenuSelection.PRACTICE)) {

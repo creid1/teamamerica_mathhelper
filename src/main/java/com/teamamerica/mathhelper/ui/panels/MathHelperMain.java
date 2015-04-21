@@ -44,6 +44,7 @@ public class MathHelperMain extends JFrame {
 
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         setPreferredSize(new java.awt.Dimension(1016, 738));
         setBackground(Color.WHITE);
 

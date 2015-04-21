@@ -70,7 +70,8 @@ public class PracticeTest extends JFrame {
 
         question = QuestionsPageConfigurator.getQuestion();
 
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        setResizable(false);
 
 
         jPanel1 = new JPanel();
@@ -259,7 +260,7 @@ public class PracticeTest extends JFrame {
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 695, Short.MAX_VALUE)
         );
 
         pack();
@@ -273,7 +274,7 @@ public class PracticeTest extends JFrame {
         AudioListener.runAudioListener("SpeechOn.wav");
 
         this.dispose();
-        new Difficulty().setVisible(true);
+        new NewDifficulty().setVisible(true);
 
     }
 
