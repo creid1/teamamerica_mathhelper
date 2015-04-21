@@ -167,6 +167,60 @@ public class MathHelperDB {
     }
 
 
+    /**
+     * Deletes the specified user from the database.
+     * @return True if a user with that id was successfully deleted from the database.
+     **/
+    public boolean deleteUser(int user_id) {
+        openDBConnection();
+        boolean error = false;
+        String sql = "DELETE FROM users WHERE user_id=?;";
+        PreparedStatement selectStmt = null;
+        try {
+            selectStmt = conn.prepareStatement(sql);
+            selectStmt.setInt(1, user_id);
+            selectStmt.execute();
+        } catch(SQLException se) {
+            error = true;
+        } finally {
+            try {
+                if(selectStmt != null) {
+                    selectStmt.close();
+                }
+            } catch(SQLException se2) {
+            }
+        }
+        return !error;
+    }
+
+    /**
+     * Deletes the specified user's grades from the database.
+     * @return True if the grades with that id were successfully deleted from the database.
+     **/
+    public boolean deleteGradeByGradeId(int grade_id) {
+        openDBConnection();
+
+        boolean error = false;
+        String sql = "DELETE FROM grades WHERE grade_id=?;";
+        PreparedStatement selectStmt = null;
+        try {
+            selectStmt = conn.prepareStatement(sql);
+            selectStmt.setInt(1, grade_id);
+            selectStmt.execute();
+        } catch(SQLException se) {
+            error = true;
+        } finally {
+            try {
+                if(selectStmt != null) {
+                    selectStmt.close();
+                }
+            } catch(SQLException se2) {
+            }
+        }
+        return !error;
+    }
+
+
     public boolean addNewGrade(Grade grade) {
         openDBConnection();
         sql = "INSERT grades " +

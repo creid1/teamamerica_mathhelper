@@ -37,7 +37,9 @@ public class MathHelperDBClient {
         }
     }
 
-    public boolean edit_user(User user) {return mathHelperDB.editUser(user);}
+    public boolean edit_user(User user) {
+        return mathHelperDB.editUser(user);
+    }
 
     public boolean add_newUser(User user) {
         return mathHelperDB.addNewUser(user);
@@ -47,6 +49,40 @@ public class MathHelperDBClient {
         return mathHelperDB.addNewGrade(grade);
     }
 
+    public boolean remove_mathhelper_user_grades(int user_id) {
+        boolean isDeleted = deleteUser(user_id);
+        if (!isDeleted) {
+            return false;
+        } else {
+            return deleteGrades(user_id);
+        }
+    }
+
+
+    private boolean deleteGrades(int user_id) {
+        ArrayList<Grade> grades = searchGrades_userId(user_id);
+        boolean isDeleted = false;
+        if (grades.size() == 0) {
+            return true;
+        } else {
+            for (Grade grade : grades) {
+              isDeleted = mathHelperDB.deleteGradeByGradeId(grade.getGrade_id());
+                if(!isDeleted){
+                    return false;
+                }else{
+                    isDeleted = true;
+                }
+
+            }
+        }
+        return isDeleted;
+    }
+
+
+    private boolean deleteUser(int user_id) {
+        return mathHelperDB.deleteUser(user_id);
+
+    }
 
     //**********************************************SEARCH USER GETTERS***************************//
 

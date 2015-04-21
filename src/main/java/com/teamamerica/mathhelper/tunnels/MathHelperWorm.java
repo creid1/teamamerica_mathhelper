@@ -67,7 +67,7 @@ public class MathHelperWorm {
     private static boolean check_skpractadd(String code) {
         if (code.equalsIgnoreCase("skpractadd")) {
 
-            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("testUser2"));
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.K);
@@ -86,7 +86,7 @@ public class MathHelperWorm {
     private static boolean check_sstutadd(String code) {
         if (code.equalsIgnoreCase("sstutadd")) {
 
-            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("testUser2"));
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
             UserInteractionsConfigurator.set_category_type_enum(CategoryType.ADDITION);
@@ -109,7 +109,7 @@ public class MathHelperWorm {
     private static boolean check_sfteste(String code) {
         if (code.equalsIgnoreCase("sfteste")) {
 
-            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("testUser2"));
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
             UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.TESTS);
@@ -161,7 +161,7 @@ public class MathHelperWorm {
     private static boolean check_sfitutadd(String code) {
         if (code.equalsIgnoreCase("sfitutadd")) {
 
-            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("testUser2"));
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
             UserInteractionsConfigurator.set_category_type_enum(CategoryType.ADDITION);
@@ -182,7 +182,7 @@ public class MathHelperWorm {
     private static boolean check_sprektutti(String code) {
         if (code.equalsIgnoreCase("sprektutti")) {
 
-            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("testUser2"));
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
             UserInteractionsConfigurator.set_category_type_enum(CategoryType.TIME);
@@ -205,7 +205,7 @@ public class MathHelperWorm {
     private static boolean check_sktutti(String code) {
         if (code.equalsIgnoreCase("sktutti")) {
 
-            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("testUser2"));
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
             UserInteractionsConfigurator.set_category_type_enum(CategoryType.TIME);
@@ -224,7 +224,7 @@ public class MathHelperWorm {
     private static boolean check_sprektutsub(String code) {
         if (code.equalsIgnoreCase("sprektutsub")) {
 
-            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("testUser2"));
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
             UserInteractionsConfigurator.set_category_type_enum(CategoryType.SUBTRACTION);
@@ -244,7 +244,7 @@ public class MathHelperWorm {
     private static boolean check_sktutsub(String code) {
         if (code.equalsIgnoreCase("sktutsub")) {
 
-            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("testUser2"));
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
             UserInteractionsConfigurator.set_category_type_enum(CategoryType.SUBTRACTION);
@@ -265,7 +265,7 @@ public class MathHelperWorm {
     private static boolean check_sprektutsha(String code) {
         if (code.equalsIgnoreCase("sprektutsha")) {
 
-            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("testUser2"));
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
             UserInteractionsConfigurator.set_category_type_enum(CategoryType.SHAPES);
@@ -285,7 +285,7 @@ public class MathHelperWorm {
     private static boolean check_sktutsha(String code) {
         if (code.equalsIgnoreCase("sktutsha")) {
 
-            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("testUser2"));
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
             UserInteractionsConfigurator.set_category_type_enum(CategoryType.SHAPES);
@@ -304,7 +304,7 @@ public class MathHelperWorm {
     private static boolean check_sprektutadd(String code) {
         if (code.equalsIgnoreCase("sprektutadd")) {
 
-            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("testUser2"));
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
             UserInteractionsConfigurator.set_category_type_enum(CategoryType.ADDITION);
@@ -325,7 +325,7 @@ public class MathHelperWorm {
     private static boolean check_sktutadd(String code) {
         if (code.equalsIgnoreCase("sktutadd")) {
 
-            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("testUser2"));
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
             UserInteractionsConfigurator.set_category_type_enum(CategoryType.ADDITION);
@@ -354,7 +354,7 @@ public class MathHelperWorm {
 
     private static boolean check_sktestadde(String code) {
         if (code.equalsIgnoreCase("sktestadde")) {
-            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("testUser2"));
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
             UserInteractionsConfigurator.set_category_type_enum(CategoryType.ADDITION);

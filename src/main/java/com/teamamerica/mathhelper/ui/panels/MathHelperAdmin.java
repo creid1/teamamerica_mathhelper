@@ -17,7 +17,8 @@ import java.util.ArrayList;
 public class MathHelperAdmin extends JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private ImageButton btnHelp, btnHints, btnSchoolsOut, btnWelcome, btnWelcomeBack, btnGenerateStudents;
+    private ImageButton btnHelp, btnHints, btnSchoolsOut, btnNewMathHelper, btnUpdateMathHelper, btnFindMathHelpers, btnTeacherZone;
+    private JCheckBox ckEditAdminInfo;
     private JLabel lblTitle, lblGrades;
     private JPanel jPanel1;
     private JScrollPane jScrollPane1;
@@ -93,18 +94,31 @@ public class MathHelperAdmin extends JFrame {
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 96);
         btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
         btnSchoolsOut = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_logout.gif"), 150, 101);
-        btnWelcome = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_welcomeToSchool.jpg"), 225, 225);
-        btnWelcomeBack = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_welcomeBack.jpg"), 225, 225);
-        btnGenerateStudents = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_generateStudents.png"), 150, 150);
+        btnNewMathHelper = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_welcomeToSchool.jpg"), 175, 175);
+        btnUpdateMathHelper = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_welcomeBack.jpg"), 175, 175);
+        btnFindMathHelpers = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_generateStudents.png"), 150, 150);
+        btnTeacherZone = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_teacherZone.jpg"), 150, 130);
 
-        btnGenerateStudents.addActionListener(new java.awt.event.ActionListener() {
+        btnFindMathHelpers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGenerateStudentsActionPerformed(evt);
+                btnFindMathHelpers(evt);
+            }
+        });
+        btnTeacherZone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTeacherZoneActionPerformed(evt);
             }
         });
 
 
-        jPanel1.add(btnGenerateStudents);
+        btnHints.setBounds(850, 575, 150, 101);
+        btnUpdateMathHelper.setBounds(700, 150, 175, 175);
+        btnNewMathHelper.setBounds(700, 375, 175, 175);
+        btnHelp.setBounds(30, 575, 150, 101);
+
+
+        jPanel1.add(btnFindMathHelpers);
+        jPanel1.add(btnTeacherZone);
 
         btnSchoolsOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,28 +149,26 @@ public class MathHelperAdmin extends JFrame {
             }
         });
 
-        btnWelcome = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_welcomeToSchool.jpg"), 200, 200);
-        btnWelcome.setBounds(650, 375, 200, 225);
-        jPanel1.add(btnWelcome);
+        jPanel1.add(btnNewMathHelper);
 
-        btnWelcome.addActionListener(new ActionListener() {
+        btnNewMathHelper.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (e.getSource() == btnWelcome) {
+                if (e.getSource() == btnNewMathHelper) {
                     AdminConfigurator.setIsEditStudent(false);
                     new AddAStudent().setVisible(true);
                     cboStudents.setSelectedIndex(0);
+                    listModel.clear();
 
                 }
             }
         });
-        btnWelcomeBack = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_welcomeBack.jpg"), 200, 200);
-        btnWelcomeBack.setBounds(650, 150, 200, 200);
-        jPanel1.add(btnWelcomeBack);
-        btnWelcomeBack.addActionListener(new ActionListener() {
+
+        jPanel1.add(btnUpdateMathHelper);
+        btnUpdateMathHelper.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (e.getSource() == btnWelcomeBack) {
+                if (e.getSource() == btnUpdateMathHelper) {
                     if (cboStudents.getSelectedIndex() == 0) {
                         JOptionPane.showMessageDialog(null, "Please select a student from the Student Drop Down List.");
                     } else {
@@ -167,6 +179,7 @@ public class MathHelperAdmin extends JFrame {
                         AdminConfigurator.setUserInfo(studentId);
                         new AddAStudent().setVisible(true);
                         cboStudents.setSelectedIndex(0);
+                        listModel.clear();
 
                     }
                 }
@@ -177,7 +190,7 @@ public class MathHelperAdmin extends JFrame {
         jScrollPane1 = new JScrollPane();
 
         cboStudents = new JComboBox(cboStudentList);
-        cboStudents.setBounds(50, 125, 500, 50);
+        cboStudents.setBounds(100, 125, 500, 50);
         cboStudents.setBackground(Color.WHITE);
         cboStudents.setFont(new Font("Comic Sans MS", 0, 26));
         cboStudents.addActionListener(new java.awt.event.ActionListener() {
@@ -188,13 +201,13 @@ public class MathHelperAdmin extends JFrame {
         listModel = new DefaultListModel();
         listGrades = new JList(listModel);
         listGrades.setBackground(Color.WHITE);
-        listGrades.setBounds(50, 225, 500, 325);
+        listGrades.setBounds(100, 225, 500, 325);
         listGrades.setFont(new Font("Comic Sans MS", 0, 24));
         listGrades.setEnabled(false);
-        jScrollPane1.setBounds(50, 225, 500, 325);
+        jScrollPane1.setBounds(100, 225, 500, 325);
 
         lblGrades = new JLabel("Student Progress Grades:");
-        lblGrades.setBounds(50, 25, 500, 350);
+        lblGrades.setBounds(100, 25, 500, 350);
         lblGrades.setFont(new Font("Comic Sans MS", 0, 24));
 
         jPanel1.add(lblGrades);
@@ -204,21 +217,20 @@ public class MathHelperAdmin extends JFrame {
 
         jPanel1.add(jScrollPane1);
 
-        btnGenerateStudents.setBounds(400, 550, 150, 150);
+        btnFindMathHelpers.setBounds(500, 550, 150, 150);
+        btnTeacherZone.setBounds(300,563,150,130);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
         jPanel1.add(btnHelp);
-        btnHelp.setBounds(30, 575, 150, 101);
 
         jPanel1.add(btnHints);
-        btnHints.setBounds(850, 575, 150, 101);
 
         lblTitle.setFont(new java.awt.Font("Comic Sans MS", 0, 60)); // NOI18N
         lblTitle.setText("Math Helper Admin Main");
         jPanel1.add(lblTitle);
-        lblTitle.setBounds(75, 10, 1000, 60);
+        lblTitle.setBounds(75, 10, 1000, 90);
 
 
         GroupLayout layout = new GroupLayout(getContentPane());
@@ -235,8 +247,20 @@ public class MathHelperAdmin extends JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnGenerateStudentsActionPerformed(ActionEvent evt) {
-        if (evt.getSource() == btnGenerateStudents) {
+    private void btnTeacherZoneActionPerformed(ActionEvent evt) {
+        if (evt.getSource().equals(btnTeacherZone)) {
+            AdminConfigurator.setIsEditStudent(false);
+            AdminConfigurator.setIsEditAdmin(true);
+            AdminConfigurator.setUserInfo(UserInteractionsConfigurator.get_interactive_user().getUser_id());
+            new AddAStudent().setVisible(true);
+            cboStudents.setSelectedIndex(0);
+            listModel.clear();
+
+        }
+    }
+
+    private void btnFindMathHelpers(ActionEvent evt) {
+        if (evt.getSource() == btnFindMathHelpers) {
             generateNewList = true;
             cboStudents.removeAllItems();
             students = AdminConfigurator.getStudents();
@@ -254,7 +278,7 @@ public class MathHelperAdmin extends JFrame {
 
             if (cboStudents.getSelectedIndex() == 0) {
                 //do not show anything
-            }else if(generateNewList){
+            } else if (generateNewList) {
 
                 //do nothing - the list is being removed from another action listener
             } else {

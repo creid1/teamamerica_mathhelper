@@ -1,6 +1,7 @@
 package com.teamamerica.mathhelper.ui.panels;
 
 import com.teamamerica.mathhelper.configurators.AdminConfigurator;
+import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 import com.teamamerica.mathhelper.controllers.SecurityQuestion;
 import com.teamamerica.mathhelper.environment.ConfigDirectory;
 import com.teamamerica.mathhelper.models.User;
@@ -35,6 +36,7 @@ public class AddAStudent extends JFrame {
     private JLabel lblFirstName;
     private JPanel jPanel1;
     private JRadioButton rbAdmin;
+    private ImageButton btnDelete;
 
     // End of variables declaration//GEN-END:variables
     public AddAStudent() {
@@ -45,8 +47,8 @@ public class AddAStudent extends JFrame {
 
     private void checkForEditUser() {
         if (AdminConfigurator.getIsEditStudent()) {
-            User user = AdminConfigurator.getUser();
-            lblAddStudent.setText("      Add MathHelper");
+            User user = AdminConfigurator.getMathHelperStudent();
+            lblAddStudent.setText("   Update MathHelper");
             txtFirstName.setText(user.getFirst_name());
             txtLastName.setText(user.getLast_name());
             txtUserName.setText(user.getUsername());
@@ -61,8 +63,24 @@ public class AddAStudent extends JFrame {
                 }
             }
 
-        } else {
+        } else if (AdminConfigurator.getIsEditAdmin()) {
+            User user = AdminConfigurator.getMathHelperStudent();
             lblAddStudent.setText("  Update MathHelper");
+            txtFirstName.setText(user.getFirst_name());
+            txtLastName.setText(user.getLast_name());
+            txtUserName.setText(user.getUsername());
+            txtPassword.setText(user.getPassword());
+            txtConfirmPassword.setText(user.getPassword());
+            txtSecurityAnswer.setText(user.getSecurity_answer());
+            rbAdmin.setSelected(true);
+            for (int i = 0; i < comboList.length; i++) {
+                if (comboList[i].equals(user.getSecurity_question())) {
+                    cboSecurityQuestion.setSelectedIndex(i);
+                    break;
+                }
+            }
+        } else {
+            lblAddStudent.setText("   Add MathHelper");
             txtFirstName.setText("");
             txtLastName.setText("");
             txtUserName.setText("");
@@ -86,8 +104,10 @@ public class AddAStudent extends JFrame {
 
 
         jPanel1 = new JPanel();
-        btnSubmit = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_teacherNotes.jpg"), 200, 150);
-        btnClose = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_bookWorm.gif"), 175, 150);
+
+        btnSubmit = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_teacherNotes.jpg"), 179, 115);
+        btnDelete = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_pencilErasing.gif"), 90, 89);
+        btnClose = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_bookWorm.gif"), 130, 150);
         jPanel1.add(btnClose);
 
         jLabel1 = new JLabel();
@@ -109,7 +129,7 @@ public class AddAStudent extends JFrame {
         cboSecurityQuestion.setSelectedIndex(0);
         txtSecurityAnswer = new JFormattedTextField();
 
-        rbAdmin = new JRadioButton("Admin User");
+        rbAdmin = new JRadioButton("MathHelper Administrative User");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
@@ -124,8 +144,14 @@ public class AddAStudent extends JFrame {
                 btnCloseActionListener(evt);
             }
         });
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionListener(evt);
+            }
+        });
         jPanel1.add(btnSubmit);
 
+        jPanel1.add(btnDelete);
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jPanel1.add(jLabel1);
@@ -158,7 +184,10 @@ public class AddAStudent extends JFrame {
             int userInput = JOptionPane.showConfirmDialog(
                     null, "Are you sure you want to exit?", "Exit Add/Edit User?", JOptionPane.YES_NO_OPTION);
             if (userInput == 0) {
-                this.setVisible(false);
+               this.dispose();
+                AdminConfigurator.setIsEditAdmin(false);
+                AdminConfigurator.setIsEditStudent(false);
+                AdminConfigurator.setUserInfo(-1);
             } else {
 
             }
@@ -224,10 +253,11 @@ public class AddAStudent extends JFrame {
 
         rbAdmin.setFont(new Font("Comic Sans MS", 0, 22));
         rbAdmin.setBackground(Color.WHITE);
-        rbAdmin.setBounds(50, 465, 1000, 30);
+        rbAdmin.setBounds(75, 465, 1000, 30);
 
-        btnSubmit.setBounds(250, 525, 200, 150);
-        btnClose.setBounds(50, 525, 175, 150);
+        btnClose.setBounds(20, 500, 130, 150);
+        btnDelete.setBounds(150, 520, 90, 89);
+        btnSubmit.setBounds(275, 525, 179, 115);
 
 
     }
@@ -255,51 +285,139 @@ public class AddAStudent extends JFrame {
             } else if (!(txtUserName.getText().length() >= 5 & txtUserName.getText().length() <= 8)) {
                 JOptionPane.showMessageDialog(null, "The user name must be between 5 and 8 characters!");
                 txtUserName.setText("");
-            } else {
-                User user;
-                if (rbAdmin.isSelected()) {
-                    user = new User(txtUserName.getText(), txtPassword.getText(), txtFirstName.getText(), txtLastName.getText(),
-                            comboList[cboSecurityQuestion.getSelectedIndex()], txtSecurityAnswer.getText(), AdminConfigurator.generateAdminRole());
-                } else {
-                    user = new User(txtUserName.getText(), txtPassword.getText(), txtFirstName.getText(), txtLastName.getText(),
-                            comboList[cboSecurityQuestion.getSelectedIndex()], txtSecurityAnswer.getText(), AdminConfigurator.generateStudentRole());
-                }
-                boolean success;
-                if (AdminConfigurator.getIsEditStudent()) {
-                    user.setUser_id(AdminConfigurator.getUser().getUser_id());
-                    success = AdminConfigurator.updateUser(user);
-                } else {
-                    if (AdminConfigurator.doesUserNameExist(txtUserName.getText())) {
-                        JOptionPane.showMessageDialog(null, "Username already exists!");
-                        txtUserName.setText("");
-                        success = false;
+            } else  {
+                int answer = JOptionPane.showConfirmDialog(null, "Are you sure you want to add to Teacher Notes?",
+                        "MathHelperAddTeacherNotes",JOptionPane.YES_NO_OPTION);
+                if(answer == 0) {
+                    User user;
+                    if (rbAdmin.isSelected()) {
+                        user = new User(txtUserName.getText(), txtPassword.getText(), txtFirstName.getText(), txtLastName.getText(),
+                                comboList[cboSecurityQuestion.getSelectedIndex()], txtSecurityAnswer.getText(), AdminConfigurator.generateAdminRole());
                     } else {
-                        success = AdminConfigurator.addNewUser(user);
-
+                        user = new User(txtUserName.getText(), txtPassword.getText(), txtFirstName.getText(), txtLastName.getText(),
+                                comboList[cboSecurityQuestion.getSelectedIndex()], txtSecurityAnswer.getText(), AdminConfigurator.generateStudentRole());
                     }
+                    boolean success;
+                    if (AdminConfigurator.getIsEditStudent()) {
+                        user.setUser_id(AdminConfigurator.getMathHelperStudent().getUser_id());
+                        success = AdminConfigurator.updateUser(user);
+                        AdminConfigurator.setIsEditStudent(false);
+                    } else if (AdminConfigurator.getIsEditAdmin()) {
+                        user.setUser_id(UserInteractionsConfigurator.get_interactive_user().getUser_id());
+                        success = AdminConfigurator.updateUser(user);
+                        AdminConfigurator.setIsEditAdmin(false);
+                    } else {
+                        if (AdminConfigurator.doesUserNameExist(txtUserName.getText())) {
+                            JOptionPane.showMessageDialog(null, "Username already exists!");
+                            txtUserName.setText("");
+                            success = false;
+                        } else {
+                            success = AdminConfigurator.addNewUser(user);
+
+                        }
+                    }
+
+                    if (success) {
+                        JOptionPane.showMessageDialog(null, "MathHelper Admin Information is updated!");
+
+                    } else {
+                        JOptionPane.showMessageDialog(null, "There was an issue processing your request. Please try again later.");
+                    }
+
+                    txtConfirmPassword.setText("");
+                    txtPassword.setText("");
+                    txtFirstName.setText("");
+                    txtLastName.setText("");
+                    txtUserName.setText("");
+                    txtSecurityAnswer.setText("");
+                    cboSecurityQuestion.setSelectedIndex(0);
+                    rbAdmin.setSelected(false);
+                    AdminConfigurator.setIsEditStudent(false);
+                   this.dispose();
+                }else{
+                    //do nothing stay on page
                 }
-
-                if (success) {
-                    JOptionPane.showMessageDialog(null, "MathHelper Admin Information is updated!");
-
-                } else {
-                    JOptionPane.showMessageDialog(null, "There was an issue processing your request. Please try again later.");
-                }
-
-                txtConfirmPassword.setText("");
-                txtPassword.setText("");
-                txtFirstName.setText("");
-                txtLastName.setText("");
-                txtUserName.setText("");
-                txtSecurityAnswer.setText("");
-                cboSecurityQuestion.setSelectedIndex(0);
-                rbAdmin.setSelected(false);
-                AdminConfigurator.setIsEditStudent(false);
-                this.setVisible(false);
 
 
             }
         }//GEN-LAST:event_jButton5ActionPerformed
+    }
+
+
+    private void btnDeleteActionListener(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        AudioListener.runAudioListener("SpeechOn.wav");
+
+        // TODO add your handling code here:
+        if (evt.getSource() == btnDelete) {
+            if (txtFirstName.getText().equalsIgnoreCase("") || txtFirstName.getText().equals(null) ||
+                    txtLastName.getText().equalsIgnoreCase("") || txtLastName.getText().equals(null) ||
+                    txtUserName.getText().equalsIgnoreCase("") || txtUserName.getText().equals(null) ||
+                    txtPassword.getText().equalsIgnoreCase("") || txtPassword.getText().equals(null) ||
+                    cboSecurityQuestion.getSelectedIndex() == 0 || txtSecurityAnswer.getText().equalsIgnoreCase("") ||
+                    txtSecurityAnswer.getText().equals(null)) {
+                JOptionPane.showMessageDialog(null, "Please enter all the required fields!");
+            } else if (!txtPassword.getText().equals(txtConfirmPassword.getText())) {
+                JOptionPane.showMessageDialog(null, "The passwords entered do not match!");
+                txtPassword.setText("");
+                txtConfirmPassword.setText("");
+            } else if (!(txtPassword.getText().length() >= 6 & txtPassword.getText().length() <= 12)) {
+                JOptionPane.showMessageDialog(null, "The password length must be between 6 and 12 characters!!");
+                txtPassword.setText("");
+                txtConfirmPassword.setText("");
+            } else if (!(txtUserName.getText().length() >= 5 & txtUserName.getText().length() <= 8)) {
+                JOptionPane.showMessageDialog(null, "The user name must be between 5 and 8 characters!");
+                txtUserName.setText("");
+            } else {
+                int answer = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this MathHelper?",
+                        "MathHelper Delete", JOptionPane.YES_NO_OPTION);
+                if(answer == 0) {
+                    User user;
+                    if (rbAdmin.isSelected()) {
+                        user = new User(txtUserName.getText(), txtPassword.getText(), txtFirstName.getText(), txtLastName.getText(),
+                                comboList[cboSecurityQuestion.getSelectedIndex()], txtSecurityAnswer.getText(), AdminConfigurator.generateAdminRole());
+                    } else {
+                        user = new User(txtUserName.getText(), txtPassword.getText(), txtFirstName.getText(), txtLastName.getText(),
+                                comboList[cboSecurityQuestion.getSelectedIndex()], txtSecurityAnswer.getText(), AdminConfigurator.generateStudentRole());
+                    }
+                    boolean success;
+                    if (AdminConfigurator.getIsEditStudent()) {
+                        user.setUser_id(AdminConfigurator.getMathHelperStudent().getUser_id());
+                        success = AdminConfigurator.removeMathHelperUser(user.getUser_id());
+                        AdminConfigurator.setIsEditStudent(false);
+                    } else if (AdminConfigurator.getIsEditAdmin()) {
+                        user.setUser_id(UserInteractionsConfigurator.get_interactive_user().getUser_id());
+                        success = AdminConfigurator.removeMathHelperUser(user.getUser_id());
+                        AdminConfigurator.setIsEditAdmin(false);
+                    } else {
+                        success = false;
+                    }
+
+
+                    if (success) {
+                        JOptionPane.showMessageDialog(null, "MathHelper Has Been Deleted!");
+
+                    } else {
+                        JOptionPane.showMessageDialog(null, "There was an issue processing your request. Please try again later.");
+                    }
+
+                    txtConfirmPassword.setText("");
+                    txtPassword.setText("");
+                    txtFirstName.setText("");
+                    txtLastName.setText("");
+                    txtUserName.setText("");
+                    txtSecurityAnswer.setText("");
+                    cboSecurityQuestion.setSelectedIndex(0);
+                    rbAdmin.setSelected(false);
+                    AdminConfigurator.setIsEditStudent(false);
+                   this.dispose();
+                }else{
+                    //do nothing stay on page
+                }
+
+
+            }
+        }//GEN-LAST:event_jButton5ActionPerformed
+
     }
 
     public static void main(String args[]) {

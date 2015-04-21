@@ -4,11 +4,14 @@ import com.teamamerica.mathhelper.configurators.TutorialsPageConfigurator;
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 import com.teamamerica.mathhelper.controllers.GradeLevel;
 import com.teamamerica.mathhelper.controllers.MainMenuSelection;
+import com.teamamerica.mathhelper.environment.ConfigDirectory;
+import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
 import com.teamamerica.mathhelper.ui.customcomponents.YouTubeFrame;
 
 import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -28,6 +31,8 @@ public class MathHelperOptions extends JFrame {
     private JLabel lblTestYourKnowledge;
     private JLabel lblPracticeMakesPerfect;
     private JPanel jPanel1;
+
+    private ImageButton btnSchoolsOut;
     // End of variables declaration//GEN-END:variables
 
     public MathHelperOptions() {
@@ -39,11 +44,20 @@ public class MathHelperOptions extends JFrame {
 
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 700));
+        setPreferredSize(new java.awt.Dimension(1016, 738));
         setBackground(Color.WHITE);
 
         jPanel1 = new JPanel();
         jPanel1.setBackground(Color.WHITE);
+        btnSchoolsOut = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_logout.gif"), 150, 101);
+        btnSchoolsOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSchoolsOutActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSchoolsOut);
+        btnSchoolsOut.setBounds(850, 10, 110, 101);
+
         lblLearnNewSubject = new JLabel();
         lblTestYourKnowledge = new JLabel();
         lblPracticeMakesPerfect = new JLabel();
@@ -150,17 +164,32 @@ public class MathHelperOptions extends JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
+                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 1016, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 700, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 738, GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
 
 
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSchoolsOutActionPerformed(ActionEvent evt) {
+
+        if (evt.getSource() == btnSchoolsOut) {
+            UserInteractionsConfigurator.set_difficulty_level_enum(null);
+            UserInteractionsConfigurator.set_category_type_enum(null);
+            UserInteractionsConfigurator.set_interactive_grade(null);
+            UserInteractionsConfigurator.set_main_menu_selection_enum(null);
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(null);
+            UserInteractionsConfigurator.set_interactive_user(null);
+            this.setVisible(false);
+            new LogIn().setVisible(true);
+
+        }
+    }
 
     private void btnPracticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 

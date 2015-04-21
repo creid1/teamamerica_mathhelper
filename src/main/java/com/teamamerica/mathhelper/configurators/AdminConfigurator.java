@@ -14,6 +14,7 @@ public class AdminConfigurator {
     private static MathHelperDBClient mathHelperDBClient = new MathHelperDBClient();
     private static User user = null;
     private static boolean isEditStudent;
+    private static boolean isEditAdmin;
 
     public static void setUserInfo(int userId){
         user = mathHelperDBClient.searchUsers_userid(userId);
@@ -23,10 +24,18 @@ public class AdminConfigurator {
         isEditStudent = isEdit;
     }
 
+    public static void setIsEditAdmin(boolean isEdit){
+        isEditAdmin = isEdit;
+    }
+    public static boolean getIsEditAdmin(){
+        return isEditAdmin;
+    }
+
     public static boolean getIsEditStudent(){
         return isEditStudent;
     }
-    public static User getUser(){
+
+    public static User getMathHelperStudent(){
         return user;
     }
 
@@ -75,5 +84,10 @@ public class AdminConfigurator {
       return  mathHelperDBClient.searchGrades_userId(studentId);
 
     }
+
+    public static boolean removeMathHelperUser(int user_id){
+        return mathHelperDBClient.remove_mathhelper_user_grades(user_id);
+    }
+
 
 }
