@@ -249,7 +249,7 @@ public class HelpDeskHints extends JFrame {
     private void btnBusActionPerformed(ActionEvent evt) {
         AudioListener.runAudioListener("SpeechOn.wav");
         if (evt.getSource() == btnBus) {
-            this.setVisible(false);
+            this.dispose();
         }
     }
 

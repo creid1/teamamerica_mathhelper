@@ -297,7 +297,7 @@ public class MathHelperAdmin extends JFrame {
             UserInteractionsConfigurator.set_main_menu_selection_enum(null);
             UserInteractionsConfigurator.set_interactive_grade_level_enum(null);
             UserInteractionsConfigurator.set_interactive_user(null);
-            this.setVisible(false);
+            this.dispose();
             new LogIn().setVisible(true);
 
         }

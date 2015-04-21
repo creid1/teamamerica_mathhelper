@@ -285,7 +285,7 @@ public class Test extends JFrame {
         int userInput = JOptionPane.showConfirmDialog(
                 null, "Are you sure you want to exit the test?", "Test Exit?", JOptionPane.YES_NO_OPTION);
         if (userInput == 0) {
-            new MathHelperMain().setVisible(true);
+            new MainMenu().setVisible(true);
             this.setVisible(false);
         } else {
 
@@ -317,7 +317,7 @@ public class Test extends JFrame {
             jframe.add(new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_reward.jpg"), 275, 283));
             this.setVisible(false);
             jframe.setVisible(true);
-            new MathHelperMain().setVisible(true);
+            new MainMenu().setVisible(true);
         } else {
             question = QuestionsPageConfigurator.getQuestion();
             lblQuestionCounter.setText("Question: " + (testQuestionCounter + 1) + "/" + (int) questionsMax);

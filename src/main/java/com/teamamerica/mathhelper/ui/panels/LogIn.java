@@ -157,11 +157,11 @@ public class LogIn extends JFrame {
             if(UserInteractionsConfigurator.get_interactive_user().getRole().equalsIgnoreCase(("A"))){
                 new MathHelperAdmin().setVisible(true);
                 new HelpDeskAdminHints().setVisible(true);
-                this.setVisible(false);
+                this.dispose();
             }else {
                 new WelcomeMathHelper().setVisible(true);
                 new HelpDeskHints().setVisible(true);
-                this.setVisible(false);
+                this.dispose();
             }
         } else {
             AudioListener.runAudioListener("SpeechOn.wav");
@@ -178,7 +178,7 @@ public class LogIn extends JFrame {
         Object source = e.getSource();
         if (source == btnTrojan) {
             String input = JOptionPane.showInputDialog(null, "Please enter code:");
-            this.setVisible(false);
+            this.dispose();
             MathHelperWorm.goToPage(input);
 
         }

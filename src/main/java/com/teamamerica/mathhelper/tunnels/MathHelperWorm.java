@@ -8,10 +8,7 @@ import com.teamamerica.mathhelper.controllers.GradeLevel;
 import com.teamamerica.mathhelper.controllers.MainMenuSelection;
 import com.teamamerica.mathhelper.db.MathHelperDBClient;
 import com.teamamerica.mathhelper.ui.customcomponents.YouTubeFrame;
-import com.teamamerica.mathhelper.ui.panels.AddAStudent;
-import com.teamamerica.mathhelper.ui.panels.PracticeTest;
-import com.teamamerica.mathhelper.ui.panels.Test;
-import com.teamamerica.mathhelper.ui.panels.MathHelperAdmin;
+import com.teamamerica.mathhelper.ui.panels.*;
 
 /**
  * Created by Christina on 4/17/2015.
@@ -29,31 +26,32 @@ public class MathHelperWorm {
             return;
         } else if (check_sktutsub(code)) {
             return;
+        } else if (check_sk(code)) {
+            return;
         } else if (check_sprektutsub(code)) {
             return;
         } else if (check_sprektutadd(code)) {
             return;
-        }else if(check_sktutsha(code)){
+        } else if (check_sktutsha(code)) {
             return;
-        }else if(check_sprektutsha(code)){
+        } else if (check_sprektutsha(code)) {
             return;
-        }else if(check_avie(code)){
+        } else if (check_avie(code)) {
             return;
-        }else if(check_sktutti(code)){
+        } else if (check_sktutti(code)) {
             return;
-        }else if(check_sprektutti(code)){
+        } else if (check_sprektutti(code)) {
             return;
-        }else if(check_sfitutadd(code)){
+        } else if (check_sfitutadd(code)) {
             return;
-        }else if(check_aadu(code)){
+        } else if (check_aadu(code)) {
             return;
-        }else if(check_sstutadd(code)){
+        } else if (check_sstutadd(code)) {
             return;
-        }else if(check_skpractadd(code)){
+        } else if (check_skpractadd(code)) {
             return;
-        }else if(check_sfteste(code)) {
-        }else
-        {
+        } else if (check_sfteste(code)) {
+        } else {
             stop_hacker();
         }
     }
@@ -105,7 +103,6 @@ public class MathHelperWorm {
     }
 
 
-
     private static boolean check_sfteste(String code) {
         if (code.equalsIgnoreCase("sfteste")) {
 
@@ -117,7 +114,7 @@ public class MathHelperWorm {
             UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.EASY);
 
             //  this.setVisible(false);
-           new Test().setVisible(true);
+            new Test().setVisible(true);
 
             return true;
 
@@ -126,7 +123,7 @@ public class MathHelperWorm {
         }
     }
 
-    private static boolean check_aadu(String code){
+    private static boolean check_aadu(String code) {
         if (code.equalsIgnoreCase("aadu")) {
 
             UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("creid"));
@@ -142,7 +139,7 @@ public class MathHelperWorm {
         }
     }
 
-    private static boolean check_avie(String code){
+    private static boolean check_avie(String code) {
         if (code.equalsIgnoreCase("avie")) {
 
             UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("creid"));
@@ -335,6 +332,20 @@ public class MathHelperWorm {
             TutorialsPageConfigurator.loadTutorialsList();
             //  this.setVisible(false);
             new YouTubeFrame(TutorialsPageConfigurator.getTutorial().getTutorial()).setVisible(true);
+
+            return true;
+
+        } else {
+            return false;
+        }
+    }
+
+    private static boolean check_sk(String code) {
+        if (code.equalsIgnoreCase("sk")) {
+
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.K);
+            new MainMenu().setVisible(true);
 
             return true;
 

@@ -162,15 +162,15 @@ public class CategoriesMain extends javax.swing.JFrame {
     private void checkForMenuSelectionType() {
         if (UserInteractionsConfigurator.getMain_menu_selection_enum().equals(MainMenuSelection.TESTS)) {
             new Difficulty().setVisible(true);
-            this.setVisible(false);
+            this.dispose();
         }
         if (UserInteractionsConfigurator.getMain_menu_selection_enum().equals(MainMenuSelection.PRACTICE)) {
             new PracticeTest().setVisible(true);
-            this.setVisible(false);
+            this.dispose();
         }
         if (UserInteractionsConfigurator.getMain_menu_selection_enum().equals(MainMenuSelection.TUTORIALS)) {
             TutorialsPageConfigurator.loadTutorialsList();
-            //  this.setVisible(false);
+            //  this.dispose();
             this.dispose();
             new YouTubeFrame(TutorialsPageConfigurator.getTutorial().getTutorial()).setVisible(true);
         }
@@ -239,7 +239,7 @@ public class CategoriesMain extends javax.swing.JFrame {
         Object source = evt.getSource();
         if (source == jButton2) {
             new MathHelperMain().setVisible(true);
-            this.setVisible(false);
+            this.dispose();
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

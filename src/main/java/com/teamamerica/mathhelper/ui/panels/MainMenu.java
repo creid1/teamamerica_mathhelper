@@ -1,6 +1,32 @@
 package com.teamamerica.mathhelper.ui.panels;
 
-public class MainMenu extends javax.swing.JFrame {
+import com.teamamerica.mathhelper.configurators.TutorialsPageConfigurator;
+import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
+import com.teamamerica.mathhelper.controllers.GradeLevel;
+import com.teamamerica.mathhelper.controllers.MainMenuSelection;
+import com.teamamerica.mathhelper.environment.ConfigDirectory;
+import com.teamamerica.mathhelper.ui.customcomponents.AudioListener;
+import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
+import com.teamamerica.mathhelper.ui.customcomponents.YouTubeFrame;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class MainMenu extends JFrame {
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private ImageButton btnHelp,btnHints, btnPractice;
+    private ImageButton btnLearn;
+    private ImageButton btnTest;
+    private ImageButton btnSchoolsOut;
+    private JLabel lblHome;
+    private JLabel lblLearn;
+    private JLabel lblSchoolsOut;
+    private JLabel lblTest;
+    private JLabel lblPractice;
+    private JPanel jPanel1;
+    // End of variables declaration//GEN-END:variables
 
 
     public MainMenu() {
@@ -10,121 +36,209 @@ public class MainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new JPanel();
+        lblLearn = new JLabel();
+        lblSchoolsOut = new JLabel();
+        lblSchoolsOut = new JLabel();
+        btnSchoolsOut = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_logout.gif"), 300, 101);
+        btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
+        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        btnTest =  new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_schoolTest.gif"), 300, 300);
+        btnPractice = new ImageButton(true,ConfigDirectory.getImageFileFromDirectory("panels_practiceBoy.jpg"),300,300);
+        btnLearn = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_teacherTutorial.gif"), 300, 300);
+        lblHome = new JLabel();
+        lblTest = new JLabel();
+        lblPractice = new JLabel();
+
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setResizable(false);
+
+        btnLearn.setBounds(10, 175, 300, 300);
+        btnPractice.setBounds(325,175,300,300);
+        btnTest.setBounds(630, 175, 300, 300);
+
+        lblLearn.setBounds(40, 475, 230, 34);
+        lblPractice.setBounds(350, 475, 700, 34);
+        lblTest.setBounds(675, 475, 240, 34);
+
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel3.setText("Learn a new subject!");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(220, 400, 230, 34);
+        lblLearn.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        lblLearn.setText("Learn a new subject!");
+        jPanel1.add(lblLearn);
 
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel4.setText("     Logout");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(840, 80, 150, 34);
+        lblPractice.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        lblPractice.setText("Practice Makes Perfect!");
+        jPanel1.add(lblPractice);
 
-        jButton5.setBackground(new java.awt.Color(204, 204, 255));
-        jButton5.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jButton5.setBorder(null);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.add(btnPractice);
+          btnSchoolsOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnSchoolsOutActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5);
-        jButton5.setBounds(840, 10, 150, 60);
+        jPanel1.add(btnSchoolsOut);
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 255));
-        jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jButton1.setMaximumSize(new java.awt.Dimension(87, 35));
-        jButton1.setMinimumSize(new java.awt.Dimension(87, 35));
-        jButton1.setPreferredSize(new java.awt.Dimension(87, 35));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSchoolsOut.setBounds(750, 20, 300, 101);
+
+        btnHelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnHelpActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(930, 530, 60, 60);
+        jPanel1.add(btnHelp);
+        btnHelp.setBounds(30, 575, 150, 101);
 
-        jButton4.setBackground(new java.awt.Color(204, 204, 255));
-        jButton4.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+        btnHints.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnHintsActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4);
-        jButton4.setBounds(576, 240, 180, 150);
-
-        jButton3.setBackground(new java.awt.Color(204, 204, 255));
-        jButton3.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.add(btnHints);
+        btnHints.setBounds(850, 575, 150, 101);
+       btnTest.addActionListener(new java.awt.event.ActionListener() {
+           public void actionPerformed(java.awt.event.ActionEvent evt) {
+               btnTestActionPerformed(evt);
+           }
+       });
+        jPanel1.add(btnTest);
+       btnLearn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnLearnActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3);
-        jButton3.setBounds(243, 240, 180, 150);
+        jPanel1.add(btnLearn);
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 70)); // NOI18N
-        jLabel2.setText("Main Menu");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(320, 50, 350, 120);
+        btnPractice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPracticeActionPerformed(evt);
+            }
+        });
 
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel6.setText("Test your knowledge!");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(550, 400, 240, 34);
+        lblHome.setBackground(new java.awt.Color(255, 255, 255));
+        lblHome.setFont(new java.awt.Font("Comic Sans MS", 0, 70)); // NOI18N
+        lblHome.setText("Math Helper Home");
+        jPanel1.add(lblHome);
+        lblHome.setBounds(150, 20, 1000, 120);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel1.setText("  Help");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(930, 500, 60, 30);
+        lblTest.setBackground(new java.awt.Color(255, 255, 255));
+        lblTest.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        lblTest.setText("Test your knowledge!");
+        jPanel1.add(lblTest);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
+            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
+
+    private void btnHintsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        AudioListener.runAudioListener("SpeechOn.wav");
+        new HelpDeskHints().setVisible(true);
+
+    }
+
+
+    private void btnPracticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.PRACTICE);
+        Object source = evt.getSource();
+        if (source == btnPractice) {
+            if (UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.K) ||
+                    UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.PRE_K)) {
+                new CategoriesMain().setVisible(true);
+                this.setVisible(false);
+            } else {
+                new PracticeTest().setVisible(true);
+                this.setVisible(false);
+            }
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+
+    private void btnLearnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Object source = evt.getSource();
+        if (source == btnLearn) {
+            if (UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.K) ||
+                    UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.PRE_K)) {
+                UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.TUTORIALS);
+                new CategoriesMain().setVisible(true);
+                this.setVisible(false);
+            } else {
+                TutorialsPageConfigurator.loadTutorialsList();
+                //  this.setVisible(false);
+                this.dispose();
+                new YouTubeFrame(TutorialsPageConfigurator.getTutorial().getTutorial()).setVisible(true);
+            }
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btnTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Object source = evt.getSource();
+        if (source == btnTest) {
+            UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.TESTS);
+            System.out.println(UserInteractionsConfigurator.get_main_menu_selection_str());
+            if (UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.K) ||
+                    UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.PRE_K)) {
+                new CategoriesMain().setVisible(true);
+                this.setVisible(false);
+            } else {
+                new Test().setVisible(true);
+                this.setVisible(false);
+            }
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+
+    private void btnHelpActionPerformed(ActionEvent evt) {
+
+        AudioListener.runAudioListener("SpeechOn.wav");
+
+
+    }
+    private void btnSchoolsOutActionPerformed(ActionEvent evt) {
+
+        if (evt.getSource() == btnSchoolsOut) {
+            UserInteractionsConfigurator.set_difficulty_level_enum(null);
+            UserInteractionsConfigurator.set_category_type_enum(null);
+            UserInteractionsConfigurator.set_interactive_grade(null);
+            UserInteractionsConfigurator.set_main_menu_selection_enum(null);
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(null);
+            UserInteractionsConfigurator.set_interactive_user(null);
+            this.dispose();
+            new LogIn().setVisible(true);
+
+        }
+    }
+
+
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        Object source = evt.getSource();
-       if(source == jButton3){
+       if(source == btnLearn){
 
-          this.setVisible(false);
+          this.dispose();
        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
        Object source = evt.getSource();
-       if(source == jButton4){
-          this.setVisible(false);
+       if(source == btnTest){
+          this.dispose();
        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -144,9 +258,9 @@ public class MainMenu extends javax.swing.JFrame {
          * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
@@ -156,7 +270,7 @@ public class MainMenu extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
@@ -167,16 +281,5 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
     }
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    // End of variables declaration//GEN-END:variables
+
 }

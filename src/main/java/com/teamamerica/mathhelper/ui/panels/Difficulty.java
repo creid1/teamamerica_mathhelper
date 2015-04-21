@@ -10,9 +10,8 @@
 
 package com.teamamerica.mathhelper.ui.panels;
 
-import com.teamamerica.mathhelper.configurators.QuestionsPageConfigurator;
-import com.teamamerica.mathhelper.controllers.DifficultyLevel;
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
+import com.teamamerica.mathhelper.controllers.DifficultyLevel;
 
 public class Difficulty extends javax.swing.JFrame {
 
@@ -131,7 +130,7 @@ public class Difficulty extends javax.swing.JFrame {
            UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.EASY);
            System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
            new Test().setVisible(true);
-          this.setVisible(false);
+          this.dispose();
        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -141,7 +140,7 @@ public class Difficulty extends javax.swing.JFrame {
            UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.MEDIUM);
            System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
            new Test().setVisible(true);
-           this.setVisible(false);
+           this.dispose();
        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -151,7 +150,7 @@ public class Difficulty extends javax.swing.JFrame {
            UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.HARD);
            System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
            new CategoriesMain().setVisible(true);
-          this.setVisible(false);
+          this.dispose();
        }
     }//GEN-LAST:event_jButton8ActionPerformed
 
@@ -159,7 +158,7 @@ public class Difficulty extends javax.swing.JFrame {
        Object source = evt.getSource();
        if(source == btnTutorials){
           new CategoriesMain().setVisible(true);
-          this.setVisible(false);
+          this.dispose();
        }
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -169,11 +169,11 @@ public class WelcomeMathHelper extends JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 1016, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 1000, GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 738, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 700, GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -194,8 +194,8 @@ public class WelcomeMathHelper extends JFrame {
         Object source = evt.getSource();
         if (source == btn2) {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.SECOND);
-            new MathHelperMain().setVisible(true);
-            this.setVisible(false);
+            new MainMenu().setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -203,8 +203,8 @@ public class WelcomeMathHelper extends JFrame {
         Object source = evt.getSource();
         if (source == btnnPreK) {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.PRE_K);
-            new MathHelperMain().setVisible(true);
-            this.setVisible(false);
+            new MainMenu().setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -213,8 +213,8 @@ public class WelcomeMathHelper extends JFrame {
         if (source == btn1) {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.FIRST);
 
-            new MathHelperMain().setVisible(true);
-            this.setVisible(false);
+            new MainMenu().setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -223,8 +223,8 @@ public class WelcomeMathHelper extends JFrame {
         if (source == btn4) {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.FOURTH);
 
-            new MathHelperMain().setVisible(true);
-            this.setVisible(false);
+            new MainMenu().setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_jButton8ActionPerformed
 
@@ -234,8 +234,8 @@ public class WelcomeMathHelper extends JFrame {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.K);
             System.out.println(UserInteractionsConfigurator.get_interactive_grade_level_enum());
 
-            new MathHelperMain().setVisible(true);
-            this.setVisible(false);
+            new MainMenu().setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_jButton9ActionPerformed
 
@@ -244,8 +244,8 @@ public class WelcomeMathHelper extends JFrame {
         if (source == btn3) {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.THIRD);
             System.out.println(UserInteractionsConfigurator.get_interactive_grade_level_enum());
-            new MathHelperMain().setVisible(true);
-            this.setVisible(false);
+            new MainMenu().setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_jButton10ActionPerformed
 
