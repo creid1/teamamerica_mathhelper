@@ -25,8 +25,8 @@ public class Difficulty extends JFrame {
     private ImageButton btnMedium;
     private ImageButton btnHard;
 
-    private JLabel lblCategoriesMain;
-    private JLabel lblSelectCategory;
+    private JLabel lblDifficulyMain;
+    private JLabel lblSelectDifficulty;
 
     private JLabel lblEasy;
     private JLabel lblHard;
@@ -62,19 +62,19 @@ public class Difficulty extends JFrame {
         lblHard = new JLabel();
         lblMedium = new JLabel();
 
-        lblSelectCategory = new JLabel();
-        lblCategoriesMain = new JLabel();
+        lblSelectDifficulty = new JLabel();
+        lblDifficulyMain = new JLabel();
 
-        lblCategoriesMain.setFont(new java.awt.Font("Comic Sans MS", 0, 70)); // NOI18N
-        lblCategoriesMain.setText("Math Helper Levels");
-        jPanel1.add(lblCategoriesMain);
-        lblCategoriesMain.setBounds(143, 20, 1000, 90);
+        lblDifficulyMain.setFont(new java.awt.Font("Comic Sans MS", 0, 70)); // NOI18N
+        lblDifficulyMain.setText("Math Helper Levels");
+        jPanel1.add(lblDifficulyMain);
+        lblDifficulyMain.setBounds(143, 20, 1000, 90);
 
-        lblSelectCategory.setFont(new java.awt.Font("Comic Sans MS", 1, 50)); // NOI18N
-        lblSelectCategory.setForeground(new java.awt.Color(51, 255, 51));
-        lblSelectCategory.setText("Select Difficulty");
-        jPanel1.add(lblSelectCategory);
-        lblSelectCategory.setBounds(285, 100, 1000, 90);
+        lblSelectDifficulty.setFont(new java.awt.Font("Comic Sans MS", 1, 50)); // NOI18N
+        lblSelectDifficulty.setForeground(new java.awt.Color(51, 255, 51));
+        lblSelectDifficulty.setText("Select Difficulty");
+        jPanel1.add(lblSelectDifficulty);
+        lblSelectDifficulty.setBounds(285, 100, 1000, 90);
 
 
 
