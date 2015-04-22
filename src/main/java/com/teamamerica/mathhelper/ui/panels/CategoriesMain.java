@@ -43,6 +43,12 @@ public class CategoriesMain extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        setBackground(Color.WHITE);
+        setLocationByPlatform(true);
+        setLocation(0,0);
+
         jPanel1 = new JPanel();
         btnMoney = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_money.jpg"), 138, 196);
         btnAddition = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_additionFace2.jpg"), 167, 179);
@@ -53,16 +59,13 @@ public class CategoriesMain extends JFrame {
 
 
         btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 125);
-        btnSchoolsOut = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_logout.gif"), 300, 101);
+        btnSchoolsOut = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_kidsSchoolBus.gif"), 300, 101);
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
         btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
 
         lblSelectCategory = new JLabel();
         lblCategoriesMain = new JLabel();
 
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-        setBackground(Color.WHITE);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(436, 308));
         jPanel1.setLayout(null);
@@ -99,7 +102,7 @@ public class CategoriesMain extends JFrame {
             }
         });
         jPanel1.add(btnMain);
-        btnMain.setBounds(10, 10, 150, 125);
+        btnMain.setBounds(3, 10, 150, 125);
 
 
         btnAddition.setBounds(150, 170, 167, 179);
@@ -160,7 +163,7 @@ public class CategoriesMain extends JFrame {
         lblCategoriesMain.setFont(new java.awt.Font("Comic Sans MS", 0, 58)); // NOI18N
         lblCategoriesMain.setText("Math Helper Categories");
         jPanel1.add(lblCategoriesMain);
-        lblCategoriesMain.setBounds(165, 20, 1000, 90);
+        lblCategoriesMain.setBounds(140, 20, 1000, 90);
 
 
         GroupLayout layout = new GroupLayout(getContentPane());
@@ -171,11 +174,10 @@ public class CategoriesMain extends JFrame {
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 700, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 696, GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
 

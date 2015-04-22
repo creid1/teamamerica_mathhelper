@@ -24,7 +24,10 @@ public class Difficulty extends JFrame {
     private ImageButton btnEasy;
     private ImageButton btnMedium;
     private ImageButton btnHard;
-    private JLabel lblTitleDifficulty;
+
+    private JLabel lblCategoriesMain;
+    private JLabel lblSelectCategory;
+
     private JLabel lblEasy;
     private JLabel lblHard;
     private JLabel lblMedium;
@@ -48,26 +51,41 @@ public class Difficulty extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         jPanel1 = new JPanel();
         btnEasy = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_easy.png"), 220, 220);
         btnMedium = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_medium2.jpg"), 240, 160);
         btnHard = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_hard.jpg"), 224, 187);
-        lblTitleDifficulty = new JLabel();
         lblEasy = new JLabel();
         lblHard = new JLabel();
         lblMedium = new JLabel();
 
-        btnSchoolsOut = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_logout.gif"), 150, 101);
+        lblSelectCategory = new JLabel();
+        lblCategoriesMain = new JLabel();
+
+        lblCategoriesMain.setFont(new java.awt.Font("Comic Sans MS", 0, 70)); // NOI18N
+        lblCategoriesMain.setText("Math Helper Levels");
+        jPanel1.add(lblCategoriesMain);
+        lblCategoriesMain.setBounds(143, 20, 1000, 90);
+
+        lblSelectCategory.setFont(new java.awt.Font("Comic Sans MS", 1, 50)); // NOI18N
+        lblSelectCategory.setForeground(new java.awt.Color(51, 255, 51));
+        lblSelectCategory.setText("Select Difficulty");
+        jPanel1.add(lblSelectCategory);
+        lblSelectCategory.setBounds(285, 100, 1000, 90);
+
+
+
+        btnSchoolsOut = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_kidsSchoolBus.gif"), 300, 101);
         btnSchoolsOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSchoolsOutActionPerformed(evt);
             }
         });
         jPanel1.add(btnSchoolsOut);
-        btnSchoolsOut.setBounds(850, 10, 110, 101);
+        btnSchoolsOut.setBounds(750, 20, 300, 101);
 
         btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 125);
         btnMain.addActionListener(new ActionListener() {
@@ -76,7 +94,7 @@ public class Difficulty extends JFrame {
             }
         });
         jPanel1.add(btnMain);
-        btnMain.setBounds(10, 10, 150, 125);
+        btnMain.setBounds(3, 10, 150, 125);
 
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
         btnHelp.addActionListener(new java.awt.event.ActionListener() {
@@ -130,11 +148,6 @@ public class Difficulty extends JFrame {
         lblMedium.setBounds(335, 395, 1000, 150);
         lblHard.setBounds(630, 395, 1000, 150);
 
-        lblTitleDifficulty.setFont(new java.awt.Font("Comic Sans MS", 0, 70)); // NOI18N
-        lblTitleDifficulty.setText("Select Difficulty");
-        jPanel1.add(lblTitleDifficulty);
-        lblTitleDifficulty.setBounds(220, 30, 557, 100);
-
         lblEasy.setFont(new java.awt.Font("Comic Sans MS", 1, 30)); // NOI18N
         lblEasy.setText("         Easy");
         lblEasy.setToolTipText("");
@@ -142,14 +155,14 @@ public class Difficulty extends JFrame {
         jPanel1.add(lblEasy);
 
         lblHard.setFont(new java.awt.Font("Comic Sans MS", 1, 30)); // NOI18N
-        lblHard.setText("        Hard");
+        lblHard.setText("     Hard");
         lblHard.setToolTipText("");
         lblHard.setPreferredSize(new java.awt.Dimension(1000, 400));
         jPanel1.add(lblHard);
 
 
         lblMedium.setFont(new java.awt.Font("Comic Sans MS", 1, 30)); // NOI18N
-        lblMedium.setText("      Medium");
+        lblMedium.setText("    Medium");
         lblMedium.setToolTipText("");
         lblMedium.setPreferredSize(new java.awt.Dimension(1000, 400));
         jPanel1.add(lblMedium);
@@ -162,7 +175,7 @@ public class Difficulty extends JFrame {
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
+                        .addComponent(jPanel1, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
 
         pack();

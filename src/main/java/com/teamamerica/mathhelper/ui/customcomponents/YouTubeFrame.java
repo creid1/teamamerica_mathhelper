@@ -46,7 +46,6 @@ public class YouTubeFrame extends JFrame {
         frame.setBackground(Color.WHITE);
         frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         frame.setResizable(true);
-        frame.setLocationRelativeTo(null);
 
 
         getJFlashPlayer(url);

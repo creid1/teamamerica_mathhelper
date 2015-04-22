@@ -37,7 +37,9 @@ public class WelcomeMathHelper extends JFrame {
     private void initComponents() {
         setBackground(Color.WHITE);
         setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
-        this.setResizable(false);
+        setResizable(false);
+        setLocationByPlatform(true);
+        setLocation(0,0);
 
         lblWelcomeTitle = new JLabel();
         jPanel1 = new JPanel();
@@ -174,7 +176,7 @@ public class WelcomeMathHelper extends JFrame {
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 690, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 710, GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

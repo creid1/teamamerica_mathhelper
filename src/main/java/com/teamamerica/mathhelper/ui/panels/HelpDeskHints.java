@@ -58,7 +58,7 @@ public class HelpDeskHints extends JFrame {
         btnPencilReady = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_psharpener.png"), 150, 113);
         btnLearnNow = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_videoTutorial.jpg"), 150, 113);
 
-        btnSchoolsOut = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_logout.gif"), 150, 101);
+        btnSchoolsOut = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_kidsSchoolBus.gif"), 275, 100);
         btnLetMeTry = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_practice.jpg"), 150, 113);
         btnPrint = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_print.png"), 150, 113);
 
@@ -130,7 +130,7 @@ public class HelpDeskHints extends JFrame {
                 }
             }
         });
-        btnSchoolsOut.setBounds(265, 120, 300, 101);
+        btnSchoolsOut.setBounds(265, 115, 275, 100);
         btnSchoolsOut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -144,7 +144,7 @@ public class HelpDeskHints extends JFrame {
         lblINeedHelp.setFont(new Font("Comic Sans MS", 1, 16)); // NOI18N
         lblHints.setBounds(200, 175, 150, 101);
         lblHints.setFont(new Font("Comic Sans MS", 1, 16)); // NOI18N
-        lblLogout.setBounds(370, 175, 300, 101);
+        lblLogout.setBounds(355, 175, 300, 101);
         lblLogout.setFont(new Font("Comic Sans MS", 1, 16)); // NOI18N
 
 
