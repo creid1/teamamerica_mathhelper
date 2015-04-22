@@ -36,7 +36,8 @@ public class WelcomeMathHelper extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         setBackground(Color.WHITE);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        this.setResizable(false);
 
         lblWelcomeTitle = new JLabel();
         jPanel1 = new JPanel();

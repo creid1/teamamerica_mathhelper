@@ -101,7 +101,7 @@ public class Difficulty extends JFrame {
         jPanel1.setLayout(null);
 
         jPanel1.add(btnEasy);
-        btnEasy.setBounds(100, 220, 220, 220);
+        btnEasy.setBounds(80, 240, 220, 220);
         btnEasy.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 btnEasyActionPerformed(evt);
@@ -115,7 +115,7 @@ public class Difficulty extends JFrame {
         });
 
         jPanel1.add(btnMedium);
-        btnMedium.setBounds(350, 235, 240, 160);
+        btnMedium.setBounds(320, 255, 240, 160);
 
 
         btnHard.addActionListener(new java.awt.event.ActionListener() {
@@ -124,11 +124,11 @@ public class Difficulty extends JFrame {
             }
         });
         jPanel1.add(btnHard);
-        btnHard.setBounds(650, 185, 233, 216);
+        btnHard.setBounds(620, 205, 233, 216);
 
-        lblEasy.setBounds(50, 375, 1000, 150);
-        lblMedium.setBounds(335, 375, 1000, 150);
-        lblHard.setBounds(630, 375, 1000, 150);
+        lblEasy.setBounds(40, 395, 1000, 150);
+        lblMedium.setBounds(335, 395, 1000, 150);
+        lblHard.setBounds(630, 395, 1000, 150);
 
         lblTitleDifficulty.setFont(new java.awt.Font("Comic Sans MS", 0, 70)); // NOI18N
         lblTitleDifficulty.setText("Select Difficulty");

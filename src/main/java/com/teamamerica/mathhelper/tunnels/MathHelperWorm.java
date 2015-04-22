@@ -34,10 +34,11 @@ public class MathHelperWorm {
             return;
         } else if (check_sktutsha(code)) {
             return;
-        } else if(check_sktestadd(code)){
+        } else if (check_sktestadd(code)) {
             return;
-        }
-        else if (check_sktutsha(code)) {
+        } else if (check_sktest(code)) {
+            return;
+        } else if (check_sktutsha(code)) {
             return;
         } else if (check_sprektutsha(code)) {
             return;
@@ -359,6 +360,21 @@ public class MathHelperWorm {
         }
     }
 
+    private static boolean check_sktest(String code) {
+        if (code.equalsIgnoreCase("sktest")) {
+
+            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.K);
+            UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.TESTS);
+            new CategoriesMain().setVisible(true);
+
+            return true;
+
+        } else {
+            return false;
+        }
+    }
+
     private static boolean check_sktestadd(String code) {
         if (code.equalsIgnoreCase("sktestadd")) {
 
@@ -366,7 +382,7 @@ public class MathHelperWorm {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.K);
             UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.TESTS);
             UserInteractionsConfigurator.set_category_type_enum(CategoryType.ADDITION);
-            new NewDifficulty().setVisible(true);
+            new Difficulty().setVisible(true);
 
             return true;
 

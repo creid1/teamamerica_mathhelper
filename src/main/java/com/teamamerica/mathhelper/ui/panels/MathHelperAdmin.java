@@ -17,7 +17,8 @@ import java.util.ArrayList;
 public class MathHelperAdmin extends JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private ImageButton btnHelp, btnHints, btnSchoolsOut, btnNewMathHelper, btnUpdateMathHelper, btnFindMathHelpers, btnTeacherZone;
+    private ImageButton btnHelp, btnHints, btnSchoolsOut, btnNewMathHelper,
+            btnUpdateMathHelper, btnFindMathHelpers, btnTeacherZone;
     private JCheckBox ckEditAdminInfo;
     private JLabel lblTitle, lblGrades;
     private JPanel jPanel1;

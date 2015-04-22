@@ -4,9 +4,37 @@ import com.teamamerica.mathhelper.configurators.TutorialsPageConfigurator;
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 import com.teamamerica.mathhelper.controllers.CategoryType;
 import com.teamamerica.mathhelper.controllers.MainMenuSelection;
+import com.teamamerica.mathhelper.environment.ConfigDirectory;
+import com.teamamerica.mathhelper.ui.customcomponents.AudioListener;
+import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
 import com.teamamerica.mathhelper.ui.customcomponents.YouTubeFrame;
 
-public class CategoriesMain extends javax.swing.JFrame {
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class CategoriesMain extends JFrame {
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private ImageButton btnMain;
+    private ImageButton btnMoney;
+    private ImageButton btnAddition;
+    private ImageButton btnSubtraction;
+    private ImageButton btnTime;
+    private ImageButton btnMeasure;
+    private ImageButton btnShapes;
+
+
+    private JLabel lblCategoriesMain;
+    private JLabel lblSelectCategory;
+    private JPanel jPanel1;
+
+    private ImageButton btnHints;
+    private ImageButton btnHelp;
+    private ImageButton btnSchoolsOut;
+    // End of variables declaration//GEN-END:variables
 
     public CategoriesMain() {
         initComponents();
@@ -15,149 +43,179 @@ public class CategoriesMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        btnMoney = new javax.swing.JButton();
-        btnAddition = new javax.swing.JButton();
-        btnSubtraction = new javax.swing.JButton();
-        btnTime = new javax.swing.JButton();
-        btnMeasure = new javax.swing.JButton();
-        btnHelp = new javax.swing.JButton();
-        btnShapes = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new JPanel();
+        btnMoney = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_money.jpg"), 138, 196);
+        btnAddition = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_additionFace2.jpg"), 167, 179);
+        btnSubtraction = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_subtraction1.jpg"), 228, 148);
+        btnTime = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_clock.jpg"), 159, 183);
+        btnMeasure = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_measure.jpg"), 110, 216);
+        btnShapes = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_shapes2.png"), 200, 200);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 125);
+        btnSchoolsOut = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_logout.gif"), 300, 101);
+        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
+        btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
+
+        lblSelectCategory = new JLabel();
+        lblCategoriesMain = new JLabel();
+
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        setBackground(Color.WHITE);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(436, 308));
         jPanel1.setLayout(null);
+        jPanel1.setBackground(Color.WHITE);
 
-        btnMoney.setBackground(new java.awt.Color(255, 255, 0));
-        btnMoney.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        btnMoney.setText("Money");
-        btnMoney.setPreferredSize(new java.awt.Dimension(107, 35));
+        btnHelp.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnHelpActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnHelp);
+        btnHelp.setBounds(30, 575, 150, 101);
+
+        btnHints.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnHintsActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnHints);
+        btnHints.setBounds(850, 575, 150, 101);
+
+
+        btnSchoolsOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSchoolsOutActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSchoolsOut);
+        btnSchoolsOut.setBounds(750, 20, 300, 101);
+
+        btnMain.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnMainActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnMain);
+        btnMain.setBounds(10, 10, 150, 125);
+
+
+        btnAddition.setBounds(150, 170, 167, 179);
+        btnSubtraction.setBounds(100, 420, 228, 148);
+
+        btnTime.setBounds(420, 175, 159, 183);
+        btnMoney.setBounds(425, 400, 138, 196);
+
+        btnMeasure.setBounds(700, 130, 110, 216);
+        btnShapes.setBounds(655, 400, 200, 200);
+
         btnMoney.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMoneyActionPerformed(evt);
             }
         });
         jPanel1.add(btnMoney);
-        btnMoney.setBounds(242, 214, 112, 86);
 
-        btnAddition.setBackground(new java.awt.Color(102, 255, 102));
-        btnAddition.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        btnAddition.setText("Addition");
-        btnAddition.setPreferredSize(new java.awt.Dimension(107, 35));
         btnAddition.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdditionActionPerformed(evt);
             }
         });
         jPanel1.add(btnAddition);
-        btnAddition.setBounds(31, 110, 112, 86);
-
-        btnSubtraction.setBackground(new java.awt.Color(102, 255, 102));
-        btnSubtraction.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        btnSubtraction.setText("Subtraction ");
-        btnSubtraction.setPreferredSize(new java.awt.Dimension(107, 35));
         btnSubtraction.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubtraction(evt);
             }
         });
         jPanel1.add(btnSubtraction);
-        btnSubtraction.setBounds(31, 216, 112, 86);
-
-        btnTime.setBackground(new java.awt.Color(255, 255, 0));
-        btnTime.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        btnTime.setText("Time");
-        btnTime.setPreferredSize(new java.awt.Dimension(107, 35));
         btnTime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTimeActionPerformed(evt);
             }
         });
         jPanel1.add(btnTime);
-        btnTime.setBounds(242, 110, 112, 86);
-
-        btnMeasure.setBackground(new java.awt.Color(255, 0, 51));
-        btnMeasure.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        btnMeasure.setText("Measure");
-        btnMeasure.setPreferredSize(new java.awt.Dimension(107, 35));
         btnMeasure.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMeasureActionPerformed(evt);
             }
         });
         jPanel1.add(btnMeasure);
-        btnMeasure.setBounds(455, 110, 112, 86);
 
-        btnHelp.setBackground(new java.awt.Color(153, 204, 255));
-        btnHelp.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        btnHelp.setText("Help");
-        btnHelp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHelpActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnHelp);
-        btnHelp.setBounds(457, 329, 110, 40);
-
-        btnShapes.setBackground(new java.awt.Color(255, 0, 51));
-        btnShapes.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        btnShapes.setText("Shapes");
-        btnShapes.setPreferredSize(new java.awt.Dimension(107, 35));
         btnShapes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnShapesActionPerformed(evt);
             }
         });
         jPanel1.add(btnShapes);
-        btnShapes.setBounds(455, 214, 112, 86);
 
-        jButton2.setBackground(new java.awt.Color(153, 204, 255));
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        jButton2.setText("Main Menu");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(33, 329, 110, 40);
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 255, 51));
-        jLabel2.setText("Select a Test");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(240, 70, 130, 26);
+        lblSelectCategory.setFont(new java.awt.Font("Comic Sans MS", 1, 26)); // NOI18N
+        lblSelectCategory.setForeground(new java.awt.Color(51, 255, 51));
+        lblSelectCategory.setText("Select a Category");
+        jPanel1.add(lblSelectCategory);
+        lblSelectCategory.setBounds(375, 100, 1000, 90);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
-        jLabel1.setText("CategoriesMain");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(97, 16, 420, 44);
+        lblCategoriesMain.setFont(new java.awt.Font("Comic Sans MS", 0, 58)); // NOI18N
+        lblCategoriesMain.setText("Math Helper Categories");
+        jPanel1.add(lblCategoriesMain);
+        lblCategoriesMain.setBounds(165, 20, 1000, 90);
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ian\\Documents\\backround.jpeg")); // NOI18N
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(0, 0, 595, 380);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 700, GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+
+    private void btnHintsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        AudioListener.runAudioListener("SpeechOn.wav");
+        new HelpDeskHints().setVisible(true);
+
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+
+    private void btnMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+
+        AudioListener.runAudioListener("SpeechOn.wav");
+
+        new MainMenu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void btnSchoolsOutActionPerformed(ActionEvent evt) {
+
+        if (evt.getSource() == btnSchoolsOut) {
+            UserInteractionsConfigurator.set_difficulty_level_enum(null);
+            UserInteractionsConfigurator.set_category_type_enum(null);
+            UserInteractionsConfigurator.set_interactive_grade(null);
+            UserInteractionsConfigurator.set_main_menu_selection_enum(null);
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(null);
+            UserInteractionsConfigurator.set_interactive_user(null);
+            this.dispose();
+            new LogIn().setVisible(true);
+
+        }
+    }
+
+
+    private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        AudioListener.runAudioListener("SpeechOn.wav");
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void checkForMenuSelectionType() {
         if (UserInteractionsConfigurator.getMain_menu_selection_enum().equals(MainMenuSelection.TESTS)) {
@@ -231,17 +289,6 @@ public class CategoriesMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Object source = evt.getSource();
-        if (source == jButton2) {
-            new MathHelperMain().setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
 
@@ -253,18 +300,5 @@ public class CategoriesMain extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnHelp;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton btnMoney;
-    private javax.swing.JButton btnAddition;
-    private javax.swing.JButton btnSubtraction;
-    private javax.swing.JButton btnTime;
-    private javax.swing.JButton btnMeasure;
-    private javax.swing.JButton btnShapes;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    // End of variables declaration//GEN-END:variables
+
 }
