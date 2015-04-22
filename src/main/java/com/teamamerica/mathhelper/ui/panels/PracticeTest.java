@@ -274,7 +274,7 @@ public class PracticeTest extends JFrame {
         AudioListener.runAudioListener("SpeechOn.wav");
 
         this.dispose();
-        new NewDifficulty().setVisible(true);
+        new Difficulty().setVisible(true);
 
     }
 

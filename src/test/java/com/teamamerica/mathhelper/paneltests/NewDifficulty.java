@@ -1,19 +1,26 @@
-package com.teamamerica.mathhelper.ui.panels;
+package com.teamamerica.mathhelper.paneltests;/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
 import com.teamamerica.mathhelper.controllers.DifficultyLevel;
 import com.teamamerica.mathhelper.environment.ConfigDirectory;
 import com.teamamerica.mathhelper.ui.customcomponents.AudioListener;
 import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
+import com.teamamerica.mathhelper.ui.panels.HelpDeskHints;
+import com.teamamerica.mathhelper.ui.panels.LogIn;
+import com.teamamerica.mathhelper.ui.panels.MainMenu;
+import com.teamamerica.mathhelper.ui.panels.Test;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Created by Christina on 4/21/2015.
+ * @author Ian
  */
-public class Difficulty extends JFrame {
+public class NewDifficulty extends JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private ImageButton btnSchoolsOut;
@@ -35,7 +42,7 @@ public class Difficulty extends JFrame {
     /**
      * Creates new form Difficulty
      */
-    public Difficulty() {
+    public NewDifficulty() {
         initComponents();
     }
 
@@ -48,7 +55,7 @@ public class Difficulty extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         jPanel1 = new JPanel();
@@ -101,7 +108,7 @@ public class Difficulty extends JFrame {
         jPanel1.setLayout(null);
 
         jPanel1.add(btnEasy);
-        btnEasy.setBounds(80, 240, 220, 220);
+        btnEasy.setBounds(100, 220, 220, 220);
         btnEasy.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 btnEasyActionPerformed(evt);
@@ -115,7 +122,7 @@ public class Difficulty extends JFrame {
         });
 
         jPanel1.add(btnMedium);
-        btnMedium.setBounds(320, 255, 240, 160);
+        btnMedium.setBounds(350, 235, 240, 160);
 
 
         btnHard.addActionListener(new java.awt.event.ActionListener() {
@@ -124,11 +131,11 @@ public class Difficulty extends JFrame {
             }
         });
         jPanel1.add(btnHard);
-        btnHard.setBounds(620, 205, 233, 216);
+        btnHard.setBounds(650, 185, 233, 216);
 
-        lblEasy.setBounds(40, 395, 1000, 150);
-        lblMedium.setBounds(335, 395, 1000, 150);
-        lblHard.setBounds(630, 395, 1000, 150);
+        lblEasy.setBounds(50, 375, 1000, 150);
+        lblMedium.setBounds(335, 375, 1000, 150);
+        lblHard.setBounds(630, 375, 1000, 150);
 
         lblTitleDifficulty.setFont(new java.awt.Font("Comic Sans MS", 0, 70)); // NOI18N
         lblTitleDifficulty.setText("Select Difficulty");
@@ -162,7 +169,7 @@ public class Difficulty extends JFrame {
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
+                        .addComponent(jPanel1, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
 
         pack();
@@ -183,7 +190,7 @@ public class Difficulty extends JFrame {
 
     private void btnMediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         Object source = evt.getSource();
-        if (source == btnMedium) {
+        if(source == btnMedium){
             UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.MEDIUM);
             System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
             new Test().setVisible(true);
@@ -193,7 +200,7 @@ public class Difficulty extends JFrame {
 
     private void btnHardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         Object source = evt.getSource();
-        if (source == btnHard) {
+        if(source == btnHard){
             UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.HARD);
             System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
             new Test().setVisible(true);
@@ -262,13 +269,13 @@ public class Difficulty extends JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Difficulty.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewDifficulty.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Difficulty.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewDifficulty.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Difficulty.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewDifficulty.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Difficulty.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewDifficulty.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -278,7 +285,7 @@ public class Difficulty extends JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new Difficulty().setVisible(true);
+                new NewDifficulty().setVisible(true);
             }
         });
     }

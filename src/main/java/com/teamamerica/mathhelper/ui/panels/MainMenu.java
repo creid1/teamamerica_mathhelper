@@ -45,7 +45,7 @@ public class MainMenu extends JFrame {
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
 
         btnTest =  new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_schoolTest.gif"), 300, 300);
-        btnPractice = new ImageButton(true,ConfigDirectory.getImageFileFromDirectory("panels_practiceBoy.jpg"),300,300);
+        btnPractice = new ImageButton(true,ConfigDirectory.getImageFileFromDirectory("panels_possPract2.gif"),400,400);
         btnLearn = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_teacherTutorial.gif"), 300, 300);
         lblHome = new JLabel();
         lblTest = new JLabel();
@@ -56,8 +56,8 @@ public class MainMenu extends JFrame {
         setResizable(false);
 
         btnLearn.setBounds(10, 175, 300, 300);
-        btnPractice.setBounds(325,175,300,300);
-        btnTest.setBounds(630, 175, 300, 300);
+        btnPractice.setBounds(275,175,400,400);
+        btnTest.setBounds(650, 175, 300, 300);
 
         lblLearn.setBounds(40, 475, 230, 34);
         lblPractice.setBounds(350, 475, 700, 34);
