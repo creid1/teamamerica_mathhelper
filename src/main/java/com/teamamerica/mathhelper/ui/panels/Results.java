@@ -32,18 +32,63 @@ public class Results extends JFrame {
     public Results() {
 
         initComponents();
-        writeResultsToTextField();
+        displayGradeResults();
 
 
     }
 
-    private void writeResultsToTextField() {
+    private void displayGradeResults() {
 
         ArrayList<String> results = GradeConfigurator.getGradeResultLetter();
         for (String line : results) {
             txtResults.append(line);
         }
 
+        String letterGrade = GradeConfigurator.getLetterGrade();
+        if (letterGrade.equals("A+")) {
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Aplus.png"));
+
+        } else if (letterGrade.equals("A")) {
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Aplus.png"));
+
+        } else if (letterGrade.equals("A-")) {
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Aplus.png"));
+
+        } else if (letterGrade.equals("B+")) {
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.jpg"));
+
+        } else if (letterGrade.equals("B")) {
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.jpg"));
+
+        } else if (letterGrade.equals("B-")) {
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.jpg"));
+
+        } else if (letterGrade.equals("C+")) {
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Aplus.png"));
+
+        }   else if(letterGrade.equals("C")){
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Aplus.png"));
+
+        }else if (letterGrade.equals("C-")){
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Aplus.png"));
+
+        }else if(letterGrade.equals("D+")){
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.jpg"));
+
+        }   else if(letterGrade.equals("D")){
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.jpg"));
+
+        }else if (letterGrade.equals("D-")){
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.jpg"));
+
+        }else if(letterGrade.equals("F")){
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.jpg"));
+
+        }
+        else {
+
+            //do nothing this doesn't occur
+        }
     }
 
 
@@ -62,7 +107,7 @@ public class Results extends JFrame {
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
         btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
 
-        lblResultsImage = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_bplus.jpg"), 250, 202);
+        lblResultsImage = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_Aplus.png"), 306, 350);
         btnPrint = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_print.png"), 113, 113);
 
         lblResults = new JLabel();
@@ -78,8 +123,8 @@ public class Results extends JFrame {
             }
         });
         jPanel1.add(btnPrint);
-        btnPrint.setBounds(790, 425, 113, 113);
-        lblResultsImage.setBounds(725, 175, 250, 202);
+        btnPrint.setBounds(650, 575, 113, 113);
+        lblResultsImage.setBounds(675, 175, 306, 350);
 
         btnHints.addActionListener(new ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

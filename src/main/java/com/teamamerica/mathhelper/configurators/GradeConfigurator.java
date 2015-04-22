@@ -111,6 +111,10 @@ public class GradeConfigurator {
 
     }
 
+    public static String getLetterGrade(){
+        return letterGrade;
+    }
+
     public static void setGradeResultLetter() {
         gradeResultLetter = new ArrayList<>();
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm");
