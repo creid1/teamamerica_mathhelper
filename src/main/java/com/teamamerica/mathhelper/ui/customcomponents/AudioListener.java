@@ -3,8 +3,8 @@ package com.teamamerica.mathhelper.ui.customcomponents;
 import com.teamamerica.mathhelper.environment.ConfigDirectory;
 
 import javax.sound.sampled.*;
-import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -13,7 +13,7 @@ import java.util.logging.Logger;
  */
 public class AudioListener {
 
-    public static void runAudioListener(String file){
+    public static void runAudioListener(String file) {
         AudioInputStream stream;
         AudioFormat format;
         DataLine.Info info;
@@ -22,10 +22,10 @@ public class AudioListener {
         String relativeFilePath = ConfigDirectory.getAudioFileFromDirectory(file);
         System.out.println("relative filepath: " + relativeFilePath);
 
-        File soundFile = new File(ConfigDirectory.getFileStringForFullPath(relativeFilePath));
+        URL url = AudioListener.class.getClassLoader().getResource(relativeFilePath);
         // A try/catch block to play the .wav file
         try {
-            stream = AudioSystem.getAudioInputStream(soundFile);
+            stream = AudioSystem.getAudioInputStream(url);
             format = stream.getFormat();
             info = new DataLine.Info(Clip.class, format);
             clip = (Clip) AudioSystem.getLine(info);

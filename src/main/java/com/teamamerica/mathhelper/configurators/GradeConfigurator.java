@@ -3,6 +3,11 @@ package com.teamamerica.mathhelper.configurators;
 import com.teamamerica.mathhelper.db.MathHelperDBClient;
 import com.teamamerica.mathhelper.models.Grade;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  * Created by Christina on 4/17/2015.
  */
@@ -10,14 +15,18 @@ public class GradeConfigurator {
 
     private static String letterGrade;
     private static boolean has_receivedReward;
+    private static ArrayList<String> gradeResultLetter;
+    private static double correct, total;
 
     private static MathHelperDBClient mathHelperDBClient = new MathHelperDBClient();
 
-    public static void calculateGradeAndSubmit(double correct, double totalQuestions) {
+    public static void calculateGradeAndSubmit(double testCorrect, double testTotal) {
 
+        correct = testCorrect;
+        total = testTotal;
         System.out.println("FINAL CORRECT: " + correct);
-        System.out.println("FINAL MAX: " + totalQuestions);
-        double temp = correct / totalQuestions;
+        System.out.println("FINAL MAX: " + total);
+        double temp = correct / total;
         System.out.println("SCORE TEMP: " + temp);
         int score = (int) (temp * 100);
 
@@ -92,11 +101,39 @@ public class GradeConfigurator {
                     "", has_receivedReward));
         }
 
+        setGradeResultLetter();
+
     }
 
 
-    public static Grade findGradeById(int id) {
-        return mathHelperDBClient.searchGrades_gradeId(id);
+    public static Grade findGradeByGradeId(int gradeId) {
+        return mathHelperDBClient.searchGrades_gradeId(gradeId);
 
+    }
+
+    public static void setGradeResultLetter() {
+        gradeResultLetter = new ArrayList<>();
+        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm");
+        Date date = new Date();
+        gradeResultLetter.add("Math Helper Test Results \n");
+        gradeResultLetter.add("Today's Date : " + dateFormat.format(date) + "\n" + "\n");
+        gradeResultLetter.add("MathHelper Name : " + UserInteractionsConfigurator.get_interactive_user().getFirst_name() + " " +
+                UserInteractionsConfigurator.get_interactive_user().getLast_name() + "\n");
+        gradeResultLetter.add("Grade Level: " + UserInteractionsConfigurator.get_interactive_grade_level_str() + "\n");
+        String categoryType = "Category Type : ";
+        if (UserInteractionsConfigurator.get_category_type_enum() == null) {
+            gradeResultLetter.add(categoryType + "N/A \n");
+        } else {
+            gradeResultLetter.add(categoryType + UserInteractionsConfigurator.get_category_type_str() + "\n");
+        }
+        gradeResultLetter.add("Difficulty Level : " + UserInteractionsConfigurator.get_difficulty_level_str() + "\n");
+        gradeResultLetter.add("Questions Correct : " + (int)correct +"\n");
+        gradeResultLetter.add("Questions Wrong : " + (int)(total - correct) + "\n");
+        gradeResultLetter.add("Total Questions " + (int)total + "\n");
+        gradeResultLetter.add("Final Grade : " + letterGrade);
+    }
+
+    public static ArrayList<String> getGradeResultLetter() {
+        return gradeResultLetter;
     }
 }

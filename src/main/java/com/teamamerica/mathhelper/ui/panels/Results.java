@@ -1,125 +1,216 @@
 package com.teamamerica.mathhelper.ui.panels;
 
-public class Results extends javax.swing.JFrame {
+import com.teamamerica.mathhelper.configurators.GradeConfigurator;
+import com.teamamerica.mathhelper.configurators.UserInteractionsConfigurator;
+import com.teamamerica.mathhelper.environment.ConfigDirectory;
+import com.teamamerica.mathhelper.ui.customcomponents.AudioListener;
+import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
+import com.teamamerica.mathhelper.ui.customcomponents.ImageLabel;
 
-   
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.print.PrinterException;
+import java.util.ArrayList;
+
+public class Results extends JFrame {
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private ImageButton btnSchoolsOut;
+    private ImageButton btnMain;
+    private ImageButton btnHelp;
+    private ImageButton btnHints;
+    private JLabel lblResults;
+    private JPanel jPanel1;
+    private JTextArea txtResults;
+
+    private ImageButton btnPrint;
+    private ImageLabel lblResultsImage;
+    // End of variables declaration//GEN-END:variables
+
     public Results() {
+
         initComponents();
+        writeResultsToTextField();
+
+
     }
 
-    
+    private void writeResultsToTextField() {
+
+        ArrayList<String> results = GradeConfigurator.getGradeResultLetter();
+        for (String line : results) {
+            txtResults.append(line);
+        }
+
+    }
+
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton6 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        setLocationByPlatform(true);
+        setLocation(0, 0);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1 = new JPanel();
+        btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 125);
+        btnSchoolsOut = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_kidsSchoolBus.gif"), 300, 101);
+        btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
+        btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
+
+        lblResultsImage = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_bplus.jpg"), 250, 202);
+        btnPrint = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_print.png"), 113, 113);
+
+        lblResults = new JLabel();
+
+        txtResults = new JTextArea("");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        jButton5.setBackground(new java.awt.Color(153, 204, 255));
-        jButton5.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnPrint.addActionListener(new ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnPrintActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5);
-        jButton5.setBounds(830, 10, 150, 60);
+        jPanel1.add(btnPrint);
+        btnPrint.setBounds(790, 425, 113, 113);
+        lblResultsImage.setBounds(725, 175, 250, 202);
 
-        jButton7.setBackground(new java.awt.Color(153, 204, 255));
-        jButton7.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnHints.addActionListener(new ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnHintsActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton7);
-        jButton7.setBounds(930, 530, 60, 60);
+        jPanel1.add(btnHints);
+        btnHints.setBounds(850, 575, 150, 101);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 0, 380);
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 60)); // NOI18N
-        jLabel2.setText("Results!");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(370, 10, 240, 60);
-
-        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel7.setText("Help");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(940, 500, 50, 30);
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("This is where the results of the grade will be listed.");
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(190, 130, 600, 450);
-
-        jButton6.setBackground(new java.awt.Color(153, 204, 255));
-        jButton6.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnMain.addActionListener(new ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnMainActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton6);
-        jButton6.setBounds(10, 10, 150, 60);
+        btnMain.setBounds(3, 10, 150, 125);
 
-        jLabel8.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel8.setText("  Main Menu");
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(10, 70, 150, 30);
+        btnHelp.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnHelpActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnHelp);
+        btnHelp.setBounds(30, 575, 150, 101);
 
-        jLabel9.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel9.setText("Print");
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(880, 60, 54, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        btnSchoolsOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSchoolsOutActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSchoolsOut);
+        btnHelp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHelpActionPerformed(evt);
+            }
+        });
+        btnSchoolsOut.setBounds(750, 20, 300, 101);
+
+
+        lblResults.setFont(new Font("Comic Sans MS", 0, 60)); // NOI18N
+        lblResults.setText("Math Helper Results");
+        jPanel1.add(lblResults);
+        lblResults.setBounds(175, 20, 1000, 90);
+
+        txtResults.setColumns(1);
+        txtResults.setRows(11);
+        txtResults.setEditable(false);
+        txtResults.setFont(new Font("Comic Sans MS", 0, 26));
+
+        jPanel1.add(txtResults);
+        txtResults.setBounds(150, 130, 500, 420);
+
+        jPanel1.add(lblResultsImage);
+        btnMain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMainActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnMain);
+
+        GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 698, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnPrintActionPerformed(ActionEvent evt) {
+        AudioListener.runAudioListener("SpeechOn.wav");
 
+        if (evt.getSource() == btnPrint) {
+            try {
+                System.out.println("trying to print: " + txtResults.getText());
+                txtResults.print();
+                ;
+            } catch (PrinterException x) {
+                // Print job did not complete.
+            }
+        }
+
+    }
+
+
+    private void btnMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+
+        AudioListener.runAudioListener("SpeechOn.wav");
+
+        new MainMenu().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+
+    private void btnSchoolsOutActionPerformed(ActionEvent evt) {
+
+        if (evt.getSource() == btnSchoolsOut) {
+            UserInteractionsConfigurator.set_difficulty_level_enum(null);
+            UserInteractionsConfigurator.set_category_type_enum(null);
+            UserInteractionsConfigurator.set_interactive_grade(null);
+            UserInteractionsConfigurator.set_main_menu_selection_enum(null);
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(null);
+            UserInteractionsConfigurator.set_interactive_user(null);
+            this.dispose();
+            new LogIn().setVisible(true);
+
+        }
+    }
+
+    private void btnHintsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        AudioListener.runAudioListener("SpeechOn.wav");
+        new HelpDeskHints().setVisible(true);
+
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
 
-    
+    private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        AudioListener.runAudioListener("SpeechOn.wav");
+
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     public static void main(String args[]) {
-       
+
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
@@ -127,17 +218,5 @@ public class Results extends javax.swing.JFrame {
             }
         });
     }
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    // End of variables declaration//GEN-END:variables
+
 }
