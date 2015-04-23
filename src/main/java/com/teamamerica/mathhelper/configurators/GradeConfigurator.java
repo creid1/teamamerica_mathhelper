@@ -14,7 +14,6 @@ import java.util.Date;
 public class GradeConfigurator {
 
     private static String letterGrade;
-    private static boolean has_receivedReward;
     private static ArrayList<String> gradeResultLetter;
     private static double correct, total;
 
@@ -24,71 +23,57 @@ public class GradeConfigurator {
 
         correct = testCorrect;
         total = testTotal;
-        System.out.println("FINAL CORRECT: " + correct);
-        System.out.println("FINAL MAX: " + total);
-        double temp = correct / total;
-        System.out.println("SCORE TEMP: " + temp);
-        int score = (int) (temp * 100);
-
+          double temp = correct / total;
+        double tempRound = Math.round((temp * 100));
+        int score = (int) tempRound;
+        System.out.println("SCORE: " + score);
         if (score == 100) {
             letterGrade = "A+";
-            has_receivedReward = true;
         }
         if (score >= 95 & score < 100) {
             letterGrade = "A";
-            has_receivedReward = true;
         }
         if (score >= 90 & score < 95) {
             letterGrade = "A-";
-            has_receivedReward = true;
         }
-        if (score >= 88 & score < 90) {
+        if (score >= 87 & score < 90) {
             letterGrade = "B+";
-            has_receivedReward = true;
         }
         if (score >= 85 & score < 87) {
             letterGrade = "B";
-            has_receivedReward = true;
         }
         if (score >= 80 & score < 85) {
             letterGrade = "B-";
-            has_receivedReward = true;
         }
-
-
-        if (score >= 78 & score < 80) {
+        if (score >= 77 & score < 80) {
             letterGrade = "C+";
-            has_receivedReward = true;
         }
         if (score >= 75 & score < 77) {
             letterGrade = "C";
-            has_receivedReward = true;
         }
         if (score >= 70 & score < 75) {
             letterGrade = "C-";
-            has_receivedReward = true;
         }
-
-
-        if (score >= 68 & score < 70) {
+        if (score >= 67 & score < 70) {
             letterGrade = "D+";
-            has_receivedReward = true;
         }
         if (score >= 65 & score < 67) {
             letterGrade = "D";
-            has_receivedReward = true;
         }
         if (score >= 60 & score < 65) {
             letterGrade = "D-";
-            has_receivedReward = true;
         }
+        if(score < 60 ){
+            letterGrade = "F";
+        }
+
         if (UserInteractionsConfigurator.get_category_type_enum() != null) {
 
             Grade grade = new Grade(-1, UserInteractionsConfigurator.get_interactive_user().getUser_id(),
                     UserInteractionsConfigurator.get_interactive_grade_level_str(),
                     UserInteractionsConfigurator.get_category_type_str(),
                     UserInteractionsConfigurator.get_difficulty_level_str(),
-                    letterGrade, (int)correct, (int)testTotal);
+                    letterGrade, (int) correct, (int) testTotal);
 
             mathHelperDBClient.add_newGrade(grade);
             System.out.println("Grade submitted:  " + grade.getGrade());
@@ -97,13 +82,13 @@ public class GradeConfigurator {
                     UserInteractionsConfigurator.get_interactive_grade_level_str(),
                     UserInteractionsConfigurator.get_category_type_str(),
                     UserInteractionsConfigurator.get_difficulty_level_str(),
-                    letterGrade, (int)correct, (int)testTotal));
+                    letterGrade, (int) correct, (int) testTotal));
         } else {
             Grade grade = new Grade(-1, UserInteractionsConfigurator.get_interactive_user().getUser_id(),
                     UserInteractionsConfigurator.get_interactive_grade_level_str(),
                     "",
                     UserInteractionsConfigurator.get_difficulty_level_str(),
-                    letterGrade, (int)correct, (int)testTotal);
+                    letterGrade, (int) correct, (int) testTotal);
 
             mathHelperDBClient.add_newGrade(grade);
             System.out.println("Grade submitted:  " + grade.getGrade());
@@ -112,7 +97,7 @@ public class GradeConfigurator {
                     UserInteractionsConfigurator.get_interactive_grade_level_str(),
                     "",
                     UserInteractionsConfigurator.get_difficulty_level_str(),
-                    letterGrade, (int)correct, (int)testTotal));
+                    letterGrade, (int) correct, (int) testTotal));
         }
 
         setGradeResultLetter();
@@ -120,7 +105,7 @@ public class GradeConfigurator {
     }
 
 
-    public static String getLetterGrade(){
+    public static String getLetterGrade() {
         return letterGrade;
     }
 
@@ -140,9 +125,9 @@ public class GradeConfigurator {
             gradeResultLetter.add(categoryType + UserInteractionsConfigurator.get_category_type_str() + "\n");
         }
         gradeResultLetter.add("Difficulty Level : " + UserInteractionsConfigurator.get_difficulty_level_str() + "\n");
-        gradeResultLetter.add("Questions Correct : " + (int)correct +"\n");
-        gradeResultLetter.add("Questions Wrong : " + (int)(total - correct) + "\n");
-        gradeResultLetter.add("Total Questions " + (int)total + "\n");
+        gradeResultLetter.add("Questions Correct : " + (int) correct + "\n");
+        gradeResultLetter.add("Questions Wrong : " + (int) (total - correct) + "\n");
+        gradeResultLetter.add("Total Questions " + (int) total + "\n");
         gradeResultLetter.add("Final Grade : " + letterGrade);
     }
 

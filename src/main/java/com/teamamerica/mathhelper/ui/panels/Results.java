@@ -50,40 +50,40 @@ public class Results extends JFrame {
             lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Aplus.png"));
 
         } else if (letterGrade.equals("A")) {
-            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Aplus.png"));
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_A.png"));
 
         } else if (letterGrade.equals("A-")) {
-            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Aplus.png"));
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Aminus.png"));
 
         } else if (letterGrade.equals("B+")) {
-            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.jpg"));
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.png"));
 
         } else if (letterGrade.equals("B")) {
-            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.jpg"));
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_B.png"));
 
         } else if (letterGrade.equals("B-")) {
-            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.jpg"));
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bminus.png"));
 
         } else if (letterGrade.equals("C+")) {
-            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Aplus.png"));
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Cplus.png"));
 
         } else if (letterGrade.equals("C")) {
-            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Aplus.png"));
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_C.png"));
 
         } else if (letterGrade.equals("C-")) {
-            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Aplus.png"));
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Cminus.png"));
 
         } else if (letterGrade.equals("D+")) {
-            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.jpg"));
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Dplus.png"));
 
         } else if (letterGrade.equals("D")) {
-            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.jpg"));
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_D.png"));
 
         } else if (letterGrade.equals("D-")) {
-            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.jpg"));
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Dminus.png"));
 
         } else if (letterGrade.equals("F")) {
-            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.jpg"));
+            lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_F.png"));
 
         } else {
 

@@ -127,21 +127,16 @@ public class Test extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Object source = e.getSource();
-                if (source == btnA) {
-                    if (btnA == correctAnswer) {
-                        correct++;
-                        System.out.println("CORRECT: " + correct);
-                        System.out.println("MAX FROM DB: " + questionsMax);
-                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
-                    } else {
-                        System.out.println("CORRECT: " + correct);
-                        System.out.println("MAX FROM DB: " + questionsMax);
-                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
+                if (source == btnA & btnA == correctAnswer) {
+                    correct++;
+                    lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
+                } else {
+                    lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
 
-                    }
-                    lblCorrect.setVisible(true);
-                    checkAnswerButtons();
                 }
+                lblCorrect.setVisible(true);
+                checkAnswerButtons();
+
             }
         });
         jPanel1.add(btnA);
@@ -151,21 +146,16 @@ public class Test extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Object source = e.getSource();
-                if (source == btnD) {
-                    if (btnD == correctAnswer) {
-                        correct++;
-                        System.out.println("CORRECT: " + correct);
-                        System.out.println("MAX FROM DB: " + questionsMax);
-                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
-                    } else {
-                        System.out.println("CORRECT: " + correct);
-                        System.out.println("MAX FROM DB: " + questionsMax);
-                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
+                if (source == btnD & btnD == correctAnswer) {
+                    correct++;
+                    lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
+                } else {
+                    lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
 
-                    }
-                    lblCorrect.setVisible(true);
-                    checkAnswerButtons();
                 }
+                lblCorrect.setVisible(true);
+                checkAnswerButtons();
+
             }
         });
         jPanel1.add(btnD);
@@ -174,45 +164,31 @@ public class Test extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Object source = e.getSource();
-                if (source == btnB) {
-                    if (btnB == correctAnswer) {
-                        correct++;
-                        System.out.println("CORRECT: " + correct);
-                        System.out.println("MAX: " + questionsMax);
-                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
-                    } else {
-                        System.out.println("CORRECT: " + correct);
-                        System.out.println("MAX FROM DB: " + questionsMax);
-
-                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
-
-                    }
-                    lblCorrect.setVisible(true);
-                    checkAnswerButtons();
+                if (source == btnB & btnB == correctAnswer) {
+                    correct++;
+                    lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
+                } else {
+                    lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
                 }
+                lblCorrect.setVisible(true);
+                checkAnswerButtons();
             }
+
         });
         jPanel1.add(btnB);
         btnC.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Object source = e.getSource();
-                if (source == btnC) {
+                if (source == btnC & btnC == correctAnswer) {
                     correct++;
-                    System.out.println("CORRECT: " + correct);
-                    System.out.println("MAX: " + questionsMax);
-                    if (btnC == correctAnswer) {
-                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
-                    } else {
-                        System.out.println("CORRECT: " + correct);
-                        System.out.println("MAX FROM DB: " + questionsMax);
-
-                        lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
-
-                    }
-                    lblCorrect.setVisible(true);
-                    checkAnswerButtons();
+                    lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_correct.jpg"));
+                } else {
+                    lblCorrect.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_wrong.jpg"));
                 }
+                lblCorrect.setVisible(true);
+                checkAnswerButtons();
+
             }
         });
         jPanel1.add(btnC);
@@ -267,10 +243,6 @@ public class Test extends JFrame {
         );
 
         pack();
-        System.out.println(this.getX());
-        int width = this.getWidth();
-        int height = this.getHeight();
-        System.out.println(width + ":" + height);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnHelpActionPerformed(ActionEvent evt) {
@@ -288,7 +260,7 @@ public class Test extends JFrame {
         int userInput = JOptionPane.showConfirmDialog(
                 null, "Are you sure you want to exit the test?", "Test Exit?", JOptionPane.YES_NO_OPTION);
         if (userInput == 0) {
-             new MainMenu().setVisible(true);
+            new MainMenu().setVisible(true);
             this.setVisible(false);
         } else {
 
@@ -305,15 +277,17 @@ public class Test extends JFrame {
 
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        System.out.println("Correct: " + correct);
+        System.out.println("Counter: " + testQuestionCounter);
+        System.out.println("Total: " + questionsMax);
         // TODO add your handling code here:
         btnNext.setVisible(false);
         testQuestionCounter++;
+        System.out.println("New testQuestionUpdate: " + testQuestionCounter);
         if (testQuestionCounter >= questionsMax) {
-
             GradeConfigurator.calculateGradeAndSubmit(correct, questionsMax);
             AudioListener.stopAudioListener();
             AudioListener.runAudioListener("SpeechOn.wav");
-
             new Results().setVisible(true);
             this.dispose();
 
