@@ -164,15 +164,15 @@ public class MainMenu extends JFrame {
                     UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.PRE_K)) {
                 AudioListener.stopAudioListener();
                 AudioListener.runAudioListener("SpeechOn.wav");
-
-                new CategoriesMain().setVisible(true);
                 this.dispose();
+                new CategoriesMain().setVisible(true);
+
             } else {
                 AudioListener.stopAudioListener();
                 AudioListener.runAudioListener("SpeechOn.wav");
-
-                new PracticeTest().setVisible(true);
                 this.dispose();
+                new PracticeTest().setVisible(true);
+
             }
         }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -186,9 +186,9 @@ public class MainMenu extends JFrame {
                 UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.TUTORIALS);
                 AudioListener.stopAudioListener();
                 AudioListener.runAudioListener("SpeechOn.wav");
-
-                new CategoriesMain().setVisible(true);
                 this.dispose();
+                new CategoriesMain().setVisible(true);
+
             } else {
                 TutorialsPageConfigurator.loadTutorialsList();
                 AudioListener.stopAudioListener();
@@ -210,15 +210,15 @@ public class MainMenu extends JFrame {
                     UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.PRE_K)) {
                 AudioListener.stopAudioListener();
                 AudioListener.runAudioListener("SpeechOn.wav");
-
-                new CategoriesMain().setVisible(true);
                 this.dispose();
+                new CategoriesMain().setVisible(true);
+
             } else {
                 AudioListener.stopAudioListener();
                 AudioListener.runAudioListener("SpeechOn.wav");
-
-                new Difficulty().setVisible(true);
                 this.dispose();
+                new Difficulty().setVisible(true);
+
             }
         }
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -244,9 +244,9 @@ public class MainMenu extends JFrame {
 
             AudioListener.stopAudioListener();
             AudioListener.runAudioListener("SpeechOn.wav");
-
-            new LogIn().setVisible(true);
             this.dispose();
+            new LogIn().setVisible(true);
+
 
         }
     }

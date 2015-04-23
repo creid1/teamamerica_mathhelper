@@ -306,9 +306,9 @@ public class PracticeTest extends JFrame {
         if (evt.getSource() == btnHome) {
             AudioListener.stopAudioListener();
             AudioListener.runAudioListener("SpeechOn.wav");
-
-            new MainMenu().setVisible(true);
             this.dispose();
+            new MainMenu().setVisible(true);
+
         }
 
     }//GEN-LAST:event_jButton5ActionPerformed

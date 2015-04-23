@@ -240,16 +240,13 @@ public class CategoriesMain extends JFrame {
     private void btnMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         AudioListener.stopAudioListener();
-
         AudioListener.runAudioListener("SpeechOn.wav");
-
-        new MainMenu().setVisible(true);
         this.dispose();
+        new MainMenu().setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void btnSchoolsOutActionPerformed(ActionEvent evt) {
         AudioListener.stopAudioListener();
-
         AudioListener.runAudioListener("SpeechOn.wav");
 
 
@@ -271,30 +268,22 @@ public class CategoriesMain extends JFrame {
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         AudioListener.stopAudioListener();
 
-        AudioListener.runAudioListener("SpeechOn.wav");
+        AudioListener.runAudioListener("watever.wav");
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void checkForMenuSelectionType() {
-        AudioListener.stopAudioListener();
-        AudioListener.runAudioListener("SpeechOn.wav");
-
         if (UserInteractionsConfigurator.getMain_menu_selection_enum().equals(MainMenuSelection.TESTS)) {
-
-            new Difficulty().setVisible(true);
             this.dispose();
+            new Difficulty().setVisible(true);
+
         }
         if (UserInteractionsConfigurator.getMain_menu_selection_enum().equals(MainMenuSelection.PRACTICE)) {
-            AudioListener.stopAudioListener();
-
-            new PracticeTest().setVisible(true);
             this.dispose();
+            new PracticeTest().setVisible(true);
         }
         if (UserInteractionsConfigurator.getMain_menu_selection_enum().equals(MainMenuSelection.TUTORIALS)) {
             TutorialsPageConfigurator.loadTutorialsList();
-            AudioListener.stopAudioListener();
-
-            //  this.dispose();
             this.dispose();
             new YouTubeFrame(TutorialsPageConfigurator.getTutorial().getTutorial()).setVisible(true);
         }
@@ -302,6 +291,9 @@ public class CategoriesMain extends JFrame {
 
     private void btnMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         if (evt.getSource() == btnMoney) {
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
+
             UserInteractionsConfigurator.set_category_type_enum(CategoryType.MONEY);
             System.out.println(UserInteractionsConfigurator.get_category_type_str());
             checkForMenuSelectionType();
@@ -312,6 +304,9 @@ public class CategoriesMain extends JFrame {
 
     private void btnAdditionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         if (evt.getSource() == btnAddition) {
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
+
             UserInteractionsConfigurator.set_category_type_enum(CategoryType.ADDITION);
             System.out.println(UserInteractionsConfigurator.get_category_type_str());
             checkForMenuSelectionType();
@@ -321,6 +316,9 @@ public class CategoriesMain extends JFrame {
 
     private void btnSubtraction(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         if (evt.getSource() == btnSubtraction) {
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
+
             UserInteractionsConfigurator.set_category_type_enum(CategoryType.SUBTRACTION);
             System.out.println(UserInteractionsConfigurator.get_category_type_str());
             checkForMenuSelectionType();
@@ -330,6 +328,9 @@ public class CategoriesMain extends JFrame {
 
     private void btnTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         if (evt.getSource() == btnTime) {
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
+
             UserInteractionsConfigurator.set_category_type_enum(CategoryType.TIME);
             System.out.println(UserInteractionsConfigurator.get_category_type_str());
             checkForMenuSelectionType();
@@ -339,6 +340,9 @@ public class CategoriesMain extends JFrame {
 
     private void btnMeasureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         if (evt.getSource() == btnMeasure) {
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
+
             UserInteractionsConfigurator.set_category_type_enum(CategoryType.MEASURE);
             System.out.println(UserInteractionsConfigurator.get_category_type_str());
             checkForMenuSelectionType();
@@ -347,8 +351,10 @@ public class CategoriesMain extends JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void btnShapesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        Object source = evt.getSource();
         if (evt.getSource() == btnShapes) {
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
+
             UserInteractionsConfigurator.set_category_type_enum(CategoryType.SHAPES);
             System.out.println(UserInteractionsConfigurator.get_category_type_str());
             checkForMenuSelectionType();

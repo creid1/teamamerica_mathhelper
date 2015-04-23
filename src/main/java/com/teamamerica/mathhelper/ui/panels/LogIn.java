@@ -159,14 +159,16 @@ public class LogIn extends JFrame {
             UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username(username));
             if(UserInteractionsConfigurator.get_interactive_user().getRole().equalsIgnoreCase(("A"))){
                 AudioListener.stopAudioListener();
+                this.dispose();
                 new MathHelperAdmin().setVisible(true);
                 new HelpDeskAdminHints().setVisible(true);
-                this.dispose();
+
             }else {
                 AudioListener.stopAudioListener();
+                this.dispose();
                 new WelcomeMathHelper().setVisible(true);
                 new HelpDeskHints().setVisible(true);
-                this.dispose();
+
             }
         } else {
             AudioListener.runAudioListener("SpeechOn.wav");

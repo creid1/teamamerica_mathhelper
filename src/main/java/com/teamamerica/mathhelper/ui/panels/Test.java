@@ -288,8 +288,10 @@ public class Test extends JFrame {
             GradeConfigurator.calculateGradeAndSubmit(correct, questionsMax);
             AudioListener.stopAudioListener();
             AudioListener.runAudioListener("SpeechOn.wav");
-            new Results().setVisible(true);
+            AudioListener.runAudioListener("SpeechOn.wav");
             this.dispose();
+            new Results().setVisible(true);
+
 
         } else {
             question = QuestionsPageConfigurator.getQuestion();

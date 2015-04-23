@@ -79,7 +79,6 @@ public class Difficulty extends JFrame {
         lblSelectDifficulty.setBounds(285, 100, 1000, 90);
 
 
-
         btnSchoolsOut = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_kidsSchoolBus.gif"), 300, 101);
         btnSchoolsOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,14 +186,12 @@ public class Difficulty extends JFrame {
     private void btnEasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         Object source = evt.getSource();
         if (source == btnEasy) {
-
-            UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.EASY);
-            System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
             AudioListener.stopAudioListener();
             AudioListener.runAudioListener("SpeechOn.wav");
-
-            new Test().setVisible(true);
+            UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.EASY);
             this.dispose();
+            new Test().setVisible(true);
+
         }
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -202,26 +199,25 @@ public class Difficulty extends JFrame {
     private void btnMediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         Object source = evt.getSource();
         if (source == btnMedium) {
-            UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.MEDIUM);
-            System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
             AudioListener.stopAudioListener();
             AudioListener.runAudioListener("SpeechOn.wav");
 
-            new Test().setVisible(true);
+            UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.MEDIUM);
             this.dispose();
+            new Test().setVisible(true);
+
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void btnHardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         Object source = evt.getSource();
         if (source == btnHard) {
-            UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.HARD);
-            System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
             AudioListener.stopAudioListener();
             AudioListener.runAudioListener("SpeechOn.wav");
-
-            new Test().setVisible(true);
+            UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.HARD);
             this.dispose();
+            new Test().setVisible(true);
+
         }
     }//GEN-LAST:event_jButton8ActionPerformed
 
@@ -230,15 +226,19 @@ public class Difficulty extends JFrame {
 
         AudioListener.stopAudioListener();
         AudioListener.runAudioListener("SpeechOn.wav");
-
-        new MainMenu().setVisible(true);
         this.dispose();
+        new MainMenu().setVisible(true);
+
 
     }
 
     private void btnSchoolsOutActionPerformed(ActionEvent evt) {
 
         if (evt.getSource() == btnSchoolsOut) {
+
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
+
             UserInteractionsConfigurator.set_difficulty_level_enum(null);
             UserInteractionsConfigurator.set_category_type_enum(null);
             UserInteractionsConfigurator.set_interactive_grade(null);
@@ -246,9 +246,6 @@ public class Difficulty extends JFrame {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(null);
             UserInteractionsConfigurator.set_interactive_user(null);
             UserInteractionsConfigurator.playLoginScript = false;
-
-            AudioListener.stopAudioListener();
-            AudioListener.runAudioListener("SpeechOn.wav");
 
             this.setVisible(false);
             new LogIn().setVisible(true);
@@ -258,8 +255,7 @@ public class Difficulty extends JFrame {
 
 
     private void btnHelpActionPerformed(ActionEvent evt) {
-        AudioListener.runAudioListener("SpeechOn.wav");
-
+        AudioListener.runAudioListener("watever.wav");
 
 
     }

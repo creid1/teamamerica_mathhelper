@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class WelcomeMathHelper extends JFrame {
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private JButton btn3;
     private ImageButton btnHelp, btnHints;
@@ -41,14 +41,14 @@ public class WelcomeMathHelper extends JFrame {
         setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
         setLocationByPlatform(true);
-        setLocation(0,0);
+        setLocation(0, 0);
 
         lblWelcomeTitle = new JLabel();
         jPanel1 = new JPanel();
         jPanel1.setBackground(Color.WHITE);
 
         btn2 = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_2gradefinal.gif"), 250, 101);
-        btnnPreK =new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_prekfinal.gif"), 250, 101);
+        btnnPreK = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_prekfinal.gif"), 250, 101);
         btn1 = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_1gradefinal.gif"), 250, 101);
         btn4 = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_4gradefinal.gif"), 250, 101);
         btnK = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_Kinderfinal.gif"), 250, 101);
@@ -103,7 +103,7 @@ public class WelcomeMathHelper extends JFrame {
             }
         });
         jPanel1.add(btn1);
-         btn4.setBackground(new java.awt.Color(255, 0, 0));
+        btn4.setBackground(new java.awt.Color(255, 0, 0));
         btn4.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btn4.setText("4th");
         btn4.setPreferredSize(new java.awt.Dimension(107, 35));
@@ -167,7 +167,7 @@ public class WelcomeMathHelper extends JFrame {
         btn3.setBounds(375, 450, 250, 101);
         btn4.setBounds(675, 450, 250, 101);
 
-          GroupLayout layout = new GroupLayout(getContentPane());
+        GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -175,7 +175,7 @@ public class WelcomeMathHelper extends JFrame {
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 710, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 700, GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -195,22 +195,26 @@ public class WelcomeMathHelper extends JFrame {
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         Object source = evt.getSource();
         if (source == btn2) {
-            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.SECOND);
             AudioListener.stopAudioListener();
             AudioListener.runAudioListener("SpeechOn.wav");
-            new MainMenu().setVisible(true);
+
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.SECOND);
             this.dispose();
+            new MainMenu().setVisible(true);
+
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void btnPreKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         Object source = evt.getSource();
         if (source == btnnPreK) {
-            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.PRE_K);
             AudioListener.stopAudioListener();
             AudioListener.runAudioListener("SpeechOn.wav");
+
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.PRE_K);
+              this.dispose();
             new MainMenu().setVisible(true);
-            this.dispose();
+
         }
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -218,12 +222,13 @@ public class WelcomeMathHelper extends JFrame {
         Object source = evt.getSource();
 
         if (source == btn1) {
-            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.FIRST);
             AudioListener.stopAudioListener();
             AudioListener.runAudioListener("SpeechOn.wav");
 
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.FIRST);
+              this.dispose();
             new MainMenu().setVisible(true);
-            this.dispose();
+
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -231,39 +236,47 @@ public class WelcomeMathHelper extends JFrame {
         Object source = evt.getSource();
 
         if (source == btn4) {
-            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.FOURTH);
             AudioListener.stopAudioListener();
             AudioListener.runAudioListener("SpeechOn.wav");
-            new MainMenu().setVisible(true);
+
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.FOURTH);
+           AudioListener.runAudioListener("SpeechOn.wav");
             this.dispose();
+            new MainMenu().setVisible(true);
+
         }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void btnKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         Object source = evt.getSource();
         if (source == btnK) {
-            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.K);
             AudioListener.stopAudioListener();
             AudioListener.runAudioListener("SpeechOn.wav");
+
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.K);
+
             new MainMenu().setVisible(true);
             this.dispose();
+
         }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         Object source = evt.getSource();
         if (source == btn3) {
-            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.THIRD);
-            System.out.println(UserInteractionsConfigurator.get_interactive_grade_level_enum());
             AudioListener.stopAudioListener();
             AudioListener.runAudioListener("SpeechOn.wav");
-            new MainMenu().setVisible(true);
+
+            UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.THIRD);
+            System.out.println(UserInteractionsConfigurator.get_interactive_grade_level_enum());
+
             this.dispose();
+            new MainMenu().setVisible(true);
         }
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        AudioListener.runAudioListener("SpeechOn.wav");
+        AudioListener.runAudioListener("watever.wav");
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
