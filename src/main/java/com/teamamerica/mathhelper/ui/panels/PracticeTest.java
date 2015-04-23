@@ -60,7 +60,8 @@ public class PracticeTest extends JFrame {
         listOfButtons.add(btnC);
         listOfButtons.add(btnD);
 
-        correctAnswer = btnA;
+        generateAnswerButtons();
+
         AudioListener.runAudioListener("watever.wav");
 
 

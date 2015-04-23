@@ -62,8 +62,7 @@ public class Test extends JFrame {
         listOfButtons.add(btnB);
         listOfButtons.add(btnC);
         listOfButtons.add(btnD);
-
-        correctAnswer = btnA;
+        generateAnswerButtons();
         AudioListener.runAudioListener("watever.wav");
 
 
