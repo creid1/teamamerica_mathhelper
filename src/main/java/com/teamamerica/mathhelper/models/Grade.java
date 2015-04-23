@@ -10,9 +10,14 @@ public class Grade {
 
     private int grade_id;
     private int user_id;
-    private String grade;
+
+    private String grade_level;
     private String category;
-    private boolean receive_reward;
+    private String difficulty_level;
+    private String grade;
+    private int correct;
+    private int total;
+
 
     public Grade() {
 
@@ -26,12 +31,17 @@ public class Grade {
 
     }
 
-    public Grade(int grade_id, int user_id, String grade, String category, boolean hasReward) {
+    public Grade(int grade_id, int user_id, String grade_level, String category, String difficulty_level,
+                 String grade, int correct, int total) {
+
         this.grade_id = grade_id;
         this.user_id = user_id;
-        this.grade = grade;
+        this.grade_level = grade_level;
         this.category = category;
-        this.receive_reward = hasReward;
+        this.difficulty_level = difficulty_level;
+        this.grade = grade;
+        this.correct = correct;
+        this.total = total;
     }
 
     //********************************SETTERS FOR THE DATA STRUCTURE*************************************//
@@ -48,18 +58,29 @@ public class Grade {
         this.grade = grade;
     }
 
-    public void setCategory(String category){this.category =category; }
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
-    public void setReceive_reward(boolean receive_reward) {
-        this.receive_reward = receive_reward;
+
+    public void setGrade_level(String grade_level) {
+        this.grade_level = grade_level;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public void setDifficulty_level(String difficulty_level) {
+        this.difficulty_level = difficulty_level;
+    }
+
+    public void setCorrect(int correct) {
+        this.correct = correct;
     }
 
     //*******************************GETTERS FOR THE DATA STRUCTURE**********************************//
 
-
-    public boolean hasReceive_reward() {
-        return receive_reward;
-    }
 
 
     public int getGrade_id() {
@@ -67,7 +88,7 @@ public class Grade {
         return grade_id;
     }
 
-    public String getCategory(){
+    public String getCategory() {
         return category;
     }
 
@@ -77,6 +98,22 @@ public class Grade {
 
     public String getGrade() {
         return grade;
+    }
+
+    public String getGrade_level() {
+        return grade_level;
+    }
+
+    public String getDifficulty_level() {
+        return difficulty_level;
+    }
+
+    public int getCorrect() {
+        return correct;
+    }
+
+    public int getTotal() {
+        return total;
     }
 
     /********************STATIC CLASS SEARCH METHODS*************************************************/
@@ -105,17 +142,5 @@ public class Grade {
             }
         }
         return grade;
-    }
-
-    public static int searchGradesByUser_idForRewards(ArrayList<Grade> grades, int user_id) {
-        int rewards = 0;
-        for (Grade grade : grades) {
-            if (grade.getUser_id() == user_id) {
-                if (grade.hasReceive_reward()) {
-                    rewards++;
-                }
-            }
-        }
-        return rewards;
     }
 }

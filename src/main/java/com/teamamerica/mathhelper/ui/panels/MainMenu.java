@@ -198,7 +198,7 @@ public class MainMenu extends JFrame {
                 new CategoriesMain().setVisible(true);
                 this.setVisible(false);
             } else {
-                new Test().setVisible(true);
+                new Difficulty().setVisible(true);
                 this.setVisible(false);
             }
         }

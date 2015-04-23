@@ -74,13 +74,17 @@ public class MathHelperAdmin extends JFrame {
         listModel.clear();
         for (Grade grade : grades) {
             if (grade.getCategory().equals("")) {
-                gradeList[counter] = "GradeId : " + grade.getGrade_id() + " |Category: N/A }Grade : " +
-                        grade.getGrade() + " |Receive Reward : " + grade.hasReceive_reward();
+                gradeList[counter] = "| Grade_Id : " + grade.getGrade_id() + " | Grade_Level : " + grade.getGrade_level() +
+                        " | Category : N/A | Difficulty_Level : " + grade.getDifficulty_level() + " | Grade : " +
+                        grade.getGrade() + " | Correct :" + grade.getCorrect() + "| Wrong : "
+                        + (grade.getTotal() - grade.getCorrect()) + " | Total_Questions : " + grade.getTotal();
                 listModel.addElement(gradeList[counter]);
                 counter++;
             } else {
-                gradeList[counter] = "GradeId : " + grade.getGrade_id() + " |Category: " + grade.getCategory()
-                        + " |Grade : " + grade.getGrade() + " |Receive Reward : " + grade.hasReceive_reward();
+                gradeList[counter] = "| Grade_Id : " + grade.getGrade_id() + " | Grade_Level : " + grade.getGrade_level() +
+                        " | Category : " + grade.getCategory() + " | Difficulty_Level : " + grade.getDifficulty_level() +
+                        " | Grade : " + grade.getGrade() + " | Correct :" + grade.getCorrect() + " | Wrong : "
+                        + (grade.getTotal() - grade.getCorrect()) + " | Total_Questions : " + grade.getTotal();
                 listModel.addElement(gradeList[counter]);
                 counter++;
             }
@@ -113,8 +117,8 @@ public class MathHelperAdmin extends JFrame {
 
 
         btnHints.setBounds(850, 575, 150, 101);
-        btnUpdateMathHelper.setBounds(700, 150, 175, 175);
-        btnNewMathHelper.setBounds(700, 375, 175, 175);
+        btnUpdateMathHelper.setBounds(750, 150, 175, 175);
+        btnNewMathHelper.setBounds(750, 375, 175, 175);
         btnHelp.setBounds(30, 575, 150, 101);
 
 
@@ -128,7 +132,6 @@ public class MathHelperAdmin extends JFrame {
         });
         jPanel1.add(btnSchoolsOut);
         btnSchoolsOut.setBounds(750, 20, 300, 101);
-
 
 
         btnHelp.addActionListener(new ActionListener() {
@@ -192,7 +195,7 @@ public class MathHelperAdmin extends JFrame {
         jScrollPane1 = new JScrollPane();
 
         cboStudents = new JComboBox(cboStudentList);
-        cboStudents.setBounds(100, 125, 500, 50);
+        cboStudents.setBounds(100, 125, 600, 50);
         cboStudents.setBackground(Color.WHITE);
         cboStudents.setFont(new Font("Comic Sans MS", 0, 26));
         cboStudents.addActionListener(new java.awt.event.ActionListener() {
@@ -203,10 +206,10 @@ public class MathHelperAdmin extends JFrame {
         listModel = new DefaultListModel();
         listGrades = new JList(listModel);
         listGrades.setBackground(Color.WHITE);
-        listGrades.setBounds(100, 225, 500, 325);
-        listGrades.setFont(new Font("Comic Sans MS", 0, 24));
+        listGrades.setBounds(100, 225, 600, 325);
+        listGrades.setFont(new Font("Comic Sans MS", 1, 24));
         listGrades.setEnabled(false);
-        jScrollPane1.setBounds(100, 225, 500, 325);
+        jScrollPane1.setBounds(100, 225, 600, 325);
 
         lblGrades = new JLabel("Student Progress Grades:");
         lblGrades.setBounds(100, 25, 500, 350);
@@ -220,7 +223,7 @@ public class MathHelperAdmin extends JFrame {
         jPanel1.add(jScrollPane1);
 
         btnFindMathHelpers.setBounds(500, 550, 150, 150);
-        btnTeacherZone.setBounds(300,563,150,130);
+        btnTeacherZone.setBounds(300, 563, 150, 130);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);

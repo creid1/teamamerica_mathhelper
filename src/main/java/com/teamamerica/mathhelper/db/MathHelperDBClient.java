@@ -66,10 +66,10 @@ public class MathHelperDBClient {
             return true;
         } else {
             for (Grade grade : grades) {
-              isDeleted = mathHelperDB.deleteGradeByGradeId(grade.getGrade_id());
-                if(!isDeleted){
+                isDeleted = mathHelperDB.deleteGradeByGradeId(grade.getGrade_id());
+                if (!isDeleted) {
                     return false;
-                }else{
+                } else {
                     isDeleted = true;
                 }
 
@@ -295,9 +295,12 @@ public class MathHelperDBClient {
         for (Grade grade : grades) {
             System.out.println("grade_id: " + grade.getGrade_id() +
                     ", user_id: " + grade.getUser_id() +
-                    ", grade: " + grade.getGrade() +
+                    ", grade_level: " + grade.getGrade_level() +
                     ", category: " + grade.getCategory() +
-                    ", received_reward: " + grade.hasReceive_reward());
+                    ", difficulty_level: " + grade.getDifficulty_level() +
+                    ", grade: " + grade.getGrade() +
+                    ", correct: " + grade.getCorrect() +
+                    ", total: " + grade.getTotal());
             System.out.println("     ");
         }
     }

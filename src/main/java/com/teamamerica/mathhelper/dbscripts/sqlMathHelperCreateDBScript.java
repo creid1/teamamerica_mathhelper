@@ -138,16 +138,22 @@ public class sqlMathHelperCreateDBScript {
             // Retrieve entry's attributes by column name
             int id = rs.getInt("grade_id");
             int userid = rs.getInt("user_id");
-            String grade = rs.getString("grade");
+            String gradeLevel = rs.getString("grade_level");
             String category = rs.getString("category");
-            boolean reward = rs.getBoolean("received_reward");
+            String difficultyLevel = rs.getString("difficulty_level");
+            String grade = rs.getString("grade");
+            int correct = rs.getInt("correct");
+            int total = rs.getInt("total");
 
             // Display values
             System.out.println("ID: " + id);
             System.out.println(", userid: " + userid);
-            System.out.println(", grade: " + grade);
+            System.out.println(", grade_level: " + gradeLevel);
             System.out.println(", category: " + category);
-            System.out.println(", rewards: " + reward);
+            System.out.println(", difficulty_level: " + difficultyLevel);
+            System.out.println(", grade: " + grade);
+            System.out.println(", correct: " + correct);
+            System.out.println(", total: " + total);
         }
 
         // Close result set.
@@ -391,16 +397,16 @@ public class sqlMathHelperCreateDBScript {
             sql = "CREATE TABLE grades" +
                     "(grade_id INT UNSIGNED NOT NULL AUTO_INCREMENT, " +
                     "user_id INT UNSIGNED NOT NULL, " +
-                    "grade TEXT NOT NULL, " +
+                    "grade_level TEXT NOT NULL, " +
                     "category TEXT NOT NULL, " +
-                    "received_reward BOOLEAN NOT NULL, " +
+                    "difficulty_level TEXT NOT NULL, " +
+                    "grade TEXT NOT NULL, " +
+                    "correct INT UNSIGNED NOT NULL, " +
+                    "total INT UNSIGNED NOT NULL, " +
                     "PRIMARY KEY(grade_id));";
             stmt.execute(sql);
-            sql = "INSERT INTO grades(user_id,grade,category,received_reward)" +
-                    "VALUES (1,'A','Addition'," + true + ");";
-            stmt.executeUpdate(sql);
-            sql = "INSERT INTO grades(user_id,grade,category,received_reward)" +
-                    "VALUES (8,'B','Addition'," + false + ");";
+            sql = "INSERT INTO grades(user_id,grade_level,category,difficulty_level,grade,correct,total)" +
+                    "VALUES (1,'K','Addition','Easy','A+',5,5);";
             stmt.executeUpdate(sql);
         } catch (SQLException se) {
             System.out.println("Found!      Using existing grades table.");

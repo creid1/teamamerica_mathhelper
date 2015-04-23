@@ -9,7 +9,7 @@ public enum GradeLevel {
     PRE_K {
         @Override
         public String toString() {
-            return "Pre_K";
+            return "PRE_K";
         }
     },
 

@@ -169,8 +169,9 @@ public class MathHelperDB {
 
     /**
      * Deletes the specified user from the database.
+     *
      * @return True if a user with that id was successfully deleted from the database.
-     **/
+     */
     public boolean deleteUser(int user_id) {
         openDBConnection();
         boolean error = false;
@@ -180,14 +181,14 @@ public class MathHelperDB {
             selectStmt = conn.prepareStatement(sql);
             selectStmt.setInt(1, user_id);
             selectStmt.execute();
-        } catch(SQLException se) {
+        } catch (SQLException se) {
             error = true;
         } finally {
             try {
-                if(selectStmt != null) {
+                if (selectStmt != null) {
                     selectStmt.close();
                 }
-            } catch(SQLException se2) {
+            } catch (SQLException se2) {
             }
         }
         return !error;
@@ -195,8 +196,9 @@ public class MathHelperDB {
 
     /**
      * Deletes the specified user's grades from the database.
+     *
      * @return True if the grades with that id were successfully deleted from the database.
-     **/
+     */
     public boolean deleteGradeByGradeId(int grade_id) {
         openDBConnection();
 
@@ -207,14 +209,14 @@ public class MathHelperDB {
             selectStmt = conn.prepareStatement(sql);
             selectStmt.setInt(1, grade_id);
             selectStmt.execute();
-        } catch(SQLException se) {
+        } catch (SQLException se) {
             error = true;
         } finally {
             try {
-                if(selectStmt != null) {
+                if (selectStmt != null) {
                     selectStmt.close();
                 }
-            } catch(SQLException se2) {
+            } catch (SQLException se2) {
             }
         }
         return !error;
@@ -224,14 +226,19 @@ public class MathHelperDB {
     public boolean addNewGrade(Grade grade) {
         openDBConnection();
         sql = "INSERT grades " +
-                "SET user_id = ?, grade = ?, category =?, received_reward = ?";
+                "SET user_id = ?, grade_level = ?, category = ?, difficulty_level = ?, grade = ?, " +
+                "correct = ?, total = ?";
         PreparedStatement ps;
         try {
             ps = conn.prepareStatement(sql);
             ps.setInt(1, grade.getUser_id());
-            ps.setString(2, grade.getGrade());
+            ps.setString(2, grade.getGrade_level());
             ps.setString(3, grade.getCategory());
-            ps.setBoolean(4, grade.hasReceive_reward());
+            ps.setString(4, grade.getDifficulty_level());
+            ps.setString(5, grade.getGrade());
+            ps.setInt(6, grade.getCorrect());
+            ps.setInt(7, grade.getTotal());
+
             ps.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -293,9 +300,12 @@ public class MathHelperDB {
                 Grade grade = new Grade();
                 grade.setGrade_id(rs.getInt("grade_id"));
                 grade.setUser_id(rs.getInt("user_id"));
-                grade.setGrade(rs.getString("grade"));
+                grade.setGrade_level(rs.getString("grade_level"));
                 grade.setCategory(rs.getString("category"));
-                grade.setReceive_reward(rs.getBoolean("received_reward"));
+                grade.setDifficulty_level(rs.getString("difficulty_level"));
+                grade.setGrade(rs.getString("grade"));
+                grade.setCorrect(rs.getInt("correct"));
+                grade.setTotal(rs.getInt("total"));
                 grades.add(grade);
             }
             // Close result set.

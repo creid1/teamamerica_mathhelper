@@ -84,32 +84,41 @@ public class GradeConfigurator {
         }
         if (UserInteractionsConfigurator.get_category_type_enum() != null) {
 
-            Grade grade = new Grade(-1, UserInteractionsConfigurator.get_interactive_user().getUser_id(), letterGrade,
-                    UserInteractionsConfigurator.get_category_type_enum().toString(), has_receivedReward);
+            Grade grade = new Grade(-1, UserInteractionsConfigurator.get_interactive_user().getUser_id(),
+                    UserInteractionsConfigurator.get_interactive_grade_level_str(),
+                    UserInteractionsConfigurator.get_category_type_str(),
+                    UserInteractionsConfigurator.get_difficulty_level_str(),
+                    letterGrade, (int)correct, (int)testTotal);
+
             mathHelperDBClient.add_newGrade(grade);
             System.out.println("Grade submitted:  " + grade.getGrade());
             UserInteractionsConfigurator.set_interactive_grade(new Grade(mathHelperDBClient.getLastGradeIdAdded(),
-                    UserInteractionsConfigurator.get_interactive_user().getUser_id(), letterGrade,
-                    UserInteractionsConfigurator.get_category_type_enum().toString(), has_receivedReward));
+                    UserInteractionsConfigurator.get_interactive_user().getUser_id(),
+                    UserInteractionsConfigurator.get_interactive_grade_level_str(),
+                    UserInteractionsConfigurator.get_category_type_str(),
+                    UserInteractionsConfigurator.get_difficulty_level_str(),
+                    letterGrade, (int)correct, (int)testTotal));
         } else {
-            Grade grade = new Grade(-1, UserInteractionsConfigurator.get_interactive_user().getUser_id(), letterGrade,
-                    "", has_receivedReward);
+            Grade grade = new Grade(-1, UserInteractionsConfigurator.get_interactive_user().getUser_id(),
+                    UserInteractionsConfigurator.get_interactive_grade_level_str(),
+                    "",
+                    UserInteractionsConfigurator.get_difficulty_level_str(),
+                    letterGrade, (int)correct, (int)testTotal);
+
             mathHelperDBClient.add_newGrade(grade);
             System.out.println("Grade submitted:  " + grade.getGrade());
             UserInteractionsConfigurator.set_interactive_grade(new Grade(mathHelperDBClient.getLastGradeIdAdded(),
-                    UserInteractionsConfigurator.get_interactive_user().getUser_id(), letterGrade,
-                    "", has_receivedReward));
+                    UserInteractionsConfigurator.get_interactive_user().getUser_id(),
+                    UserInteractionsConfigurator.get_interactive_grade_level_str(),
+                    "",
+                    UserInteractionsConfigurator.get_difficulty_level_str(),
+                    letterGrade, (int)correct, (int)testTotal));
         }
 
         setGradeResultLetter();
 
     }
 
-
-    public static Grade findGradeByGradeId(int gradeId) {
-        return mathHelperDBClient.searchGrades_gradeId(gradeId);
-
-    }
 
     public static String getLetterGrade(){
         return letterGrade;

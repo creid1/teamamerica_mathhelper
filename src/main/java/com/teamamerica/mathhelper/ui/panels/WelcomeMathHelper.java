@@ -26,7 +26,7 @@ public class WelcomeMathHelper extends JFrame {
     private JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
-    private ImageLabel lblWelcomeBackImage, lblSchoolImage;
+    private ImageLabel lblSelectGrade;
 
     public WelcomeMathHelper() {
         initComponents();
@@ -55,8 +55,7 @@ public class WelcomeMathHelper extends JFrame {
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
         btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
 
-        lblWelcomeBackImage = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_childrenSchool.jpg"), 290, 174);
-        lblSchoolImage = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_elementary.jpg"), 224, 134);
+        lblSelectGrade = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_sgradefinal.gif"), 300, 300);
 
         jPanel1.setLayout(null);
 
@@ -138,10 +137,9 @@ public class WelcomeMathHelper extends JFrame {
         jPanel1.add(btn3);
 
         lblWelcomeTitle.setFont(new Font("Comic Sans MS", 0, 60)); // NOI18N
-        jPanel1.add(lblWelcomeBackImage);
         lblWelcomeTitle.setText("Welcome To The Math Helper");
         jPanel1.add(lblWelcomeTitle);
-        jPanel1.add(lblSchoolImage);
+        jPanel1.add(lblSelectGrade);
 
         btnHelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,8 +155,7 @@ public class WelcomeMathHelper extends JFrame {
         });
 
         lblWelcomeTitle.setBounds(75, 10, 1000, 100);
-        lblWelcomeBackImage.setBounds(500, 100, 290, 174);
-        lblSchoolImage.setBounds(175,120,224,134);
+        lblSelectGrade.setBounds(383, 150, 224, 134);
 
         btnnPreK.setBounds(75, 315, 250, 101);
         btnK.setBounds(375, 315, 250, 101);
