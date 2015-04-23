@@ -30,6 +30,8 @@ public class WelcomeMathHelper extends JFrame {
 
     public WelcomeMathHelper() {
         initComponents();
+        AudioListener.runAudioListener("watever.wav");
+
     }
 
 
@@ -194,6 +196,8 @@ public class WelcomeMathHelper extends JFrame {
         Object source = evt.getSource();
         if (source == btn2) {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.SECOND);
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
             new MainMenu().setVisible(true);
             this.dispose();
         }
@@ -203,6 +207,8 @@ public class WelcomeMathHelper extends JFrame {
         Object source = evt.getSource();
         if (source == btnnPreK) {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.PRE_K);
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
             new MainMenu().setVisible(true);
             this.dispose();
         }
@@ -210,8 +216,11 @@ public class WelcomeMathHelper extends JFrame {
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         Object source = evt.getSource();
+
         if (source == btn1) {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.FIRST);
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
 
             new MainMenu().setVisible(true);
             this.dispose();
@@ -220,9 +229,11 @@ public class WelcomeMathHelper extends JFrame {
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         Object source = evt.getSource();
+
         if (source == btn4) {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.FOURTH);
-
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
             new MainMenu().setVisible(true);
             this.dispose();
         }
@@ -232,8 +243,8 @@ public class WelcomeMathHelper extends JFrame {
         Object source = evt.getSource();
         if (source == btnK) {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.K);
-            System.out.println(UserInteractionsConfigurator.get_interactive_grade_level_enum());
-
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
             new MainMenu().setVisible(true);
             this.dispose();
         }
@@ -244,6 +255,8 @@ public class WelcomeMathHelper extends JFrame {
         if (source == btn3) {
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.THIRD);
             System.out.println(UserInteractionsConfigurator.get_interactive_grade_level_enum());
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
             new MainMenu().setVisible(true);
             this.dispose();
         }

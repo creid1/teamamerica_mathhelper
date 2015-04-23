@@ -40,6 +40,8 @@ public class Difficulty extends JFrame {
      */
     public Difficulty() {
         initComponents();
+        AudioListener.runAudioListener("watever.wav");
+
     }
 
     /**
@@ -188,6 +190,9 @@ public class Difficulty extends JFrame {
 
             UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.EASY);
             System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
+
             new Test().setVisible(true);
             this.dispose();
         }
@@ -199,6 +204,9 @@ public class Difficulty extends JFrame {
         if (source == btnMedium) {
             UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.MEDIUM);
             System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
+
             new Test().setVisible(true);
             this.dispose();
         }
@@ -209,6 +217,9 @@ public class Difficulty extends JFrame {
         if (source == btnHard) {
             UserInteractionsConfigurator.set_difficulty_level_enum(DifficultyLevel.HARD);
             System.out.println(UserInteractionsConfigurator.get_difficulty_level_str());
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
+
             new Test().setVisible(true);
             this.dispose();
         }
@@ -217,7 +228,9 @@ public class Difficulty extends JFrame {
 
     private void btnMainActionPerformed(ActionEvent evt) {
 
+        AudioListener.stopAudioListener();
         AudioListener.runAudioListener("SpeechOn.wav");
+
         new MainMenu().setVisible(true);
         this.dispose();
 
@@ -232,6 +245,10 @@ public class Difficulty extends JFrame {
             UserInteractionsConfigurator.set_main_menu_selection_enum(null);
             UserInteractionsConfigurator.set_interactive_grade_level_enum(null);
             UserInteractionsConfigurator.set_interactive_user(null);
+
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
+
             this.setVisible(false);
             new LogIn().setVisible(true);
 
@@ -240,8 +257,8 @@ public class Difficulty extends JFrame {
 
 
     private void btnHelpActionPerformed(ActionEvent evt) {
-
         AudioListener.runAudioListener("SpeechOn.wav");
+
 
 
     }

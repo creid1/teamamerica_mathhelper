@@ -61,6 +61,8 @@ public class PracticeTest extends JFrame {
         listOfButtons.add(btnD);
 
         correctAnswer = btnA;
+        AudioListener.runAudioListener("watever.wav");
+
 
     }
 
@@ -271,6 +273,7 @@ public class PracticeTest extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTestsActionPerformed(ActionEvent evt) {
+        AudioListener.stopAudioListener();
         AudioListener.runAudioListener("SpeechOn.wav");
 
         this.dispose();
@@ -285,11 +288,13 @@ public class PracticeTest extends JFrame {
     }
 
     private void btnLearnNowActionPerformed(ActionEvent evt) {
+        AudioListener.stopAudioListener();
         AudioListener.runAudioListener("SpeechOn.wav");
 
         if (evt.getSource().equals(btnLearnNow)) {
 
             TutorialsPageConfigurator.loadTutorialsList();
+
             this.dispose();
             new YouTubeFrame(TutorialsPageConfigurator.getTutorial().getTutorial()).setVisible(true);
         }
@@ -299,7 +304,9 @@ public class PracticeTest extends JFrame {
         // TODO add your handling code here:
 
         if (evt.getSource() == btnHome) {
+            AudioListener.stopAudioListener();
             AudioListener.runAudioListener("SpeechOn.wav");
+
             new MainMenu().setVisible(true);
             this.dispose();
         }
@@ -316,6 +323,8 @@ public class PracticeTest extends JFrame {
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
+        AudioListener.runAudioListener("SpeechOn.wav");
+
         btnNext.setVisible(false);
         question = QuestionsPageConfigurator.getQuestion();
         System.out.println(question.getQuestion());

@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 public class MainMenu extends JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private ImageButton btnHelp,btnHints, btnPractice;
+    private ImageButton btnHelp, btnHints, btnPractice;
     private ImageButton btnLearn;
     private ImageButton btnTest;
     private ImageButton btnSchoolsOut;
@@ -30,7 +30,9 @@ public class MainMenu extends JFrame {
 
 
     public MainMenu() {
-      initComponents();
+        initComponents();
+        AudioListener.runAudioListener("watever.wav");
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -44,8 +46,8 @@ public class MainMenu extends JFrame {
         btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
 
-        btnTest =  new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_schoolTest.gif"), 300, 300);
-        btnPractice = new ImageButton(true,ConfigDirectory.getImageFileFromDirectory("panels_possPract2.gif"),400,400);
+        btnTest = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_schoolTest.gif"), 300, 300);
+        btnPractice = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_possPract2.gif"), 400, 400);
         btnLearn = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_teacherTutorial.gif"), 300, 300);
         lblHome = new JLabel();
         lblTest = new JLabel();
@@ -56,7 +58,7 @@ public class MainMenu extends JFrame {
         setResizable(false);
 
         btnLearn.setBounds(10, 175, 300, 300);
-        btnPractice.setBounds(275,175,400,400);
+        btnPractice.setBounds(275, 175, 400, 400);
         btnTest.setBounds(650, 175, 300, 300);
 
         lblLearn.setBounds(40, 475, 230, 34);
@@ -76,7 +78,7 @@ public class MainMenu extends JFrame {
         jPanel1.add(lblPractice);
 
         jPanel1.add(btnPractice);
-          btnSchoolsOut.addActionListener(new java.awt.event.ActionListener() {
+        btnSchoolsOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSchoolsOutActionPerformed(evt);
             }
@@ -100,13 +102,13 @@ public class MainMenu extends JFrame {
         });
         jPanel1.add(btnHints);
         btnHints.setBounds(850, 575, 150, 101);
-       btnTest.addActionListener(new java.awt.event.ActionListener() {
-           public void actionPerformed(java.awt.event.ActionEvent evt) {
-               btnTestActionPerformed(evt);
-           }
-       });
+        btnTest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTestActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnTest);
-       btnLearn.addActionListener(new java.awt.event.ActionListener() {
+        btnLearn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLearnActionPerformed(evt);
             }
@@ -133,17 +135,16 @@ public class MainMenu extends JFrame {
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
 
 
     private void btnHintsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -161,11 +162,17 @@ public class MainMenu extends JFrame {
         if (source == btnPractice) {
             if (UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.K) ||
                     UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.PRE_K)) {
+                AudioListener.stopAudioListener();
+                AudioListener.runAudioListener("SpeechOn.wav");
+
                 new CategoriesMain().setVisible(true);
-                this.setVisible(false);
+                this.dispose();
             } else {
+                AudioListener.stopAudioListener();
+                AudioListener.runAudioListener("SpeechOn.wav");
+
                 new PracticeTest().setVisible(true);
-                this.setVisible(false);
+                this.dispose();
             }
         }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -177,11 +184,17 @@ public class MainMenu extends JFrame {
             if (UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.K) ||
                     UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.PRE_K)) {
                 UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.TUTORIALS);
+                AudioListener.stopAudioListener();
+                AudioListener.runAudioListener("SpeechOn.wav");
+
                 new CategoriesMain().setVisible(true);
-                this.setVisible(false);
+                this.dispose();
             } else {
                 TutorialsPageConfigurator.loadTutorialsList();
-                //  this.setVisible(false);
+                AudioListener.stopAudioListener();
+                AudioListener.runAudioListener("SpeechOn.wav");
+
+                //  this.dispose();
                 this.dispose();
                 new YouTubeFrame(TutorialsPageConfigurator.getTutorial().getTutorial()).setVisible(true);
             }
@@ -195,11 +208,17 @@ public class MainMenu extends JFrame {
             System.out.println(UserInteractionsConfigurator.get_main_menu_selection_str());
             if (UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.K) ||
                     UserInteractionsConfigurator.get_interactive_grade_level_enum().equals(GradeLevel.PRE_K)) {
+                AudioListener.stopAudioListener();
+                AudioListener.runAudioListener("SpeechOn.wav");
+
                 new CategoriesMain().setVisible(true);
-                this.setVisible(false);
+                this.dispose();
             } else {
+                AudioListener.stopAudioListener();
+                AudioListener.runAudioListener("SpeechOn.wav");
+
                 new Difficulty().setVisible(true);
-                this.setVisible(false);
+                this.dispose();
             }
         }
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -211,6 +230,7 @@ public class MainMenu extends JFrame {
 
 
     }
+
     private void btnSchoolsOutActionPerformed(ActionEvent evt) {
 
         if (evt.getSource() == btnSchoolsOut) {
@@ -220,35 +240,15 @@ public class MainMenu extends JFrame {
             UserInteractionsConfigurator.set_main_menu_selection_enum(null);
             UserInteractionsConfigurator.set_interactive_grade_level_enum(null);
             UserInteractionsConfigurator.set_interactive_user(null);
-            this.dispose();
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
+
             new LogIn().setVisible(true);
+            this.dispose();
 
         }
     }
 
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       Object source = evt.getSource();
-       if(source == btnLearn){
-
-          this.dispose();
-       }
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       Object source = evt.getSource();
-       if(source == btnTest){
-          this.dispose();
-       }
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_jButton5ActionPerformed
 
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -276,7 +276,7 @@ public class MainMenu extends JFrame {
         //</editor-fold>
 
         java.awt.EventQueue.invokeLater(new Runnable() {
-        public void run() {
+            public void run() {
                 new MainMenu().setVisible(true);
             }
         });

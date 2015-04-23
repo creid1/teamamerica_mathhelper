@@ -40,6 +40,8 @@ public class CategoriesMain extends JFrame {
 
     public CategoriesMain() {
         initComponents();
+        AudioListener.runAudioListener("watever.wav");
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -237,6 +239,7 @@ public class CategoriesMain extends JFrame {
 
     private void btnMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        AudioListener.stopAudioListener();
 
         AudioListener.runAudioListener("SpeechOn.wav");
 
@@ -245,6 +248,10 @@ public class CategoriesMain extends JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void btnSchoolsOutActionPerformed(ActionEvent evt) {
+        AudioListener.stopAudioListener();
+
+        AudioListener.runAudioListener("SpeechOn.wav");
+
 
         if (evt.getSource() == btnSchoolsOut) {
             UserInteractionsConfigurator.set_difficulty_level_enum(null);
@@ -261,21 +268,31 @@ public class CategoriesMain extends JFrame {
 
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        AudioListener.stopAudioListener();
+
         AudioListener.runAudioListener("SpeechOn.wav");
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void checkForMenuSelectionType() {
+        AudioListener.stopAudioListener();
+        AudioListener.runAudioListener("SpeechOn.wav");
+
         if (UserInteractionsConfigurator.getMain_menu_selection_enum().equals(MainMenuSelection.TESTS)) {
+
             new Difficulty().setVisible(true);
             this.dispose();
         }
         if (UserInteractionsConfigurator.getMain_menu_selection_enum().equals(MainMenuSelection.PRACTICE)) {
+            AudioListener.stopAudioListener();
+
             new PracticeTest().setVisible(true);
             this.dispose();
         }
         if (UserInteractionsConfigurator.getMain_menu_selection_enum().equals(MainMenuSelection.TUTORIALS)) {
             TutorialsPageConfigurator.loadTutorialsList();
+            AudioListener.stopAudioListener();
+
             //  this.dispose();
             this.dispose();
             new YouTubeFrame(TutorialsPageConfigurator.getTutorial().getTutorial()).setVisible(true);

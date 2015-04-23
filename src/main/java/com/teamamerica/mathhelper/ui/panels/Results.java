@@ -33,6 +33,7 @@ public class Results extends JFrame {
 
         initComponents();
         displayGradeResults();
+        AudioListener.runAudioListener("watever.wav");
 
 
     }
@@ -66,26 +67,25 @@ public class Results extends JFrame {
         } else if (letterGrade.equals("C+")) {
             lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Aplus.png"));
 
-        }   else if(letterGrade.equals("C")){
+        } else if (letterGrade.equals("C")) {
             lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Aplus.png"));
 
-        }else if (letterGrade.equals("C-")){
+        } else if (letterGrade.equals("C-")) {
             lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Aplus.png"));
 
-        }else if(letterGrade.equals("D+")){
+        } else if (letterGrade.equals("D+")) {
             lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.jpg"));
 
-        }   else if(letterGrade.equals("D")){
+        } else if (letterGrade.equals("D")) {
             lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.jpg"));
 
-        }else if (letterGrade.equals("D-")){
+        } else if (letterGrade.equals("D-")) {
             lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.jpg"));
 
-        }else if(letterGrade.equals("F")){
+        } else if (letterGrade.equals("F")) {
             lblResultsImage.changeLabelImage(true, ConfigDirectory.getImageFileFromDirectory("panels_Bplus.jpg"));
 
-        }
-        else {
+        } else {
 
             //do nothing this doesn't occur
         }
@@ -219,7 +219,9 @@ public class Results extends JFrame {
     private void btnMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
 
+        AudioListener.stopAudioListener();
         AudioListener.runAudioListener("SpeechOn.wav");
+
 
         new MainMenu().setVisible(true);
         this.dispose();
@@ -235,6 +237,10 @@ public class Results extends JFrame {
             UserInteractionsConfigurator.set_main_menu_selection_enum(null);
             UserInteractionsConfigurator.set_interactive_grade_level_enum(null);
             UserInteractionsConfigurator.set_interactive_user(null);
+
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
+
             this.dispose();
             new LogIn().setVisible(true);
 

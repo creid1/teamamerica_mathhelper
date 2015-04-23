@@ -64,6 +64,8 @@ public class Test extends JFrame {
         listOfButtons.add(btnD);
 
         correctAnswer = btnA;
+        AudioListener.runAudioListener("watever.wav");
+
 
     }
 
@@ -280,12 +282,13 @@ public class Test extends JFrame {
 
     private void btnMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-
+        AudioListener.stopAudioListener();
         AudioListener.runAudioListener("SpeechOn.wav");
+
         int userInput = JOptionPane.showConfirmDialog(
                 null, "Are you sure you want to exit the test?", "Test Exit?", JOptionPane.YES_NO_OPTION);
         if (userInput == 0) {
-            new MainMenu().setVisible(true);
+             new MainMenu().setVisible(true);
             this.setVisible(false);
         } else {
 
@@ -308,6 +311,9 @@ public class Test extends JFrame {
         if (testQuestionCounter >= questionsMax) {
 
             GradeConfigurator.calculateGradeAndSubmit(correct, questionsMax);
+            AudioListener.stopAudioListener();
+            AudioListener.runAudioListener("SpeechOn.wav");
+
             new Results().setVisible(true);
             this.dispose();
 

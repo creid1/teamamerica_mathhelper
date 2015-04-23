@@ -13,11 +13,13 @@ import java.util.logging.Logger;
  */
 public class AudioListener {
 
+    private static AudioInputStream stream;
+    private static AudioFormat format;
+    private static DataLine.Info info;
+    private static Clip clip;
+
     public static void runAudioListener(String file) {
-        AudioInputStream stream;
-        AudioFormat format;
-        DataLine.Info info;
-        Clip clip;
+
 
         String relativeFilePath = ConfigDirectory.getAudioFileFromDirectory(file);
         System.out.println("relative filepath: " + relativeFilePath);
@@ -36,5 +38,9 @@ public class AudioListener {
         } catch (LineUnavailableException ex) {
             Logger.getLogger(AudioListener.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public static void stopAudioListener(){
+        clip.stop();
     }
 }

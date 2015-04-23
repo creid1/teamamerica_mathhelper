@@ -41,6 +41,7 @@ public class LogIn extends JFrame {
         this.mathHelperDBClient = new MathHelperDBClient();
 
         initComponents();
+        AudioListener.runAudioListener("watever.wav");
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -155,10 +156,12 @@ public class LogIn extends JFrame {
         if (mathHelperDBClient.validate_user_login(username, password)) {
             UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username(username));
             if(UserInteractionsConfigurator.get_interactive_user().getRole().equalsIgnoreCase(("A"))){
+                AudioListener.stopAudioListener();
                 new MathHelperAdmin().setVisible(true);
                 new HelpDeskAdminHints().setVisible(true);
                 this.dispose();
             }else {
+                AudioListener.stopAudioListener();
                 new WelcomeMathHelper().setVisible(true);
                 new HelpDeskHints().setVisible(true);
                 this.dispose();
