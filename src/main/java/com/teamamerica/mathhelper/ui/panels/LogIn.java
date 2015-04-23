@@ -153,18 +153,18 @@ public class LogIn extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        AudioListener.stopAudioListener();
+        AudioListener.runAudioListener("SpeechOn.wav");
         String username = txtUserName.getText();
         String password = new String(jPasswordField.getPassword());
         if (mathHelperDBClient.validate_user_login(username, password)) {
+            this.dispose();
             UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username(username));
             if(UserInteractionsConfigurator.get_interactive_user().getRole().equalsIgnoreCase(("A"))){
-                AudioListener.stopAudioListener();
-                this.dispose();
                 new MathHelperAdmin().setVisible(true);
                 new HelpDeskAdminHints().setVisible(true);
 
             }else {
-                AudioListener.stopAudioListener();
                 this.dispose();
                 new WelcomeMathHelper().setVisible(true);
                 new HelpDeskHints().setVisible(true);
