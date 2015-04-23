@@ -279,7 +279,7 @@ public class sqlMathHelperCreateDBScript {
                     "role TEXT NOT NULL, " +
                     "PRIMARY KEY(user_id));";
             stmt.execute(sql);
-            String[] users = {"testUser1", "testUser2", "creid", "billybob", "inielsen", "cousensb", "jsharma0223"};
+            String[] users = {"swalker", "testUser2", "creid", "billybob", "inielsen", "cousensb", "jsharma0223"};
             String[] role = {"S_creid", "S_creid", "A", "S_jsharma0223", "A", "A", "A"};
             for (int i = 0; i < users.length; i++) {
                 sql = "INSERT INTO users (username,password,first_name,last_name,security_question,security_answer,role)" +

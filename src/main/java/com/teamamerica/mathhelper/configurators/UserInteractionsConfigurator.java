@@ -20,6 +20,8 @@ public class UserInteractionsConfigurator {
     private static CategoryType category_type = null;
     private static DifficultyLevel difficulty_level = null;
 
+    public static boolean playLoginScript = true;
+
     public static void set_interactive_user(User user){
         interactive_user = user;
     }

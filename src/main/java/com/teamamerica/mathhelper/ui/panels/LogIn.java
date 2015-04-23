@@ -41,7 +41,9 @@ public class LogIn extends JFrame {
         this.mathHelperDBClient = new MathHelperDBClient();
 
         initComponents();
-        AudioListener.runAudioListener("watever.wav");
+        if(UserInteractionsConfigurator.playLoginScript) {
+            AudioListener.runAudioListener("watever.wav");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
