@@ -111,7 +111,7 @@ public class Results extends JFrame {
         btnSchoolsOut.setToolTipText("Schools Out!");
         btnHelp.setToolTipText("I Need Help!");
         btnHints.setToolTipText("HelpDesk Hints!");
-        btnPrint.setToolTipText("Print!");
+        btnPrint.setToolTipText("Print Me!");
 
 
         lblResultsImage = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_Aplus.png"), 306, 350);

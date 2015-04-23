@@ -132,7 +132,7 @@ public class HelpDeskHints extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == btnINeedHelp) {
-                    AudioListener.runAudioListener("SpeechOn.wav");
+                    AudioListener.runAudioListener("HelpButton.wav");
                 }
             }
         });
@@ -141,7 +141,7 @@ public class HelpDeskHints extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == btnHints) {
-                    AudioListener.runAudioListener("SpeechOn.wav");
+                    AudioListener.runAudioListener("Helpdeskhints.wav");
                 }
             }
         });
@@ -150,7 +150,7 @@ public class HelpDeskHints extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == btnSchoolsOut) {
-                    AudioListener.runAudioListener("SpeechOn.wav");
+                    AudioListener.runAudioListener("Schoolsout.wav");
                 }
             }
         });
@@ -168,7 +168,7 @@ public class HelpDeskHints extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == btnHome) {
-                    AudioListener.runAudioListener("SpeechOn.wav");
+                    AudioListener.runAudioListener("Homebutton.wav");
                 }
             }
         });
@@ -177,7 +177,7 @@ public class HelpDeskHints extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == btnLetMeTry) {
-                    AudioListener.runAudioListener("SpeechOn.wav");
+                    AudioListener.runAudioListener("Letmetry.wav");
                 }
             }
         });
@@ -186,7 +186,7 @@ public class HelpDeskHints extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == btnNext) {
-                    AudioListener.runAudioListener("SpeechOn.wav");
+                    AudioListener.runAudioListener("Nextbutton.wav");
                 }
             }
         });
@@ -205,7 +205,7 @@ public class HelpDeskHints extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == btnLearnNow) {
-                    AudioListener.runAudioListener("SpeechOn.wav");
+                    AudioListener.runAudioListener("Learnnow.wav");
                 }
             }
         });
@@ -214,7 +214,7 @@ public class HelpDeskHints extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == btnPencilReady) {
-                    AudioListener.runAudioListener("SpeechOn.wav");
+                    AudioListener.runAudioListener("Pencilsready.wav");
                 }
             }
         });
@@ -223,7 +223,7 @@ public class HelpDeskHints extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == btnPrint) {
-                    AudioListener.runAudioListener("SpeechOn.wav");
+                    AudioListener.runAudioListener("Printme.wav");
                 }
             }
         });
