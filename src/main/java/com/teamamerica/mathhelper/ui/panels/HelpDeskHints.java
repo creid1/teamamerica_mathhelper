@@ -64,6 +64,21 @@ public class HelpDeskHints extends JFrame {
 
         btnBus = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_bus6.gif"), 150, 113);
 
+
+        btnHome.setToolTipText("Home!");
+        btnSchoolsOut.setToolTipText("Schools Out!");
+        btnINeedHelp.setToolTipText("I Need Help!");
+        btnHints.setToolTipText("HelpDesk Hints!");
+        btnNext.setToolTipText("Next!");
+        btnPencilReady.setToolTipText("Pencils Ready!");
+        btnLearnNow.setToolTipText("Learn Now!");
+        btnLetMeTry.setToolTipText("Let Me Try!");
+        btnPrint.setToolTipText("Print!");
+        btnBus.setToolTipText("Close HelpDesk Hints!");
+
+
+
+
         lblHints = new JLabel("HelpDesk Hints!");
         lblHome = new JLabel("Home!");
         lblINeedHelp = new JLabel("I Need Help!");

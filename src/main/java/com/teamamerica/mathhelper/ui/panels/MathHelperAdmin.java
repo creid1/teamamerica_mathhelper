@@ -115,6 +115,16 @@ public class MathHelperAdmin extends JFrame {
             }
         });
 
+        btnSchoolsOut.setToolTipText("Schools Out!");
+        btnHelp.setToolTipText("I Need Help!");
+        btnHints.setToolTipText("HelpDesk Hints!");
+
+        btnUpdateMathHelper.setToolTipText("Update MathHelper!");
+        btnFindMathHelpers.setToolTipText("Find MathHelpers!");
+        btnNewMathHelper.setToolTipText("NewMathHelper!");
+        btnTeacherZone.setToolTipText("Admin Account!");
+
+
 
         btnHints.setBounds(850, 575, 150, 101);
         btnUpdateMathHelper.setBounds(750, 150, 175, 175);

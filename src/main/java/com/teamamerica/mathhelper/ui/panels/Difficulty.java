@@ -64,6 +64,10 @@ public class Difficulty extends JFrame {
         lblHard = new JLabel();
         lblMedium = new JLabel();
 
+        btnEasy.setToolTipText("Easy!");
+        btnMedium.setToolTipText("Medium!");
+        btnHard.setToolTipText("Hard!");
+
         lblSelectDifficulty = new JLabel();
         lblDifficulyMain = new JLabel();
 
@@ -167,6 +171,13 @@ public class Difficulty extends JFrame {
         lblMedium.setToolTipText("");
         lblMedium.setPreferredSize(new java.awt.Dimension(1000, 400));
         jPanel1.add(lblMedium);
+
+
+        btnMain.setToolTipText("Home!");
+        btnSchoolsOut.setToolTipText("Schools Out!");
+        btnHelp.setToolTipText("I Need Help!");
+        btnHints.setToolTipText("HelpDesk Hints!");
+
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

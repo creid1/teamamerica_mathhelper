@@ -53,6 +53,17 @@ public class MainMenu extends JFrame {
         lblTest = new JLabel();
         lblPractice = new JLabel();
 
+
+        btnSchoolsOut.setToolTipText("Schools Out!");
+        btnHelp.setToolTipText("I Need Help!");
+        btnHints.setToolTipText("HelpDesk Hints!");
+
+
+        btnLearn.setToolTipText("Learn a New Subject!");
+        btnPractice.setToolTipText("Practice Makes Perfect!");
+        btnTest.setToolTipText("Test Your Knowledge!");
+
+
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setResizable(false);
@@ -70,7 +81,7 @@ public class MainMenu extends JFrame {
         jPanel1.setLayout(null);
 
         lblLearn.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        lblLearn.setText("Learn a new subject!");
+        lblLearn.setText("Learn a New Subject!");
         jPanel1.add(lblLearn);
 
         lblPractice.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
@@ -129,7 +140,7 @@ public class MainMenu extends JFrame {
 
         lblTest.setBackground(new java.awt.Color(255, 255, 255));
         lblTest.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        lblTest.setText("Test your knowledge!");
+        lblTest.setText("Test Your Knowledge!");
         jPanel1.add(lblTest);
 
         GroupLayout layout = new GroupLayout(getContentPane());

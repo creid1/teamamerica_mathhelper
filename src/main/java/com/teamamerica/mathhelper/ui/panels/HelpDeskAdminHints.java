@@ -53,12 +53,14 @@ public class HelpDeskAdminHints extends JFrame {
         btnFindMathHelpers = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_generateStudentsAdmin.png"), 95, 95);
         btnNewMathHelper = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_welcomeAdmin.jpg"), 95, 95);
 
-        btnTeacherZone = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_teacherZoneAdmin.jpg"),111,95);
+        btnTeacherZone = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_teacherZoneAdmin.jpg"), 111, 95);
         btnExit = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_bookWorm.gif"), 175, 150);
 
         btnSubmit = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_teacherNotesAdmin.jpg"), 148, 95);
         btnDelete = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_pencilErasing.gif"), 90, 89);
         btnBus = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_bus6.gif"), 150, 113);
+        btnBus.setToolTipText("Close HelpDesk Hints!");
+
 
         lblUpdateMathHelper = new JLabel("Update MathHelper!");
         lblExit = new JLabel("Exit!");
@@ -86,7 +88,6 @@ public class HelpDeskAdminHints extends JFrame {
         jPanel1.add(lblDelete);
 
 
-
         jPanel1.add(lblExit);
         jPanel1.add(lblSubmit);
 
@@ -94,7 +95,7 @@ public class HelpDeskAdminHints extends JFrame {
         lblAdminHints.setFont(new Font("Comic Sans MS", 0, 60)); // NOI18N
         lblAdminHints.setText("     HelpDesk");
         jPanel1.add(lblAdminHints);
-        lblAdminHints.setBounds(30, 10, 1000,90);
+        lblAdminHints.setBounds(30, 10, 1000, 90);
 
 
         JLabel lblAdminHints2 = new JLabel("   Admin Hints!");
@@ -106,7 +107,7 @@ public class HelpDeskAdminHints extends JFrame {
         btnUpdateMathHelper.setBounds(20, 215, 95, 95);
         btnNewMathHelper.setBounds(150, 215, 95, 95);
         btnFindMathHelpers.setBounds(252, 215, 95, 95);
-        btnTeacherZone.setBounds(370,215,111,95);
+        btnTeacherZone.setBounds(370, 215, 111, 95);
 
         lblUpdateMathHelper.setBounds(10, 275, 150, 101);
         lblUpdateMathHelper.setFont(new Font("Comic Sans MS", 1, 13)); // NOI18N
@@ -118,7 +119,7 @@ public class HelpDeskAdminHints extends JFrame {
         lblFindMathHelpers.setFont(new Font("Comic Sans MS", 1, 13)); // NOI18N
 
         lblTeacherZone.setFont(new Font("Comic Sans MS", 1, 13)); // NOI18N
-        lblTeacherZone.setBounds(390,275,150,101);
+        lblTeacherZone.setBounds(390, 275, 150, 101);
 
         btnExit.setBounds(10, 350, 175, 150);
         btnDelete.setBounds(185, 400, 90, 89);

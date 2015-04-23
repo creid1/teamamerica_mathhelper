@@ -142,6 +142,12 @@ public class YouTubeFrame extends JFrame {
         btnHints.setBounds(10, 700, 150, 101);
         btnNext.setBounds(820, 10, 150, 101);
 
+        btnMain.setToolTipText("Home!");
+        btnPractice.setToolTipText("Let Me Try!");
+        btnHelp.setToolTipText("I Need Help!");
+        btnHints.setToolTipText("HelpDesk Hints!");
+        btnNext.setToolTipText("Next!");
+
 
         pnButtons.add(btnMain);
         pnButtons.add(btnHelp);

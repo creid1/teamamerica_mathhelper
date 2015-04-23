@@ -61,11 +61,23 @@ public class CategoriesMain extends JFrame {
         btnMeasure = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_measure.jpg"), 76, 150);
         btnShapes = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_shapes2.png"), 150, 150);
 
+        btnMoney.setToolTipText("Money!");
+        btnAddition.setToolTipText("Addition!");
+        btnTime.setToolTipText("Time!");
+        btnMeasure.setToolTipText("Measure!");
+        btnShapes.setToolTipText("Shapes!");
+        btnSubtraction.setToolTipText("Subtraction!");
+
 
         btnMain = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_home.png"), 150, 125);
         btnSchoolsOut = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_kidsSchoolBus.gif"), 300, 101);
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
         btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
+
+        btnMain.setToolTipText("Home!");
+        btnSchoolsOut.setToolTipText("Schools Out!");
+        btnHelp.setToolTipText("I Need Help!");
+        btnHints.setToolTipText("HelpDesk Hints!");
 
         lblSelectCategory = new JLabel();
         lblCategoriesMain = new JLabel();

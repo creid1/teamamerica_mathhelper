@@ -82,10 +82,20 @@ public class PracticeTest extends JFrame {
         btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
 
+        btnHome.setToolTipText("Home!");
+        btnHelp.setToolTipText("I Need Help!");
+        btnHints.setToolTipText("HelpDesk Hints!");
+
         btnA = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(), question.getHas_answer_image()), 150, 150);
         btnB = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_1(), question.getHas_answer_image()), 150, 150);
         btnC = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_2(), question.getHas_answer_image()), 150, 150);
         btnD = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_3(), question.getHas_answer_image()), 150, 150);
+
+        btnA.setToolTipText("Is this correct?");
+        btnB.setToolTipText("Is this correct?");
+        btnC.setToolTipText("Is this correct?");
+        btnD.setToolTipText("Is this correct?");
+
 
         lblQuestionCounter = new JLabel();
         lblAnswer = new ImageLabel(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(), question.getHas_answer_image()), 150, 150);
@@ -95,6 +105,9 @@ public class PracticeTest extends JFrame {
         btnPencilReady = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_psharpener.png"), 150, 113);
 
         btnLearnNow = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_videoTutorial.jpg"), 150, 113);
+        btnLearnNow.setToolTipText("Learn Now!");
+        btnPencilReady.setToolTipText("Pencils Ready!");
+        btnNext.setToolTipText("Next!");
 
         jPanel1.setBackground(new Color(255, 255, 255));
         jPanel1.setLayout(null);

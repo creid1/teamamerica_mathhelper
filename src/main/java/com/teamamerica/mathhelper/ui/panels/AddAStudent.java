@@ -108,6 +108,11 @@ public class AddAStudent extends JFrame {
         btnSubmit = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_teacherNotes.jpg"), 179, 115);
         btnDelete = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_pencilErasing.gif"), 90, 89);
         btnClose = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_bookWorm.gif"), 130, 150);
+
+        btnSubmit.setToolTipText("Submit MathHelper!");
+        btnDelete.setToolTipText("Delete MathHelper!");
+        btnClose.setToolTipText("Exit!");
+
         jPanel1.add(btnClose);
 
         jLabel1 = new JLabel();

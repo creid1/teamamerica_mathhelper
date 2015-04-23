@@ -18,7 +18,7 @@ public class WelcomeMathHelper extends JFrame {
     private JButton btn3;
     private ImageButton btnHelp, btnHints;
     private ImageButton btn2;
-    private ImageButton btnnPreK;
+    private ImageButton btnPreK;
     private ImageButton btn1;
     private ImageButton btn4;
     private ImageButton btnK;
@@ -48,14 +48,27 @@ public class WelcomeMathHelper extends JFrame {
         jPanel1.setBackground(Color.WHITE);
 
         btn2 = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_2gradefinal.gif"), 250, 101);
-        btnnPreK = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_prekfinal.gif"), 250, 101);
+        btnPreK = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_prekfinal.gif"), 250, 101);
         btn1 = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_1gradefinal.gif"), 250, 101);
         btn4 = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_4gradefinal.gif"), 250, 101);
         btnK = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_Kinderfinal.gif"), 250, 101);
         btn3 = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_3gradefinal.gif"), 250, 101);
 
+        btn2.setToolTipText("2nd Grade!");
+        btnPreK.setToolTipText("Pre-K!");
+        btn1.setToolTipText("1st Grade!");
+        btn3.setToolTipText("3rd Grade!");
+        btnK.setToolTipText("Kindergarten!");
+        btn4.setToolTipText("4th Grade!");
+
+
+
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
         btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
+
+        btnHelp.setToolTipText("I Need Help!");
+        btnHints.setToolTipText("HelpDesk Hints!");
+
 
         lblSelectGrade = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_sgradefinal.gif"), 300, 300);
 
@@ -82,16 +95,16 @@ public class WelcomeMathHelper extends JFrame {
         });
         jPanel1.add(btn2);
 
-        btnnPreK.setBackground(new java.awt.Color(102, 255, 102));
-        btnnPreK.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        btnnPreK.setText("Pre-K");
-        btnnPreK.setPreferredSize(new java.awt.Dimension(107, 35));
-        btnnPreK.addActionListener(new java.awt.event.ActionListener() {
+        btnPreK.setBackground(new java.awt.Color(102, 255, 102));
+        btnPreK.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnPreK.setText("Pre-K");
+        btnPreK.setPreferredSize(new java.awt.Dimension(107, 35));
+        btnPreK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPreKActionPerformed(evt);
             }
         });
-        jPanel1.add(btnnPreK);
+        jPanel1.add(btnPreK);
 
         btn1.setBackground(new java.awt.Color(255, 0, 0));
         btn1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -159,7 +172,7 @@ public class WelcomeMathHelper extends JFrame {
         lblWelcomeTitle.setBounds(75, 10, 1000, 100);
         lblSelectGrade.setBounds(383, 150, 224, 134);
 
-        btnnPreK.setBounds(75, 315, 250, 101);
+        btnPreK.setBounds(75, 315, 250, 101);
         btnK.setBounds(375, 315, 250, 101);
         btn1.setBounds(675, 315, 250, 101);
 
@@ -207,12 +220,12 @@ public class WelcomeMathHelper extends JFrame {
 
     private void btnPreKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         Object source = evt.getSource();
-        if (source == btnnPreK) {
+        if (source == btnPreK) {
             AudioListener.stopAudioListener();
             AudioListener.runAudioListener("SpeechOn.wav");
 
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.PRE_K);
-              this.dispose();
+            this.dispose();
             new MainMenu().setVisible(true);
 
         }
@@ -226,7 +239,7 @@ public class WelcomeMathHelper extends JFrame {
             AudioListener.runAudioListener("SpeechOn.wav");
 
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.FIRST);
-              this.dispose();
+            this.dispose();
             new MainMenu().setVisible(true);
 
         }
@@ -240,7 +253,7 @@ public class WelcomeMathHelper extends JFrame {
             AudioListener.runAudioListener("SpeechOn.wav");
 
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.FOURTH);
-           AudioListener.runAudioListener("SpeechOn.wav");
+            AudioListener.runAudioListener("SpeechOn.wav");
             this.dispose();
             new MainMenu().setVisible(true);
 

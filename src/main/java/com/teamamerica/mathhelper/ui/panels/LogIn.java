@@ -65,6 +65,11 @@ public class LogIn extends JFrame {
 
         btnTrojan = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_trojan.png"), 20, 20);
 
+        btnHelp.setToolTipText("I Need Help!");
+
+        btnSignIn.setToolTipText("Login to Math Helper!");
+
+
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBackground(Color.WHITE);
