@@ -107,12 +107,6 @@ public class Results extends JFrame {
         btnHelp = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_help.gif"), 150, 101);
         btnHints = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_helpDesk.png"), 150, 101);
 
-        btnMain.setToolTipText("Home!");
-        btnSchoolsOut.setToolTipText("Schools Out!");
-        btnHelp.setToolTipText("I Need Help!");
-        btnHints.setToolTipText("HelpDesk Hints!");
-        btnPrint.setToolTipText("Print Me!");
-
 
         lblResultsImage = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_Aplus.png"), 306, 350);
         btnPrint = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_print.png"), 113, 113);
@@ -120,6 +114,13 @@ public class Results extends JFrame {
         lblResults = new JLabel();
 
         txtResults = new JTextArea("");
+
+        btnMain.setToolTipText("Home!");
+        btnSchoolsOut.setToolTipText("Schools Out!");
+        btnHelp.setToolTipText("I Need Help!");
+        btnHints.setToolTipText("HelpDesk Hints!");
+        btnPrint.setToolTipText("Print Me!");
+
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);

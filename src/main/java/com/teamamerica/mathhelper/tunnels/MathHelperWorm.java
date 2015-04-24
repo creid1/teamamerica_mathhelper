@@ -188,7 +188,7 @@ public class MathHelperWorm {
             UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
-            UserInteractionsConfigurator.set_category_type_enum(CategoryType.TIME);
+            UserInteractionsConfigurator.set_category_type_enum(CategoryType.SETS);
             UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.TUTORIALS);
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.PRE_K);
 
@@ -211,7 +211,7 @@ public class MathHelperWorm {
             UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("swalker"));
             System.out.println("User logged in!");
             System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
-            UserInteractionsConfigurator.set_category_type_enum(CategoryType.TIME);
+            UserInteractionsConfigurator.set_category_type_enum(CategoryType.SETS);
             UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.TUTORIALS);
             UserInteractionsConfigurator.set_interactive_grade_level_enum(GradeLevel.K);
 

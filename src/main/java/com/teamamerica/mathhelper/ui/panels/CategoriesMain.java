@@ -22,7 +22,7 @@ public class CategoriesMain extends JFrame {
     private ImageButton btnMoney;
     private ImageButton btnAddition;
     private ImageButton btnSubtraction;
-    private ImageButton btnTime;
+    private ImageButton btnSets;
     private ImageButton btnMeasure;
     private ImageButton btnShapes;
 
@@ -35,7 +35,7 @@ public class CategoriesMain extends JFrame {
     private ImageButton btnHelp;
     private ImageButton btnSchoolsOut;
 
-    private JLabel lblMoney, lblAddition, lblSubtraction, lblTime, lblMeasure, lblShapes;
+    private JLabel lblMoney, lblAddition, lblSubtraction, lblSets, lblMeasure, lblShapes;
     // End of variables declaration//GEN-END:variables
 
     public CategoriesMain() {
@@ -57,13 +57,13 @@ public class CategoriesMain extends JFrame {
         btnMoney = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_money.jpg"), 105, 150);
         btnAddition = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_additionFace2.jpg"), 141, 150);
         btnSubtraction = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_subtraction1.jpg"), 220, 148);
-        btnTime = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_clock.jpg"), 130, 150);
+        btnSets = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_Sets1.jpg"), 208, 130);
         btnMeasure = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_measure.jpg"), 76, 150);
         btnShapes = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_shapes2.png"), 150, 150);
 
         btnMoney.setToolTipText("Money!");
         btnAddition.setToolTipText("Addition!");
-        btnTime.setToolTipText("Time!");
+        btnSets.setToolTipText("Time!");
         btnMeasure.setToolTipText("Measure!");
         btnShapes.setToolTipText("Shapes!");
         btnSubtraction.setToolTipText("Subtraction!");
@@ -85,7 +85,7 @@ public class CategoriesMain extends JFrame {
         lblAddition = new JLabel();
         lblSubtraction = new JLabel();
         lblMoney = new JLabel();
-        lblTime = new JLabel();
+        lblSets = new JLabel();
         lblMeasure = new JLabel();
         lblShapes = new JLabel();
 
@@ -130,16 +130,16 @@ public class CategoriesMain extends JFrame {
         btnAddition.setBounds(150, 170, 141, 150);
         btnSubtraction.setBounds(100, 375, 220, 148);
 
-        btnTime.setBounds(445, 175, 130, 150);
+        btnSets.setBounds(400, 180, 208, 130);
         btnMoney.setBounds(450, 375, 105, 150);
 
         btnMeasure.setBounds(725, 170, 76, 150);
         btnShapes.setBounds(680, 375, 150, 150);
 
-        lblAddition.setBounds(165, 330, 1000, 30);
+        lblAddition.setBounds(165, 325, 1000, 30);
         lblSubtraction.setBounds(140, 525, 1000, 30);
 
-        lblTime.setBounds(475, 300, 1000, 90);
+        lblSets.setBounds(475, 290, 1000, 90);
         lblMoney.setBounds(465, 525, 1000, 30);
 
         lblMeasure.setBounds(710, 320, 1000, 30);
@@ -165,12 +165,12 @@ public class CategoriesMain extends JFrame {
             }
         });
         jPanel1.add(btnSubtraction);
-        btnTime.addActionListener(new java.awt.event.ActionListener() {
+        btnSets.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTimeActionPerformed(evt);
+                btnSetsActionPerformed(evt);
             }
         });
-        jPanel1.add(btnTime);
+        jPanel1.add(btnSets);
         btnMeasure.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMeasureActionPerformed(evt);
@@ -206,9 +206,9 @@ public class CategoriesMain extends JFrame {
         jPanel1.add(lblSubtraction);
 
 
-        lblTime.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        lblTime.setText("Time!");
-        jPanel1.add(lblTime);
+        lblSets.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        lblSets.setText("Sets!");
+        jPanel1.add(lblSets);
 
 
         lblMeasure.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
@@ -338,12 +338,12 @@ public class CategoriesMain extends JFrame {
         }
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void btnTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        if (evt.getSource() == btnTime) {
+    private void btnSetsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        if (evt.getSource() == btnSets) {
             AudioListener.stopAudioListener();
             AudioListener.runAudioListener("SpeechOn.wav");
 
-            UserInteractionsConfigurator.set_category_type_enum(CategoryType.TIME);
+            UserInteractionsConfigurator.set_category_type_enum(CategoryType.SETS);
             System.out.println(UserInteractionsConfigurator.get_category_type_str());
             checkForMenuSelectionType();
 

@@ -5,7 +5,6 @@ import com.teamamerica.mathhelper.controllers.GradeLevel;
 import com.teamamerica.mathhelper.environment.ConfigDirectory;
 import com.teamamerica.mathhelper.ui.customcomponents.AudioListener;
 import com.teamamerica.mathhelper.ui.customcomponents.ImageButton;
-import com.teamamerica.mathhelper.ui.customcomponents.ImageLabel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -26,7 +25,7 @@ public class WelcomeMathHelper extends JFrame {
     private JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
-    private ImageLabel lblSelectGrade;
+    private JLabel lblSelectGrade;
 
     public WelcomeMathHelper() {
         initComponents();
@@ -70,7 +69,14 @@ public class WelcomeMathHelper extends JFrame {
         btnHints.setToolTipText("HelpDesk Hints!");
 
 
-        lblSelectGrade = new ImageLabel(true, ConfigDirectory.getImageFileFromDirectory("panels_sgradefinal.gif"), 300, 300);
+        lblSelectGrade = new JLabel();
+
+        lblSelectGrade.setFont(new java.awt.Font("Comic Sans MS", 1, 45)); // NOI18N
+        lblSelectGrade.setForeground(new java.awt.Color(51, 255, 51));
+        lblSelectGrade.setText("Select a Grade");
+        jPanel1.add(lblSelectGrade);
+        lblSelectGrade.setBounds(325, 125, 1000, 90);
+
 
         jPanel1.setLayout(null);
 
@@ -170,7 +176,6 @@ public class WelcomeMathHelper extends JFrame {
         });
 
         lblWelcomeTitle.setBounds(75, 10, 1000, 100);
-        lblSelectGrade.setBounds(383, 150, 224, 134);
 
         btnPreK.setBounds(75, 315, 250, 101);
         btnK.setBounds(375, 315, 250, 101);

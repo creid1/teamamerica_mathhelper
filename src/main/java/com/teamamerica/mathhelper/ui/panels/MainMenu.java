@@ -72,7 +72,7 @@ public class MainMenu extends JFrame {
         btnPractice.setBounds(275, 175, 400, 400);
         btnTest.setBounds(650, 175, 300, 300);
 
-        lblLearn.setBounds(40, 475, 230, 34);
+        lblLearn.setBounds(70, 475, 230, 34);
         lblPractice.setBounds(350, 475, 700, 34);
         lblTest.setBounds(675, 475, 240, 34);
 
@@ -80,11 +80,11 @@ public class MainMenu extends JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        lblLearn.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        lblLearn.setFont(new java.awt.Font("Comic Sans MS", 0, 22)); // NOI18N
         lblLearn.setText("Learn a New Subject!");
         jPanel1.add(lblLearn);
 
-        lblPractice.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        lblPractice.setFont(new java.awt.Font("Comic Sans MS", 0, 22)); // NOI18N
         lblPractice.setText("Practice Makes Perfect!");
         jPanel1.add(lblPractice);
 
@@ -139,7 +139,7 @@ public class MainMenu extends JFrame {
         lblHome.setBounds(150, 20, 1000, 120);
 
         lblTest.setBackground(new java.awt.Color(255, 255, 255));
-        lblTest.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        lblTest.setFont(new java.awt.Font("Comic Sans MS", 0, 22)); // NOI18N
         lblTest.setText("Test Your Knowledge!");
         jPanel1.add(lblTest);
 

@@ -20,10 +20,10 @@ public enum CategoryType {
         }
     },
 
-    TIME {
+    SETS {
         @Override
         public String toString() {
-            return "Time";
+            return "Sets";
         }
     },
     MONEY {
