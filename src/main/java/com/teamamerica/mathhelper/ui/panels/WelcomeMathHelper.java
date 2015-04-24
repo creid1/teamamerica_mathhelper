@@ -294,7 +294,10 @@ public class WelcomeMathHelper extends JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        AudioListener.stopAudioListener();
+        AudioListener.runAudioListener("SpeechOn.wav");
         AudioListener.runAudioListener("watever.wav");
+
 
     }//GEN-LAST:event_jButton3ActionPerformed
 

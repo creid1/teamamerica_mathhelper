@@ -63,9 +63,6 @@ public class Test extends JFrame {
         listOfButtons.add(btnC);
         listOfButtons.add(btnD);
         generateAnswerButtons();
-        AudioListener.runAudioListener("watever.wav");
-
-
     }
 
 
@@ -257,7 +254,10 @@ public class Test extends JFrame {
 
     private void btnHelpActionPerformed(ActionEvent evt) {
 
+        AudioListener.stopAudioListener();
         AudioListener.runAudioListener("SpeechOn.wav");
+        AudioListener.runAudioListener("watever.wav");
+
 
 
     }

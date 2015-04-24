@@ -148,8 +148,9 @@ public class MathHelperAdmin extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == btnHelp) {
+                    AudioListener.stopAudioListener();
                     AudioListener.runAudioListener("SpeechOn.wav");
-
+                    AudioListener.runAudioListener("watever.wav");
                 }
             }
         });

@@ -40,7 +40,6 @@ public class CategoriesMain extends JFrame {
 
     public CategoriesMain() {
         initComponents();
-        AudioListener.runAudioListener("watever.wav");
 
     }
 
@@ -279,7 +278,7 @@ public class CategoriesMain extends JFrame {
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         AudioListener.stopAudioListener();
-
+        AudioListener.runAudioListener("SpeechOn.wav");
         AudioListener.runAudioListener("watever.wav");
 
     }//GEN-LAST:event_jButton3ActionPerformed

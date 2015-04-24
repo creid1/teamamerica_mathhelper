@@ -40,7 +40,9 @@ public class AudioListener {
         }
     }
 
-    public static void stopAudioListener(){
-        clip.stop();
+    public static void stopAudioListener() {
+        if (clip != null) {
+            clip.stop();
+        }
     }
 }

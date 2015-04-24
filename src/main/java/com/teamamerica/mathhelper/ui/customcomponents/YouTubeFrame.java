@@ -51,8 +51,6 @@ public class YouTubeFrame extends JFrame {
         getJFlashPlayer(url);
         frame.getContentPane().add(webBrowserPanel, BorderLayout.CENTER);
 
-        AudioListener.runAudioListener("watever.wav");
-
         frame.setSize(new Dimension(1016, 736));
         frame.setLocation(0,0);
 
@@ -162,9 +160,8 @@ public class YouTubeFrame extends JFrame {
     private void btnPracticeActionPerformed(ActionEvent evt) {
         AudioListener.stopAudioListener();
         AudioListener.runAudioListener("SpeechOn.wav");
-
-        this.setVisible(false);
-            this.frame.setVisible(false);
+        this.dispose();
+        this.frame.dispose();
         UserInteractionsConfigurator.set_main_menu_selection_enum(MainMenuSelection.PRACTICE);
         new PracticeTest().setVisible(true);
 
@@ -174,8 +171,8 @@ public class YouTubeFrame extends JFrame {
     private void btnMainActionPerformed(ActionEvent evt) {
         AudioListener.stopAudioListener();
         AudioListener.runAudioListener("SpeechOn.wav");
-        this.setVisible(false);
-        this.frame.setVisible(false);
+        this.dispose();
+        this.frame.dispose();
 
         new MainMenu().setVisible(true);
 
@@ -183,7 +180,10 @@ public class YouTubeFrame extends JFrame {
 
 
     private void btnHelpActionPerformed(ActionEvent evt) {
+        AudioListener.stopAudioListener();
         AudioListener.runAudioListener("SpeechOn.wav");
+        AudioListener.runAudioListener("watever.wav");
+
 
     }
 

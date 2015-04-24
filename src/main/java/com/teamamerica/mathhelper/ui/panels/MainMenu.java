@@ -31,8 +31,6 @@ public class MainMenu extends JFrame {
 
     public MainMenu() {
         initComponents();
-        AudioListener.runAudioListener("watever.wav");
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -72,7 +70,7 @@ public class MainMenu extends JFrame {
         btnPractice.setBounds(275, 175, 400, 400);
         btnTest.setBounds(650, 175, 300, 300);
 
-        lblLearn.setBounds(70, 475, 230, 34);
+        lblLearn.setBounds(50, 475, 230, 34);
         lblPractice.setBounds(350, 475, 700, 34);
         lblTest.setBounds(675, 475, 240, 34);
 
@@ -236,8 +234,10 @@ public class MainMenu extends JFrame {
 
 
     private void btnHelpActionPerformed(ActionEvent evt) {
-
+        AudioListener.stopAudioListener();
         AudioListener.runAudioListener("SpeechOn.wav");
+        AudioListener.runAudioListener("watever.wav");
+
 
 
     }

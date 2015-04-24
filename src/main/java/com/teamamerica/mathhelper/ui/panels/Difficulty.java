@@ -40,7 +40,6 @@ public class Difficulty extends JFrame {
      */
     public Difficulty() {
         initComponents();
-        AudioListener.runAudioListener("watever.wav");
 
     }
 
@@ -266,7 +265,10 @@ public class Difficulty extends JFrame {
 
 
     private void btnHelpActionPerformed(ActionEvent evt) {
+        AudioListener.stopAudioListener();
+        AudioListener.runAudioListener("SpeechOn.wav");
         AudioListener.runAudioListener("watever.wav");
+
 
 
     }

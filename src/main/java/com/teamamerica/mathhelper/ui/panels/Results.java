@@ -24,6 +24,7 @@ public class Results extends JFrame {
     private JLabel lblResults;
     private JPanel jPanel1;
     private JTextArea txtResults;
+    private JScrollPane jScrollPane;
 
     private ImageButton btnPrint;
     private ImageLabel lblResultsImage;
@@ -33,9 +34,6 @@ public class Results extends JFrame {
 
         initComponents();
         displayGradeResults();
-        AudioListener.runAudioListener("watever.wav");
-
-
     }
 
     private void displayGradeResults() {
@@ -114,6 +112,7 @@ public class Results extends JFrame {
         lblResults = new JLabel();
 
         txtResults = new JTextArea("");
+        jScrollPane = new JScrollPane();
 
         btnMain.setToolTipText("Home!");
         btnSchoolsOut.setToolTipText("Schools Out!");
@@ -182,9 +181,10 @@ public class Results extends JFrame {
         txtResults.setRows(11);
         txtResults.setEditable(false);
         txtResults.setFont(new Font("Comic Sans MS", 0, 26));
+        jScrollPane.setViewportView(txtResults);
 
-        jPanel1.add(txtResults);
-        txtResults.setBounds(150, 130, 500, 420);
+        jPanel1.add(jScrollPane);
+        jScrollPane.setBounds(150, 130, 500, 450);
 
         jPanel1.add(lblResultsImage);
         btnMain.addActionListener(new java.awt.event.ActionListener() {
@@ -265,7 +265,10 @@ public class Results extends JFrame {
 
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        AudioListener.stopAudioListener();
         AudioListener.runAudioListener("SpeechOn.wav");
+        AudioListener.runAudioListener("watever.wav");
+
 
     }//GEN-LAST:event_jButton3ActionPerformed
 

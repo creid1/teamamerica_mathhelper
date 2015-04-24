@@ -62,9 +62,6 @@ public class PracticeTest extends JFrame {
 
         generateAnswerButtons();
 
-        AudioListener.runAudioListener("watever.wav");
-
-
     }
 
 
@@ -296,8 +293,9 @@ public class PracticeTest extends JFrame {
     }
 
     private void btnHelpActionPerformed(ActionEvent evt) {
-
+        AudioListener.stopAudioListener();
         AudioListener.runAudioListener("SpeechOn.wav");
+        AudioListener.runAudioListener("watever.wav");
 
     }
 
