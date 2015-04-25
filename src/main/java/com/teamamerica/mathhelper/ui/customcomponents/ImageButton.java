@@ -73,6 +73,7 @@ public class ImageButton extends JButton {
         this.setOpaque(false);
         this.setContentAreaFilled(false);
         this.setBorderPainted(false);
+        this.setBackground(null);
         this.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createBevelBorder(BevelBorder.RAISED, Color.BLUE.darker(), Color.BLACK),
                 BorderFactory.createEtchedBorder(EtchedBorder.LOWERED)));

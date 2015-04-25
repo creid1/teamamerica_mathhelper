@@ -336,7 +336,7 @@ public class PracticeTest extends JFrame {
         btnNext.setVisible(false);
         question = QuestionsPageConfigurator.getQuestion();
         System.out.println(question.getQuestion());
-        lblQuestion.setText(question.getQuestion());
+        lblQuestion.changeLabelImage(question.getHas_question_image(), checkHasFileToGenerateFullPath(question.getQuestion(), question.getHas_question_image()));
         lblAnswer.changeLabelImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(), question.getHas_answer_image()));
         lblAnswer.setVisible(false);
         lblCorrect.setVisible(false);

@@ -77,7 +77,7 @@ public class Question {
     public void setWrong_3(String wrong_3) {
         this.wrong_3 = wrong_3;
     }
-    public void setHas_question_image(boolean has_questionimage) {
+    public void setHas_question_image(boolean has_question_image) {
         this.has_question_image = has_question_image;
     }
 

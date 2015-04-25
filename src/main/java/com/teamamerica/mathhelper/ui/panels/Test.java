@@ -299,11 +299,10 @@ public class Test extends JFrame {
             this.dispose();
             new Results().setVisible(true);
 
-
         } else {
             question = QuestionsPageConfigurator.getQuestion();
             lblQuestionCounter.setText("Question: " + (testQuestionCounter + 1) + "/" + (int) questionsMax);
-            lblQuestion.setText(question.getQuestion());
+            lblQuestion.changeLabelImage(question.getHas_question_image(), checkHasFileToGenerateFullPath(question.getQuestion(), question.getHas_question_image()));
             lblAnswer.changeLabelImage(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(), question.getHas_answer_image()));
             lblAnswer.setVisible(false);
             lblCorrect.setVisible(false);
