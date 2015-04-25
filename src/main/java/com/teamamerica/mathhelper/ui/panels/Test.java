@@ -85,10 +85,10 @@ public class Test extends JFrame {
         btnHints.setToolTipText("HelpDesk Hints!");
 
 
-        btnA = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(), question.getHas_answer_image()), 150, 150);
-        btnB = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_1(), question.getHas_answer_image()), 150, 150);
-        btnC = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_2(), question.getHas_answer_image()), 150, 150);
-        btnD = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_3(), question.getHas_answer_image()), 150, 150);
+        btnA = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(), question.getHas_answer_image()), 175, 175);
+        btnB = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_1(), question.getHas_answer_image()), 175, 175);
+        btnC = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_2(), question.getHas_answer_image()), 175, 175);
+        btnD = new ImageButton(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getWrong_3(), question.getHas_answer_image()), 175, 175);
 
         btnA.setToolTipText("Is this correct?");
         btnB.setToolTipText("Is this correct?");
@@ -200,21 +200,18 @@ public class Test extends JFrame {
         });
         jPanel1.add(btnC);
 
-        btnA.setBounds(115, 390, 150, 150);
-        btnB.setBounds(315, 390, 150, 150);
+        btnA.setBounds(115, 390, 175, 175);
+        btnB.setBounds(315, 390, 175, 175);
 
-        btnC.setBounds(515, 390, 150, 150);
-        btnD.setBounds(715, 390, 150, 150);
+        btnC.setBounds(515, 390, 175, 175);
+        btnD.setBounds(715, 390, 175, 175);
 
 
-        lblAnswer.setFont(new Font("Comic Sans MS", 0, 75)); // NOI18N
         jPanel1.add(lblAnswer);
         lblAnswer.setVisible(false);
 
         jPanel1.add(lblCorrect);
 
-
-        lblQuestion.setFont(new Font("Comic Sans MS", 0, 75)); // NOI18N
         jPanel1.add(lblQuestion);
 
         lblQuestionCounter.setFont(new Font("Comic Sans MS", 0, 65)); // NOI18N
@@ -222,9 +219,9 @@ public class Test extends JFrame {
         jPanel1.add(lblQuestionCounter);
         lblQuestionCounter.setBounds(265, 30, 1000, 90);
 
-        lblQuestion.setBounds(100, 170, 1000, 150);
-        lblAnswer.setBounds(425, 170, 150, 150);
-        lblCorrect.setBounds(700, 170, 150, 150);
+        lblQuestion.setBounds(75, 170, 1000, 150);
+        lblAnswer.setBounds(500, 170, 150, 150);
+        lblCorrect.setBounds(775, 170, 150, 150);
 
         lblCorrect.setVisible(false);
 

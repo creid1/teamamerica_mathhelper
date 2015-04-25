@@ -50,9 +50,11 @@ public class ImageLabel extends JLabel {
 
 
     private void createLabelText(String fileName) {
-        this.setPreferredSize(new Dimension(width, height));
+        this.setPreferredSize(new Dimension(1000, 90));
         this.setIcon(null);
         this.setText(fileName);
+        this.setFont(new Font("DejaVu Serif", 0, 26));
+        this.setBackground(Color.WHITE);
 
     }
 

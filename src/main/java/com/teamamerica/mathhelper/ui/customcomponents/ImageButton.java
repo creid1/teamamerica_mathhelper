@@ -44,7 +44,7 @@ public class ImageButton extends JButton {
 
         this.setIcon(null);
         this.setText(fileName);
-        this.setFont(new Font("DejaVu Serif", 0, 40));
+        this.setFont(new Font("DejaVu Serif", 0, 20));
         this.setBackground(Color.WHITE);
         this.setPreferredSize(new Dimension(width, height));
         this.setMaximumSize(new Dimension(width, height));
