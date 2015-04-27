@@ -240,7 +240,7 @@ public class PracticeTest extends JFrame {
         jPanel1.add(lblQuestionCounter);
 
         lblQuestion.setBounds(75, 170, 1000, 150);
-        lblAnswer.setBounds(500, 170, 150, 150);
+        lblAnswer.setBounds(400, 170, 150, 150);
         lblCorrect.setBounds(775, 170, 150, 150);
 
         lblCorrect.setVisible(false);

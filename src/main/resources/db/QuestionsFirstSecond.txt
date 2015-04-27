@@ -1,589 +1,154 @@
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'addition_3ApplesPlus1Apple.jpg','4 apples','3 apples' '2 apples', '5 apples');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'addition_5ApplesPlus5Apple.jpg','10 apples','12 apples','13 apples','9 apples');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'addition_6ApplesPlus3Apple.jpg','9 apples','8 apples','7 apples','10 apples');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'addition_7ApplesPlus13Apple.jpg','13 apples','19 apples','17 apples','10 apples');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'addition_8ApplesPlus3Apple.jpg','11 apples','12 apples','9 apples','10 apples');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'addition_8ApplesPlus4Apple.jpg','12 apples ','11 apples','9 apples','10 apples');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'addition_9ApplesPlus2Apple.jpg','11 apples','12 apples','19 apples','10 apples');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'addition_8ApplesPlus7Apple.jpg','15 apples','16 apples','19 apples','14 apples');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'addition_10ApplesPlus3Apple.jpg','13 apples','12 apples','11 apples','9 apples');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'addition_10ApplesPlus5Apple.jpg','15 apples','12 apples','11 apples','16 apples');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'addition_10ApplesPlus10Apple.jpg','20 apples','18 apples','19 apples','16 apples');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'addition_14ApplesPlus6Apple.jpg','20 apples','18 apples','19 apples','16 apples');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'addition_10ApplesPlus9Apple.jpg','19 apples','18 apples','20 apples','16 apples');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'addition_16ApplesPlus4Apple.jpg','20 apples','17 apples','19 apples','16 apples');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'addition_15ApplesPlus5Apple.jpg','20 apples','18 apples','19 apples','16 apples');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'addition_17ApplesPlus3Apple.jpg','20 apples','18 apples','19 apples','16 apples');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'addition_14ApplesPlus6Apple.jpg','20 apples','18 apples','19 apples','16 apples');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'addition_18ApplesPlus2Apple.jpg','20 apples','18 apples','19 apples','16 apples');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'addition_5ApplesPlus5Apple.jpg','fruits_apples10.jpg','fruits_apples12.jpg','fruits_apples13.jpg','fruits_apples9.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'addition_6ApplesPlus3Apple.jpg','fruits_apples9.jpg','fruits_apples8.jpg','fruits_apples7.jpg','fruits_apples10.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'addition_7ApplesPlus13Apple.jpg','fruits_apples20.jpg','fruits_apples19.jpg','fruits_apples17.jpg','fruits_apples10.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'addition_8ApplesPlus3Apple.jpg','fruits_apples11.jpg','fruits_apples12.jpg','fruits_apples9.jpg','fruits_apples10.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'addition_8ApplesPlus4Apple.jpg','fruits_apples12.jpg','fruits_apples11.jpg','fruits_apples9.jpg','fruits_apples10.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'addition_9ApplesPlus2Apple.jpg','fruits_apples11.jpg','fruits_apples12.jpg','fruits_apples9.jpg','fruits_apples10.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'addition_8ApplesPlus7Apple.jpg','fruits_apples15.jpg','fruits_apples16.jpg','fruits_apples19.jpg','fruits_apples14.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'addition_10ApplesPlus3Apple.jpg','fruits_apples13.jpg','fruits_apples12.jpg','fruits_apples11.jpg','fruits_apples10.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'addition_10ApplesPlus5Apple.jpg','fruits_apples15.jpg','fruits_apples12.jpg','fruits_apples11.jpg','fruits_apples16.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'addition_10ApplesPlus10Apple.jpg','fruits_apples20.jpg','fruits_apples18.jpg','fruits_apples19.jpg','fruits_apples16.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'addition_14ApplesPlus6Apple.jpg','fruits_apples20.jpg','fruits_apples18.jpg','fruits_apples19.jpg','fruits_apples16.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'addition_10ApplesPlus9Apple.jpg','fruits_apples19.jpg','fruits_apples18.jpg','fruits_apples20.jpg','fruits_apples16.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'addition_16ApplesPlus4Apple.jpg','fruits_apples20.jpg','fruits_apples18.jpg','fruits_apples19.jpg','fruits_apples16.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'addition_15ApplesPlus5Apple.jpg','fruits_apples20.jpg','fruits_apples18.jpg','fruits_apples19.jpg','fruits_apples16.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'addition_17ApplesPlus3Apple.jpg','fruits_apples20.jpg','fruits_apples18.jpg','fruits_apples19.jpg','fruits_apples16.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'addition_14ApplesPlus6Apple.jpg','fruits_apples20.jpg','fruits_apples18.jpg','fruits_apples19.jpg','fruits_apples16.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'addition_18ApplesPlus2Apple.jpg','fruits_apples20.jpg','fruits_apples18.jpg','fruits_apples19.jpg','fruits_apples16.jpg');
-
-
-
-
-
-
-
-***************************************************************************************************************************************************************************************************************************************************************************************************
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_18ApplesPlus2Apple.jpg','fruits_apples20.jpg','fruits_apples18.jpg','fruits_apples19.jpg','fruits_apples16.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_3ApplesPlus1Apple.jpg','fruits_apples4.jpg','fruits_apples2.jpg','fruits_apples2.jpg','fruits_apples1.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_3ApplesPlus1Apple.jpg','fruits_apples4.jpg','fruits_apples2.jpg','fruits_apples2.jpg','fruits_apples1.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_3ApplesPlus1Apple.jpg','fruits_apples4.jpg','fruits_apples2.jpg','fruits_apples2.jpg','fruits_apples1.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_3ApplesPlus1Apple.jpg','fruits_apples4.jpg','fruits_apples2.jpg','fruits_apples2.jpg','fruits_apples1.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_3ApplesPlus1Apple.jpg','fruits_apples4.jpg','fruits_apples2.jpg','fruits_apples2.jpg','fruits_apples1.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_3ApplesPlus1Apple.jpg','fruits_apples4.jpg','fruits_apples2.jpg','fruits_apples2.jpg','fruits_apples1.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_3ApplesPlus1Apple.jpg','fruits_apples4.jpg','fruits_apples2.jpg','fruits_apples2.jpg','fruits_apples1.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_3ApplesPlus1Apple.jpg','fruits_apples4.jpg','fruits_apples2.jpg','fruits_apples2.jpg','fruits_apples1.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_3ApplesPlus1Apple.jpg','fruits_apples4.jpg','fruits_apples2.jpg','fruits_apples2.jpg','fruits_apples1.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_3ApplesPlus1Apple.jpg','fruits_apples4.jpg','fruits_apples2.jpg','fruits_apples2.jpg','fruits_apples1.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_3ApplesPlus1Apple.jpg','fruits_apples4.jpg','fruits_apples2.jpg','fruits_apples2.jpg','fruits_apples1.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_3ApplesPlus1Apple.jpg','fruits_apples4.jpg','fruits_apples2.jpg','fruits_apples2.jpg','fruits_apples1.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_3ApplesPlus1Apple.jpg','fruits_apples4.jpg','fruits_apples2.jpg','fruits_apples2.jpg','fruits_apples1.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_3ApplesPlus1Apple.jpg','fruits_apples4.jpg','fruits_apples2.jpg','fruits_apples2.jpg','fruits_apples1.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_3ApplesPlus1Apple.jpg','fruits_apples4.jpg','fruits_apples2.jpg','fruits_apples2.jpg','fruits_apples1.jpg');
-
-
-
-
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_4Apples3Bananas.jpg','addition_4Apples3Bananas.jpg','addition_2Apples7Bananas.jpg','addition_1Apples4Bananas.jpg','addition_4Apples4Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_4Apples4Bananas.jpg','addition_4Apples4Bananas.jpg','addition_2Apples7Bananas.jpg','addition_1Apples4Bananas.jpg','addition_4Apples3Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_4Apples7Bananas.jpg','addition_4Apples7Bananas.jpg','addition_8Apples6Bananas.jpg','addition_1Apples4Bananas.jpg','addition_4Apples3Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_8Apples6Bananas.jpg','addition_8Apples6Bananas.jpg','addition_4Apples7Bananas.jpg','addition_9Apples14Bananas.jpg','addition_4Apples3Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_9Apples14Bananas.jpg','addition_9Apples14Bananas.jpg','addition_4Apples7Bananas.jpg','addition_10Apples9Bananas.jpg','addition_4Apples3Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_10Apples9Bananas.jpg','addition_10Apples9Bananas.jpg','addition_10Apples10Bananas.jpg','addition_9Apples14Bananas.jpg','addition_4Apples3Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_10Apples10Bananas.jpg','addition_10Apples10Bananas.jpg','addition_9Apples14Bananas.jpg','addition_9Apples11Bananas.jpg','addition_10Apples14Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_10Apples14Bananas.jpg','addition_10Apples14Bananas.jpg','addition_10Apples10Bananas.jpg','addition_9Apples14Bananas.jpg','addition_10Apples9Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_10Apples11Bananas.jpg','addition_10Apples11Bananas.jpg','addition_10Apples10Bananas.jpg','addition_9Apples14Bananas.jpg','addition_10Apples9Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_11Apples8Bananas.jpg','addition_11Apples8Bananas.jpg','addition_10Apples10Bananas.jpg','addition_9Apples14Bananas.jpg','addition_10Apples9Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_11Apples11Bananas.jpg','addition_11Apples11Bananas.jpg','addition_11Apples10Bananas.jpg','addition_9Apples14Bananas.jpg','addition_10Apples9Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_11Apples14Bananas.jpg','addition_11Apples14Bananas.jpg','addition_11Apples10Bananas.jpg','addition_9Apples14Bananas.jpg','addition_10Apples9Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_11Apples16Bananas.jpg','addition_11Apples16Bananas.jpg','addition_11Apples10Bananas.jpg','addition_11Apples8Bananas.jpg','addition_11Apples14Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_11Apples18Bananas.jpg','addition_11Apples18Bananas.jpg','addition_11Apples16Bananas.jpg','addition_11Apples8Bananas.jpg','addition_11Apples14Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_11Apples17Bananas.jpg','addition_11Apples17Bananas.jpg','addition_11Apples16Bananas.jpg','addition_11Apples8Bananas.jpg','addition_11Apples14Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_13Apples11Bananas.jpg','addition_13Apples11Bananas.jpg','addition_11Apples16Bananas.jpg','addition_11Apples8Bananas.jpg','addition_11Apples14Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_12Apples15Bananas.jpg','addition_12Apples15Bananas.jpg','addition_11Apples16Bananas.jpg','addition_11Apples8Bananas.jpg','addition_11Apples14Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_14Apples12Bananas.jpg','addition_14Apples12Bananas.jpg','addition_11Apples16Bananas.jpg','addition_11Apples8Bananas.jpg','addition_11Apples14Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_14Apples15Bananas.jpg','addition_14Apples15Bananas.jpg','addition_11Apples16Bananas.jpg','addition_11Apples8Bananas.jpg','addition_11Apples14Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_13Apples15Bananas.jpg','addition_13Apples15Bananas.jpg','addition_11Apples16Bananas.jpg','addition_11Apples8Bananas.jpg','addition_11Apples14Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_14Apples11Bananas.jpg','addition_14Apples11Bananas.jpg','addition_11Apples16Bananas.jpg','addition_11Apples8Bananas.jpg','addition_11Apples14Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_14Apples18Bananas.jpg','addition_14Apples18Bananas.jpg','addition_11Apples16Bananas.jpg','addition_11Apples8Bananas.jpg','addition_11Apples14Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_15Apples13Bananas.jpg','addition_15Apples13Bananas.jpg','addition_11Apples16Bananas.jpg','addition_15Apples12Bananas.jpg','addition_15Apples10Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_15Apples12Bananas.jpg','addition_15Apples12Bananas.jpg','addition_11Apples16Bananas.jpg','addition_11Apples8Bananas.jpg','addition_11Apples14Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_15Apples10Bananas.jpg','addition_15Apples10Bananas.jpg','addition_11Apples16Bananas.jpg','addition_11Apples8Bananas.jpg','addition_11Apples14Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_15Apples18Bananas.jpg','addition_15Apples18Bananas.jpg','addition_11Apples16Bananas.jpg','addition_15Apples12Bananas.jpg','addition_15Apples10Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_15Apples17Bananas.jpg','addition_15Apples17Bananas.jpg','addition_11Apples16Bananas.jpg','addition_15Apples12Bananas.jpg','addition_15Apples10Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_15Apples14Bananas.jpg','addition_15Apples14Bananas.jpg','addition_11Apples16Bananas.jpg','addition_15Apples12Bananas.jpg','addition_15Apples10Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_15Apples15Bananas.jpg','addition_15Apples15Bananas.jpg','addition_11Apples16Bananas.jpg','addition_15Apples12Bananas.jpg','addition_15Apples10Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_15Apples16Bananas.jpg','addition_15Apples16Bananas.jpg','addition_11Apples16Bananas.jpg','addition_15Apples12Bananas.jpg','addition_15Apples10Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_16Apples16Bananas.jpg','addition_16Apples16Bananas.jpg','addition_16Apples17Bananas.jpg','addition_15Apples17Bananas.jpg','addition_15Apples10Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_16Apples17Bananas.jpg','addition_16Apples17Bananas.jpg','addition_16Apples16Bananas.jpg','addition_15Apples17Bananas.jpg','addition_15Apples10Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_17Apples15Bananas.jpg','addition_17Apples15Bananas.jpg','addition_16Apples16Bananas.jpg','addition_15Apples17Bananas.jpg','addition_15Apples10Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_17Apples18Bananas.jpg','addition_17Apples18Bananas.jpg','addition_16Apples16Bananas.jpg','addition_15Apples17Bananas.jpg','addition_15Apples18Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,true,'addition_21Apples18Bananas.jpg','addition_21Apples18Bananas.jpg','addition_16Apples16Bananas.jpg','addition_15Apples17Bananas.jpg','addition_15Apples18Bananas.jpg');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-************************************************************************************************************************************************************************************************************************************************************************
-
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Sets',true,true,'addition_21Apples18Bananas.jpg','addition_21Apples18Bananas.jpg','addition_16Apples176Bananas.jpg','addition_15Apples17Bananas.jpg','addition_15Apples18Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Sets',true,true,'addition_8Apples6Bananas.jpg','addition_8Apples6Bananas.jpg','addition_4Apples7Bananas.jpg','addition_9Apples14Bananas.jpg','addition_4Apples3Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Sets',true,true,'addition_9Apples14Bananas.jpg','addition_9Apples14Bananas.jpg','addition_4Apples7Bananas.jpg','addition_10Apples9Bananas.jpg','addition_4Apples3Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Sets',true,true,'addition_10Apples9Bananas.jpg','addition_10Apples9Bananas.jpg','addition_10Apples10Bananas.jpg','addition_9Apples14Bananas.jpg','addition_4Apples3Bananas.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Sets',true,true,'addition_10Apples10Bananas.jpg','addition_10Apples10Bananas.jpg','addition_9Apples14Bananas.jpg','addition_9Apples11Bananas.jpg','addition_10Apples14Bananas.jpg');
-
-
-
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Circle: ','shapes_circle.jpg','shapes_diamond.png','shapes_heart.jpeg','shapes_triangle.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Triangle: ','shapes_triangle.jpg','shapes_square.jpg','shapes_star.jpg','shapes_circle.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Circle: ','shapes_circle.jpg','shapes_diamond.png','shapes_heart.jpeg','shapes_triangle.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Triangle: ','shapes_triangle.jpg','shapes_square.jpg','shapes_star.jpg','shapes_circle.jpg');
-
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Circle: ','shapes_circle.jpg','shapes_diamond.png','shapes_heart.jpeg','shapes_triangle.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Triangle: ','shapes_triangle.jpg','shapes_square.jpg','shapes_star.jpg','shapes_circle.jpg');
-
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Circle: ','shapes_circle.jpg','shapes_diamond.png','shapes_heart.jpeg','shapes_triangle.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Triangle: ','shapes_triangle.jpg','shapes_square.jpg','shapes_star.jpg','shapes_circle.jpg');
-
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Circle: ','shapes_circle.jpg','shapes_diamond.png','shapes_heart.jpeg','shapes_triangle.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Triangle: ','shapes_triangle.jpg','shapes_square.jpg','shapes_star.jpg','shapes_circle.jpg');
-
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Circle: ','shapes_circle.jpg','shapes_diamond.png','shapes_heart.jpeg','shapes_triangle.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Triangle: ','shapes_triangle.jpg','shapes_square.jpg','shapes_star.jpg','shapes_circle.jpg');
-
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Circle: ','shapes_circle.jpg','shapes_diamond.png','shapes_heart.jpeg','shapes_triangle.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Triangle: ','shapes_triangle.jpg','shapes_square.jpg','shapes_star.jpg','shapes_circle.jpg');
-
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Circle: ','shapes_circle.jpg','shapes_diamond.png','shapes_heart.jpeg','shapes_triangle.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Triangle: ','shapes_triangle.jpg','shapes_square.jpg','shapes_star.jpg','shapes_circle.jpg');
-
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Circle: ','shapes_circle.jpg','shapes_diamond.png','shapes_heart.jpeg','shapes_triangle.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Triangle: ','shapes_triangle.jpg','shapes_square.jpg','shapes_star.jpg','shapes_circle.jpg');
-
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'2 + 2 =','4','3','7','9');
-
-
-
-
-
-
-
-
-
-
-
-
-
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,false,'3 + 4 = ','7','3','8','9');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,false,'6 + 2 = ','8','3','6','9');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,false,'8 + 3 = ','11','12','5','9');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,false,'6 + 3 = ','9','3','8','6');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,false,'3 + 3 = ','6','3','5','9');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Circle: ','shapes_circle.jpg','shapes_diamond.png','shapes_heart.jpeg','shapes_triangle.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',false,true,'Triangle: ','shapes_triangle.jpg','shapes_square.jpg','shapes_star.jpg','shapes_circle.jpg');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'2 + 2 =','4','3','7','9');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'1 + 2 = ','3','4','8','5');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'4 + 5 = ','9','8','7','6');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'3 + 4 = ','7','3','8','9');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'The value of 3 in 340?','Hundreds','Tens','Ones','Thousands');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'The value of 7 in 876?','Tens','Ones','Hundreds','Thousands');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'The value of 4 in 1,478?','Hundreds','Tens','Ones','Thousands');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'The value of 1 in 1,254?','Thousands','Tens','Hundreds','Ones');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'The value of 2 in 1,623?','Tens','Ones','Hundreds','Thousands');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'The value of 5 in 1,275?','Ones','Tens','Hundreds','Thousands');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'The value of 6 in 6,203?','Thousands','Tens','Hundreds','Ones');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'The value of 8 in 1,803?','Hundreds','Tens','Ones','Thousands');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'The value of 9 in 1,209?','Ones','Tens','Hundreds','Thousands');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'The value of 3 in 1,345?','Hundreds','Ones','Tens','Thousands');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'The value of 3 in 340?','Hundreds','Tens','Ones','Thousands');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'The value of 7 in 876?','Tens','Ones','Hundreds','Thousands');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'The value of 4 in 1,478?','Hundreds','Tens','Ones','Thousands');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'The value of 1 in 1,254?','Thousands','Tens','Hundreds','Ones');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'The value of 2 in 1,623?','Tens','Ones','Hundreds','Thousands');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'The value of 5 in 1,275?','Ones','Tens','Hundreds','Thousands');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'The value of 6 in 6,203?','Thousands','Tens','Hundreds','Ones');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'The value of 8 in 1,803?','Hundreds','Tens','Ones','Thousands');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'The value of 9 in 1,209?','Ones','Tens','Hundreds','Thousands');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'The value of 3 in 1,345?','Hundreds','Ones','Tens','Thousands');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,' ? >  36','42','36','26','15');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,' ? =  27','27','65','15','86');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,' ? <  17','15','29','26','64');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,' ? >  36','42','36','26','15');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,' ? >  76','87','66','54','76');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,' ? <  55','42','55','68','98');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,' ? =  44','44','36','76','49');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,' ? =  85','85','36','26','15');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,' ? <  99','98','99','113','176');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,' ? >  130','160','130','26','15');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,' ? >  75','90','75','26','67');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,' ? <  27','15','36','27','38');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,' ? >  36','42','36','26','15');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,' ? =  27','27','65','15','86');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,' ? <  17','15','29','26','64');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,' ? >  36','42','36','26','15');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,' ? >  76','87','66','54','76');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,' ? <  55','42','55','68','98');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,' ? =  44','44','36','76','49');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,' ? =  85','85','36','26','15');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,' ? <  99','98','99','113','176');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,' ? >  130','160','130','26','15');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,' ? >  75','90','75','26','67');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,' ? <  27','15','36','27','38');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'What Number is Even?','248','331','141','875');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'What Number is Even?','134','167','181','199');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'What Number is Even?','228','235','267','243');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'What Number is Even?','312','313','317','321');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'What Number is Even?','546','547','531','597');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'What Number is Even?','752','759','723','775');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'What Number is Even?','498','493','435','471');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'What Number is Even?','122','133','143','157');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'What Number is Even?','0','11','9','5');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'What Number is Even?','24','31','11','25');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'What Number is Even?','34','67','81','99');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'What Number is Even?','28','35','67','43');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'What Number is Even?','12','13','17','21');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'What Number is Even?','46','47','31','97');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'What Number is Even?','52','59','23','75');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'What Number is Even?','98','93','35','71');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'What Number is Even?','22','33','43','57');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'What Number is Even?','0','11','9','5');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'What Number is Odd?','241','330','142','876');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'What Number is Odd?','135','166','186','190');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'What Number is Odd?','223','238','262','244');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'What Number is Odd?','311','314','318','320');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'What Number is Odd?','545','546','532','598');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'What Number is Odd?','757','752','724','770');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'What Number is Odd?','499','492','434','476');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'What Number is Odd?','123','132','146','158');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'What Number is Odd?','11','20','12','18');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'What Number is Odd?','21','30','42','76');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'What Number is Odd?','15','16','18','10');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'What Number is Odd?','23','28','262','24');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'What Number is Odd?','31','34','38','32');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'What Number is Odd?','45','46','32','98');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'What Number is Odd?','57','52','24','70');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'What Number is Odd?','99','92','34','76');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'What Number is Odd?','23','32','46','58');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'What Number is Odd?','11','20','12','18');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'$1.00 - 50¢ = ','50¢','52¢','40¢','30¢');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'$1.50 - 10¢ = ','$1.40','52¢','$.20','$1.30');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'$1.25 - 50¢ = ','75¢','25¢','50¢','$1.00');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'$1.75 - 50¢ = ','$1.25','$1.50','$1.00','75¢');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'70¢ - 50¢ = ','20¢','22¢','40¢','30¢');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'$2.50 - 50¢ = ','$2.00','$1.25','$1.75','$2.25');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'85¢ - 25¢ = ','60¢','50¢','40¢','30¢');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'75¢ - 50¢ = ','25¢','50¢','40¢','30¢');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'$1.50 - 25¢ = ','$1.25','$1.00','75¢','50¢');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'$1.00 - 50¢ = ','50¢','52¢','40¢','30¢');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'$1.50 - 10¢ = ','$1.40','52¢','$.20','$1.30');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'$1.25 - 50¢ = ','75¢','25¢','50¢','$1.00');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'$1.75 - 50¢ = ','$1.25','$1.50','$1.00','75¢');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'70¢ - 50¢ = ','20¢','22¢','40¢','30¢');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'$2.50 - 50¢ = ','$2.00','$1.25','$1.75','$2.25');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'85¢ - 25¢ = ','60¢','50¢','40¢','30¢');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'75¢ - 50¢ = ','25¢','50¢','40¢','30¢');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'$1.50 - 25¢ = ','$1.25','$1.00','75¢','50¢');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'2 + 3 = ','5','4','7','6');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'2 + 3 = ','5','4','7','6');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'1 + 2 = ','3','4','8','5');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'4 + 5 = ','9','8','7','6');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'3 + 4 = ','7','3','8','9');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'6 + 2 = ','8','3','6','9');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'8 + 3 = ','11','12','5','9');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'6 + 3 = ','9','3','8','6');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'3 + 3 = ','6','3','5','9');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'12 + 13 = ','25','24','27','26');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'11 + 21 = ','32','34','28','25');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'24 + 25 = ','49','48','47','46');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'33 + 44 = ','77','73','78','79');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'12 + 26 = ','38','33','36','39');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'48 + 53 = ','101','102','105','109');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'62 + 37 = ','99','93','98','96');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',false,false,'53 + 23 = ','76','73','75','79');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'102 + 123 = ','125','124','127','126');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'143 + 212 = ','255','254','258','256');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'434 + 510 = ','944','948','47','946');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'73 + 74 = ','147','143','148','149');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'66 + 27 = ','93','97','96','99');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'88 + 13 = ','101','102','105','109');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'326 + 123 = ','449','443','448','446');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'342 + 210 = ','550','530','554','559');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'235 + 350 = ','585','524','587','586');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'11 + 21 = ','32','34','28','25');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'24 + 25 = ','49','48','47','46');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'33 + 44 = ','77','73','78','79');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'452 + 126 = ','578','533','556','539');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'48 + 53 = ','101','102','105','109');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'62 + 37 = ','99','93','98','96');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',false,false,'53 + 23 = ','76','73','75','79');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Subtraction',false,false,'12 - 11 = ','1','2','3','4');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Subtraction',false,false,'22 - 13 = ','9','14','17','16');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Subtraction',false,false,'45 - 29 = ','14','14','15','12');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Subtraction',false,false,'39 - 17 = ','22','28','27','26');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Subtraction',false,false,'53 - 34 = ','19','13','18','29');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Subtraction',false,false,'16 - 12 = ','4','3','6','9');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Subtraction',false,false,'28 - 23 = ','5','7','4','9');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Subtraction',false,false,'67 - 30 = ','37','33','38','36');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Subtraction',false,false,'13 - 13 = ','0','3','5','9');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Subtraction',false,false,'92 - 76 = ','16','14','17','18');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Subtraction',false,false,'31 - 21 = ','10','14','18','15');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Subtraction',false,false,'24 - 15 = ','9','5','7','8');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Subtraction',false,false,'71 - 34 = ','37','33','38','39');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Subtraction',false,false,'85 - 37 = ','48','44','46','49');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Subtraction',false,false,'48 - 23 = ','25','26','27','29');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Subtraction',false,false,'62 - 37 = ','35','33','38','36');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Subtraction',false,false,'53 - 23 = ','30','33','35','39');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Subtraction',false,false,'132 - 78 = ','54','52','53','45');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Subtraction',false,false,'225 - 131 = ','356','314','357','326');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Subtraction',false,false,'457 - 229 = ','228','224','225','222');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Subtraction',false,false,'396 - 174 = ','222','228','227','226');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Subtraction',false,false,'53 - 34 = ','19','13','18','29');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Subtraction',false,false,'866 - 591 = ','275','273','276','279');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Subtraction',false,false,'673 - 289 = ','384','387','384','389');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Subtraction',false,false,'67 - 30 = ','37','33','38','36');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Subtraction',false,false,'874 - 472 = ','402','403','405','409');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Subtraction',false,false,'92 - 76 = ','16','14','17','18');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Subtraction',false,false,'315 - 221 = ','94','84','98','85');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Subtraction',false,false,'724 - 315 = ','409','405','407','408');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Subtraction',false,false,'71 - 34 = ','37','33','38','39');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Subtraction',false,false,'85 - 37 = ','48','44','46','49');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Subtraction',false,false,'48 - 23 = ','25','26','27','29');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Subtraction',false,false,'62 - 37 = ','35','33','38','36');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Subtraction',false,false,'53 - 23 = ','30','33','35','39');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Equal',false,false,'14 + 6 = 20','20 - 6 = 14','14 - 20 = 6','14 + 20 = 6','14 - 6 = 20');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Equal',false,false,'24 + 16 = 40','40 - 16 = 24','14 - 40 = 16','14 + 40 = 16','14 - 16 = 40');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Equal',false,false,'18 - 12 = 6','12 + 6 = 18','12 - 6 = 18','14 + 20 = 60','14 - 6 = 20');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Equal',false,false,'34 - 22 = 12','22 + 12 = 34','34 + 20 = 12','12 + 34 = 22','34 - 12 = 22');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Equal',false,false,'4 + 6 = 10','10 - 6 = 4','6 - 4 = 10','10 + 6 = 4','10 + 4 = 6');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Equal',false,false,'14 + 6 = 20','20 - 6 = 14','14 - 20 = 6','14 + 20 = 6','14 - 6 = 20');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Equal',false,false,'24 + 16 = 40','40 - 16 = 24','14 - 40 = 16','14 + 40 = 16','14 - 16 = 40');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Equal',false,false,'18 - 12 = 6','12 + 6 = 18','12 - 6 = 18','14 + 20 = 60','14 - 6 = 20');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Equal',false,false,'34 - 22 = 12','22 + 12 = 34','34 + 20 = 12','12 + 34 = 22','34 - 12 = 22');
-INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Equal',false,false,'4 + 6 = 10','10 - 6 = 4','6 - 4 = 10','10 + 6 = 4','10 + 4 = 6');
-*******************************************************************************************************************************
-
-
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/mHCBtKFhV8M?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Addition','https://www.youtube.com/v/mHCBtKFhV8M=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST,'Money','https://www.youtube.com/v/S41F8KdgAek?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Money','https://www.youtube.com/v/S41F8KdgAek?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/8IxyrEO4i14?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Addition','https://www.youtube.com/v/8IxyrEO4i14?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/xjnlymFLSdM?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Addition','https://www.youtube.com/v/xjnlymFLSdM?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/DR-cfDsHCGA?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Addition','https://www.youtube.com/v/DR-cfDsHCGA?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/wiGEEJLLKd8?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Addition','https://www.youtube.com/v/wiGEEJLLKd8?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/q7mi24ClSMw?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Addition','https://www.youtube.com/v/KFF8-kx-Ejw?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Addition','https://www.youtube.com/v/2X-HAFPHBzg?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/2X-HAFPHBzg?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Subtraction','https://www.youtube.com/v/s3_rLuntgvI?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Subtraction','https://www.youtube.com/v/s3_rLuntgvI?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Shapes','https://www.youtube.com/v/gepEhdI7418?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Shapes','https://www.youtube.com/v/gepEhdI7418?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Subtraction','https://www.youtube.com/v/OA6Rxe5MxEY?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Subtraction','https://www.youtube.com/v/OA6Rxe5MxEY?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/XnmuCYbJmsU?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Addition','https://www.youtube.com/v/ML1KoW9JMwA?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Addition','https://www.youtube.com/v/INHYb1RNaMM?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/INHYb1RNaMM?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/4RhBhzFJ4Ww?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Addition','https://www.youtube.com/v/4RhBhzFJ4Ww?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Addition','https://www.youtube.com/v/azIG0kLIlgs?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/azIG0kLIlgs?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/cwcCyXsGN7E?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Addition','https://www.youtube.com/v/cwcCyXsGN7E?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/uedvwH6Ay18?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Addition','https://www.youtube.com/v/uedvwH6Ay18?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/WT_wvvEvkw4?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Addition','https://www.youtube.com/v/WT_wvvEvkw4?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Subtraction','https://www.youtube.com/v/QkPa9V2wtZs?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Subtraction','https://www.youtube.com/v/QkPa9V2wtZs?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/eSvz1lkvih4?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Addition','https://www.youtube.com/v/eSvz1lkvih4?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/NUprfk7UWNA?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Addition','https://www.youtube.com/v/NUprfk7UWNA?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Addition','https://www.youtube.com/v/6F8JjEV3brY?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/6F8JjEV3brY?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Shapes','https://www.youtube.com/v/_-w4_GEBssw?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Shapes','https://www.youtube.com/v/_-w4_GEBssw?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/jR6KbE_aGWw?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Addition','https://www.youtube.com/v/jR6KbE_aGWw?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Shapes','https://www.youtube.com/v/8uIjdI0qbi8?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Shapes','https://www.youtube.com/v/8uIjdI0qbi8?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Shapes','https://www.youtube.com/v/qny6CPtJvpo?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Shapes','https://www.youtube.com/v/qny6CPtJvpo?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Shapes','https://www.youtube.com/v/sVfHZ7Wf2Ao?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Shapes','https://www.youtube.com/v/sVfHZ7Wf2Ao?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Addition','https://www.youtube.com/v/jceuDoWVHrU?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/jceuDoWVHrU?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/UYUTuK47-CQ?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Addition','https://www.youtube.com/v/UYUTuK47-CQ?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/mi3Khu9DSm8?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Addition','https://www.youtube.com/v/mi3Khu9DSm8?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/baq-ChMhtMA?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Addition','https://www.youtube.com/v/baq-ChMhtMA?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Addition','https://www.youtube.com/v/A4GHS7u4Gsc?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/A4GHS7u4Gsc?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Addition','https://www.youtube.com/v/s7GJxbS0S7g?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Addition','https://www.youtube.com/v/s7GJxbS0S7g?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Addition','https://www.youtube.com/v/V4ALuyyKcSI?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Addition','https://www.youtube.com/v/V4ALuyyKcSI?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Addition','https://www.youtube.com/v/pMeaWzJpAHQ?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Addition','https://www.youtube.com/v/pMeaWzJpAHQ?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Shapes','https://www.youtube.com/v/5VMopryowKs?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Shapes','https://www.youtube.com/v/5VMopryowKs?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Shapes','https://www.youtube.com/v/q4unlaIbe7E?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Shapes','https://www.youtube.com/v/q4unlaIbe7E?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Shapes','https://www.youtube.com/v/JQD2sTTg5dw?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Shapes','https://www.youtube.com/v/JQD2sTTg5dw?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Addition','https://www.youtube.com/v/q4BF8wHvi4o?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Addition','https://www.youtube.com/v/0XJVuzk7wc0?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Addition','https://www.youtube.com/v/C1PsoV4cKSg?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Addition','https://www.youtube.com/v/C1PsoV4cKSg-CQ?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/HM_1k2I4Hes?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Addition','https://www.youtube.com/v/HM_1k2I4Hes?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Subtraction','https://www.youtube.com/v/COuedSha1Dk?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Subtraction','https://www.youtube.com/v/COuedSha1Dk?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/Ss1i0Cp3W_U?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Addition','https://www.youtube.com/v/Ss1i0Cp3W_U?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Subtraction','https://www.youtube.com/v/dA5Rxtc18_M?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Subtraction','https://www.youtube.com/v/dA5Rxtc18_M?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Addition','https://www.youtube.com/v/mWQ7ZR1YRqY?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Addition','https://www.youtube.com/v/mWQ7ZR1YRqY?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Measurement','https://www.youtube.com/v/2ndXknhmFwA?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Measurement','https://www.youtube.com/v/2ndXknhmFwA?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Addition','https://www.youtube.com/v/m1aMRFxC560?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Addition','https://www.youtube.com/v/m1aMRFxC560?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Addition','https://www.youtube.com/v/m1aMRFxC560?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/m1aMRFxC560?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Measurement','https://www.youtube.com/v/7vT-988yH3M?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Measurement','https://www.youtube.com/v/7vT-988yH3M-CQ?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Measurement','https://www.youtube.com/v/274gK7i7yGs?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Measurement','https://www.youtube.com/v/274gK7i7yGs?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Addition','https://www.youtube.com/v/kRKO_m_EupM?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Addition','https://www.youtube.com/v/kRKO_m_EupM?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Division','https://www.youtube.com/v/0XJVuzk7wc0?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Division','https://www.youtube.com/v/eZWE9YPDxag?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Division','https://www.youtube.com/v/eZWE9YPDxag?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Multiplication','https://www.youtube.com/v/XoXjsh91Zw0?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Multiplication','https://www.youtube.com/v/XoXjsh91Zw0?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Fractions','https://www.youtube.com/v/fKc68jbfC34?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Fractions','https://www.youtube.com/v/fKc68jbfC34?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Fractions','https://www.youtube.com/v/fKc68jbfC34?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Fractions','https://www.youtube.com/v/fKc68jbfC34?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Sets','https://www.youtube.com/v/3RNVeFu0fT8?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Sets','https://www.youtube.com/v/3RNVeFu0fT8?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Sets','https://www.youtube.com/v/gcizRJrV1dI?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Sets','https://www.youtube.com/v/gcizRJrV1dI?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Measurement','https://www.youtube.com/v/IagPPmfgDq4?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Measurement','https://www.youtube.com/v/IagPPmfgDq4?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Measurement','https://www.youtube.com/v/IagPPmfgDq4?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Addition','https://www.youtube.com/v/IagPPmfgDq4?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Measurement','https://www.youtube.com/v/D1EAFXBleCY?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Measurement','https://www.youtube.com/v/D1EAFXBleCY?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Measurement','https://www.youtube.com/v/D1EAFXBleCY?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Addition','https://www.youtube.com/v/D1EAFXBleCY?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Measurement','https://www.youtube.com/v/lfBFwXUSg_U?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Measurement','https://www.youtube.com/v/lfBFwXUSg_U?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Measurement','https://www.youtube.com/v/lfBFwXUSg_U?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Addition','https://www.youtube.com/v/lfBFwXUSg_U?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Measurement','https://www.youtube.com/v/bZ_1Wn2oWpQ?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Measurement','https://www.youtube.com/v/bZ_1Wn2oWpQ?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Measurement','https://www.youtube.com/v/bZ_1Wn2oWpQ?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Addition','https://www.youtube.com/v/bZ_1Wn2oWpQ?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Fractions','https://www.youtube.com/v/NS6LYSB4rxY?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Measurement','https://www.youtube.com/v/NS6LYSB4rxY?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Measurement','https://www.youtube.com/v/NS6LYSB4rxY?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Addition','https://www.youtube.com/v/NS6LYSB4rxY?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Fractions','https://www.youtube.com/v/BdVfPrd8sdg?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Measurement','https://www.youtube.com/v/BdVfPrd8sdg?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Measurement','https://www.youtube.com/v/BdVfPrd8sdg?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Addition','https://www.youtube.com/v/BdVfPrd8sdg?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Fractions','https://www.youtube.com/v/SCeOd9PbcUw?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Measurement','https://www.youtube.com/v/SCeOd9PbcUw?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Measurement','https://www.youtube.com/v/SCeOd9PbcUw?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Addition','https://www.youtube.com/v/SCeOd9PbcUw?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Measurement','https://www.youtube.com/v/fKc68jbfC34?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Measurement','https://www.youtube.com/v/fKc68jbfC34?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Measurement','https://www.youtube.com/v/fKc68jbfC34?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Addition','https://www.youtube.com/v/fKc68jbfC34?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Measurement','https://www.youtube.com/v/vzD68A4KOwg?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Measurement','https://www.youtube.com/v/vzD68A4KOwg?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Measurement','https://www.youtube.com/v/vzD68A4KOwg?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Addition','https://www.youtube.com/v/vzD68A4KOwg?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Measurement','https://www.youtube.com/v/xkLNCoKmsZw?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Measurement','https://www.youtube.com/v/xkLNCoKmsZw?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Measurement','https://www.youtube.com/v/xkLNCoKmsZw?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Addition','https://www.youtube.com/v/xkLNCoKmsZw?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Measurement','https://www.youtube.com/v/_l6NsKFvx6k?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Measurement','https://www.youtube.com/v/_l6NsKFvx6k?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Measurement','https://www.youtube.com/v/_l6NsKFvx6k?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Addition','https://www.youtube.com/v/_l6NsKFvx6k?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Measurement','https://www.youtube.com/v/Aphgn84e6ao?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Measurement','https://www.youtube.com/v/Aphgn84e6ao?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Measurement','https://www.youtube.com/v/Aphgn84e6ao?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Addition','https://www.youtube.com/v/Aphgn84e6ao?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Counting','https://www.youtube.com/v/D8qMqxhWMPc?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Counting','https://www.youtube.com/v/D8qMqxhWMPc?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Sets','https://www.youtube.com/v/KPaU4VKkYF8?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Sets','https://www.youtube.com/v/KPaU4VKkYF8?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Multiplication','https://www.youtube.com/v/NwoRP_a7pyg?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Multiplication','https://www.youtube.com/v/NwoRP_a7pyg?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Subtraction','https://www.youtube.com/v/srPktd4k_O8?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Subtraction','https://www.youtube.com/v/srPktd4k_O8?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Fractions','https://www.youtube.com/v/x8vCnLD2t6M?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Addition','https://www.youtube.com/v/g_O8oWNE9A0?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/g_O8oWNE9A0?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/8jnEpf31oJQ?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Addition','https://www.youtube.com/v/8jnEpf31oJQ?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Subtraction','https://www.youtube.com/v/8jnEpf31oJQ?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Subtraction','https://www.youtube.com/v/8jnEpf31oJQ?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Sets','https://www.youtube.com/v/NPqT6JBxKCo?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Sets','https://www.youtube.com/v/NPqT6JBxKCo?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Fraction','https://www.youtube.com/v/8OKTrN0uT-Q?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Fraction','https://www.youtube.com/v/8OKTrN0uT-Q?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Fraction','https://www.youtube.com/v/VTCGuAdbQKE?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Fraction','https://www.youtube.com/v/VTCGuAdbQKE?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Fraction','https://www.youtube.com/v/VTCGuAdbQKE?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Fraction','https://www.youtube.com/v/VTCGuAdbQKE?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Measurement','https://www.youtube.com/v/FWEUkOOFhfU?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Measurement','https://www.youtube.com/v/FWEUkOOFhfU?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Fractions','https://www.youtube.com/v/-oJK-8fk7-E?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Fractions','https://www.youtube.com/v/-oJK-8fk7-E?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Fractions','https://www.youtube.com/v/VMWa6dDoicc?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Fractions','https://www.youtube.com/v/VMWa6dDoicc?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Fractions','https://www.youtube.com/v/rtwGHYyTifQ?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Fractions','https://www.youtube.com/v/rtwGHYyTifQ?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Fractions','https://www.youtube.com/v/OHiNYPeixa4?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Fractions','https://www.youtube.com/v/OHiNYPeixa4?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Fractions','https://www.youtube.com/v/syKKg7iuSDc?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Fractions','https://www.youtube.com/v/syKKg7iuSDc?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Counting','https://www.youtube.com/v/KwXBMGdSWmI?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Counting','https://www.youtube.com/v/KwXBMGdSWmI?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Sets','https://www.youtube.com/v/M6Efzu2slaI?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('K','Sets','https://www.youtube.com/v/M6Efzu2slaI?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Fractions','https://www.youtube.com/v/1GFdSzBNduw?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Fractions','https://www.youtube.com/v/1GFdSzBNduw?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Fractions','https://www.youtube.com/v/TMvhqsR-naI?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Fractions','https://www.youtube.com/v/TMvhqsR-naI?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Fractions','https://www.youtube.com/v/8jnEpf31oJQ?fs=1');
-INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Fractions','https://www.youtube.com/v/8jnEpf31oJQ?fs=1');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_circleLeft.jpg','shapes_circleRight.jpg','shapes_diamondLeft.jpg','shapes_rhombusLeft.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_circleRight.jpg','shapes_circleLeft.jpg','shapes_squareRight.jpg','shapes_starLeft.jpg','shapes_starRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_diamondLeft.jpg','shapes_diamondRight.jpg','shapes_hexagonLeft.jpg','shapes_moonBottom.jpg','shapes_triangleRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_diamondRight.jpg','shapes_diamondLeft.jpg','shapes_circleLeft.jpg','shapes_heartLeft.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_heartLeft.jpg','shapes_heartRight.jpg','shapes_triangleLeft.jpg','shapes_heartLeft.jpg','shapes_rectangleRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_heartRight.jpg','shapes_heartLeft.jpg','shapes_diamondLeft.jpg','shapes_squareLeft.jpg','shapes_moonTop.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_hexagonLeft.jpg','shapes_hexagonRight.jpg','shapes_starLeft.jpg','shapes_circleRight.jpg','shapes_octagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_hexagonRight.jpg','shapes_hexagonLeft.jpg','shapes_diamondLeft.jpg','shapes_heartLeft.jpg','shapes_octagonLeft.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_moonBottom.jpg','shapes_moonTop.jpg','shapes_squareLeft.jpg','shapes_heartLeft.jpg','shapes_octagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_moonTop.jpg','shapes_moonBottom.jpg','shapes_diamondLeft.jpg','shapes_heartLeft.jpg','shapes_octagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_octagonLeft.jpg','shapes_octagonRight.jpg','shapes_triangleLeft.jpg','shapes_rhombusLeft.jpg','shapes_rhombusRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_octagonRight.jpg','shapes_octagonLeft.jpg','shapes_diamondLeft.jpg','shapes_heartLeft.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_rectangleLeft.jpg','shapes_rectangleRight.jpg','shapes_rhombusLeft.jpg','shapes_starLeft.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_rectangleRight.jpg','shapes_rectangleLeft.jpg','shapes_diamondLeft.jpg','shapes_heartLeft.jpg','shapes_rhombusRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_rhombusLeft.jpg','shapes_rhombusRight.jpg','shapes_triangleLeft.jpg','shapes_moonTop.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_rhombusRight.jpg','shapes_rhombusLeft.jpg','shapes_diamondLeft.jpg','shapes_heartLeft.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_squareLeft.jpg','shapes_squareRight.jpg','shapes_diamondLeft.jpg','shapes_squareLeft.jpg','shapes_triangleRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_squareRight.jpg','shapes_squareLeft.jpg','shapes_diamondLeft.jpg','shapes_heartLeft.jpg','shapes_moonBottom.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_starLeft.jpg','shapes_starRight.jpg','shapes_diamondLeft.jpg','shapes_rectangleLeft.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_starRight.jpg','shapes_starLeft.jpg','shapes_diamondLeft.jpg','shapes_heartLeft.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_triangleLeft.jpg','shapes_triangleRight.jpg','shapes_diamondLeft.jpg','shapes_rectangleLeft.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_triangleRight.jpg','shapes_triangleLeft.jpg','shapes_diamondLeft.jpg','shapes_heartLeft.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_circleLeft.jpg','shapes_circleRight.jpg','shapes_diamondLeft.jpg','shapes_rhombusLeft.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_circleRight.jpg','shapes_circleLeft.jpg','shapes_squareRight.jpg','shapes_starLeft.jpg','shapes_starRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_diamondLeft.jpg','shapes_diamondRight.jpg','shapes_hexagonLeft.jpg','shapes_moonBottom.jpg','shapes_triangleRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_diamondRight.jpg','shapes_diamondLeft.jpg','shapes_circleLeft.jpg','shapes_heartLeft.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_heartLeft.jpg','shapes_heartRight.jpg','shapes_triangleLeft.jpg','shapes_heartLeft.jpg','shapes_rectangleRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_heartRight.jpg','shapes_heartLeft.jpg','shapes_diamondLeft.jpg','shapes_squareLeft.jpg','shapes_moonTop.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_hexagonLeft.jpg','shapes_hexagonRight.jpg','shapes_starLeft.jpg','shapes_circleRight.jpg','shapes_octagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_hexagonRight.jpg','shapes_hexagonLeft.jpg','shapes_diamondLeft.jpg','shapes_heartLeft.jpg','shapes_octagonLeft.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_moonBottom.jpg','shapes_moonTop.jpg','shapes_squareLeft.jpg','shapes_heartLeft.jpg','shapes_octagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_moonTop.jpg','shapes_moonBottom.jpg','shapes_diamondLeft.jpg','shapes_heartLeft.jpg','shapes_octagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_octagonLeft.jpg','shapes_octagonRight.jpg','shapes_triangleLeft.jpg','shapes_rhombusLeft.jpg','shapes_rhombusRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_octagonRight.jpg','shapes_octagonLeft.jpg','shapes_diamondLeft.jpg','shapes_heartLeft.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_rectangleLeft.jpg','shapes_rectangleRight.jpg','shapes_rhombusLeft.jpg','shapes_starLeft.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_rectangleRight.jpg','shapes_rectangleLeft.jpg','shapes_diamondLeft.jpg','shapes_heartLeft.jpg','shapes_rhombusRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_rhombusLeft.jpg','shapes_rhombusRight.jpg','shapes_triangleLeft.jpg','shapes_moonTop.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_rhombusRight.jpg','shapes_rhombusLeft.jpg','shapes_diamondLeft.jpg','shapes_heartLeft.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_squareLeft.jpg','shapes_squareRight.jpg','shapes_diamondLeft.jpg','shapes_squareLeft.jpg','shapes_triangleRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_squareRight.jpg','shapes_squareLeft.jpg','shapes_diamondLeft.jpg','shapes_heartLeft.jpg','shapes_moonBottom.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_starLeft.jpg','shapes_starRight.jpg','shapes_diamondLeft.jpg','shapes_rectangleLeft.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_starRight.jpg','shapes_starLeft.jpg','shapes_diamondLeft.jpg','shapes_heartLeft.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_triangleLeft.jpg','shapes_triangleRight.jpg','shapes_diamondLeft.jpg','shapes_rectangleLeft.jpg','shapes_hexagonRight.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_triangleRight.jpg','shapes_triangleLeft.jpg','shapes_diamondLeft.jpg','shapes_heartLeft.jpg','shapes_hexagonRight.jpg');
+
+
+
+
+
+
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_elipse.png','shapes_elipse.png','shapes_diamond.png','shapes_circle.jpg','shapes_heart.jpeg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_heart.jpeg','shapes_heart.jpeg','shapes_elipse.png','shapes_circle.jpg','shapes_diamond.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_hexagon.jpg','shapes_hexagon.jpg','shapes_octagon.png','shapes_circle.jpg','shapes_heart.jpeg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_octagon.png','shapes_octagon.png','shapes_hexagon.jpg','shapes_circle.jpg','shapes_heart.jpeg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_rectangle.png','shapes_rectangle.png','shapes_octagon.png','shapes_square.jpg','shapes_heart.jpeg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_square.jpg','shapes_square.jpg','shapes_rectangle.png','shapes_octagon.png','shapes_hexagon.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_star.jpg','shapes_star.jpg','shapes_elipse.png','shapes_circle.jpg','shapes_heart.jpeg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_triangle.jpg','shapes_triangle.jpg','shapes_octagon.png','shapes_heart.jpeg','shapes_diamond.jpg');
+
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_diamond.png','shapes_diamond.png','shapes_elipse.png','shapes_circle.jpg','shapes_heart.jpeg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_elipse.png','shapes_elipse.png','shapes_diamond.png','shapes_circle.jpg','shapes_heart.jpeg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_heart.jpeg','shapes_heart.jpeg','shapes_elipse.png','shapes_circle.jpg','shapes_diamond.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_hexagon.jpg','shapes_hexagon.jpg','shapes_octagon.png','shapes_circle.jpg','shapes_heart.jpeg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_octagon.png','shapes_octagon.png','shapes_hexagon.jpg','shapes_circle.jpg','shapes_heart.jpeg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_rectangle.png','shapes_rectangle.png','shapes_octagon.png','shapes_square.jpg','shapes_heart.jpeg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_square.jpg','shapes_square.jpg','shapes_rectangle.png','shapes_octagon.png','shapes_hexagon.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_star.jpg','shapes_star.jpg','shapes_elipse.png','shapes_circle.jpg','shapes_heart.jpeg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('PRE_K','Shapes',true,true,'shapes_triangle.jpg','shapes_triangle.jpg','shapes_octagon.png','shapes_heart.jpeg','shapes_diamond.jpg');
+
+
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_6ApplesMinus1Apples.jpg','fruits_apples5.jpg','fruits_apples8.jpg','fruits_apples7.jpg','fruits_apples4.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_7ApplesMinus2Apples.jpg','fruits_apples5.jpg','fruits_apples4.jpg','fruits_apples3.jpg','fruits_apples1.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_7ApplesMinus3Apples.jpg','fruits_apples4.jpg','fruits_apples2.jpg','fruits_apples1.jpg','fruits_apples5.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_7ApplesMinus5Apples.jpg','fruits_apples2.jpg','fruits_apples1.jpg','fruits_apples3.jpg','fruits_apples4.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_8ApplesMinus4Apples.jpg','fruits_apples4.jpg','fruits_apples2.jpg','fruits_apples5.jpg','fruits_apples1.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_9ApplesMinus5Apples.jpg','fruits_apples4.jpg','fruits_apples6.jpg','fruits_apples4.jpg','fruits_apples3.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_9ApplesMinus8Apples.jpg','fruits_apples1.jpg','fruits_apples2.jpg','fruits_apples3.jpg','fruits_apples4.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_10ApplesMinus4Apples.jpg','fruits_apples6.jpg','fruits_apples2.jpg','fruits_apples5.jpg','fruits_apples7.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_10ApplesMinus8Apples.jpg','fruits_apples2.jpg','fruits_apples1.jpg','fruits_apples3.jpg','fruits_apples4.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Shapes',true,true,'shapes_11ApplesMinus4Apples.jpg','fruits_apples7.jpg','fruits_apples8.jpg','fruits_apples9.jpg','fruits_apples6.jpg');
+
+
+
+
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Subtraction',true,true,'shapes_12ApplesMinus4Apples.jpg','fruits_apples8.jpg','fruits_apples9.jpg','fruits_apples7.jpg','fruits_apples6.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Subtraction',true,true,'shapes_13ApplesMinus5Apples.jpg','fruits_apples8.jpg','fruits_apples9.jpg','fruits_apples7.jpg','fruits_apples6.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Subtraction',true,true,'shapes_15ApplesMinus3Apples.jpg','fruits_apples12.jpg','fruits_apples11.jpg','fruits_apples10.jpg','fruits_apples13.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Subtraction',true,true,'shapes_15ApplesMinus5Apples.jpg','fruits_apples5.jpg','fruits_apples8.jpg','fruits_apples4.jpg','fruits_apples6.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Subtraction',true,true,'shapes_17ApplesMinus9Apples.jpg','fruits_apples8.jpg','fruits_apples7.jpg','fruits_apples9.jpg','fruits_apples6.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Subtraction',true,true,'shapes_20ApplesMinus10Apples.jpg','fruits_apples10.jpg','fruits_apples8.jpg','fruits_apples9.jpg','fruits_apples6.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Subtraction',true,true,'shapes_20ApplesMinus14Apples.jpg','fruits_apples6.jpg','fruits_apples8.jpg','fruits_apples7.jpg','fruits_apples5.jpg');
+
+
+
+
+
+
+
+
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'shapes_3ApplesMinus1Apples.jpg','fruits_apples4.jpg','fruits_apples2.jpg','fruits_apples2.jpg','fruits_apples1.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'shapes_5ApplesMinus5Apples.jpg','fruits_apples10.jpg','fruits_apples12.jpg','fruits_apples13.jpg','fruits_apples9.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'shapes_6ApplesMinus3Apples.jpg','fruits_apples9.jpg','fruits_apples8.jpg','fruits_apples7.jpg','fruits_apples10.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'shapes_7ApplesMinus13Apples.jpg','fruits_apples20.jpg','fruits_apples19.jpg','fruits_apples17.jpg','fruits_apples10.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'shapes_8ApplesMinus3Apples.jpg','fruits_apples11.jpg','fruits_apples12.jpg','fruits_apples9.jpg','fruits_apples10.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'shapes_8ApplesMinus4Apples.jpg','fruits_apples12.jpg','fruits_apples11.jpg','fruits_apples9.jpg','fruits_apples10.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'shapes_9ApplesMinus2Apples.jpg','fruits_apples11.jpg','fruits_apples12.jpg','fruits_apples9.jpg','fruits_apples10.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'shapes_8ApplesMinus7Apples.jpg','fruits_apples15.jpg','fruits_apples16.jpg','fruits_apples19.jpg','fruits_apples14.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'shapes_10ApplesMinus3Apples.jpg','fruits_apples13.jpg','fruits_apples12.jpg','fruits_apples11.jpg','fruits_apples10.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'shapes_10ApplesMinus5Apples.jpg','fruits_apples15.jpg','fruits_apples12.jpg','fruits_apples11.jpg','fruits_apples16.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'shapes_10ApplesMinus10Apples.jpg','fruits_apples20.jpg','fruits_apples18.jpg','fruits_apples19.jpg','fruits_apples16.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'shapes_14ApplesMinus6Apples.jpg','fruits_apples20.jpg','fruits_apples18.jpg','fruits_apples19.jpg','fruits_apples16.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'shapes_10ApplesMinus9Apples.jpg','fruits_apples19.jpg','fruits_apples18.jpg','fruits_apples20.jpg','fruits_apples16.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'shapes_16ApplesMinus4Apples.jpg','fruits_apples20.jpg','fruits_apples18.jpg','fruits_apples19.jpg','fruits_apples16.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'shapes_15ApplesMinus5Apples.jpg','fruits_apples20.jpg','fruits_apples18.jpg','fruits_apples19.jpg','fruits_apples16.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'shapes_17ApplesMinus3Apples.jpg','fruits_apples20.jpg','fruits_apples18.jpg','fruits_apples19.jpg','fruits_apples16.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'shapes_14ApplesMinus6Apples.jpg','fruits_apples20.jpg','fruits_apples18.jpg','fruits_apples19.jpg','fruits_apples16.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('K','Addition',true,true,'shapes_18ApplesMinus2Appless.jpg','fruits_apples20.jpg','fruits_apples18.jpg','fruits_apples19.jpg','fruits_apples16.jpg');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'shapes_3ApplesMinus1Apples.jpg','4 apples','3 apples','2 apples','5 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'shapes_5ApplesMinus5Apples.jpg','10 apples','12 apples','13 apples','9 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'shapes_6ApplesMinus3Apples.jpg','9 apples','8 apples','7 apples','10 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'shapes_7ApplesMinus13Apples.jpg','13 apples','19 apples','17 apples','10 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'shapes_8ApplesMinus3Apples.jpg','11 apples','12 apples','9 apples','10 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'shapes_8ApplesMinus4Apples.jpg','12 apples','11 apples','9 apples','10 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'shapes_9ApplesMinus2Apples.jpg','11 apples','12 apples','19 apples','10 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'shapes_8ApplesMinus7Apples.jpg','15 apples','16 apples','19 apples','14 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'shapes_10ApplesMinus3Apples.jpg','13 apples','12 apples','11 apples','9 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'shapes_10ApplesMinus5Apples.jpg','15 apples','12 apples','11 apples','16 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'shapes_10ApplesMinus10Apples.jpg','20 apples','18 apples','19 apples','16 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'shapes_14ApplesMinus6Apples.jpg','20 apples','18 apples','19 apples','16 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'shapes_10ApplesMinus9Apples.jpg','19 apples','18 apples','20 apples','16 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'shapes_16ApplesMinus4Apples.jpg','20 apples','17 apples','19 apples','16 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'shapes_15ApplesMinus5Apples.jpg','20 apples','18 apples','19 apples','16 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'shapes_17ApplesMinus3Apples.jpg','20 apples','18 apples','19 apples','16 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'shapes_14ApplesMinus6Apples.jpg','20 apples','18 apples','19 apples','16 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('FIRST','Addition',true,false,'shapes_18ApplesMinus2Apples.jpg','20 apples','18 apples','19 apples','16 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',true,false,'shapes_3ApplesMinus1Apples.jpg','4 apples','3 apples','2 apples', '5 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',true,false,'shapes_5ApplesMinus5Apples.jpg','10 apples','12 apples','13 apples','9 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',true,false,'shapes_6ApplesMinus3Apples.jpg','9 apples','8 apples','7 apples','10 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',true,false,'shapes_7ApplesMinus13Apples.jpg','13 apples','19 apples','17 apples','10 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',true,false,'shapes_8ApplesMinus3Apples.jpg','11 apples','12 apples','9 apples','10 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',true,false,'shapes_8ApplesMinus4Apples.jpg','12 apples ','11 apples','9 apples','10 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',true,false,'shapes_9ApplesMinus2Apples.jpg','11 apples','12 apples','19 apples','10 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',true,false,'shapes_8ApplesMinus7Apples.jpg','15 apples','16 apples','19 apples','14 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',true,false,'shapes_10ApplesMinus3Apples.jpg','13 apples','12 apples','11 apples','9 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',true,false,'shapes_10ApplesMinus5Apples.jpg','15 apples','12 apples','11 apples','16 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',true,false,'shapes_10ApplesMinus10Apples.jpg','20 apples','18 apples','19 apples','16 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',true,false,'shapes_14ApplesMinus6Apples.jpg','20 apples','18 apples','19 apples','16 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',true,false,'shapes_10ApplesMinus9Apples.jpg','19 apples','18 apples','20 apples','16 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',true,false,'shapes_16ApplesMinus4Apples.jpg','20 apples','17 apples','19 apples','16 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',true,false,'shapes_15ApplesMinus5Apples.jpg','20 apples','18 apples','19 apples','16 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',true,false,'shapes_17ApplesMinus3Apples.jpg','20 apples','18 apples','19 apples','16 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',true,false,'shapes_14ApplesMinus6Apples.jpg','20 apples','18 apples','19 apples','16 apples');
+INSERT INTO questions (grade_level,category_type,has_question_image,has_answer_image,question,answer,wrong_1,wrong_2,wrong_3) VALUES ('SECOND','Addition',true,false,'shapes_18ApplesMinus2Apples.jpg','20 apples','18 apples','19 apples','16 apples');
