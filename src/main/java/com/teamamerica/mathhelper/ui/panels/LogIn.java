@@ -168,7 +168,7 @@ public class LogIn extends JFrame {
 
             }else {
                 this.dispose();
-                new WelcomeMathHelper().setVisible(true);
+                new SelectGrade().setVisible(true);
                 new HelpDeskHints().setVisible(true);
 
             }
@@ -200,7 +200,7 @@ public class LogIn extends JFrame {
         // TODO add your handling code here:
         AudioListener.stopAudioListener();
         AudioListener.runAudioListener("SpeechOn.wav");
-        AudioListener.runAudioListener("watever.wav");
+        AudioListener.runAudioListener("login.wav");
 
     }//GEN-LAST:event_jButton2ActionPerformed
 

@@ -236,7 +236,7 @@ public class MainMenu extends JFrame {
     private void btnHelpActionPerformed(ActionEvent evt) {
         AudioListener.stopAudioListener();
         AudioListener.runAudioListener("SpeechOn.wav");
-        AudioListener.runAudioListener("watever.wav");
+        AudioListener.runAudioListener("homepage.wav");
 
 
 

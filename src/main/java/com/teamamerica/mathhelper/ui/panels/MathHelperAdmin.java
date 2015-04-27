@@ -150,7 +150,7 @@ public class MathHelperAdmin extends JFrame {
                 if (e.getSource() == btnHelp) {
                     AudioListener.stopAudioListener();
                     AudioListener.runAudioListener("SpeechOn.wav");
-                    AudioListener.runAudioListener("watever.wav");
+                    AudioListener.runAudioListener("admin.wav");
                 }
             }
         });

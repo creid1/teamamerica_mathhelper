@@ -62,7 +62,7 @@ public class CategoriesMain extends JFrame {
 
         btnMoney.setToolTipText("Money!");
         btnAddition.setToolTipText("Addition!");
-        btnSets.setToolTipText("Time!");
+        btnSets.setToolTipText("Counting Sets!");
         btnMeasure.setToolTipText("Measure!");
         btnShapes.setToolTipText("Shapes!");
         btnSubtraction.setToolTipText("Subtraction!");
@@ -138,7 +138,7 @@ public class CategoriesMain extends JFrame {
         lblAddition.setBounds(165, 325, 1000, 30);
         lblSubtraction.setBounds(140, 525, 1000, 30);
 
-        lblSets.setBounds(475, 290, 1000, 90);
+        lblSets.setBounds(423, 290, 1000, 90);
         lblMoney.setBounds(465, 525, 1000, 30);
 
         lblMeasure.setBounds(710, 320, 1000, 30);
@@ -206,7 +206,7 @@ public class CategoriesMain extends JFrame {
 
 
         lblSets.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        lblSets.setText("Sets!");
+        lblSets.setText("Counting Sets!");
         jPanel1.add(lblSets);
 
 
@@ -279,7 +279,7 @@ public class CategoriesMain extends JFrame {
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         AudioListener.stopAudioListener();
         AudioListener.runAudioListener("SpeechOn.wav");
-        AudioListener.runAudioListener("watever.wav");
+        AudioListener.runAudioListener("categories.wav");
 
     }//GEN-LAST:event_jButton3ActionPerformed
 

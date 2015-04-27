@@ -291,7 +291,7 @@ public class PracticeTest extends JFrame {
     private void btnHelpActionPerformed(ActionEvent evt) {
         AudioListener.stopAudioListener();
         AudioListener.runAudioListener("SpeechOn.wav");
-        AudioListener.runAudioListener("watever.wav");
+        AudioListener.runAudioListener("practice.wav");
 
     }
 
