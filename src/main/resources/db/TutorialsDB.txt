@@ -293,3 +293,11 @@ INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addit
 INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Addition','https://www.youtube.com/v/mHCBtKFhV8M=1');
 INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FIRST','Addition','https://www.youtube.com/v/wcxaDBbOR5U?fs=1');
 INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('SECOND','Addition','https://www.youtube.com/v/wcxaDBbOR5U=1');
+INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Fractions','https://www.youtube.com/v/q4BF8wHvi4o?fs=1');
+INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Fractions','https://www.youtube.com/v/q4BF8wHvi4o?fs=1');
+INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Fractions','https://www.youtube.com/v/0XJVuzk7wc0?fs=1');
+INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Fractions','https://www.youtube.com/v/0XJVuzk7wc0?fs=1');
+INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Fractions','https://www.youtube.com/v/eSU6K512N8M?fs=1');
+INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Fractions','https://www.youtube.com/v/eSU6K512N8M?fs=1');
+INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('THIRD','Fractions','https://www.youtube.com/v/Y6Els4H9dck?fs=1');
+INSERT INTO tutorials(grade_level,category_type,tutorial) VALUES ('FOURTH','Fractions','https://www.youtube.com/v/Y6Els4H9dck?fs=1');
