@@ -1,3 +1,8 @@
+/**
+ * Name: Christina Reid
+ * Date Produced: April 29,2015
+ * Purpose: The purpose of this software is to help children learn math.
+ */
 package com.teamamerica.mathhelper.db;
 
 import com.teamamerica.mathhelper.controllers.CategoryType;
@@ -12,6 +17,11 @@ import java.util.ArrayList;
 /**
  * Created by Christina on 4/11/2015.
  */
+
+/**
+ * This class is the client class to the database that the other classes in the application use to connect to the
+ * database and update and retrieve information
+ */
 public class MathHelperDBClient {
 
     private MathHelperDB mathHelperDB;
@@ -24,6 +34,12 @@ public class MathHelperDBClient {
      * **************ACTIONS TO THE DB*********************************************
      */
 
+    /**
+     * This method validates the user login credentials
+     * @param username
+     * @param password
+     * @return boolean
+     */
     public boolean validate_user_login(String username, String password) {
         User user = User.searchForUserByUsername(get_allUserList(), username);
 
@@ -37,18 +53,38 @@ public class MathHelperDBClient {
         }
     }
 
+    /**
+     * This method updates an existing user
+     * @param user
+     * @return boolean
+     */
     public boolean edit_user(User user) {
         return mathHelperDB.editUser(user);
     }
 
+    /**
+     * This method add a new user
+     * @param user
+     * @return boolean
+     */
     public boolean add_newUser(User user) {
         return mathHelperDB.addNewUser(user);
     }
 
+    /**
+     * This method adds a new grade
+     * @param grade
+     * @return boolean
+     */
     public boolean add_newGrade(Grade grade) {
         return mathHelperDB.addNewGrade(grade);
     }
 
+    /**
+     * This method removes the user and grades
+     * @param user_id
+     * @return boolean
+     */
     public boolean remove_mathhelper_user_grades(int user_id) {
         boolean isDeleted = deleteUser(user_id);
         if (!isDeleted) {
@@ -59,6 +95,11 @@ public class MathHelperDBClient {
     }
 
 
+    /**
+     * This method deletes the grades based on the user id
+     * @param user_id
+     * @return boolean
+     */
     private boolean deleteGrades(int user_id) {
         ArrayList<Grade> grades = searchGrades_userId(user_id);
         boolean isDeleted = false;
@@ -79,6 +120,11 @@ public class MathHelperDBClient {
     }
 
 
+    /**
+     * This method deletes a user by the user id
+     * @param user_id
+     * @return
+     */
     private boolean deleteUser(int user_id) {
         return mathHelperDB.deleteUser(user_id);
 

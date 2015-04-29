@@ -1,9 +1,19 @@
+/**
+ * Name: Christina Reid
+ * Date Produced: April 29,2015
+ * Purpose: The purpose of this software is to help children learn math.
+ */
 package com.teamamerica.mathhelper.models;
 
 import java.util.ArrayList;
 
 /**
  * Created by Christina on 4/11/2015.
+ */
+
+
+/**
+ * This is the User class which is a data structure that is used to store information about a User
  */
 public class User {
 
@@ -46,6 +56,7 @@ public class User {
         this.role = role;
     }
 
+    /******************SETTERS FOR THE FIELDS**********************************************/
     public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
@@ -61,8 +72,6 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
-
-    /*********************************GETTERS FOR THE DATA STRUCTURES***************************************/
 
     public void setFirst_name(String first_name) {
         this.first_name = first_name;

@@ -1,9 +1,18 @@
+/**
+ * Name: Christina Reid
+ * Date Produced: April 29,2015
+ * Purpose: The purpose of this software is to help children learn math.
+ */
 package com.teamamerica.mathhelper.models;
 
 import java.util.ArrayList;
 
 /**
  * Created by Christina on 4/11/2015.
+ */
+
+/**
+ * This is the Grade class which is a data structure that is used to store information about a Grade
  */
 public class Grade {
 
@@ -134,6 +143,12 @@ public class Grade {
         return userGrades;
     }
 
+    /**
+     * This method searches for a grade by the grade id in the list of grades
+     * @param grades
+     * @param grade_id
+     * @return Grade
+     */
     public static Grade searchForGradeByGradeId(ArrayList<Grade> grades, int grade_id) {
         Grade grade = new Grade();
         for (Grade temp : grades) {

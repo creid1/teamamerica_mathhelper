@@ -1,3 +1,8 @@
+/**
+ * Name: Christina Reid, Jyoti Sharma
+ * Date Produced: April 29,2015
+ * Purpose: The purpose of this software is to help children learn math.
+ */
 package com.teamamerica.mathhelper.ui.customcomponents;
 
 import com.teamamerica.mathhelper.environment.ConfigDirectory;
@@ -11,6 +16,10 @@ import java.util.logging.Logger;
 /**
  * Created by Christina on 4/16/2015.
  */
+
+/**
+ * This class has static methods that handle the audio in the application
+ */
 public class AudioListener {
 
     private static AudioInputStream stream;
@@ -18,8 +27,11 @@ public class AudioListener {
     private static DataLine.Info info;
     private static Clip clip;
 
+    /**
+     * This method runs the audio listener based on the .wav file provided
+     * @param file
+     */
     public static void runAudioListener(String file) {
-
 
         String relativeFilePath = ConfigDirectory.getAudioFileFromDirectory(file);
         System.out.println("relative filepath: " + relativeFilePath);
@@ -40,6 +52,9 @@ public class AudioListener {
         }
     }
 
+    /**
+     * This method stops the audio listener from running the current audio
+     */
     public static void stopAudioListener() {
         if (clip != null) {
             clip.stop();

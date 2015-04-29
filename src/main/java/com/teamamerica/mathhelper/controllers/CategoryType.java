@@ -1,7 +1,18 @@
+/**
+ * Name: Christina Reid
+ * Date Produced: April 29,2015
+ * Purpose: The purpose of this software is to help children learn math.
+ */
 package com.teamamerica.mathhelper.controllers;
 
 /**
  * Created by Christina on 4/11/2015.
+ */
+
+/**
+ * This is a data type called CategoryType and is an enumeration.
+ * The CategoryType data types are used throughout the application to set data about the user's selections as well
+ * as the category type columns that are stored in the database
  */
 public enum CategoryType {
 

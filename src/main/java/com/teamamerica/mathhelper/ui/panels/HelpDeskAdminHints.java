@@ -1,3 +1,8 @@
+/**
+ * Name: Christina Reid
+ * Date Produced: April 29,2015
+ * Purpose: The purpose of this software is to help children learn math.
+ */
 package com.teamamerica.mathhelper.ui.panels;
 
 import com.teamamerica.mathhelper.environment.ConfigDirectory;

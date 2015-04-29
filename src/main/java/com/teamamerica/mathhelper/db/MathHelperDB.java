@@ -1,3 +1,8 @@
+/**
+ * Name: Christina Reid
+ * Date Produced: April 29,2015
+ * Purpose: The purpose of this software is to help children learn math.
+ */
 package com.teamamerica.mathhelper.db;
 
 import com.teamamerica.mathhelper.models.Grade;
@@ -10,6 +15,12 @@ import java.util.ArrayList;
 
 /**
  * Created by Christina on 4/11/2015.
+ */
+
+/**
+ * The MathHelperDB is the database level class that connects to the MySQL server in the cloud.
+ * The MathHelperDB contains all the necessary methods for updating and retrieval of database information that is used
+ * throughout the application.
  */
 public class MathHelperDB {
 
@@ -40,9 +51,12 @@ public class MathHelperDB {
         //create statement
         createStatement();
         //set database math helper
-        userMathHelperDB();
+        useMathHelperDB();
     }
 
+    /**
+     * This methoc closes the connection to the DB
+     */
     private void closeDBConnection() {
         try {
             //Logger.get//Logger(loggerName).log(Level.INFO,"Closing Connection to Math Helper DB.....");
@@ -63,6 +77,9 @@ public class MathHelperDB {
     }
 
 
+    /**
+     * This method connects to the database
+     */
     private void dbConnect() {
         //Logger.get//Logger(loggerName).log(Level.INFO, "Connecting to database...");
         try {
@@ -80,6 +97,9 @@ public class MathHelperDB {
         }
     }
 
+    /**
+     * This method creates a new statement
+     */
     private void createStatement() {
         try {
             //create a new statement
@@ -92,7 +112,10 @@ public class MathHelperDB {
         }
     }
 
-    private void userMathHelperDB() {
+    /**
+     * This method executes the statement to use the mathhelper database
+     */
+    private void useMathHelperDB() {
         // Use the mathhelper database
         //Logger.get//Logger(loggerName).log(Level.INFO,"Connecting to Math Helper DB.....");
         String sql = "USE mathhelper";
@@ -106,6 +129,11 @@ public class MathHelperDB {
     }
 
 
+    /**
+     * This method adds a new user to the database
+     * @param user
+     * @return boolean
+     */
     public boolean addNewUser(User user) {
         openDBConnection();
         sql = "INSERT users " +
@@ -135,6 +163,11 @@ public class MathHelperDB {
         return false;
     }
 
+    /**
+     * This method updates an existing user in the database
+     * @param user
+     * @return boolean
+     */
 
     public boolean editUser(User user) {
         openDBConnection();
@@ -223,6 +256,11 @@ public class MathHelperDB {
     }
 
 
+    /**
+     * This method adds a new grade to the database
+     * @param grade
+     * @return boolean
+     */
     public boolean addNewGrade(Grade grade) {
         openDBConnection();
         sql = "INSERT grades " +
@@ -252,6 +290,10 @@ public class MathHelperDB {
         return false;
     }
 
+    /**
+     * This method returns a User ArrayList of all the users in the database
+     * @return ArrayList
+     */
     public ArrayList<User> getUserTableList() {
         ArrayList<User> users = new ArrayList<>();
         openDBConnection();
@@ -286,6 +328,10 @@ public class MathHelperDB {
     }
 
 
+    /**
+     * This method returns all the grades and stores the Grades object in a list
+     * @return ArrayList
+     */
     public ArrayList<Grade> getGradeTableList() {
         ArrayList<Grade> grades = new ArrayList<>();
         openDBConnection();
@@ -321,6 +367,10 @@ public class MathHelperDB {
     }
 
 
+    /**
+     * This method returns all of the questions in the table
+     * @return ArrayList
+     */
     public ArrayList<Question> getQuestionTableList() {
         ArrayList<Question> questions = new ArrayList<>();
         openDBConnection();
@@ -356,7 +406,10 @@ public class MathHelperDB {
         return questions;
     }
 
-
+    /**
+     * This method returns all the tutorials in the tutorials table
+     * @return ArrayList
+     */
     public ArrayList<Tutorial> getTutorialTableList() {
         ArrayList<Tutorial> tutorials = new ArrayList<>();
         openDBConnection();

@@ -1,3 +1,8 @@
+/**
+ * Name: Christina Reid
+ * Date Produced: April 29,2015
+ * Purpose: The purpose of this software is to help children learn math.
+ */
 package com.teamamerica.mathhelper.configurators;
 
 import com.teamamerica.mathhelper.db.MathHelperDBClient;
@@ -11,6 +16,10 @@ import java.util.Date;
 /**
  * Created by Christina on 4/17/2015.
  */
+
+/**
+ * This class is contains static methods that retrieve and store information about the grade information
+ */
 public class GradeConfigurator {
 
     private static String letterGrade;
@@ -19,6 +28,11 @@ public class GradeConfigurator {
 
     private static MathHelperDBClient mathHelperDBClient = new MathHelperDBClient();
 
+    /**
+     * This method calculates the grade and submits the Grade object to the database
+     * @param testCorrect
+     * @param testTotal
+     */
     public static void calculateGradeAndSubmit(double testCorrect, double testTotal) {
 
         correct = testCorrect;
@@ -105,10 +119,17 @@ public class GradeConfigurator {
     }
 
 
+    /**
+     * This method returns the Letter Grade that was just generated
+     * @return String
+     */
     public static String getLetterGrade() {
         return letterGrade;
     }
 
+    /**
+     * This method creates the results letter that is displayed in the Results Frame
+     */
     public static void setGradeResultLetter() {
         gradeResultLetter = new ArrayList<>();
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm");
@@ -131,6 +152,10 @@ public class GradeConfigurator {
         gradeResultLetter.add("Final Grade : " + letterGrade);
     }
 
+    /**
+     * This method returns the results grade letter as a String ArrayList for the JList in the Results table
+     * @return ArrayList
+     */
     public static ArrayList<String> getGradeResultLetter() {
         return gradeResultLetter;
     }

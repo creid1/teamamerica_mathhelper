@@ -1,3 +1,8 @@
+/**
+ * Name: Christina Reid, Brandon Cousen, Ian Nielson
+ * Date Produced: April 29,2015
+ * Purpose: The purpose of this software is to help children learn math.
+ */
 package com.teamamerica.mathhelper.ui.panels;
 
 import com.teamamerica.mathhelper.configurators.QuestionsPageConfigurator;
@@ -95,7 +100,7 @@ public class PracticeTest extends JFrame {
 
 
         lblQuestionCounter = new JLabel();
-        lblAnswer = new ImageLabel(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(), question.getHas_answer_image()), 150, 150);
+        lblAnswer = new ImageLabel(question.getHas_answer_image(), checkHasFileToGenerateFullPath(question.getAnswer(), question.getHas_answer_image()), 1000, 150);
         lblCorrect = new ImageLabel(150, 150);
         lblQuestion = new ImageLabel(question.getHas_question_image(), checkHasFileToGenerateFullPath(question.getQuestion(), question.getHas_question_image()), 1000, 150);
         btnNext = new ImageButton(true, ConfigDirectory.getImageFileFromDirectory("panels_arrow.jpg"), 150, 101);
@@ -240,7 +245,7 @@ public class PracticeTest extends JFrame {
         jPanel1.add(lblQuestionCounter);
 
         lblQuestion.setBounds(75, 170, 1000, 150);
-        lblAnswer.setBounds(400, 170, 150, 150);
+        lblAnswer.setBounds(450, 170, 1000, 150);
         lblCorrect.setBounds(775, 170, 150, 150);
 
         lblCorrect.setVisible(false);

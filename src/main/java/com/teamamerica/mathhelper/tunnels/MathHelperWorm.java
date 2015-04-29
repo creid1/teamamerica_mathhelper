@@ -1,3 +1,8 @@
+/**
+ * Name: Christina Reid
+ * Date Produced: April 29,2015
+ * Purpose: The purpose of this software is to help children learn math.
+ */
 package com.teamamerica.mathhelper.tunnels;
 
 import com.teamamerica.mathhelper.configurators.TutorialsPageConfigurator;
@@ -12,6 +17,14 @@ import com.teamamerica.mathhelper.ui.panels.*;
 
 /**
  * Created by Christina on 4/17/2015.
+ */
+
+/**
+ * This class is a worm that creates tunnels inside the application that allows the developers to navigate directly
+ * to the desired page while setting the necessary selection options to preserve the system.
+ *
+ * The MathHelperWorm is fully implemented and functional and is being left in the program in hopes that a student
+ * will stumble upon the wormhole and spark curiosity in a path towards computer science.
  */
 public class MathHelperWorm {
 
@@ -41,8 +54,6 @@ public class MathHelperWorm {
         } else if (check_sktutsha(code)) {
             return;
         } else if (check_sprektutsha(code)) {
-            return;
-        } else if (check_avie(code)) {
             return;
         } else if (check_sktutti(code)) {
             return;
@@ -145,21 +156,6 @@ public class MathHelperWorm {
         }
     }
 
-    private static boolean check_avie(String code) {
-        if (code.equalsIgnoreCase("avie")) {
-
-            UserInteractionsConfigurator.set_interactive_user(mathHelperDBClient.searchUsers_username("creid"));
-            System.out.println("User logged in!");
-            System.out.println(UserInteractionsConfigurator.get_interactive_user().getUsername());
-
-            new MathHelperAdmin().setVisible(true);
-
-            return true;
-
-        } else {
-            return false;
-        }
-    }
 
     private static boolean check_sfitutadd(String code) {
         if (code.equalsIgnoreCase("sfitutadd")) {

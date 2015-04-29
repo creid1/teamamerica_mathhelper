@@ -1,3 +1,8 @@
+/**
+ * Name: Christina Reid
+ * Date Produced: April 29,2015
+ * Purpose: The purpose of this software is to help children learn math.
+ */
 package com.teamamerica.mathhelper.ui.customcomponents;
 
 import chrriis.dj.nativeswing.swtimpl.NativeInterface;
@@ -17,6 +22,10 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by Christina on 4/14/2015.
+ */
+
+/**
+ * This class is the frame that contains the web browser embedded in a frame
  */
 public class YouTubeFrame extends JFrame {
 

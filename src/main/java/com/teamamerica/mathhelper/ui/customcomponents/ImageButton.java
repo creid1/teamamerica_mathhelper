@@ -1,3 +1,8 @@
+/**
+ * Name: Christina Reid
+ * Date Produced: April 29,2015
+ * Purpose: The purpose of this software is to help children learn math.
+ */
 package com.teamamerica.mathhelper.ui.customcomponents;
 
 import javax.swing.*;
@@ -9,9 +14,12 @@ import java.net.URL;
 /**
  * Created by Christina on 4/10/2015.
  */
+
+/**
+ * This class overrides the design component of a JButton in order to display both images and text as the button
+ */
 public class ImageButton extends JButton {
 
-    /** Filename of the image to be used as the button's icon. */
     /**
      * The width of the button
      */
@@ -22,6 +30,13 @@ public class ImageButton extends JButton {
     private int height;
 
 
+    /**
+     * The constructor
+     * @param hasImage
+     * @param fileName
+     * @param width
+     * @param height
+     */
     public ImageButton(boolean hasImage, String fileName, int width, int height) {
         this.width = width;
         this.height = height;
@@ -29,6 +44,11 @@ public class ImageButton extends JButton {
 
     }
 
+    /**
+     * This method changes the button images based on whether the fileName is an image or String text
+     * @param hasImage
+     * @param fileName
+     */
     public void changeButtonImage(boolean hasImage, String fileName) {
         this.setEnabled(true);
         if (hasImage) {
@@ -40,6 +60,10 @@ public class ImageButton extends JButton {
 
     }
 
+    /**
+     * This method creates the button text based on the filename
+     * @param fileName
+     */
     private void createButtonText(String fileName) {
 
         this.setIcon(null);
@@ -80,6 +104,9 @@ public class ImageButton extends JButton {
 
     }
 
+    /**
+     * This method creates the wrong answer buttons displayed in the practice and test pages
+     */
     public void createWrongAnswerButton() {
 
         this.setBackground(Color.RED);
@@ -101,6 +128,9 @@ public class ImageButton extends JButton {
     }
 
 
+    /**
+     * This method creates the right answer button displayed in the practice and test pages
+     */
     public void createRightAnswerButton() {
 
         this.setBackground(Color.GREEN);
@@ -119,7 +149,11 @@ public class ImageButton extends JButton {
 
     }
 
-
+    /**
+     * This method returns the image icon based on the filename
+     * @param fileName
+     * @return ImageIcon
+     */
     public ImageIcon getImageIcon(String fileName) {
         System.out.println(fileName);
         URL imageUrl = ImageButton.class.getClassLoader().getResource(fileName);

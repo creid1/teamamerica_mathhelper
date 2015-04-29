@@ -1,12 +1,16 @@
+/**
+ * Name: Christina Reid
+ * Date Produced: April 29,2015
+ * Purpose: The purpose of this software is to help children learn math.
+ */
 package com.teamamerica.mathhelper.dbscripts;
 
 import java.sql.*;
 import java.sql.SQLException;
 
 /**
- * You need to download the Java Database Connector (JDBC) here (http://dev.mysql.com/downloads/connector/j/).
- * Once downloaded, you will need to move the .jar file which was part of the .zip you downloaded for the JDBC.
- * Move the JAR file to the folder: /Library/Java/Extensions
+ * This class is a script that creates the database and tables for the application.
+ * This class is not used in the application but for the DB admin
  */
 public class sqlMathHelperCreateDBScript {
     // JDBC driver name and database URL

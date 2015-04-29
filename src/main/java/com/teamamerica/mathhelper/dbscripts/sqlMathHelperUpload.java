@@ -1,3 +1,8 @@
+/**
+ * Name: Christina Reid
+ * Date Produced: April 29,2015
+ * Purpose: The purpose of this software is to help children learn math.
+ */
 package com.teamamerica.mathhelper.dbscripts;
 
 import com.teamamerica.mathhelper.db.MathHelperDBClient;
@@ -12,6 +17,11 @@ import java.util.ArrayList;
 
 /**
  * Created by Christina on 4/17/2015.
+ */
+
+/**
+ * This class is a script that uploads the tutorials and questions to the math helper database.
+ * This class is not used in the application but for the DB Admin.
  */
 public class sqlMathHelperUpload extends sqlMathHelperDBClean{
 

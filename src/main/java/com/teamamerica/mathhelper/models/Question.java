@@ -1,9 +1,19 @@
+/**
+ * Name: Christina Reid
+ * Date Produced: April 29,2015
+ * Purpose: The purpose of this software is to help children learn math.
+ */
 package com.teamamerica.mathhelper.models;
 
 import java.util.ArrayList;
 
 /**
  * Created by Christina on 4/11/2015.
+ */
+
+
+/**
+ * This is the Question class which is a data structure that is used to store information about a Question
  */
 public class Question {
 
